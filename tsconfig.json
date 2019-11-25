@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "outFile": "./dist/StrFunctions.js",
+        //"outFile": "./docs/scripts/graph_table_svg.js",
+        "sourceMap": true,
+        "target": "ES6",
+        "declaration": true,
+        "strict": true,
+        //"module" : "amd"
+        //"declarationDir" : "../"
+        //"typeRoots": ["custom_typings"]
+        //"baseUrl": ".",
+        //"paths": {
+        //    "*": [
+        //        "lib/*"
+        //    ]
+        //}
+    },
+    "include": [
+        "src", 
+        //"custom_typings"
+        "../GraphTableSVG/dist"
+    ]
+}

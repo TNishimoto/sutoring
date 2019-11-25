@@ -1,0 +1,20 @@
+{
+    "name": "typedoc-sample",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "typedoc": "typedoc --out ./docs/typedoc/ ./src/ --includeDeclarations ../GraphTableSVG/dist --excludeExternals ",
+        "gulp": "gulp"
+    },
+    "keywords": [
+        "typedoc"
+    ],
+    "author": "Mic-U",
+    "license": "MIT",
+    "dependencies": {
+        "gulp": "^3.9.1",
+        "gulp-typedoc": "^2.0.0",
+        "typedoc": "^0.4.4"
+    }
+}
