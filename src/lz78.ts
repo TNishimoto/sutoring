@@ -1,6 +1,9 @@
 
 
 namespace StrFunctions {
+    /**
+     * This namespace provides functions for Lempel-Ziv 78 compression.
+     */
     export namespace LZ78{
         export type LZ78Factor = { id : number, nextChar : string };
         export type LZ78Node = { id : number, children : Map<string, LZ78Node>}
@@ -61,10 +64,10 @@ namespace StrFunctions {
         export function constructLZ78Table(text : string) : GraphTableSVG.LogicTable {
             const comp = compress(text);
             return StrFunctions.LogicGraphTable.createLogicTable([
-                {name : "index", values : comp.map((v,i) => i)  },
+                //{name : "index", values : comp.map((v,i) => i)  },
                 {name : "id", values : comp.map((v,i) => v.id)  },
                 {name : "character", values : comp.map((v,i) => v.nextChar)  }
-            ], {isRowLines : true} )
+            ], {isRowLines : true, withIndex : true} )
             /*
             const table = new GraphTableSVG.LogicTable({rowCount : 3, columnCount : comp.length+1});
             StrFunctions.LogicGraphTable.setRow(table, 0, "index", comp.map((v,i) => i) );

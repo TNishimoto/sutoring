@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Color | typedoc-sample</title>
+	<title>LCPArray | typedoc-sample</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,16 +54,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_graphtablesvg_dist_graph_table_svg_d_.html">&quot;GraphTableSVG/dist/graph_table_svg.d&quot;</a>
+					<a href="strfunctions.html">StrFunctions</a>
 				</li>
 				<li>
-					<a href="_graphtablesvg_dist_graph_table_svg_d_.graphtablesvg.html">GraphTableSVG</a>
-				</li>
-				<li>
-					<a href="_graphtablesvg_dist_graph_table_svg_d_.graphtablesvg.color.html">Color</a>
+					<a href="strfunctions.lcparray.html">LCPArray</a>
 				</li>
 			</ul>
-			<h1>Module Color</h1>
+			<h1>Module LCPArray</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +70,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>色に関する名前空間です。</p>
+						<p>This namespace provides functions for longest common prefix array.</p>
 					</div>
 				</div>
 			</section>
@@ -81,151 +78,91 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-not-exported">
+						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_graphtablesvg_dist_graph_table_svg_d_.graphtablesvg.color.html#createhexcodefromcolorname" class="tsd-kind-icon">create<wbr>Hex<wbr>Code<wbr>From<wbr>Color<wbr>Name</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_graphtablesvg_dist_graph_table_svg_d_.graphtablesvg.color.html#createhexfromcolorname" class="tsd-kind-icon">create<wbr>Hex<wbr>From<wbr>Color<wbr>Name</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_graphtablesvg_dist_graph_table_svg_d_.graphtablesvg.color.html#creatergbcodefromcolorname" class="tsd-kind-icon">createRGBCode<wbr>From<wbr>Color<wbr>Name</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_graphtablesvg_dist_graph_table_svg_d_.graphtablesvg.color.html#creatergbfromcolorname" class="tsd-kind-icon">createRGBFrom<wbr>Color<wbr>Name</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="strfunctions.lcparray.html#construct" class="tsd-kind-icon">construct</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="strfunctions.lcparray.html#constructlcptable" class="tsd-kind-icon">constructLCPTable</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="strfunctions.lcparray.html#lcp" class="tsd-kind-icon">lcp</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="createhexcodefromcolorname" class="tsd-anchor"></a>
-					<h3>create<wbr>Hex<wbr>Code<wbr>From<wbr>Color<wbr>Name</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Hex<wbr>Code<wbr>From<wbr>Color<wbr>Name<span class="tsd-signature-symbol">(</span>colorName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="construct" class="tsd-anchor"></a>
+					<h3>construct</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">construct<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in GraphTableSVG/dist/graph_table_svg.d.ts:10</li>
+									<li>Defined in suffix_array.ts:101</li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>色名から16進コードを生成します。</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>colorName: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-									</div>
+									<h5>text: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="constructlcptable" class="tsd-anchor"></a>
+					<h3>constructLCPTable</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">constructLCPTable<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, option<span class="tsd-signature-symbol">?: </span><a href="strfunctions.suffixarray.html#satableoption" class="tsd-signature-type">SATableOption</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">LogicTable</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in suffix_array.ts:112</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> option: <a href="strfunctions.suffixarray.html#satableoption" class="tsd-signature-type">SATableOption</a><span class="tsd-signature-symbol"> =&nbsp;{zeroBased : true, withSA : true,  withLCP : true, withBWT : false}</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">LogicTable</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="createhexfromcolorname" class="tsd-anchor"></a>
-					<h3>create<wbr>Hex<wbr>From<wbr>Color<wbr>Name</h3>
+					<a name="lcp" class="tsd-anchor"></a>
+					<h3>lcp</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Hex<wbr>From<wbr>Color<wbr>Name<span class="tsd-signature-symbol">(</span>colorName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+						<li class="tsd-signature tsd-kind-icon">lcp<span class="tsd-signature-symbol">(</span>text1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, text2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in GraphTableSVG/dist/graph_table_svg.d.ts:15</li>
+									<li>Defined in suffix_array.ts:94</li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>色名を16進表現に変換します。</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>colorName: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-									</div>
+									<h5>text1: <span class="tsd-signature-type">string</span></h5>
 								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span>
-								<span class="tsd-signature-symbol"> | </span>
-								<span class="tsd-signature-type">null</span>
-							</h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="creatergbcodefromcolorname" class="tsd-anchor"></a>
-					<h3>createRGBCode<wbr>From<wbr>Color<wbr>Name</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">createRGBCode<wbr>From<wbr>Color<wbr>Name<span class="tsd-signature-symbol">(</span>colorName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in GraphTableSVG/dist/graph_table_svg.d.ts:24</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>色名をRGBコードに変換します。</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
 								<li>
-									<h5>colorName: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-									</div>
+									<h5>text2: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="creatergbfromcolorname" class="tsd-anchor"></a>
-					<h3>createRGBFrom<wbr>Color<wbr>Name</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">createRGBFrom<wbr>Color<wbr>Name<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in GraphTableSVG/dist/graph_table_svg.d.ts:29</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>色名をRGB表現に変換します。</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>str: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
-							<ul class="tsd-parameters">
-								<li class="tsd-parameter">
-									<h5>b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-								</li>
-								<li class="tsd-parameter">
-									<h5>g<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-								</li>
-								<li class="tsd-parameter">
-									<h5>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -237,21 +174,42 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
+					<li class=" tsd-kind-module tsd-is-not-exported">
+						<a href="strfunctions.html">Str<wbr>Functions</a>
+					</li>
+					<li class=" tsd-kind-module tsd-parent-kind-module">
+						<a href="strfunctions.bwt.html">Str<wbr>Functions.BWT</a>
+					</li>
+					<li class=" tsd-kind-module tsd-parent-kind-module">
+						<a href="strfunctions.distinctsubstrings.html">Str<wbr>Functions.<wbr>Distinct<wbr>Substrings</a>
+					</li>
+					<li class="current tsd-kind-module tsd-parent-kind-module">
+						<a href="strfunctions.lcparray.html">Str<wbr>Functions.LCPArray</a>
+					</li>
+					<li class=" tsd-kind-module tsd-parent-kind-module">
+						<a href="strfunctions.lz78.html">Str<wbr>Functions.LZ78</a>
+					</li>
+					<li class=" tsd-kind-module tsd-parent-kind-module">
+						<a href="strfunctions.logicgraphtable.html">Str<wbr>Functions.<wbr>Logic<wbr>Graph<wbr>Table</a>
+					</li>
+					<li class=" tsd-kind-module tsd-parent-kind-module">
+						<a href="strfunctions.minimaluniquesubstrings.html">Str<wbr>Functions.<wbr>Minimal<wbr>Unique<wbr>Substrings</a>
+					</li>
+					<li class=" tsd-kind-module tsd-parent-kind-module">
+						<a href="strfunctions.suffixarray.html">Str<wbr>Functions.<wbr>Suffix<wbr>Array</a>
+					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_graphtablesvg_dist_graph_table_svg_d_.graphtablesvg.color.html#createhexcodefromcolorname" class="tsd-kind-icon">create<wbr>Hex<wbr>Code<wbr>From<wbr>Color<wbr>Name</a>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="strfunctions.lcparray.html#construct" class="tsd-kind-icon">construct</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="strfunctions.lcparray.html#constructlcptable" class="tsd-kind-icon">constructLCPTable</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_graphtablesvg_dist_graph_table_svg_d_.graphtablesvg.color.html#createhexfromcolorname" class="tsd-kind-icon">create<wbr>Hex<wbr>From<wbr>Color<wbr>Name</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_graphtablesvg_dist_graph_table_svg_d_.graphtablesvg.color.html#creatergbcodefromcolorname" class="tsd-kind-icon">createRGBCode<wbr>From<wbr>Color<wbr>Name</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_graphtablesvg_dist_graph_table_svg_d_.graphtablesvg.color.html#creatergbfromcolorname" class="tsd-kind-icon">createRGBFrom<wbr>Color<wbr>Name</a>
+						<a href="strfunctions.lcparray.html#lcp" class="tsd-kind-icon">lcp</a>
 					</li>
 				</ul>
 			</nav>

@@ -6,8 +6,10 @@ declare namespace StrFunctions {
             name: string;
             values: (number | string)[];
         };
-        function createLogicTable(lines: LogicTableLine[], option: {
-            isRowLines: boolean;
+        function createLogicTable(lines: LogicTableLine[] | LogicTableLine, option?: {
+            isRowLines?: boolean;
+            withIndex?: boolean;
+            zeroBased?: boolean;
         }): GraphTableSVG.LogicTable;
     }
 }
@@ -28,19 +30,33 @@ declare namespace StrFunctions {
     }
 }
 declare namespace StrFunctions {
+    namespace DistinctSubstrings {
+        function sort(strings: string[]): void;
+        function enumerate(text: string): string[];
+        function enumerateWithOccurrences(text: string): Map<string, number[]>;
+    }
+    namespace MinimalUniqueSubstrings {
+        function enumerate(text: string): string[];
+    }
+}
+declare namespace StrFunctions {
     namespace SuffixArray {
         function construct(str: string, zero_based?: boolean): number[];
-        function constructSATable(text: string, option?: {
-            zero_based?: boolean;
+        type SATableOption = {
+            zeroBased?: boolean;
             withSA?: boolean;
             withLCP?: boolean;
             withBWT?: boolean;
-        }): GraphTableSVG.LogicTable;
+            withIndex?: boolean;
+        };
+        function constructSATable(text: string, option?: SATableOption): GraphTableSVG.LogicTable;
     }
     namespace LongestCommonPrefixArray {
         function construct(text: string): number[];
+        function constructLCPTable(text: string, option?: SuffixArray.SATableOption): GraphTableSVG.LogicTable;
     }
     namespace BWT {
         function construct(text: string): string[];
+        function constructBWTTable(text: string, option?: SuffixArray.SATableOption): GraphTableSVG.LogicTable;
     }
 }

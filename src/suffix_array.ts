@@ -1,6 +1,9 @@
 
 
 namespace StrFunctions {
+    /**
+     * This namespace provides functions for suffix array.
+     */
     export namespace SuffixArray {
         /*
         export function compare(str1: string, str2: string): [number, number] {
@@ -51,20 +54,22 @@ namespace StrFunctions {
                 return arr.map((v) => v+1);
             }
         }
-        export type SATableOption = { zero_based? : boolean, withSA? : boolean, withLCP? : boolean, withBWT? : boolean} ;
-        export function constructSATable(text: string, option : SATableOption = {zero_based : true, withSA : true,  withLCP : false, withBWT : false} ): GraphTableSVG.LogicTable {
-            if(option.zero_based == undefined) option.zero_based = true;
+        export type SATableOption = { zeroBased? : boolean, withSA? : boolean, withLCP? : boolean, withBWT? : boolean, withIndex? : boolean} ;
+        export function constructSATable(text: string, option : SATableOption = {zeroBased : true, withSA : true,  withLCP : false, withBWT : false, withIndex : true} ): GraphTableSVG.LogicTable {
+            if(option.zeroBased == undefined) option.zeroBased = true;
             if(option.withSA == undefined) option.withSA = true;
             if(option.withLCP == undefined) option.withLCP = false;
             if(option.withBWT == undefined) option.withBWT = false;            
+            if(option.withIndex == undefined) option.withIndex = true;            
+
             const sa = construct(text);
-            const view_sa = option.zero_based ? sa : sa.map((v) => v+1);
-            const indexes = option.zero_based ? sa.map((v, i) => i) : sa.map((v, i) => i+1);
-            const lcpArray = LongestCommonPrefixArray.construct(text);
+            const view_sa = option.zeroBased ? sa : sa.map((v) => v+1);
+            const indexes = option.zeroBased ? sa.map((v, i) => i) : sa.map((v, i) => i+1);
+            const lcpArray = LCPArray.construct(text);
             const bwt = BWT.construct(text).map((v) => v);
 
             const arrays : LogicGraphTable.LogicTableLine[] = new Array(0);
-            arrays.push({ name: "Index", values: indexes });
+            //arrays.push({ name: "Index", values: indexes });
             if(option.withSA){
                 arrays.push({ name: "SA", values: view_sa  });
             }
@@ -78,11 +83,14 @@ namespace StrFunctions {
             arrays.push({ name: "Suffix", values: sa.map((v) => text.substr(v)) });
 
 
-            return StrFunctions.LogicGraphTable.createLogicTable(arrays, { isRowLines: false })
+            return StrFunctions.LogicGraphTable.createLogicTable(arrays, { isRowLines: false, withIndex : option.withIndex, zeroBased : option.zeroBased })
 
         }
     }
-    export namespace LongestCommonPrefixArray {
+    /**
+     * This namespace provides functions for longest common prefix array.
+     */
+    export namespace LCPArray {
         function lcp(text1: string, text2: string): number {
             const max = text1.length < text2.length ? text2.length : text1.length;
             for (let i = 0; i < max; i++) {
@@ -101,10 +109,14 @@ namespace StrFunctions {
             })
             return lcpArray;
         }
-        export function constructLCPTable(text : string, option : SuffixArray.SATableOption = {zero_based : true, withSA : true,  withLCP : true, withBWT : false} ){
+        export function constructLCPTable(text : string, option : SuffixArray.SATableOption = {zeroBased : true, withSA : true,  withLCP : true, withBWT : false} ){
             return SuffixArray.constructSATable(text, option);
         }
     }
+
+    /**
+     * This namespace provides functions for Burrows-Wheeler transform.
+     */
     export namespace BWT {
         function getCircularString(text : string, nth : number){
             return text.substr(nth) + text.substr(0, nth);
@@ -135,7 +147,7 @@ namespace StrFunctions {
                 }
             })
         }
-        export function constructBWTTable(text : string, option : SuffixArray.SATableOption = {zero_based : true, withSA : true,  withLCP : false, withBWT : true} ){
+        export function constructBWTTable(text : string, option : SuffixArray.SATableOption = {zeroBased : true, withSA : true,  withLCP : false, withBWT : true} ){
             return SuffixArray.constructSATable(text, option);
         }
     }

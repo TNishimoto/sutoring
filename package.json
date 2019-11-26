@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "typedoc": "typedoc --out ./docs/typedoc/ ./src/ --includeDeclarations ../GraphTableSVG/dist --excludeExternals ",
+        "typedoc": "typedoc --out ./docs/typedoc/ ./src/  ../GraphTableSVG/dist --excludeExternals --mode file",
         "gulp": "gulp"
     },
     "keywords": [

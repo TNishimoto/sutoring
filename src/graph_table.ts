@@ -1,5 +1,8 @@
 namespace StrFunctions {
 
+    /**
+     * LogicGraphTable namespace provides snippets for LogicTable, LogicTable, and LogicTree classes.
+     */
     export namespace LogicGraphTable {
         export function setRow(table: GraphTableSVG.LogicTable, ithRow: number, name: string, values: (number | string)[]) {
             table.cells[ithRow][0].text = name;
@@ -11,30 +14,46 @@ namespace StrFunctions {
         }
         export type LogicTableLine = { name: string, values: (number | string)[] }
 
-        export function createLogicTable(lines: LogicTableLine[],
-            option: { isRowLines: boolean }): GraphTableSVG.LogicTable {
-            let maximalLineLength = 0;
-            lines.forEach((v) => {
-                if (maximalLineLength < v.values.length) {
-                    maximalLineLength = v.values.length
+        export function createLogicTable(lines: LogicTableLine[] | LogicTableLine,
+            option?: { isRowLines?: boolean, withIndex?: boolean, zeroBased? : boolean }): GraphTableSVG.LogicTable {
+            if (option == undefined) option = {};
+            if (option.isRowLines == undefined) option.isRowLines = true;
+            if (option.withIndex == undefined) option.withIndex = false;
+            if (lines instanceof Array) {
+
+
+                let maximalLineLength = 0;
+                lines.forEach((v) => {
+                    if (maximalLineLength < v.values.length) {
+                        maximalLineLength = v.values.length
+                    }
                 }
-            }
-            )
-            const rowCount = option.isRowLines ? lines.length : maximalLineLength + 1;
-            const columnCount = option.isRowLines ? maximalLineLength + 1 : lines.length;
-            const table: GraphTableSVG.LogicTable = new GraphTableSVG.LogicTable({ rowCount: rowCount, columnCount: columnCount });
+                )
+                if(option.withIndex){
+                    const newLines : LogicTableLine[] = new Array();
+                    newLines.push({name : "Index", values : Array.from(Array(maximalLineLength).keys()).map((i) => option!.zeroBased ? i : (i+1)) })
+                    lines.forEach((v) => newLines.push(v));
+                    option.withIndex = false;
+                    return createLogicTable(newLines, option);
+                }
+                const rowCount = option.isRowLines ? lines.length : maximalLineLength + 1;
+                const columnCount = option.isRowLines ? maximalLineLength + 1 : lines.length;
+                const table: GraphTableSVG.LogicTable = new GraphTableSVG.LogicTable({ rowCount: rowCount, columnCount: columnCount });
 
-            if (option.isRowLines) {
-                lines.forEach((v, i) => {
-                    StrFunctions.LogicGraphTable.setRow(table, i, v.name, v.values );
-                })
+                if (option.isRowLines) {
+                    lines.forEach((v, i) => {
+                        StrFunctions.LogicGraphTable.setRow(table, i, v.name, v.values);
+                    })
+                } else {
+                    lines.forEach((v, i) => {
+                        StrFunctions.LogicGraphTable.setColumn(table, i, v.name, v.values);
+                    })
+
+                }
+                return table;
             } else {
-                lines.forEach((v, i) => {
-                    StrFunctions.LogicGraphTable.setColumn(table, i, v.name, v.values );
-                })
-
+                return createLogicTable([lines], option);
             }
-            return table;
         }
     }
 

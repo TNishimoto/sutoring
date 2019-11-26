@@ -14,26 +14,44 @@ var StrFunctions;
         }
         LogicGraphTable.setColumn = setColumn;
         function createLogicTable(lines, option) {
-            let maximalLineLength = 0;
-            lines.forEach((v) => {
-                if (maximalLineLength < v.values.length) {
-                    maximalLineLength = v.values.length;
-                }
-            });
-            const rowCount = option.isRowLines ? lines.length : maximalLineLength + 1;
-            const columnCount = option.isRowLines ? maximalLineLength + 1 : lines.length;
-            const table = new GraphTableSVG.LogicTable({ rowCount: rowCount, columnCount: columnCount });
-            if (option.isRowLines) {
-                lines.forEach((v, i) => {
-                    StrFunctions.LogicGraphTable.setRow(table, i, v.name, v.values);
+            if (option == undefined)
+                option = {};
+            if (option.isRowLines == undefined)
+                option.isRowLines = true;
+            if (option.withIndex == undefined)
+                option.withIndex = false;
+            if (lines instanceof Array) {
+                let maximalLineLength = 0;
+                lines.forEach((v) => {
+                    if (maximalLineLength < v.values.length) {
+                        maximalLineLength = v.values.length;
+                    }
                 });
+                if (option.withIndex) {
+                    const newLines = new Array();
+                    newLines.push({ name: "Index", values: Array.from(Array(maximalLineLength).keys()).map((i) => option.zeroBased ? i : (i + 1)) });
+                    lines.forEach((v) => newLines.push(v));
+                    option.withIndex = false;
+                    return createLogicTable(newLines, option);
+                }
+                const rowCount = option.isRowLines ? lines.length : maximalLineLength + 1;
+                const columnCount = option.isRowLines ? maximalLineLength + 1 : lines.length;
+                const table = new GraphTableSVG.LogicTable({ rowCount: rowCount, columnCount: columnCount });
+                if (option.isRowLines) {
+                    lines.forEach((v, i) => {
+                        StrFunctions.LogicGraphTable.setRow(table, i, v.name, v.values);
+                    });
+                }
+                else {
+                    lines.forEach((v, i) => {
+                        StrFunctions.LogicGraphTable.setColumn(table, i, v.name, v.values);
+                    });
+                }
+                return table;
             }
             else {
-                lines.forEach((v, i) => {
-                    StrFunctions.LogicGraphTable.setColumn(table, i, v.name, v.values);
-                });
+                return createLogicTable([lines], option);
             }
-            return table;
         }
         LogicGraphTable.createLogicTable = createLogicTable;
     })(LogicGraphTable = StrFunctions.LogicGraphTable || (StrFunctions.LogicGraphTable = {}));
@@ -97,10 +115,9 @@ var StrFunctions;
         function constructLZ78Table(text) {
             const comp = compress(text);
             return StrFunctions.LogicGraphTable.createLogicTable([
-                { name: "index", values: comp.map((v, i) => i) },
                 { name: "id", values: comp.map((v, i) => v.id) },
                 { name: "character", values: comp.map((v, i) => v.nextChar) }
-            ], { isRowLines: true });
+            ], { isRowLines: true, withIndex: true });
         }
         LZ78.constructLZ78Table = constructLZ78Table;
         function constructLZ78Trie(text) {
@@ -118,6 +135,74 @@ var StrFunctions;
         }
         LZ78.constructLZ78Trie = constructLZ78Trie;
     })(LZ78 = StrFunctions.LZ78 || (StrFunctions.LZ78 = {}));
+})(StrFunctions || (StrFunctions = {}));
+var StrFunctions;
+(function (StrFunctions) {
+    let DistinctSubstrings;
+    (function (DistinctSubstrings) {
+        function sort(strings) {
+            strings.sort((a, b) => {
+                if (a < b)
+                    return -1;
+                if (a > b)
+                    return 1;
+                return 0;
+            });
+        }
+        DistinctSubstrings.sort = sort;
+        function enumerate(text) {
+            const map = enumerateWithOccurrences(text);
+            const r = new Array(0);
+            map.forEach((value, key) => {
+                r.push(key);
+            });
+            DistinctSubstrings.sort(r);
+            return r;
+        }
+        DistinctSubstrings.enumerate = enumerate;
+        function enumerateWithOccurrences(text) {
+            let map = new Map();
+            for (let i = 0; i < text.length; i++) {
+                for (let len = 1; len <= text.length - i; len++) {
+                    const substr = text.substr(i, len);
+                    if (map.has(substr)) {
+                        const occs = map.get(substr);
+                        occs.push(i);
+                        map.set(substr, occs);
+                    }
+                    else {
+                        map.set(substr, [i]);
+                    }
+                }
+            }
+            return map;
+        }
+        DistinctSubstrings.enumerateWithOccurrences = enumerateWithOccurrences;
+    })(DistinctSubstrings = StrFunctions.DistinctSubstrings || (StrFunctions.DistinctSubstrings = {}));
+    let MinimalUniqueSubstrings;
+    (function (MinimalUniqueSubstrings) {
+        function enumerate(text) {
+            const map = DistinctSubstrings.enumerateWithOccurrences(text);
+            const r = new Array(0);
+            map.forEach((occs, substr) => {
+                if (occs.length == 1) {
+                    if (substr.length == 1) {
+                        r.push(substr);
+                    }
+                    else {
+                        const left = substr.substr(1);
+                        const right = substr.substr(0, substr.length - 1);
+                        if (map.get(left).length > 1 && map.get(right).length > 1) {
+                            r.push(substr);
+                        }
+                    }
+                }
+            });
+            DistinctSubstrings.sort(r);
+            return r;
+        }
+        MinimalUniqueSubstrings.enumerate = enumerate;
+    })(MinimalUniqueSubstrings = StrFunctions.MinimalUniqueSubstrings || (StrFunctions.MinimalUniqueSubstrings = {}));
 })(StrFunctions || (StrFunctions = {}));
 var StrFunctions;
 (function (StrFunctions) {
@@ -155,22 +240,23 @@ var StrFunctions;
             }
         }
         SuffixArray.construct = construct;
-        function constructSATable(text, option = { zero_based: true, withLCP: false, withBWT: false }) {
-            if (option.zero_based == undefined)
-                option.zero_based = true;
+        function constructSATable(text, option = { zeroBased: true, withSA: true, withLCP: false, withBWT: false, withIndex: true }) {
+            if (option.zeroBased == undefined)
+                option.zeroBased = true;
             if (option.withSA == undefined)
                 option.withSA = true;
             if (option.withLCP == undefined)
                 option.withLCP = false;
             if (option.withBWT == undefined)
                 option.withBWT = false;
+            if (option.withIndex == undefined)
+                option.withIndex = true;
             const sa = construct(text);
-            const view_sa = option.zero_based ? sa : sa.map((v) => v + 1);
-            const indexes = option.zero_based ? sa.map((v, i) => i) : sa.map((v, i) => i + 1);
+            const view_sa = option.zeroBased ? sa : sa.map((v) => v + 1);
+            const indexes = option.zeroBased ? sa.map((v, i) => i) : sa.map((v, i) => i + 1);
             const lcpArray = LongestCommonPrefixArray.construct(text);
             const bwt = BWT.construct(text).map((v) => v);
             const arrays = new Array(0);
-            arrays.push({ name: "Index", values: indexes });
             if (option.withSA) {
                 arrays.push({ name: "SA", values: view_sa });
             }
@@ -181,7 +267,7 @@ var StrFunctions;
                 arrays.push({ name: "BWT", values: bwt });
             }
             arrays.push({ name: "Suffix", values: sa.map((v) => text.substr(v)) });
-            return StrFunctions.LogicGraphTable.createLogicTable(arrays, { isRowLines: false });
+            return StrFunctions.LogicGraphTable.createLogicTable(arrays, { isRowLines: false, withIndex: option.withIndex, zeroBased: option.zeroBased });
         }
         SuffixArray.constructSATable = constructSATable;
     })(SuffixArray = StrFunctions.SuffixArray || (StrFunctions.SuffixArray = {}));
@@ -208,6 +294,10 @@ var StrFunctions;
             return lcpArray;
         }
         LongestCommonPrefixArray.construct = construct;
+        function constructLCPTable(text, option = { zeroBased: true, withSA: true, withLCP: true, withBWT: false }) {
+            return SuffixArray.constructSATable(text, option);
+        }
+        LongestCommonPrefixArray.constructLCPTable = constructLCPTable;
     })(LongestCommonPrefixArray = StrFunctions.LongestCommonPrefixArray || (StrFunctions.LongestCommonPrefixArray = {}));
     let BWT;
     (function (BWT) {
@@ -234,7 +324,6 @@ var StrFunctions;
             r.sort((a, b) => {
                 return compare(text, a, b);
             });
-            console.log(r);
             return r.map((v) => {
                 if (v == 0) {
                     return text[text.length - 1];
@@ -245,6 +334,10 @@ var StrFunctions;
             });
         }
         BWT.construct = construct;
+        function constructBWTTable(text, option = { zeroBased: true, withSA: true, withLCP: false, withBWT: true }) {
+            return SuffixArray.constructSATable(text, option);
+        }
+        BWT.constructBWTTable = constructBWTTable;
     })(BWT = StrFunctions.BWT || (StrFunctions.BWT = {}));
 })(StrFunctions || (StrFunctions = {}));
 //# sourceMappingURL=StrFunctions.js.map

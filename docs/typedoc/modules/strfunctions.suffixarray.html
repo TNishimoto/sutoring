@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Console | typedoc-sample</title>
+	<title>SuffixArray | typedoc-sample</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,99 +54,130 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_graphtablesvg_dist_graph_table_svg_d_.html">&quot;GraphTableSVG/dist/graph_table_svg.d&quot;</a>
+					<a href="strfunctions.html">StrFunctions</a>
 				</li>
 				<li>
-					<a href="_graphtablesvg_dist_graph_table_svg_d_.graphtablesvg.html">GraphTableSVG</a>
-				</li>
-				<li>
-					<a href="_graphtablesvg_dist_graph_table_svg_d_.graphtablesvg.console.html">Console</a>
+					<a href="strfunctions.suffixarray.html">SuffixArray</a>
 				</li>
 			</ul>
-			<h1>Module Console</h1>
+			<h1>Module SuffixArray</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>This namespace provides functions for suffix array.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-not-exported">
+						<section class="tsd-index-section ">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="strfunctions.suffixarray.html#satableoption" class="tsd-kind-icon">SATable<wbr>Option</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_graphtablesvg_dist_graph_table_svg_d_.graphtablesvg.console.html#clear" class="tsd-kind-icon">clear</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_graphtablesvg_dist_graph_table_svg_d_.graphtablesvg.console.html#graph" class="tsd-kind-icon">graph</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_graphtablesvg_dist_graph_table_svg_d_.graphtablesvg.console.html#table" class="tsd-kind-icon">table</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="strfunctions.suffixarray.html#construct" class="tsd-kind-icon">construct</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="strfunctions.suffixarray.html#constructsatable" class="tsd-kind-icon">constructSATable</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="satableoption" class="tsd-anchor"></a>
+					<h3>SATable<wbr>Option</h3>
+					<div class="tsd-signature tsd-kind-icon">SATable<wbr>Option<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in suffix_array.ts:57</li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> withBWT<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> with<wbr>Index<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> withLCP<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> withSA<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> zero<wbr>Based<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="clear" class="tsd-anchor"></a>
-					<h3>clear</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">clear<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="construct" class="tsd-anchor"></a>
+					<h3>construct</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">construct<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, zero_based<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in GraphTableSVG/dist/graph_table_svg.d.ts:2031</li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="graph" class="tsd-anchor"></a>
-					<h3>graph</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">graph<span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> | </span><a href="../classes/_graphtablesvg_dist_graph_table_svg_d_.graphtablesvg.logictree.html" class="tsd-signature-type">LogicTree</a><span class="tsd-signature-symbol"> | </span><a href="../classes/_graphtablesvg_dist_graph_table_svg_d_.graphtablesvg.logicgraph.html" class="tsd-signature-type">LogicGraph</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in GraphTableSVG/dist/graph_table_svg.d.ts:2032</li>
+									<li>Defined in suffix_array.ts:28</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>item: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> | </span><a href="../classes/_graphtablesvg_dist_graph_table_svg_d_.graphtablesvg.logictree.html" class="tsd-signature-type">LogicTree</a><span class="tsd-signature-symbol"> | </span><a href="../classes/_graphtablesvg_dist_graph_table_svg_d_.graphtablesvg.logicgraph.html" class="tsd-signature-type">LogicGraph</a></h5>
+									<h5>str: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> zero_based: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="table" class="tsd-anchor"></a>
-					<h3>table</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">table<span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="constructsatable" class="tsd-anchor"></a>
+					<h3>constructSATable</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">constructSATable<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, option<span class="tsd-signature-symbol">?: </span><a href="strfunctions.suffixarray.html#satableoption" class="tsd-signature-type">SATableOption</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">LogicTable</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in GraphTableSVG/dist/graph_table_svg.d.ts:2030</li>
+									<li>Defined in suffix_array.ts:58</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>item: <span class="tsd-signature-type">any</span></h5>
+									<h5>text: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> option: <a href="strfunctions.suffixarray.html#satableoption" class="tsd-signature-type">SATableOption</a><span class="tsd-signature-symbol"> =&nbsp;{zeroBased : true, withSA : true,  withLCP : false, withBWT : false, withIndex : true}</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">LogicTable</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -158,18 +189,42 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
+					<li class=" tsd-kind-module tsd-is-not-exported">
+						<a href="strfunctions.html">Str<wbr>Functions</a>
+					</li>
+					<li class=" tsd-kind-module tsd-parent-kind-module">
+						<a href="strfunctions.bwt.html">Str<wbr>Functions.BWT</a>
+					</li>
+					<li class=" tsd-kind-module tsd-parent-kind-module">
+						<a href="strfunctions.distinctsubstrings.html">Str<wbr>Functions.<wbr>Distinct<wbr>Substrings</a>
+					</li>
+					<li class=" tsd-kind-module tsd-parent-kind-module">
+						<a href="strfunctions.lcparray.html">Str<wbr>Functions.LCPArray</a>
+					</li>
+					<li class=" tsd-kind-module tsd-parent-kind-module">
+						<a href="strfunctions.lz78.html">Str<wbr>Functions.LZ78</a>
+					</li>
+					<li class=" tsd-kind-module tsd-parent-kind-module">
+						<a href="strfunctions.logicgraphtable.html">Str<wbr>Functions.<wbr>Logic<wbr>Graph<wbr>Table</a>
+					</li>
+					<li class=" tsd-kind-module tsd-parent-kind-module">
+						<a href="strfunctions.minimaluniquesubstrings.html">Str<wbr>Functions.<wbr>Minimal<wbr>Unique<wbr>Substrings</a>
+					</li>
+					<li class="current tsd-kind-module tsd-parent-kind-module">
+						<a href="strfunctions.suffixarray.html">Str<wbr>Functions.<wbr>Suffix<wbr>Array</a>
+					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_graphtablesvg_dist_graph_table_svg_d_.graphtablesvg.console.html#clear" class="tsd-kind-icon">clear</a>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="strfunctions.suffixarray.html#satableoption" class="tsd-kind-icon">SATable<wbr>Option</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_graphtablesvg_dist_graph_table_svg_d_.graphtablesvg.console.html#graph" class="tsd-kind-icon">graph</a>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="strfunctions.suffixarray.html#construct" class="tsd-kind-icon">construct</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_graphtablesvg_dist_graph_table_svg_d_.graphtablesvg.console.html#table" class="tsd-kind-icon">table</a>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="strfunctions.suffixarray.html#constructsatable" class="tsd-kind-icon">constructSATable</a>
 					</li>
 				</ul>
 			</nav>
