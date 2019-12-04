@@ -5,6 +5,7 @@
     "main": "index.js",
     "scripts": {
         "typedoc": "typedoc --out ./docs/typedoc/ ./src/  ../GraphTableSVG/dist --excludeExternals --mode file",
+        "start": "webpack",
         "gulp": "gulp"
     },
     "keywords": [
@@ -16,5 +17,11 @@
         "gulp": "^3.9.1",
         "gulp-typedoc": "^2.0.0",
         "typedoc": "^0.4.4"
+    },
+    "devDependencies": {
+        "ts-loader": "^6.2.1",
+        "typescript": "^3.7.2",
+        "webpack": "^4.41.2",
+        "webpack-cli": "^3.3.10"
     }
 }

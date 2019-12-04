@@ -1,6 +1,6 @@
 
 
-namespace StrFunctions {
+//namespace StrFunctions {
     /**
      * This namespace provides functions for distinct substrings on a string.
      */
@@ -69,4 +69,4 @@ namespace StrFunctions {
             
         }
     }
-}
+//}

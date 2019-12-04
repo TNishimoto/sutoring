@@ -1,21 +1,22 @@
-namespace StrFunctions {
+    import {LogicTable} from "logic_table"
+    import {LogicTree} from "logic_tree"
 
     /**
      * LogicGraphTable namespace provides snippets for LogicTable, LogicTable, and LogicTree classes.
      */
     export namespace LogicGraphTable {
-        export function setRow(table: GraphTableSVG.LogicTable, ithRow: number, name: string, values: (number | string)[]) {
+        export function setRow(table: LogicTable, ithRow: number, name: string, values: (number | string)[]) {
             table.cells[ithRow][0].text = name;
             values.forEach((v, i) => { table.cells[ithRow][i + 1].text = v.toString() })
         }
-        export function setColumn(table: GraphTableSVG.LogicTable, ithColumn: number, name: string, values: (number | string)[]) {
+        export function setColumn(table: LogicTable, ithColumn: number, name: string, values: (number | string)[]) {
             table.cells[0][ithColumn].text = name;
             values.forEach((v, i) => { table.cells[i + 1][ithColumn].text = v.toString() })
         }
         export type LogicTableLine = { name: string, values: (number | string)[] }
 
         export function createLogicTable(lines: LogicTableLine[] | LogicTableLine,
-            option?: { isRowLines?: boolean, withIndex?: boolean, zeroBased? : boolean }): GraphTableSVG.LogicTable {
+            option?: { isRowLines?: boolean, withIndex?: boolean, zeroBased? : boolean }): LogicTable {
             if (option == undefined) option = {};
             if (option.isRowLines == undefined) option.isRowLines = true;
             if (option.withIndex == undefined) option.withIndex = false;
@@ -38,15 +39,15 @@ namespace StrFunctions {
                 }
                 const rowCount = option.isRowLines ? lines.length : maximalLineLength + 1;
                 const columnCount = option.isRowLines ? maximalLineLength + 1 : lines.length;
-                const table: GraphTableSVG.LogicTable = new GraphTableSVG.LogicTable({ rowCount: rowCount, columnCount: columnCount });
+                const table: LogicTable = new LogicTable({ rowCount: rowCount, columnCount: columnCount });
 
                 if (option.isRowLines) {
                     lines.forEach((v, i) => {
-                        StrFunctions.LogicGraphTable.setRow(table, i, v.name, v.values);
+                        LogicGraphTable.setRow(table, i, v.name, v.values);
                     })
                 } else {
                     lines.forEach((v, i) => {
-                        StrFunctions.LogicGraphTable.setColumn(table, i, v.name, v.values);
+                        LogicGraphTable.setColumn(table, i, v.name, v.values);
                     })
 
                 }
@@ -56,6 +57,6 @@ namespace StrFunctions {
             }
         }
     }
+    //export { LogicTable, LogicTree}
 
 
-}

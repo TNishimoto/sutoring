@@ -3,12 +3,14 @@
         "noImplicitAny": true,
         "removeComments": true,
         "preserveConstEnums": true,
-        "outFile": "./dist/StrFunctions.js",
+        "outDir" : "./dist",
+        //"outFile": "./dist/StrFunctions.js",
         //"outFile": "./docs/scripts/graph_table_svg.js",
         "sourceMap": true,
         "target": "ES6",
         "declaration": true,
         "strict": true,
+        "module": "commonjs",
         //"module" : "amd"
         //"declarationDir" : "../"
         //"typeRoots": ["custom_typings"]
@@ -18,10 +20,20 @@
         //        "lib/*"
         //    ]
         //}
+        "baseUrl": "../GraphTableSVG/src",
+        //"baseUrl": "./src",
+
+        "paths": {"logic_table": ["options/logic_table"], "logic_tree": ["options/logic_tree"]}
+
     },
     "include": [
-        "src", 
+        "src",
+        
+        "src/common", 
+        "src/object", 
+        "src/svghtml",
+        "src/options" 
         //"custom_typings"
-        "../GraphTableSVG/dist"
+        //"../GraphTableSVG/dist"
     ]
 }

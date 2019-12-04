@@ -1,6 +1,8 @@
 
-
-namespace StrFunctions {
+//import {LogicGraphTable} from "./graph_table"
+import {LogicGraphTable} from "./graph_table"
+import {LogicTable} from "logic_table"
+//namespace StrFunctions {
     /**
      * This namespace provides functions for suffix array.
      */
@@ -55,7 +57,7 @@ namespace StrFunctions {
             }
         }
         export type SATableOption = { zeroBased? : boolean, withSA? : boolean, withLCP? : boolean, withBWT? : boolean, withIndex? : boolean} ;
-        export function constructSATable(text: string, option : SATableOption = {zeroBased : true, withSA : true,  withLCP : false, withBWT : false, withIndex : true} ): GraphTableSVG.LogicTable {
+        export function constructSATable(text: string, option : SATableOption = {zeroBased : true, withSA : true,  withLCP : false, withBWT : false, withIndex : true} ): LogicTable {
             if(option.zeroBased == undefined) option.zeroBased = true;
             if(option.withSA == undefined) option.withSA = true;
             if(option.withLCP == undefined) option.withLCP = false;
@@ -83,7 +85,7 @@ namespace StrFunctions {
             arrays.push({ name: "Suffix", values: sa.map((v) => text.substr(v)) });
 
 
-            return StrFunctions.LogicGraphTable.createLogicTable(arrays, { isRowLines: false, withIndex : option.withIndex, zeroBased : option.zeroBased })
+            return LogicGraphTable.createLogicTable(arrays, { isRowLines: false, withIndex : option.withIndex, zeroBased : option.zeroBased })
 
         }
     }
@@ -151,4 +153,4 @@ namespace StrFunctions {
             return SuffixArray.constructSATable(text, option);
         }
     }
-}
+//}

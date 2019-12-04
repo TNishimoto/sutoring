@@ -1,6 +1,12 @@
 
 
-namespace StrFunctions {
+import {LogicGraphTable} from "./graph_table"
+import {LogicTable} from "logic_table"
+import {LogicTree} from "logic_tree"
+//import {LogicTable} from "../../GraphTableSVG/dist/options/logic_table"
+//import {LogicTree} from "../../GraphTableSVG/dist/options/logic_tree"
+
+//namespace StrFunctions {
     /**
      * This namespace provides functions for Lempel-Ziv 78 compression.
      */
@@ -61,9 +67,9 @@ namespace StrFunctions {
             return p[0];
 
         }
-        export function constructLZ78Table(text : string) : GraphTableSVG.LogicTable {
+        export function constructLZ78Table(text : string) : LogicTable {
             const comp = compress(text);
-            return StrFunctions.LogicGraphTable.createLogicTable([
+            return LogicGraphTable.createLogicTable([
                 //{name : "index", values : comp.map((v,i) => i)  },
                 {name : "id", values : comp.map((v,i) => v.id)  },
                 {name : "character", values : comp.map((v,i) => v.nextChar)  }
@@ -77,10 +83,10 @@ namespace StrFunctions {
             return table;
             */
         }
-        export function constructLZ78Trie(text : string) : GraphTableSVG.LogicTree {
+        export function constructLZ78Trie(text : string) : LogicTree {
             const nodes = preprocess(text)[1];
             //const graph = new Tree();            
-            const graphNodes = nodes.map((v) => new GraphTableSVG.LogicTree() );
+            const graphNodes = nodes.map((v) => new LogicTree() );
             //graph.root = graphNodes[0];
             nodes.forEach((v, i) =>{
                 graphNodes[v.id].vertexText = (v.id).toString();
@@ -101,4 +107,4 @@ namespace StrFunctions {
             return graphNodes[0];
         }
     }
-}
+//}
