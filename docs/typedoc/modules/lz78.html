@@ -54,10 +54,7 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="strfunctions.html">StrFunctions</a>
-				</li>
-				<li>
-					<a href="strfunctions.lz78.html">LZ78</a>
+					<a href="lz78.html">LZ78</a>
 				</li>
 			</ul>
 			<h1>Module LZ78</h1>
@@ -81,19 +78,19 @@
 						<section class="tsd-index-section ">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="strfunctions.lz78.html#lz78factor" class="tsd-kind-icon">LZ78<wbr>Factor</a></li>
-								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="strfunctions.lz78.html#lz78node" class="tsd-kind-icon">LZ78<wbr>Node</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="lz78.html#lz78factor" class="tsd-kind-icon">LZ78<wbr>Factor</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="lz78.html#lz78node" class="tsd-kind-icon">LZ78<wbr>Node</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="strfunctions.lz78.html#compress" class="tsd-kind-icon">compress</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="strfunctions.lz78.html#constructlz78table" class="tsd-kind-icon">constructLZ78<wbr>Table</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="strfunctions.lz78.html#constructlz78trie" class="tsd-kind-icon">constructLZ78<wbr>Trie</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="strfunctions.lz78.html#extract" class="tsd-kind-icon">extract</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="strfunctions.lz78.html#factorize" class="tsd-kind-icon">factorize</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="strfunctions.lz78.html#preprocess" class="tsd-kind-icon">preprocess</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="lz78.html#compress" class="tsd-kind-icon">compress</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="lz78.html#constructlz78table" class="tsd-kind-icon">constructLZ78<wbr>Table</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="lz78.html#constructlz78trie" class="tsd-kind-icon">constructLZ78<wbr>Trie</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="lz78.html#extract" class="tsd-kind-icon">extract</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="lz78.html#factorize" class="tsd-kind-icon">factorize</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="lz78.html#preprocess" class="tsd-kind-icon">preprocess</a></li>
 							</ul>
 						</section>
 					</div>
@@ -107,7 +104,7 @@
 					<div class="tsd-signature tsd-kind-icon">LZ78<wbr>Factor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in lz78.ts:8</li>
+							<li>Defined in lz78.ts:14</li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -128,14 +125,14 @@
 					<div class="tsd-signature tsd-kind-icon">LZ78<wbr>Node<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in lz78.ts:9</li>
+							<li>Defined in lz78.ts:15</li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter">
-								<h5>children<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="strfunctions.lz78.html#lz78node" class="tsd-signature-type">LZ78Node</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								<h5>children<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="lz78.html#lz78node" class="tsd-signature-type">LZ78Node</a><span class="tsd-signature-symbol">&gt;</span></h5>
 							</li>
 							<li class="tsd-parameter">
 								<h5>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
@@ -150,13 +147,13 @@
 					<a name="compress" class="tsd-anchor"></a>
 					<h3>compress</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">compress<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="strfunctions.lz78.html#lz78factor" class="tsd-signature-type">LZ78Factor</a><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">compress<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="lz78.html#lz78factor" class="tsd-signature-type">LZ78Factor</a><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in lz78.ts:59</li>
+									<li>Defined in lz78.ts:65</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -165,7 +162,7 @@
 									<h5>text: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="strfunctions.lz78.html#lz78factor" class="tsd-signature-type">LZ78Factor</a><span class="tsd-signature-symbol">[]</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="lz78.html#lz78factor" class="tsd-signature-type">LZ78Factor</a><span class="tsd-signature-symbol">[]</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -179,7 +176,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in lz78.ts:64</li>
+									<li>Defined in lz78.ts:70</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -202,7 +199,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in lz78.ts:80</li>
+									<li>Defined in lz78.ts:86</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -219,19 +216,19 @@
 					<a name="extract" class="tsd-anchor"></a>
 					<h3>extract</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">extract<span class="tsd-signature-symbol">(</span>factors<span class="tsd-signature-symbol">: </span><a href="strfunctions.lz78.html#lz78factor" class="tsd-signature-type">LZ78Factor</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">extract<span class="tsd-signature-symbol">(</span>factors<span class="tsd-signature-symbol">: </span><a href="lz78.html#lz78factor" class="tsd-signature-type">LZ78Factor</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in lz78.ts:40</li>
+									<li>Defined in lz78.ts:46</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>factors: <a href="strfunctions.lz78.html#lz78factor" class="tsd-signature-type">LZ78Factor</a><span class="tsd-signature-symbol">[]</span></h5>
+									<h5>factors: <a href="lz78.html#lz78factor" class="tsd-signature-type">LZ78Factor</a><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
@@ -248,7 +245,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in lz78.ts:54</li>
+									<li>Defined in lz78.ts:60</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -265,13 +262,13 @@
 					<a name="preprocess" class="tsd-anchor"></a>
 					<h3>preprocess</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">preprocess<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><a href="strfunctions.lz78.html#lz78factor" class="tsd-signature-type">LZ78Factor</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">, </span><a href="strfunctions.lz78.html#lz78node" class="tsd-signature-type">LZ78Node</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">]</span></li>
+						<li class="tsd-signature tsd-kind-icon">preprocess<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><a href="lz78.html#lz78factor" class="tsd-signature-type">LZ78Factor</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">, </span><a href="lz78.html#lz78node" class="tsd-signature-type">LZ78Node</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in lz78.ts:12</li>
+									<li>Defined in lz78.ts:18</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -280,7 +277,7 @@
 									<h5>text: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><a href="strfunctions.lz78.html#lz78factor" class="tsd-signature-type">LZ78Factor</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">, </span><a href="strfunctions.lz78.html#lz78node" class="tsd-signature-type">LZ78Node</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">]</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><a href="lz78.html#lz78factor" class="tsd-signature-type">LZ78Factor</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">, </span><a href="lz78.html#lz78node" class="tsd-signature-type">LZ78Node</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">]</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -292,57 +289,54 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-module tsd-is-not-exported">
-						<a href="strfunctions.html">Str<wbr>Functions</a>
+					<li class=" tsd-kind-module">
+						<a href="bwt.html">BWT</a>
 					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="strfunctions.bwt.html">Str<wbr>Functions.BWT</a>
+					<li class=" tsd-kind-module">
+						<a href="distinctsubstrings.html">Distinct<wbr>Substrings</a>
 					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="strfunctions.distinctsubstrings.html">Str<wbr>Functions.<wbr>Distinct<wbr>Substrings</a>
+					<li class=" tsd-kind-module">
+						<a href="lcparray.html">LCPArray</a>
 					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="strfunctions.lcparray.html">Str<wbr>Functions.LCPArray</a>
+					<li class="current tsd-kind-module">
+						<a href="lz78.html">LZ78</a>
 					</li>
-					<li class="current tsd-kind-module tsd-parent-kind-module">
-						<a href="strfunctions.lz78.html">Str<wbr>Functions.LZ78</a>
+					<li class=" tsd-kind-module">
+						<a href="logicgraphtable.html">Logic<wbr>Graph<wbr>Table</a>
 					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="strfunctions.logicgraphtable.html">Str<wbr>Functions.<wbr>Logic<wbr>Graph<wbr>Table</a>
+					<li class=" tsd-kind-module">
+						<a href="minimaluniquesubstrings.html">Minimal<wbr>Unique<wbr>Substrings</a>
 					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="strfunctions.minimaluniquesubstrings.html">Str<wbr>Functions.<wbr>Minimal<wbr>Unique<wbr>Substrings</a>
-					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="strfunctions.suffixarray.html">Str<wbr>Functions.<wbr>Suffix<wbr>Array</a>
+					<li class=" tsd-kind-module">
+						<a href="suffixarray.html">Suffix<wbr>Array</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="strfunctions.lz78.html#lz78factor" class="tsd-kind-icon">LZ78<wbr>Factor</a>
+						<a href="lz78.html#lz78factor" class="tsd-kind-icon">LZ78<wbr>Factor</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="strfunctions.lz78.html#lz78node" class="tsd-kind-icon">LZ78<wbr>Node</a>
+						<a href="lz78.html#lz78node" class="tsd-kind-icon">LZ78<wbr>Node</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="strfunctions.lz78.html#compress" class="tsd-kind-icon">compress</a>
+						<a href="lz78.html#compress" class="tsd-kind-icon">compress</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="strfunctions.lz78.html#constructlz78table" class="tsd-kind-icon">constructLZ78<wbr>Table</a>
+						<a href="lz78.html#constructlz78table" class="tsd-kind-icon">constructLZ78<wbr>Table</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="strfunctions.lz78.html#constructlz78trie" class="tsd-kind-icon">constructLZ78<wbr>Trie</a>
+						<a href="lz78.html#constructlz78trie" class="tsd-kind-icon">constructLZ78<wbr>Trie</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="strfunctions.lz78.html#extract" class="tsd-kind-icon">extract</a>
+						<a href="lz78.html#extract" class="tsd-kind-icon">extract</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="strfunctions.lz78.html#factorize" class="tsd-kind-icon">factorize</a>
+						<a href="lz78.html#factorize" class="tsd-kind-icon">factorize</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="strfunctions.lz78.html#preprocess" class="tsd-kind-icon">preprocess</a>
+						<a href="lz78.html#preprocess" class="tsd-kind-icon">preprocess</a>
 					</li>
 				</ul>
 			</nav>

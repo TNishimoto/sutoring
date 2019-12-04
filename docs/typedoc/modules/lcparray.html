@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>StrFunctions | typedoc-sample</title>
+	<title>LCPArray | typedoc-sample</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,33 +54,114 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="strfunctions.html">StrFunctions</a>
+					<a href="lcparray.html">LCPArray</a>
 				</li>
 			</ul>
-			<h1>Module StrFunctions</h1>
+			<h1>Module LCPArray</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>This namespace provides functions for longest common prefix array.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Modules</h3>
+							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-module tsd-parent-kind-module"><a href="strfunctions.bwt.html" class="tsd-kind-icon">BWT</a></li>
-								<li class="tsd-kind-module tsd-parent-kind-module"><a href="strfunctions.distinctsubstrings.html" class="tsd-kind-icon">Distinct<wbr>Substrings</a></li>
-								<li class="tsd-kind-module tsd-parent-kind-module"><a href="strfunctions.lcparray.html" class="tsd-kind-icon">LCPArray</a></li>
-								<li class="tsd-kind-module tsd-parent-kind-module"><a href="strfunctions.lz78.html" class="tsd-kind-icon">LZ78</a></li>
-								<li class="tsd-kind-module tsd-parent-kind-module"><a href="strfunctions.logicgraphtable.html" class="tsd-kind-icon">Logic<wbr>Graph<wbr>Table</a></li>
-								<li class="tsd-kind-module tsd-parent-kind-module"><a href="strfunctions.minimaluniquesubstrings.html" class="tsd-kind-icon">Minimal<wbr>Unique<wbr>Substrings</a></li>
-								<li class="tsd-kind-module tsd-parent-kind-module"><a href="strfunctions.suffixarray.html" class="tsd-kind-icon">Suffix<wbr>Array</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="lcparray.html#construct" class="tsd-kind-icon">construct</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="lcparray.html#constructlcptable" class="tsd-kind-icon">constructLCPTable</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="lcparray.html#lcp" class="tsd-kind-icon">lcp</a></li>
 							</ul>
 						</section>
 					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="construct" class="tsd-anchor"></a>
+					<h3>construct</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">construct<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in suffix_array.ts:103</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="constructlcptable" class="tsd-anchor"></a>
+					<h3>constructLCPTable</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">constructLCPTable<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, option<span class="tsd-signature-symbol">?: </span><a href="suffixarray.html#satableoption" class="tsd-signature-type">SATableOption</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">LogicTable</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in suffix_array.ts:114</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> option: <a href="suffixarray.html#satableoption" class="tsd-signature-type">SATableOption</a><span class="tsd-signature-symbol"> =&nbsp;{zeroBased : true, withSA : true,  withLCP : true, withBWT : false}</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">LogicTable</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="lcp" class="tsd-anchor"></a>
+					<h3>lcp</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">lcp<span class="tsd-signature-symbol">(</span>text1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, text2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in suffix_array.ts:96</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text1: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>text2: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -90,34 +171,40 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class="current tsd-kind-module tsd-is-not-exported">
-						<a href="strfunctions.html">Str<wbr>Functions</a>
+					<li class=" tsd-kind-module">
+						<a href="bwt.html">BWT</a>
 					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="strfunctions.bwt.html">Str<wbr>Functions.BWT</a>
+					<li class=" tsd-kind-module">
+						<a href="distinctsubstrings.html">Distinct<wbr>Substrings</a>
 					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="strfunctions.distinctsubstrings.html">Str<wbr>Functions.<wbr>Distinct<wbr>Substrings</a>
+					<li class="current tsd-kind-module">
+						<a href="lcparray.html">LCPArray</a>
 					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="strfunctions.lcparray.html">Str<wbr>Functions.LCPArray</a>
+					<li class=" tsd-kind-module">
+						<a href="lz78.html">LZ78</a>
 					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="strfunctions.lz78.html">Str<wbr>Functions.LZ78</a>
+					<li class=" tsd-kind-module">
+						<a href="logicgraphtable.html">Logic<wbr>Graph<wbr>Table</a>
 					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="strfunctions.logicgraphtable.html">Str<wbr>Functions.<wbr>Logic<wbr>Graph<wbr>Table</a>
+					<li class=" tsd-kind-module">
+						<a href="minimaluniquesubstrings.html">Minimal<wbr>Unique<wbr>Substrings</a>
 					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="strfunctions.minimaluniquesubstrings.html">Str<wbr>Functions.<wbr>Minimal<wbr>Unique<wbr>Substrings</a>
-					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="strfunctions.suffixarray.html">Str<wbr>Functions.<wbr>Suffix<wbr>Array</a>
+					<li class=" tsd-kind-module">
+						<a href="suffixarray.html">Suffix<wbr>Array</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="lcparray.html#construct" class="tsd-kind-icon">construct</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="lcparray.html#constructlcptable" class="tsd-kind-icon">constructLCPTable</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="lcparray.html#lcp" class="tsd-kind-icon">lcp</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
