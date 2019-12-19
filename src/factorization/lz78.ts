@@ -68,11 +68,13 @@ export function compress(text: string): LZ78Factor[] {
 }
 export function constructLZ78Table(text: string): LogicTable {
     const comp = compress(text);
+    const indexLine = LogicGraphTable.getIndexArrayTableLine(comp.length);
     return LogicGraphTable.createLogicTable([
         //{name : "index", values : comp.map((v,i) => i)  },
+        indexLine,
         { name: "id", values: comp.map((v, i) => v.id) },
         { name: "character", values: comp.map((v, i) => v.nextChar) }
-    ], { isRowLines: true, withIndex: true })
+    ], { isRowLines: true })
     /*
     const table = new GraphTableSVG.LogicTable({rowCount : 3, columnCount : comp.length+1});
     StrFunctions.LogicGraphTable.setRow(table, 0, "index", comp.map((v,i) => i) );

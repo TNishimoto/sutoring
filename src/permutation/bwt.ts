@@ -1,6 +1,7 @@
 import * as LogicGraphTable from "../graph_table"
 import { LogicTable } from "logic_table"
 import * as SuffixArray from "../array/suffix_array"
+import { GTextBoxCSS } from "object/g_options";
 
 /**
  * This namespace provides functions for Burrows-Wheeler transform.
@@ -21,7 +22,7 @@ function compare(text: string, ith: number, jth: number): number {
         }
     }
 }
-export function construct(text: string) {
+export function construct(text: string) : string[] {
     const r = Array.from(Array(text.length).keys());
     r.sort((a, b) => {
         return compare(text, a, b);
@@ -34,6 +35,13 @@ export function construct(text: string) {
         }
     })
 }
+export function getBWTTableLine(text: string, cellClass? : string | GTextBoxCSS) : LogicGraphTable.LogicTableLine{
+    const arr = construct(text);
+    const name = "BWT"
+    const line = { name: name, values : arr, cellClass : cellClass };
+    return line;
+}
+
 export function constructBWTTable(text: string, option: SuffixArray.SATableOption = { zeroBased: true, withSA: true, withLCP: false, withBWT: true }) {
     return SuffixArray.constructSATable(text, option);
 }

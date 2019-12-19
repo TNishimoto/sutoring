@@ -27,12 +27,21 @@ export function setColumn(table: LogicTable, ithColumn: number, line: LogicTable
 
     })
 }
+export function getIndexArray(length : number, zeroBased : boolean = true) : number[] {
+    return Array.from(Array(length).keys()).map((i) => zeroBased ? i : (i + 1));
+}
+export function getIndexArrayTableLine(length : number, zeroBased : boolean = true) : LogicTableLine {
+    const arr = getIndexArray(length, zeroBased);
+    const name = "Index"
+    const r = { name: name, values : arr };
+    return r;
+}
 
 export function createLogicTable(lines: LogicTableLine[] | LogicTableLine,
-    option?: { isRowLines?: boolean, withIndex?: boolean, zeroBased?: boolean }): LogicTable {
+    option?: { isRowLines?: boolean }): LogicTable {
     if (option == undefined) option = {};
     if (option.isRowLines == undefined) option.isRowLines = true;
-    if (option.withIndex == undefined) option.withIndex = false;
+    //if (option.withIndex == undefined) option.withIndex = false;
     if (lines instanceof Array) {
 
 
@@ -43,6 +52,7 @@ export function createLogicTable(lines: LogicTableLine[] | LogicTableLine,
             }
         }
         )
+        /*
         if (option.withIndex) {
             const newLines: LogicTableLine[] = new Array();
             newLines.push({ name: "Index", values: Array.from(Array(maximalLineLength).keys()).map((i) => option!.zeroBased ? i : (i + 1)) })
@@ -50,6 +60,7 @@ export function createLogicTable(lines: LogicTableLine[] | LogicTableLine,
             option.withIndex = false;
             return createLogicTable(newLines, option);
         }
+        */
         const rowCount = option.isRowLines ? lines.length : maximalLineLength + 1;
         const columnCount = option.isRowLines ? maximalLineLength + 1 : lines.length;
         const table: LogicTable = new LogicTable({ rowCount: rowCount, columnCount: columnCount });

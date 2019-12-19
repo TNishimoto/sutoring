@@ -5,6 +5,7 @@ import * as LCPArray from "./lcp_array"
 import * as BWT from "../permutation/bwt"
 
 import { LogicTable } from "logic_table"
+import { GTextBoxCSS } from "object/g_options";
 //namespace StrFunctions {
 /**
  * This namespace provides functions for suffix array.
@@ -39,6 +40,24 @@ export function construct(str: string, zero_based: boolean = true): number[] {
     }
 }
 export type SATableOption = { zeroBased?: boolean, withSA?: boolean, withLCP?: boolean, withBWT?: boolean, withIndex?: boolean };
+export function getSuffixArrayTableLine(text: string, zero_based: boolean = true, cellClass? : string | GTextBoxCSS) : LogicGraphTable.LogicTableLine{
+    const arr = construct(text, zero_based);
+    const name = "SA"
+    const line = { name: name, values : arr, cellClass : cellClass };
+    return line;
+}
+export function getSortedSuffixes(text : string) : string[] {
+    const sa = construct(text);
+    return sa.map((v) => text.substr(v));
+}
+export function getSortedSuffixesTableLine(text : string, cellClass : string | GTextBoxCSS = {horizontalAnchor: "left"}) : LogicGraphTable.LogicTableLine {
+    const suffixes = getSortedSuffixes(text);
+    const name = "Suffix";
+    const line = { name: name, values : suffixes, cellClass: cellClass };
+    return line;
+
+}
+
 export function constructSATable(text: string, option: SATableOption = { zeroBased: true, withSA: true, withLCP: false, withBWT: false, withIndex: true }): LogicTable {
     if (option.zeroBased == undefined) option.zeroBased = true;
     if (option.withSA == undefined) option.withSA = true;
@@ -46,28 +65,28 @@ export function constructSATable(text: string, option: SATableOption = { zeroBas
     if (option.withBWT == undefined) option.withBWT = false;
     if (option.withIndex == undefined) option.withIndex = true;
 
-    const sa = construct(text);
-    const view_sa = option.zeroBased ? sa : sa.map((v) => v + 1);
+    //const sa = construct(text);
+    //const view_sa = option.zeroBased ? sa : sa.map((v) => v + 1);
     //const indexes = option.zeroBased ? sa.map((v, i) => i) : sa.map((v, i) => i+1);
-    const lcpArray = LCPArray.construct(text);
-    const bwt = BWT.construct(text).map((v) => v);
+    //const lcpArray = LCPArray.construct(text);
+    //const bwt = BWT.construct(text).map((v) => v);
 
     const arrays: LogicGraphTable.LogicTableLine[] = new Array(0);
     //arrays.push({ name: "Index", values: indexes });
     if (option.withSA) {
-        arrays.push({ name: "SA", values: view_sa });
+        arrays.push( getSuffixArrayTableLine(text, option.zeroBased) );
     }
     if (option.withLCP) {
-        arrays.push({ name: "LCP", values: lcpArray });
+        arrays.push( LCPArray.getLCPArrayLine(text) );
     }
     if (option.withBWT) {
-        arrays.push({ name: "BWT", values: bwt });
+        arrays.push( BWT.getBWTTableLine(text) );
     }
 
-    arrays.push({ name: "Suffix", values: sa.map((v) => text.substr(v)), cellClass: { horizontalAnchor: "left" } });
+    arrays.push( getSortedSuffixesTableLine(text));
 
 
-    return LogicGraphTable.createLogicTable(arrays, { isRowLines: false, withIndex: option.withIndex, zeroBased: option.zeroBased })
+    return LogicGraphTable.createLogicTable(arrays, { isRowLines: false })
 
 }
 
