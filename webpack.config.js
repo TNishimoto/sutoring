@@ -12,7 +12,10 @@ module.exports = {
         extensions: ['.ts', '.js'], //拡張子がtsだったらTypescirptでコンパイルする
         alias: {
             logic_table: path.resolve(__dirname, "../GraphTableSVG/src/options/logic_table"),
-            logic_tree: path.resolve(__dirname, "../GraphTableSVG/src/options/logic_tree")
+            logic_tree: path.resolve(__dirname, "../GraphTableSVG/src/options/logic_tree"),
+            console: path.resolve(__dirname, "../GraphTableSVG/src/options/console"),
+            ggraph: path.resolve(__dirname, "../GraphTableSVG/src/object/g_graph")
+
         }
         //alias: {
         //    logic_table: path.resolve(__dirname, "src/options/logic_table"),

@@ -19,19 +19,31 @@ import {GObject} from "./object/g_object"
 import {GPathTextBox} from "./object/g_path_textbox"
 */
 
-import {LogicGraphTable} from "./graph_table"
-import {LZ78} from "./lz78"
-import {SuffixArray} from "./suffix_array"
-import {MinimalUniqueSubstrings} from "./minimal_unique_substrings"
+import * as Console from "console"
+
+import * as LogicGraphTable from "./graph_table"
+import * as LZ78 from "./factorization/lz78"
+import * as SuffixArray from "./array/suffix_array"
+import * as MinimalUniqueSubstrings from "./substring/minimal_unique_substrings"
+import * as DistinctSubstrings from "./substring/distinct_substrings"
+import * as MaximalRepeats from "./substring/maximal_repeats"
+import * as MinimalRepeats from "./substring/minimal_repeats"
+
+import * as FibonacciString from "./string/fibonacci_string"
+import * as Trie from "./tree/trie"
+import * as SuffixTrie from "./tree/suffix_trie"
+import * as SuffixTree from "./tree/suffix_tree"
+
+//import { GGraph } from "ggraph"
 
 
 export{
     //Common, GUI, Rectangle, GObjectAttributes, SVG, HTMLFunctions, CustomAttributeNames, 
     //ShapeObjectType, openSVG, openHTML, openCustomElement, openSVGFunctions, lazyOpenSVG,
     //LogicTable, LogicTree, Console, GObject, GPathTextBox,
+    Console,
     LZ78,
-    SuffixArray, MinimalUniqueSubstrings,
-    LogicGraphTable
+    SuffixArray, MinimalUniqueSubstrings, DistinctSubstrings, MaximalRepeats, MinimalRepeats,
+    LogicGraphTable, 
+    FibonacciString, Trie, SuffixTrie, SuffixTree
 }
-
-console.log("Loaded Index.ts")

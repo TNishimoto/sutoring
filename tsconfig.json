@@ -23,7 +23,7 @@
         "baseUrl": "../GraphTableSVG/src",
         //"baseUrl": "./src",
 
-        "paths": {"logic_table": ["options/logic_table"], "logic_tree": ["options/logic_tree"]}
+        "paths": {"logic_table": ["options/logic_table"], "logic_tree": ["options/logic_tree"], "console": ["options/console"], "ggraph": ["object/g_graph"] }
 
     },
     "include": [
