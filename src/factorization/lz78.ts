@@ -1,8 +1,10 @@
 
 
-import * as LogicGraphTable from "../graph_table"
-import { LogicTable } from "logic_table"
-import { LogicTree } from "logic_tree"
+//import * as LogicGraphTable from "../graph_table"
+import { LogicTable, createLogicTable, getIndexArrayTableLine, LogicTree } from "logic_index"
+//import {  } from "logic_table_line"
+
+//import { LogicTree } from "logic_tree"
 //import {LogicTable} from "../../GraphTableSVG/dist/options/logic_table"
 //import {LogicTree} from "../../GraphTableSVG/dist/options/logic_tree"
 
@@ -68,8 +70,8 @@ export function compress(text: string): LZ78Factor[] {
 }
 export function constructLZ78Table(text: string): LogicTable {
     const comp = compress(text);
-    const indexLine = LogicGraphTable.getIndexArrayTableLine(comp.length);
-    return LogicGraphTable.createLogicTable([
+    const indexLine = getIndexArrayTableLine(comp.length);
+    return createLogicTable([
         //{name : "index", values : comp.map((v,i) => i)  },
         indexLine,
         { name: "id", values: comp.map((v, i) => v.id) },

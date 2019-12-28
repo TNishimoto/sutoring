@@ -1,4 +1,4 @@
-import { LogicTree } from "logic_tree";
+import { LogicTree } from "logic_index";
 import * as Trie from "./trie";
 export function getSuffixes(text: string): string[] {
     const texts: string[] = new Array();

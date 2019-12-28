@@ -1,4 +1,4 @@
-import { LogicTree } from "logic_tree";
+import { LogicTree } from "logic_index";
 import * as LCPArray from "../array/lcp_array";
 import * as Trie from "./trie";
 

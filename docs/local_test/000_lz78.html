@@ -8,12 +8,14 @@
     <script>
         function constructLZ78TableButton() {
             const text = document.getElementById("text").value;
-            Sutoring.LZ78.constructLZ78Table(text).view();
+            const table = Sutoring.LZ78.constructLZ78Table(text);
+            Sutoring.Console.table(table);
         }
 
         function constructLZ78TrieButton() {
             const text = document.getElementById("text").value;
-            Sutoring.LZ78.constructLZ78Trie(text).view();
+            const trie = Sutoring.LZ78.constructLZ78Trie(text);
+            Sutoring.Console.graph(trie);
         }
 
         function factorizeButton() {

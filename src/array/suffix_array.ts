@@ -1,10 +1,9 @@
 
 //import {LogicGraphTable} from "./graph_table"
-import * as LogicGraphTable from "../graph_table"
+import { LogicTableLine, createLogicTable, LogicTable } from "logic_index"
 import * as LCPArray from "./lcp_array"
 import * as BWT from "../permutation/bwt"
 
-import { LogicTable } from "logic_table"
 import { GTextBoxCSS } from "object/g_options";
 //namespace StrFunctions {
 /**
@@ -40,7 +39,7 @@ export function construct(str: string, zero_based: boolean = true): number[] {
     }
 }
 export type SATableOption = { zeroBased?: boolean, withSA?: boolean, withLCP?: boolean, withBWT?: boolean, withIndex?: boolean };
-export function getSuffixArrayTableLine(text: string, zero_based: boolean = true, cellClass? : string | GTextBoxCSS) : LogicGraphTable.LogicTableLine{
+export function getSuffixArrayTableLine(text: string, zero_based: boolean = true, cellClass? : string | GTextBoxCSS) : LogicTableLine{
     const arr = construct(text, zero_based);
     const name = "SA"
     const line = { name: name, values : arr, cellClass : cellClass };
@@ -50,7 +49,7 @@ export function getSortedSuffixes(text : string) : string[] {
     const sa = construct(text);
     return sa.map((v) => text.substr(v));
 }
-export function getSortedSuffixesTableLine(text : string, cellClass : string | GTextBoxCSS = {horizontalAnchor: "left"}) : LogicGraphTable.LogicTableLine {
+export function getSortedSuffixesTableLine(text : string, cellClass : string | GTextBoxCSS = {horizontalAnchor: "left"}) : LogicTableLine {
     const suffixes = getSortedSuffixes(text);
     const name = "Suffix";
     const line = { name: name, values : suffixes, cellClass: cellClass };
@@ -71,7 +70,7 @@ export function constructSATable(text: string, option: SATableOption = { zeroBas
     //const lcpArray = LCPArray.construct(text);
     //const bwt = BWT.construct(text).map((v) => v);
 
-    const arrays: LogicGraphTable.LogicTableLine[] = new Array(0);
+    const arrays: LogicTableLine[] = new Array(0);
     //arrays.push({ name: "Index", values: indexes });
     if (option.withSA) {
         arrays.push( getSuffixArrayTableLine(text, option.zeroBased) );
@@ -86,7 +85,7 @@ export function constructSATable(text: string, option: SATableOption = { zeroBas
     arrays.push( getSortedSuffixesTableLine(text));
 
 
-    return LogicGraphTable.createLogicTable(arrays, { isRowLines: false })
+    return createLogicTable(arrays, { isRowLines: false })
 
 }
 

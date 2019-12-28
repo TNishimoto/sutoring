@@ -1,4 +1,4 @@
-import { LogicTree } from "logic_tree";
+import { LogicTree } from "logic_index";
 import * as CompactTrie from "./compact_trie";
 import * as SuffixTrie from "./suffix_trie";
 

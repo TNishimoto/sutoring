@@ -21,7 +21,7 @@ import {GPathTextBox} from "./object/g_path_textbox"
 
 import * as Console from "console"
 
-import * as LogicGraphTable from "./graph_table"
+//import * as LogicGraphTable from "./graph_table"
 import * as LZ78 from "./factorization/lz78"
 import * as SuffixArray from "./array/suffix_array"
 import * as MinimalUniqueSubstrings from "./substring/minimal_unique_substrings"
@@ -33,6 +33,7 @@ import * as FibonacciString from "./string/fibonacci_string"
 import * as Trie from "./tree/trie"
 import * as SuffixTrie from "./tree/suffix_trie"
 import * as SuffixTree from "./tree/suffix_tree"
+import * as BWT from "./permutation/bwt"
 
 //import { GGraph } from "ggraph"
 
@@ -44,6 +45,6 @@ export{
     Console,
     LZ78,
     SuffixArray, MinimalUniqueSubstrings, DistinctSubstrings, MaximalRepeats, MinimalRepeats,
-    LogicGraphTable, 
-    FibonacciString, Trie, SuffixTrie, SuffixTree
+    FibonacciString, Trie, SuffixTrie, SuffixTree, 
+    BWT
 }

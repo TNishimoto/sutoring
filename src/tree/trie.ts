@@ -1,4 +1,4 @@
-import { LogicTree } from "logic_tree";
+import { LogicTree } from "logic_index";
 
 export function construct(texts: string[]): LogicTree {
     const root = new LogicTree();
