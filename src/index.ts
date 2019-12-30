@@ -34,6 +34,7 @@ import * as Trie from "./tree/trie"
 import * as SuffixTrie from "./tree/suffix_trie"
 import * as SuffixTree from "./tree/suffix_tree"
 import * as BWT from "./permutation/bwt"
+import * as RLBWT from "./permutation/rlbwt"
 
 //import { GGraph } from "ggraph"
 
@@ -46,5 +47,5 @@ export{
     LZ78,
     SuffixArray, MinimalUniqueSubstrings, DistinctSubstrings, MaximalRepeats, MinimalRepeats,
     FibonacciString, Trie, SuffixTrie, SuffixTree, 
-    BWT
+    BWT, RLBWT
 }

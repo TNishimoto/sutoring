@@ -1,7 +1,7 @@
 
 
 //import * as LogicGraphTable from "../graph_table"
-import { LogicTable, createLogicTable, getIndexArrayTableLine, LogicTree } from "logic_index"
+import { LogicTable,  getIndexArrayTableLine, LogicTree, toLogicCellLine, buildLogicTable } from "logic_index"
 //import {  } from "logic_table_line"
 
 //import { LogicTree } from "logic_tree"
@@ -71,12 +71,11 @@ export function compress(text: string): LZ78Factor[] {
 export function constructLZ78Table(text: string): LogicTable {
     const comp = compress(text);
     const indexLine = getIndexArrayTableLine(comp.length);
-    return createLogicTable([
-        //{name : "index", values : comp.map((v,i) => i)  },
-        indexLine,
-        { name: "id", values: comp.map((v, i) => v.id) },
-        { name: "character", values: comp.map((v, i) => v.nextChar) }
-    ], { isRowLines: true })
+    const idLine = toLogicCellLine("id", comp.map((v, i) => v.id));
+    const characterLine = toLogicCellLine("character", comp.map((v, i) => v.nextChar))
+    return buildLogicTable(
+        [indexLine, idLine, characterLine]
+    , { isRowLines: true })
     /*
     const table = new GraphTableSVG.LogicTable({rowCount : 3, columnCount : comp.length+1});
     StrFunctions.LogicGraphTable.setRow(table, 0, "index", comp.map((v,i) => i) );

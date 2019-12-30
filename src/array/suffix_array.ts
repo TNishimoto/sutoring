@@ -1,10 +1,11 @@
 
 //import {LogicGraphTable} from "./graph_table"
-import { LogicTableLine, createLogicTable, LogicTable } from "logic_index"
+import { LogicTable, LogicCellLine, LogicCell } from "logic_index"
 import * as LCPArray from "./lcp_array"
 import * as BWT from "../permutation/bwt"
 
 import { GTextBoxCSS } from "object/g_options";
+import { toLogicCellLine, buildLogicTable } from "logic_index";
 //namespace StrFunctions {
 /**
  * This namespace provides functions for suffix array.
@@ -39,21 +40,19 @@ export function construct(str: string, zero_based: boolean = true): number[] {
     }
 }
 export type SATableOption = { zeroBased?: boolean, withSA?: boolean, withLCP?: boolean, withBWT?: boolean, withIndex?: boolean };
-export function getSuffixArrayTableLine(text: string, zero_based: boolean = true, cellClass? : string | GTextBoxCSS) : LogicTableLine{
+export function createSuffixArrayTableLine(text: string, zero_based: boolean = true, cellClass? : string | GTextBoxCSS) : LogicCellLine{
     const arr = construct(text, zero_based);
     const name = "SA"
-    const line = { name: name, values : arr, cellClass : cellClass };
-    return line;
+    return toLogicCellLine(name, arr, cellClass);
 }
-export function getSortedSuffixes(text : string) : string[] {
+export function createSortedSuffixes(text : string) : string[] {
     const sa = construct(text);
     return sa.map((v) => text.substr(v));
 }
-export function getSortedSuffixesTableLine(text : string, cellClass : string | GTextBoxCSS = {horizontalAnchor: "left"}) : LogicTableLine {
-    const suffixes = getSortedSuffixes(text);
+export function createSortedSuffixesTableLine(text : string, cellClass : string | GTextBoxCSS = {horizontalAnchor: "left"}) : LogicCellLine {
+    const suffixes = createSortedSuffixes(text);
     const name = "Suffix";
-    const line = { name: name, values : suffixes, cellClass: cellClass };
-    return line;
+    return toLogicCellLine(name, suffixes, cellClass);
 
 }
 
@@ -70,22 +69,22 @@ export function constructSATable(text: string, option: SATableOption = { zeroBas
     //const lcpArray = LCPArray.construct(text);
     //const bwt = BWT.construct(text).map((v) => v);
 
-    const arrays: LogicTableLine[] = new Array(0);
+    const arrays: LogicCellLine[] = new Array(0);
     //arrays.push({ name: "Index", values: indexes });
     if (option.withSA) {
-        arrays.push( getSuffixArrayTableLine(text, option.zeroBased) );
+        arrays.push( createSuffixArrayTableLine(text, option.zeroBased) );
     }
     if (option.withLCP) {
-        arrays.push( LCPArray.getLCPArrayLine(text) );
+        arrays.push( LCPArray.createLCPArrayLine(text) );
     }
     if (option.withBWT) {
-        arrays.push( BWT.getBWTTableLine(text) );
+        arrays.push( BWT.createBWTTableLine(text) );
     }
 
-    arrays.push( getSortedSuffixesTableLine(text));
+    arrays.push( createSortedSuffixesTableLine(text));
 
 
-    return createLogicTable(arrays, { isRowLines: false })
+    return buildLogicTable(arrays, { isRowLines: false })
 
 }
 
