@@ -24,6 +24,8 @@ import * as Console from "console"
 //import * as LogicGraphTable from "./graph_table"
 import * as LZ78 from "./factorization/lz78"
 import * as SuffixArray from "./array/suffix_array"
+import * as LCPArray from "./array/lcp_array"
+
 import * as MinimalUniqueSubstrings from "./substring/minimal_unique_substrings"
 import * as DistinctSubstrings from "./substring/distinct_substrings"
 import * as MaximalRepeats from "./substring/maximal_repeats"
@@ -35,6 +37,8 @@ import * as SuffixTrie from "./tree/suffix_trie"
 import * as SuffixTree from "./tree/suffix_tree"
 import * as BWT from "./permutation/bwt"
 import * as RLBWT from "./permutation/rlbwt"
+import * as SAonRLBWT from "./permutation/sa_on_rlbwt"
+import * as Debug from "./debug/debug"
 
 //import { GGraph } from "ggraph"
 
@@ -47,5 +51,5 @@ export{
     LZ78,
     SuffixArray, MinimalUniqueSubstrings, DistinctSubstrings, MaximalRepeats, MinimalRepeats,
     FibonacciString, Trie, SuffixTrie, SuffixTree, 
-    BWT, RLBWT
+    BWT, RLBWT, SAonRLBWT, Debug,LCPArray
 }

@@ -35,7 +35,7 @@ export function construct(text: string) : RLEFactor[] {
     const bwt = BWT.construct(text);
     return runLengthEncode(bwt);
 }
-export function createLRunStartPositions(text: string) : number[] {
+export function createLRunStartingPositions(text: string) : number[] {
     const bwt = BWT.createLArray(text);
     const r : number[] = new Array();
     r.push(0);
@@ -46,9 +46,20 @@ export function createLRunStartPositions(text: string) : number[] {
     }
     return r;    
 }
+export function createLRunEndingPositions(text: string) : number[] {
+    const lruns = createLRunStartingPositions(text);
+    const r : number[] = new Array();
+    for(let i=1;i<lruns.length;i++){
+        r.push(lruns[i]-1);
+    }
+    r.push(text.length-1);
+
+    return r;    
+}
+
 export function createFRunStartPositions(text: string){
     const bwt = BWT.createLArray(text);
-    const lruns = createLRunStartPositions(text);
+    const lruns = createLRunStartingPositions(text);
     const infos = lruns.map((v, i)=>{
         if(i + 1 == lruns.length){
             return [v, bwt.length - lruns[i]];
@@ -75,7 +86,7 @@ export function createFRunStartPositions(text: string){
 
 export function createLArrayLine(text: string, isColored : boolean = false, cellClass: string | GTextBoxCSS = { horizontalAnchor: "center" } ): LogicCellLine {
     const line = BWT.createLArrayLine(text, isColored, cellClass);
-    const lruns = createLRunStartPositions(text);
+    const lruns = createLRunStartingPositions(text);
     lruns.push(text.length);
 
     for(let i=0;i<lruns.length;i++){

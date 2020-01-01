@@ -14,7 +14,7 @@ function createCircularStrings(text: string): string[] {
     const r = Array.from(Array(text.length).keys()).map((i) => createCircularString(text, i));
     return r;
 }
-function createCircularSuffixArray(text: string, zeroBased : boolean = true): number[] {
+export function createCircularSuffixArray(text: string, zeroBased : boolean = true): number[] {
     const r = Array.from(Array(text.length).keys());
     r.sort((a, b) => {
         return compare(text, a, b);
