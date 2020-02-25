@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Suffix Array, LCP, BWT</title>
+    <script src="../sutoring.js"></script>
+    <script>
+        function constructSATableButton() {
+            const text = document.getElementById("text").value;
+            const zeroBasedIndexFlag = document.getElementById("zeroBased").checked;
+            const withBWTFlag = document.getElementById("withBWT").checked;
+            const withSAFlag = document.getElementById("withSA").checked;
+            const withLCPFlag = document.getElementById("withLCP").checked;
+            const withIndexFlag = document.getElementById("withIndex").checked;
+
+            console.log("LCP:" * withLCPFlag);
+            const table = Sutoring.SuffixArray.constructSATable(text, {
+                zeroBased: zeroBasedIndexFlag,
+                withBWT: withBWTFlag,
+                withLCP: withLCPFlag,
+                withSA: withSAFlag,
+                withIndex: withIndexFlag
+            });
+            Sutoring.Console.table(table);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Suffix Array, LCP, BWT</h1>
+    <fieldset>
+        <legend>Input Text</legend>
+        <textarea id="text" rows="1" cols="80">hogehoge$</textarea></br>
+    </fieldset>
+
+    <fieldset>
+        <legend>Methods</legend>
+        <button onclick="constructSATableButton()">constructSATable</button>
+        <input type="checkbox" id="zeroBased" value="1" checked="checked">zero based index
+        <input type="checkbox" id="withBWT" value="1">with BWT
+        <input type="checkbox" id="withSA" value="1" checked="checked">with SA
+        <input type="checkbox" id="withLCP" value="1">with LCP
+        <input type="checkbox" id="withIndex" value="1" checked="checked">with Index
+    </fieldset>
+
+</body>
+
+</html>

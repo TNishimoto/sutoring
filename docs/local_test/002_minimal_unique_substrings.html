@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Minimal Unique Substrings and Distinct Substrings</title>
+    <script src="../sutoring.js"></script>
+    <script>
+        function enumerateButton() {
+            const text = document.getElementById("text").value;
+            const results = Sutoring.MinimalUniqueSubstrings.enumerate(text);
+            Sutoring.Console.log(results.join(", "));
+        }
+
+        function enumerateDistinctSubstringsButton() {
+            const text = document.getElementById("text").value;
+            const results = Sutoring.DistinctSubstrings.enumerate(text);
+            Sutoring.Console.log(results.join(", "));
+        }
+
+        function enumerateWithOccurrencesButton() {
+            const text = document.getElementById("text").value;
+            const results = Sutoring.DistinctSubstrings.enumerateWithOccurrences(text);
+            //Sutoring.Console.log(results.join(", "));
+        }
+
+        function enumerateMaximalRepeatsButton() {
+            const text = document.getElementById("text").value;
+            const results = Sutoring.MaximalRepeats.enumerate(text);
+            Sutoring.Console.log(results.join(", "));
+
+        }
+
+        function enumerateMinimalRepeatsButton() {
+            const text = document.getElementById("text").value;
+            const results = Sutoring.MinimalRepeats.enumerate(text);
+            Sutoring.Console.log(results.join(", "));
+
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Minimal Unique Substrings and Distinct Substrings</h1>
+    <fieldset>
+        <legend>Input Text</legend>
+        <textarea id="text" rows="1" cols="80">abaababaabaababa$</textarea></br>
+    </fieldset>
+
+    <fieldset>
+        <legend>Methods(Minimal Unique Substrings)</legend>
+        <button onclick="enumerateButton()">enumerate</button>
+    </fieldset>
+    <fieldset>
+        <legend>Methods(Distinct Substrings)</legend>
+        <button onclick="enumerateDistinctSubstringsButton()">enumerate</button>
+        <button onclick="enumerateWithOccurrencesButton()">enumerateWithOccurrences</button>
+    </fieldset>
+    <fieldset>
+        <legend>Methods(MaximalRepeats)</legend>
+        <button onclick="enumerateMaximalRepeatsButton()">enumerate</button>
+    </fieldset>
+    <fieldset>
+        <legend>Methods(MinimalRepeats)</legend>
+        <button onclick="enumerateMinimalRepeatsButton()">enumerate</button>
+    </fieldset>
+
+
+</body>
+
+</html>

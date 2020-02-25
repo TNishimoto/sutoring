@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Sequence</title>
+    <script src="../sutoring.js"></script>
+    <script>
+        function enumerateButton() {
+            const length = parseInt(document.getElementById("text").value);
+            console.log(length);
+            const str = Sutoring.FibonacciString.enumerate(length);
+            document.getElementById("fib_result").value = str;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Sequence</h1>
+    <fieldset>
+        <legend>Length</legend>
+        <textarea id="text" rows="1" cols="80">100</textarea></br>
+    </fieldset>
+
+    <fieldset>
+        <legend>Methods(Fibonacci String)</legend>
+        <button onclick="enumerateButton()">enumerate</button>
+        <legend>Result</legend>
+        <textarea id="fib_result" rows="1" cols="80"></textarea></br>
+    </fieldset>
+
+
+</body>
+
+</html>

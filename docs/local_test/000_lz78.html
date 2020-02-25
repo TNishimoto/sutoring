@@ -21,7 +21,9 @@
         function factorizeButton() {
             const text = document.getElementById("text").value;
             const results = Sutoring.LZ78.factorize(text);
-            Sutoring.Console.log(results.join("|"));
+            Sutoring.Console.textarea(results.join("|"));
+
+            //Sutoring.Console.log(results.join("|"));
         }
 
         function compressButton() {

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Trie</title>
+    <script src="../sutoring.js"></script>
+    <script>
+        function constructButton() {
+
+            const texts = document.getElementById("text").value.split(",");
+            const tree = Sutoring.Trie.construct(texts);
+            Sutoring.Console.graph(tree);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Trie</h1>
+    <fieldset>
+        <legend>Input Text</legend>
+        <textarea id="text" rows="1" cols="80">hoge,huga,piyo,hugo,hune</textarea></br>
+    </fieldset>
+
+    <fieldset>
+        <legend>Methods</legend>
+        <button onclick="constructButton()">construct</button>
+    </fieldset>
+
+</body>
+
+</html>
