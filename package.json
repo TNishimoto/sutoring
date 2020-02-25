@@ -14,8 +14,8 @@
     "author": "Mic-U",
     "license": "MIT",
     "dependencies": {
-        "gulp": "^3.9.1",
-        "gulp-typedoc": "^2.0.0"
+        "gulp-typedoc": "^2.0.0",
+        "gulp": "^4.0.2"
     },
     "devDependencies": {
         "ts-loader": "^6.2.1",

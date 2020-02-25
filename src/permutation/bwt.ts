@@ -56,11 +56,13 @@ export function createBWTIndexes(text: string, zeroBased : boolean = true): numb
     });
 }
 export function construct(text: string): string {
-    return createBWTIndexes(text).map((v) => text[v]).join();
+    return createBWTIndexes(text).map((v) => text[v]).join("");
 }
 export function createBWTTableLine(text: string, cellClass?: string | GTextBoxCSS): LogicCellLine {
     const bwt = construct(text);
     const arr = Array.from(Array(text.length).keys()).map((i) => bwt[i]);
+    console.log(arr);
+    console.log(bwt);
 
     const name = "BWT"
     return toLogicCellLine(name, arr, cellClass);

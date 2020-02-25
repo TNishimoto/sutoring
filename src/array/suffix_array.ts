@@ -1,11 +1,12 @@
 
 //import {LogicGraphTable} from "./graph_table"
-import { LogicTable, LogicCellLine, LogicCell } from "logic_index"
+//import { LogicTable, LogicCellLine, LogicCell } from "logic_index"
+import { LogicTable, LogicCell, LogicTSpan, LogicText, getIndexArrayTableLine, LogicCellLine, buildLogicTable,toLogicCellLine } from "logic_index"
 import * as LCPArray from "./lcp_array"
 import * as BWT from "../permutation/bwt"
 
 import { GTextBoxCSS } from "object/g_options";
-import { toLogicCellLine, buildLogicTable } from "logic_index";
+//import { toLogicCellLine, buildLogicTable } from "logic_index";
 //namespace StrFunctions {
 /**
  * This namespace provides functions for suffix array.
@@ -71,6 +72,9 @@ export function constructSATable(text: string, option: SATableOption = { zeroBas
 
     const arrays: LogicCellLine[] = new Array(0);
     //arrays.push({ name: "Index", values: indexes });
+    if(option.withIndex){
+        arrays.push(getIndexArrayTableLine(text.length, option.zeroBased))
+    }
     if (option.withSA) {
         arrays.push( createSuffixArrayTableLine(text, option.zeroBased) );
     }
