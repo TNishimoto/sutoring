@@ -23,6 +23,12 @@
             });
             Sutoring.Console.table(table);
         }
+
+        function constructButton() {
+            const text = document.getElementById("text").value;
+            const bwt = Sutoring.BWT.construct(text);
+            Sutoring.Console.textarea(bwt);
+        }
     </script>
 </head>
 
@@ -41,6 +47,9 @@
         <input type="checkbox" id="withSA" value="1" checked="checked">with SA
         <input type="checkbox" id="withLCP" value="1">with LCP
         <input type="checkbox" id="withIndex" value="1" checked="checked">with Index
+        <br>
+        <button onclick="constructButton()">BWT</button>
+
     </fieldset>
 
 </body>

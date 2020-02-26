@@ -9,13 +9,13 @@
         function enumerateButton() {
             const text = document.getElementById("text").value;
             const results = Sutoring.MinimalUniqueSubstrings.enumerate(text);
-            Sutoring.Console.log(results.join(", "));
+            Sutoring.Console.textarea(results.join(", "));
         }
 
         function enumerateDistinctSubstringsButton() {
             const text = document.getElementById("text").value;
             const results = Sutoring.DistinctSubstrings.enumerate(text);
-            Sutoring.Console.log(results.join(", "));
+            Sutoring.Console.textarea(results.join(", "));
         }
 
         function enumerateWithOccurrencesButton() {
@@ -27,14 +27,14 @@
         function enumerateMaximalRepeatsButton() {
             const text = document.getElementById("text").value;
             const results = Sutoring.MaximalRepeats.enumerate(text);
-            Sutoring.Console.log(results.join(", "));
+            Sutoring.Console.textarea(results.join(", "));
 
         }
 
         function enumerateMinimalRepeatsButton() {
             const text = document.getElementById("text").value;
             const results = Sutoring.MinimalRepeats.enumerate(text);
-            Sutoring.Console.log(results.join(", "));
+            Sutoring.Console.textarea(results.join(", "));
 
         }
     </script>
