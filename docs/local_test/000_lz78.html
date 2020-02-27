@@ -9,19 +9,19 @@
         function constructLZ78TableButton() {
             const text = document.getElementById("text").value;
             const table = Sutoring.LZ78.constructLZ78Table(text);
-            Sutoring.Console.table(table);
+            Sutoring.Console.table(table, `LZ78 Table(${text})`);
         }
 
         function constructLZ78TrieButton() {
             const text = document.getElementById("text").value;
             const trie = Sutoring.LZ78.constructLZ78Trie(text);
-            Sutoring.Console.graph(trie);
+            Sutoring.Console.graph(trie, `LZ78 Trie(${text})`);
         }
 
         function factorizeButton() {
             const text = document.getElementById("text").value;
             const results = Sutoring.LZ78.factorize(text);
-            Sutoring.Console.textarea(results.join("|"));
+            Sutoring.Console.textarea(results.join("|"), `Factorize(${text})`);
 
             //Sutoring.Console.log(results.join("|"));
         }
@@ -30,7 +30,7 @@
             const text = document.getElementById("text").value;
             const results = Sutoring.LZ78.compress(text);
 
-            Sutoring.Console.table(results);
+            Sutoring.Console.table(results, `Compress(${text})`);
         }
     </script>
 </head>
