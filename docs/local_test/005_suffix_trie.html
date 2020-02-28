@@ -8,13 +8,15 @@
     <script>
         function constructButton() {
             const text = document.getElementById("text").value;
-            Sutoring.SuffixTrie.construct(text).view();
+            const tree = Sutoring.SuffixTrie.construct(text);
+            Sutoring.Console.graph(tree, `Suffix Trie(${text})`);
+
         }
 
         function constructSuffixTreeButton() {
             const text = document.getElementById("text").value;
             const tree = Sutoring.SuffixTree.construct(text);
-            Sutoring.Console.graph(tree);
+            Sutoring.Console.graph(tree, `Suffix Tree(${text})`);
         }
     </script>
 </head>

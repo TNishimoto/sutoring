@@ -13,6 +13,7 @@ At the moment, this library supports the following functions:
 - [Trie](https://TNishimoto.github.io/sutoring/local_test/004_trie.html "Trie")
 - [Suffix Trie](https://TNishimoto.github.io/sutoring/local_test/005_suffix_trie.html "Suffix Trie")
 - [BWT](https://TNishimoto.github.io/sutoring/local_test/006_bwt.html "BWT")
+- [RLBWT](https://TNishimoto.github.io/sutoring/local_test/007_rlbwt.html "RLBWT")
 
 
 

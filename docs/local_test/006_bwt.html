@@ -21,13 +21,13 @@
                 withSA: withSAFlag,
                 withIndex: withIndexFlag
             });
-            Sutoring.Console.table(table);
+            Sutoring.Console.table(table, `BWT Table(${text})`);
         }
 
         function constructButton() {
             const text = document.getElementById("text").value;
             const bwt = Sutoring.BWT.construct(text);
-            Sutoring.Console.textarea(bwt);
+            Sutoring.Console.textarea(bwt, `BWT(${text})`);
         }
     </script>
 </head>
