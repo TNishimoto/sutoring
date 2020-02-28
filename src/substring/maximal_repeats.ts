@@ -9,7 +9,7 @@ export function getAlphabet(text: string): Set<string> {
 
 }
 export function enumerate(text: string) {
-    const map = DistinctSubstrings.enumerateWithOccurrences(text);
+    const map = DistinctSubstrings.createOccurrenceMap(text);
     const substrSet: Set<string> = new Set();
     const characters = getAlphabet(text);
 

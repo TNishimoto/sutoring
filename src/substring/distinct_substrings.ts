@@ -11,7 +11,7 @@ export function sort(strings: string[]) {
 }
 
 export function enumerate(text: string): string[] {
-    const map = enumerateWithOccurrences(text);
+    const map = createOccurrenceMap(text);
     const r: string[] = new Array(0);
     map.forEach((value, key) => {
         r.push(key);
@@ -20,7 +20,7 @@ export function enumerate(text: string): string[] {
 
     return r;
 }
-export function enumerateWithOccurrences(text: string): Map<string, number[]> {
+export function createOccurrenceMap(text: string): Map<string, number[]> {
     let map = new Map<string, number[]>();
     for (let i = 0; i < text.length; i++) {
         for (let len = 1; len <= text.length - i; len++) {
@@ -35,5 +35,17 @@ export function enumerateWithOccurrences(text: string): Map<string, number[]> {
         }
     }
     return map;
-
+}
+export type SubstringInfo = { substring : string, occurrences : number[]}
+export function enumerateWithInfo(text: string): SubstringInfo[] {
+    const arr : SubstringInfo[] = [];
+    createOccurrenceMap(text).forEach((occs, substr) =>{
+        arr.push({ substring : substr, occurrences : occs});
+    })
+    arr.sort((a, b) =>{
+        if (a < b) return -1;
+        if (a > b) return 1;
+        return 0;
+    })
+    return arr;
 }

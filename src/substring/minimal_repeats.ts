@@ -2,7 +2,7 @@ import * as DistinctSubstrings from "./distinct_substrings"
 import * as MaximalRepeats from "./maximal_repeats"
 
 export function enumerate(text: string) {
-    const map = DistinctSubstrings.enumerateWithOccurrences(text);
+    const map = DistinctSubstrings.createOccurrenceMap(text);
     const substrSet: Set<string> = new Set();
     const characters = MaximalRepeats.getAlphabet(text);
 
