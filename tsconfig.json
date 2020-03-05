@@ -20,7 +20,7 @@
         //        "lib/*"
         //    ]
         //}
-        "baseUrl": "../GraphTableSVG/src",
+        "baseUrl": "./node_modules/graph-table-svg/src",
         //"baseUrl": "./src",
 
         "paths": {"logic_index": ["object/logic/index"],

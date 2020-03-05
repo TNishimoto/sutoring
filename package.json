@@ -14,8 +14,10 @@
     "author": "Mic-U",
     "license": "MIT",
     "dependencies": {
+        "graph-table-svg": "0.0.21",
+        "gulp": "^4.0.2",
         "gulp-typedoc": "^2.0.0",
-        "gulp": "^4.0.2"
+        "opener": "^1.5.1"
     },
     "devDependencies": {
         "ts-loader": "^6.2.1",
