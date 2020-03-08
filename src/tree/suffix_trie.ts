@@ -1,4 +1,4 @@
-import { LogicTree } from "logic_index";
+import { LogicTree } from "graph-table-svg";
 import * as Trie from "./trie";
 export function enumerateSuffixes(text: string): string[] {
     const texts: string[] = new Array();

@@ -20,11 +20,18 @@
         //        "lib/*"
         //    ]
         //}
-        "baseUrl": "./node_modules/graph-table-svg/src",
+        "baseUrl": "./",
         //"baseUrl": "./src",
 
-        "paths": {"logic_index": ["object/logic/index"],
-            "console": ["options/console"], "ggraph": ["object/g_graph"] }
+        "paths": {
+            "graph-table-svg": ["./node_modules/graph-table-svg/src/nodejs_index"]
+
+            //"logic_index": ["./node_modules/graph-table-svg/src/object/logic/index"],
+            //"console": ["./node_modules/graph-table-svg/src/options/nodejs_console"], 
+            //"g_options": ["./node_modules/graph-table-svg/src/object/g_obtions"], 
+
+            //"ggraph": ["./node_modules/graph-table-svg/src/object/g_graph"] 
+        }
 
     },
     "include": [

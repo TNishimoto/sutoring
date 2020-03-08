@@ -1,14 +1,6 @@
 
 
-//import * as LogicGraphTable from "../graph_table"
-import { LogicTable,  getIndexArrayTableLine, LogicTree, toLogicCellLine, buildLogicTable } from "logic_index"
-//import {  } from "logic_table_line"
-
-//import { LogicTree } from "logic_tree"
-//import {LogicTable} from "../../GraphTableSVG/dist/options/logic_table"
-//import {LogicTree} from "../../GraphTableSVG/dist/options/logic_tree"
-
-//namespace StrFunctions {
+import { LogicTable,  getIndexArrayTableLine, LogicTree, toLogicCellLine, buildLogicTable } from "graph-table-svg"
 /**
  * This namespace provides functions for Lempel-Ziv 78 compression.
  */

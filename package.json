@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "typedoc": "typedoc --out ./docs/typedoc/ ./src/  ../GraphTableSVG/dist --excludeExternals --mode file",
-        "start": "webpack",
+        "webpack": "webpack",
         "gulp": "gulp"
     },
     "keywords": [
@@ -14,7 +14,8 @@
     "author": "Mic-U",
     "license": "MIT",
     "dependencies": {
-        "graph-table-svg": "0.0.21",
+        "@types/node": "^13.9.0",
+        "graph-table-svg": "0.0.27",
         "gulp": "^4.0.2",
         "gulp-typedoc": "^2.0.0",
         "opener": "^1.5.1"

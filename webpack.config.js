@@ -11,11 +11,7 @@ module.exports = {
     resolve: {
         extensions: ['.ts', '.js'], //拡張子がtsだったらTypescirptでコンパイルする
         alias: {
-            logic_index: path.resolve(__dirname, "./node_modules/graph-table-svg/dist/object/logic/index"),
-
-            console: path.resolve(__dirname, "./node_modules/graph-table-svg/dist/options/console"),
-            ggraph: path.resolve(__dirname, "./node_modules/graph-table-svg/dist/object/g_graph")
-
+            "graph-table-svg": path.resolve(__dirname, "./node_modules/graph-table-svg/dist/index")
         }
         //alias: {
         //    logic_table: path.resolve(__dirname, "src/options/logic_table"),

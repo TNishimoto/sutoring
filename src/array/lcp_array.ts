@@ -1,7 +1,7 @@
 //import * as LogicGraphTable from "../graph_table"
 import * as SuffixArray from "./suffix_array"
-import { GTextBoxCSS } from "object/g_options";
-import { toLogicCellLine, LogicCellLine } from "logic_index"
+//import { GTextBoxCSS } from "g_options";
+import { toLogicCellLine, LogicCellLine, GTextBoxCSS } from "graph-table-svg"
 /**
  * This namespace provides functions for longest common prefix array.
  */

@@ -1,4 +1,4 @@
-import { LogicTree } from "logic_index";
+import { LogicTree } from "graph-table-svg";
 import * as CompactTrie from "./compact_trie";
 import * as SuffixTrie from "./suffix_trie";
 

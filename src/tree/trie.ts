@@ -1,4 +1,4 @@
-import { LogicTree } from "logic_index";
+import { LogicTree } from "graph-table-svg";
 
 export function construct(texts: string[]): LogicTree {
     const root = new LogicTree();

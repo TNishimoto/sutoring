@@ -1,11 +1,10 @@
 
 //import {LogicGraphTable} from "./graph_table"
 //import { LogicTable, LogicCellLine, LogicCell } from "logic_index"
-import { LogicTable, LogicCell, LogicTSpan, LogicText, getIndexArrayTableLine, LogicCellLine, buildLogicTable,toLogicCellLine } from "logic_index"
+import { GTextBoxCSS, LogicTable, LogicCell, LogicTSpan, LogicText, getIndexArrayTableLine, LogicCellLine, buildLogicTable,toLogicCellLine } from "graph-table-svg"
 import * as LCPArray from "./lcp_array"
 import * as BWT from "../permutation/bwt"
 
-import { GTextBoxCSS } from "object/g_options";
 //import { toLogicCellLine, buildLogicTable } from "logic_index";
 //namespace StrFunctions {
 /**

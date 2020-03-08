@@ -1,8 +1,7 @@
 import * as BWT from "./bwt"
-import { LogicTable, LogicCell, LogicTSpan, LogicText, getIndexArrayTableLine, LogicCellLine, buildLogicTable } from "logic_index"
+import { GTextBoxCSS, LogicTable, LogicCell, LogicTSpan, LogicText, getIndexArrayTableLine, LogicCellLine, buildLogicTable } from "graph-table-svg"
 import * as SuffixArray from "../array/suffix_array"
 import * as LCPArray from "../array/lcp_array"
-import { GTextBoxCSS } from "object/g_options";
 
 type RLEFactor = { char : string, length : number}
 
