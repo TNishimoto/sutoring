@@ -24,7 +24,7 @@
         //"baseUrl": "./src",
 
         "paths": {
-            "graph-table-svg": ["./node_modules/graph-table-svg/src/nodejs_index"]
+            //"graph-table-svg": ["../node_modules/graph-table-svg/src/nodejs_index"]
 
             //"logic_index": ["./node_modules/graph-table-svg/src/object/logic/index"],
             //"console": ["./node_modules/graph-table-svg/src/options/nodejs_console"], 

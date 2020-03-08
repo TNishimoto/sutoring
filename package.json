@@ -15,7 +15,7 @@
     "license": "MIT",
     "dependencies": {
         "@types/node": "^13.9.0",
-        "graph-table-svg": "0.0.27",
+        "graph-table-svg": "0.0.28",
         "gulp": "^4.0.2",
         "gulp-typedoc": "^2.0.0",
         "opener": "^1.5.1"
