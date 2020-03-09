@@ -6,11 +6,18 @@
     <title>Sequence</title>
     <script src="../sutoring.js"></script>
     <script>
-        function enumerateButton() {
+        function createFibonacciButton() {
             const length = parseInt(document.getElementById("text").value);
             console.log(length);
-            const str = Sutoring.FibonacciString.enumerate(length);
-            Sutoring.Console.textarea(str, `Fibonacci String(${length})`);
+            const str = Sutoring.FibonacciSequence.create(length);
+            Sutoring.Console.textarea(str, `Fibonacci Sequence(${length})`);
+        }
+
+        function createThueMorseButton() {
+            const length = parseInt(document.getElementById("text").value);
+            console.log(length);
+            const str = Sutoring.ThueMorseSequence.create(length);
+            Sutoring.Console.textarea(str, `Thue-Morse Sequence(${length})`);
         }
     </script>
 </head>
@@ -23,9 +30,14 @@
     </fieldset>
 
     <fieldset>
-        <legend>Methods(Fibonacci String)</legend>
-        <button onclick="enumerateButton()">enumerate</button>
+        <legend>Methods(Fibonacci Sequence)</legend>
+        <button onclick="createFibonacciButton()">create</button>
     </fieldset>
+    <fieldset>
+        <legend>Methods(Thue-Morse Sequence)</legend>
+        <button onclick="createThueMorseButton()">create</button>
+    </fieldset>
+
     <hr size="10" color="black" noshade>
 
 </body>

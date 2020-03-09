@@ -3,7 +3,7 @@
 //import { LogicTable, LogicCellLine, LogicCell } from "logic_index"
 import { GTextBoxCSS, LogicTable, LogicCell, LogicTSpan, LogicText, getIndexArrayTableLine, LogicCellLine, buildLogicTable,toLogicCellLine } from "graph-table-svg"
 import * as LCPArray from "./lcp_array"
-import * as BWT from "../permutation/bwt"
+import * as BWT from "../permutations/bwt"
 
 //import { toLogicCellLine, buildLogicTable } from "logic_index";
 //namespace StrFunctions {

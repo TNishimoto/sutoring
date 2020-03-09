@@ -37,10 +37,6 @@
     "include": [
         "src",
         
-        "src/common", 
-        "src/object", 
-        "src/svghtml",
-        "src/options" 
         //"custom_typings"
         //"../GraphTableSVG/dist"
     ]
