@@ -58,8 +58,8 @@ export function factorize(text: string): string[] {
 export function compress(text: string): LZ78Factor[] {
     const p = preprocess(text);
     return p[0];
-
 }
+
 export function constructLZ78Table(text: string): LogicTable {
     const comp = compress(text);
     const indexLine = getIndexArrayTableLine(comp.length);

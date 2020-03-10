@@ -3,7 +3,7 @@
 import { Console } from "graph-table-svg"
 
 //import * as LogicGraphTable from "./graph_table"
-import * as LZ78 from "./factorizations/lz78"
+import  {LZ77WithSelfReference, LZ78}from "./factorizations/index"
 import * as SuffixArray from "./array/suffix_array"
 import * as LCPArray from "./array/lcp_array"
 
@@ -32,7 +32,7 @@ export{
     //ShapeObjectType, openSVG, openHTML, openCustomElement, openSVGFunctions, lazyOpenSVG,
     //LogicTable, LogicTree, Console, GObject, GPathTextBox,
     Console,
-    LZ78,
+    LZ78, LZ77WithSelfReference, 
     SuffixArray, MinimalUniqueSubstrings, DistinctSubstrings, MaximalRepeats, MinimalRepeats,
     Trie, SuffixTrie, SuffixTree, 
     BWT, RLBWT, SAonRLBWT, Debug,LCPArray, 
