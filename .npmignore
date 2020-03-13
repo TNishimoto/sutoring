@@ -1,0 +1,4 @@
+# .npmignore
+/.vscode
+/docs/local_test
+/docs/typedoc

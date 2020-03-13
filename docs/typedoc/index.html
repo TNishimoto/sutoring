@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>typedoc-sample</title>
+	<title>graph-table-svg - v0.0.28</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">typedoc-sample</a>
+					<a href="index.html" class="title">graph-table-svg - v0.0.28</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -38,6 +38,8 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 							<input type="checkbox" id="tsd-filter-only-exported" />
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
@@ -54,7 +56,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> typedoc-sample</h1>
+			<h1> graph-table-svg - v0.0.28</h1>
 		</div>
 	</div>
 </header>
@@ -62,24 +64,20 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#strfunctionjs" id="strfunctionjs" style="color: inherit; text-decoration: none;">
-					<h1>StrFunction.js</h1>
+				<a href="#graphtablesvg" id="graphtablesvg" style="color: inherit; text-decoration: none;">
+					<h1>GraphTableSVG</h1>
 				</a>
-				<a href="#what-is-this" id="what-is-this" style="color: inherit; text-decoration: none;">
-					<h2>What is this?</h2>
+				<p>GraphTableSVG is a library outputting graphs and tables on svg.
+					<a href="https://TNishimoto.github.io/GraphTableSVG/typedoc/index.html" title="reference">reference</a>
+				<a href="https://TNishimoto.github.io/GraphTableSVG/tutorial.html" title="tutorial">tutorial</a></p>
+				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
+					<h2>License</h2>
 				</a>
-				<p>StrFunction.js provides many functions and those visualizations for strings.<br>At the moment, this library supports the following functions:</p>
-				<ul>
-					<li>BWT</li>
-					<li>LZ78</li>
-					<li>Suffix Array</li>
-					<li>Longest Common Prefix Array</li>
-					<li>Minimal Unique Substrings</li>
-				</ul>
-				<a href="#tutorial" id="tutorial" style="color: inherit; text-decoration: none;">
-					<h2>Tutorial</h2>
+				<p>MIT License</p>
+				<a href="#environment" id="environment" style="color: inherit; text-decoration: none;">
+					<h2>Environment</h2>
 				</a>
-				<p>hogehoge. </p>
+				<p>Firefox, Chrome, Edge</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -88,26 +86,113 @@
 					<li class="globals  ">
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/bwt.html">BWT</a>
+					<li class="label tsd-is-external">
+						<span>Internals</span>
 					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/distinctsubstrings.html">Distinct<wbr>Substrings</a>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_array_lcp_array_.html">&quot;src/array/lcp_<wbr>array&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/lcparray.html">LCPArray</a>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_array_suffix_array_.html">&quot;src/array/suffix_<wbr>array&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/lz78.html">LZ78</a>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_debug_debug_.html">&quot;src/debug/debug&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/logicgraphtable.html">Logic<wbr>Graph<wbr>Table</a>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_factorizations_index_.html">&quot;src/factorizations/index&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/minimaluniquesubstrings.html">Minimal<wbr>Unique<wbr>Substrings</a>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_factorizations_lz77_with_self_reference_.html">&quot;src/factorizations/lz77_<wbr>with_<wbr>self_<wbr>reference&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/suffixarray.html">Suffix<wbr>Array</a>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_factorizations_lz78_.html">&quot;src/factorizations/lz78&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_index_.html">&quot;src/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_permutations_bwt_.html">&quot;src/permutations/bwt&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_permutations_rlbwt_.html">&quot;src/permutations/rlbwt&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_permutations_sa_on_rlbwt_.html">&quot;src/permutations/sa_<wbr>on_<wbr>rlbwt&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_sequences_fibonacci_sequence_.html">&quot;src/sequences/fibonacci_<wbr>sequence&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_sequences_index_.html">&quot;src/sequences/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_sequences_thue_morse_sequence_.html">&quot;src/sequences/thue_<wbr>morse_<wbr>sequence&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_substrings_distinct_substrings_.html">&quot;src/substrings/distinct_<wbr>substrings&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_substrings_maximal_repeats_.html">&quot;src/substrings/maximal_<wbr>repeats&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_substrings_minimal_repeats_.html">&quot;src/substrings/minimal_<wbr>repeats&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_substrings_minimal_unique_substrings_.html">&quot;src/substrings/minimal_<wbr>unique_<wbr>substrings&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_substrings_qgram_.html">&quot;src/substrings/qgram&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_trees_compact_trie_.html">&quot;src/trees/compact_<wbr>trie&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_trees_suffix_tree_.html">&quot;src/trees/suffix_<wbr>tree&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_trees_suffix_trie_.html">&quot;src/trees/suffix_<wbr>trie&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_trees_trie_.html">&quot;src/trees/trie&quot;</a>
+					</li>
+					<li class="label tsd-is-external">
+						<span>Externals</span>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules__types_minimatch_index_d_.html">&quot;node_<wbr>modules/@types/minimatch/index.d&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules_graph_table_svg_dist_basic_common_enums_d_.html">&quot;node_<wbr>modules/graph-<wbr>table-<wbr>svg/dist/basic/common/enums.d&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules_graph_table_svg_dist_nodejs_index_d_.html">&quot;node_<wbr>modules/graph-<wbr>table-<wbr>svg/dist/nodejs_<wbr>index.d&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules_graph_table_svg_dist_object_g_options_d_.html">&quot;node_<wbr>modules/graph-<wbr>table-<wbr>svg/dist/object/g_<wbr>options.d&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules_graph_table_svg_dist_object_logic_index_d_.html">&quot;node_<wbr>modules/graph-<wbr>table-<wbr>svg/dist/object/logic/index.d&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules_graph_table_svg_dist_object_logic_logic_builder_d_.html">&quot;node_<wbr>modules/graph-<wbr>table-<wbr>svg/dist/object/logic/logic_<wbr>builder.d&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules_graph_table_svg_dist_object_logic_logic_cell_d_.html">&quot;node_<wbr>modules/graph-<wbr>table-<wbr>svg/dist/object/logic/logic_<wbr>cell.d&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules_graph_table_svg_dist_object_logic_logic_table_d_.html">&quot;node_<wbr>modules/graph-<wbr>table-<wbr>svg/dist/object/logic/logic_<wbr>table.d&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules_graph_table_svg_dist_object_logic_logic_table_line_d_.html">&quot;node_<wbr>modules/graph-<wbr>table-<wbr>svg/dist/object/logic/logic_<wbr>table_<wbr>line.d&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules_graph_table_svg_dist_object_logic_logic_text_d_.html">&quot;node_<wbr>modules/graph-<wbr>table-<wbr>svg/dist/object/logic/logic_<wbr>text.d&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules_graph_table_svg_dist_object_logic_logic_tree_d_.html">&quot;node_<wbr>modules/graph-<wbr>table-<wbr>svg/dist/object/logic/logic_<wbr>tree.d&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_node_modules_graph_table_svg_dist_options_nodejs_console_d_.html">&quot;node_<wbr>modules/graph-<wbr>table-<wbr>svg/dist/options/nodejs_<wbr>console.d&quot;</a>
 					</li>
 				</ul>
 			</nav>

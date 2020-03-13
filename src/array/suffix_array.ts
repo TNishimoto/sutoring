@@ -40,6 +40,14 @@ export function construct(str: string, zero_based: boolean = true): number[] {
     }
 }
 export type SATableOption = { zeroBased?: boolean, withSA?: boolean, withLCP?: boolean, withBWT?: boolean, withIndex?: boolean };
+
+/**
+ * [Markdown](https://marked.js.org/)
+ * @param text 
+ * @param zero_based 
+ * @param cellClass
+ * @returns aaaaaaaa
+ */
 export function createSuffixArrayTableLine(text: string, zero_based: boolean = true, cellClass? : string | GTextBoxCSS) : LogicCellLine{
     const arr = construct(text, zero_based);
     const name = "SA"

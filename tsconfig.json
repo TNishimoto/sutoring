@@ -4,6 +4,7 @@
         "removeComments": true,
         "preserveConstEnums": true,
         "outDir" : "./dist",
+        "moduleResolution": "node",
         //"outFile": "./dist/StrFunctions.js",
         //"outFile": "./docs/scripts/graph_table_svg.js",
         "sourceMap": true,

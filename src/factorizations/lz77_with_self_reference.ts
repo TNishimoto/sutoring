@@ -1,4 +1,4 @@
-import { type } from "os";
+//import { type } from "os";
 
 
 export type LZ77Factor = { position: number, length: number } | string;

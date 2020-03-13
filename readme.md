@@ -1,9 +1,7 @@
 
 # sutoring
 
-## What is this?
-
-StrFunction.js provides many functions and those visualizations for strings.  
+sutoring.js provides many functions and those visualizations for strings.  
 At the moment, this library supports the following functions:
 
 - [LZ78](https://TNishimoto.github.io/sutoring/local_test/000_lz78.html "LZ78")
@@ -15,5 +13,6 @@ At the moment, this library supports the following functions:
 - [BWT](https://TNishimoto.github.io/sutoring/local_test/006_bwt.html "BWT")
 - [RLBWT](https://TNishimoto.github.io/sutoring/local_test/007_rlbwt.html "RLBWT")
 
-
+# Documents
+- [Reference](https://TNishimoto.github.io/sutoring/typedoc/index.html "Reference")
 
