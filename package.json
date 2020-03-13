@@ -7,7 +7,7 @@
         "sutoring": "./nodejs_examples/repl.js"
     },
     "scripts": {
-        "typedoc": "typedoc --out ./docs/typedoc2/ ./src/ --name sutoring --readme readme.md --includeDeclarations --exclude node_modules/typescript/**/*.d.ts -m 'commonjs'",
+        "typedoc": "typedoc --out ./docs/typedoc/ ./src/ --name sutoring --readme readme.md --includeDeclarations --exclude node_modules/typescript/**/*.d.ts -m 'commonjs'",
         "webpack": "webpack",
         "gulp": "gulp"
     },

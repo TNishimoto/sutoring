@@ -14,5 +14,5 @@ At the moment, this library supports the following functions:
 - [RLBWT](https://TNishimoto.github.io/sutoring/local_test/007_rlbwt.html "RLBWT")
 
 # Documents
-- [Reference](https://TNishimoto.github.io/sutoring/typedoc2/index.html "Reference")
+- [Reference](https://TNishimoto.github.io/sutoring/typedoc/index.html "Reference")
 
