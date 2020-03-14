@@ -16,3 +16,19 @@ At the moment, this library supports the following functions:
 # Documents
 - [Reference](https://TNishimoto.github.io/sutoring/typedoc/index.html "Reference")
 
+# Insutall
+
+npm install -g sutoring
+
+# Examples(node.js)
+
+> sutoring  
+Hello world, sutoring.js!  
+This is a REPL of node.js.  
+Sutoring.js modules are stored in variable 'sutoring'  
+\>\>\> sutoring.LZ78.factorize("abababba$")  
+[ 'a', 'b', 'ab', 'abb', 'a$' ]
+\>\>\> const table78 = sutoring.LZ78.constructLZ78Table("abababab$")  
+\>\>\> sutoring.Console.table(table78)  
+\>\>\> const trie78 = sutoring.LZ78.constructLZ78Trie("abababab$")  
+\>\>\> sutoring.Console.graph(trie78)
