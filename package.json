@@ -8,8 +8,7 @@
     },
     "scripts": {
         "typedoc": "node node_modules/typedoc/bin/typedoc --out ./docs/typedoc/ ./src/ --name sutoring --readme readme.md --includeDeclarations --exclude node_modules/typescript/**/*.d.ts -m 'commonjs'",
-        "webpack": "node node_modules/webpack/bin/webpack.js",
-        "gulp": "gulp"
+        "webpack": "node node_modules/webpack/bin/webpack.js"
     },
     "keywords": [
         "sutoring"
