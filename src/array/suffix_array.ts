@@ -1,7 +1,7 @@
 
 //import {LogicGraphTable} from "./graph_table"
 //import { LogicTable, LogicCellLine, LogicCell } from "logic_index"
-import { GTextBoxCSS, LogicTable, LogicCell, LogicTSpan, LogicText, getIndexArrayTableLine, LogicCellLine, buildLogicTable,toLogicCellLine } from "graph-table-svg"
+import { Logics, Objects } from "graph-table-svg"
 import * as LCPArray from "./lcp_array"
 import * as BWT from "../permutations/bwt"
 
@@ -48,23 +48,23 @@ export type SATableOption = { zeroBased?: boolean, withSA?: boolean, withLCP?: b
  * @param cellClass
  * @returns aaaaaaaa
  */
-export function createSuffixArrayTableLine(text: string, zero_based: boolean = true, cellClass? : string | GTextBoxCSS) : LogicCellLine{
+export function createSuffixArrayTableLine(text: string, zero_based: boolean = true, cellClass? : string | Objects.GOptions.GTextBoxCSS) : Logics.LogicCellLine{
     const arr = construct(text, zero_based);
     const name = "SA"
-    return toLogicCellLine(name, arr, cellClass);
+    return Logics.toLogicCellLine(name, arr, cellClass);
 }
 export function createSortedSuffixes(text : string) : string[] {
     const sa = construct(text);
     return sa.map((v) => text.substr(v));
 }
-export function createSortedSuffixesTableLine(text : string, cellClass : string | GTextBoxCSS = {horizontalAnchor: "left"}) : LogicCellLine {
+export function createSortedSuffixesTableLine(text : string, cellClass : string | Objects.GOptions.GTextBoxCSS = {horizontalAnchor: "left"}) : Logics.LogicCellLine {
     const suffixes = createSortedSuffixes(text);
     const name = "Suffix";
-    return toLogicCellLine(name, suffixes, cellClass);
+    return Logics.toLogicCellLine(name, suffixes, cellClass);
 
 }
 
-export function constructSATable(text: string, option: SATableOption = { zeroBased: true, withSA: true, withLCP: false, withBWT: false, withIndex: true }): LogicTable {
+export function constructSATable(text: string, option: SATableOption = { zeroBased: true, withSA: true, withLCP: false, withBWT: false, withIndex: true }): Logics.LogicTable {
     if (option.zeroBased == undefined) option.zeroBased = true;
     if (option.withSA == undefined) option.withSA = true;
     if (option.withLCP == undefined) option.withLCP = false;
@@ -77,10 +77,10 @@ export function constructSATable(text: string, option: SATableOption = { zeroBas
     //const lcpArray = LCPArray.construct(text);
     //const bwt = BWT.construct(text).map((v) => v);
 
-    const arrays: LogicCellLine[] = new Array(0);
+    const arrays: Logics.LogicCellLine[] = new Array(0);
     //arrays.push({ name: "Index", values: indexes });
     if(option.withIndex){
-        arrays.push(getIndexArrayTableLine(text.length, option.zeroBased))
+        arrays.push(Logics.getIndexArrayTableLine(text.length, option.zeroBased))
     }
     if (option.withSA) {
         arrays.push( createSuffixArrayTableLine(text, option.zeroBased) );
@@ -95,7 +95,7 @@ export function constructSATable(text: string, option: SATableOption = { zeroBas
     arrays.push( createSortedSuffixesTableLine(text));
 
 
-    return buildLogicTable(arrays, { isRowLines: false })
+    return Logics.buildLogicTable(arrays, { isRowLines: false })
 
 }
 

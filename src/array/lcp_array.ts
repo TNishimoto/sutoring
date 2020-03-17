@@ -1,7 +1,7 @@
 //import * as LogicGraphTable from "../graph_table"
 import * as SuffixArray from "./suffix_array"
 //import { GTextBoxCSS } from "g_options";
-import { toLogicCellLine, LogicCellLine, GTextBoxCSS } from "graph-table-svg"
+import { Logics, Objects } from "graph-table-svg"
 /**
  * This namespace provides functions for longest common prefix array.
  */
@@ -23,10 +23,10 @@ export function construct(text: string): number[] {
     })
     return lcpArray;
 }
-export function createLCPArrayLine(text: string, cellClass? : string | GTextBoxCSS) : LogicCellLine{
+export function createLCPArrayLine(text: string, cellClass? : string | Objects.GOptions.GTextBoxCSS) : Logics.LogicCellLine{
     const arr = construct(text);
     const name = "LCP"
-    return toLogicCellLine(name, arr, cellClass);
+    return Logics.toLogicCellLine(name, arr, cellClass);
 }
 
 export function constructLCPTable(text: string, option: SuffixArray.SATableOption = { zeroBased: true, withSA: true, withLCP: true, withBWT: false }) {

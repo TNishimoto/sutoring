@@ -16,7 +16,7 @@
     "author": "mklemma",
     "license": "MIT",
     "dependencies": {
-        "graph-table-svg": "0.0.28",
+        "graph-table-svg": "0.0.34",
         "opener": "^1.5.1"
     },
     "devDependencies": {

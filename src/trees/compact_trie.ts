@@ -1,8 +1,8 @@
-import { LogicTree } from "graph-table-svg";
+import { Logics } from "graph-table-svg";
 import * as LCPArray from "../array/lcp_array";
 import * as Trie from "./trie";
 
-export function construct(texts: string[]): LogicTree {
+export function construct(texts: string[]): Logics.LogicTree {
     const root = Trie.construct(texts);
 
     while (true) {
@@ -28,7 +28,7 @@ export function construct(texts: string[]): LogicTree {
 
 
 }
-export function compact(node: LogicTree, parent: LogicTree): boolean {
+export function compact(node: Logics.LogicTree, parent: Logics.LogicTree): boolean {
     if (node.children.length == 1) {
         const p = parent.children.findIndex((v) => { return v == node });
         if (p >= 0) {

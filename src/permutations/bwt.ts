@@ -1,7 +1,8 @@
 //import * as LogicGraphTable from "../graph_table"
-import { GTextBoxCSS, toLogicCellLine, LogicTable, LogicCell, LogicTSpan, LogicText, getIndexArrayTableLine, LogicCellLine, buildLogicTable } from "graph-table-svg"
+import { Logics, Objects } from "graph-table-svg"
 import * as SuffixArray from "../array/suffix_array"
 import * as LCPArray from "../array/lcp_array"
+//import { GObject } from "graph-table-svg/dist/objects";
 
 /**
  * This namespace provides functions for Burrows-Wheeler transform.
@@ -57,14 +58,14 @@ export function createBWTIndexes(text: string, zeroBased : boolean = true): numb
 export function construct(text: string): string {
     return createBWTIndexes(text).map((v) => text[v]).join("");
 }
-export function createBWTTableLine(text: string, cellClass?: string | GTextBoxCSS): LogicCellLine {
+export function createBWTTableLine(text: string, cellClass?: string | Objects.GOptions.GTextBoxCSS): Logics.LogicCellLine {
     const bwt = construct(text);
     const arr = Array.from(Array(text.length).keys()).map((i) => bwt[i]);
     console.log(arr);
     console.log(bwt);
 
     const name = "BWT"
-    return toLogicCellLine(name, arr, cellClass);
+    return Logics.toLogicCellLine(name, arr, cellClass);
 }
 export function createFArray(text: string): string[] {
     return createSortedCircularStrings(text).map((v) => v[0]);
@@ -87,8 +88,8 @@ const bwtColors = ["black", "red", "orange", "blue", "green", "purple", "gray", 
 
 
 
-export function createFArrayLine(text: string, isColored : boolean = false, cellClass: string | GTextBoxCSS = { horizontalAnchor: "center" } ): LogicCellLine {
-    const titleCell = new LogicCell();
+export function createFArrayLine(text: string, isColored : boolean = false, cellClass: string | Objects.GOptions.GTextBoxCSS = { horizontalAnchor: "center" } ): Logics.LogicCellLine {
+    const titleCell = new Logics.LogicCell();
     titleCell.text.textContent = "F";
     titleCell.cellClass = cellClass;
 
@@ -97,7 +98,7 @@ export function createFArrayLine(text: string, isColored : boolean = false, cell
     const csa = createCircularSuffixArray(text);
     const cells = csa.map((v,i) =>{
         const _rank = rank(text, v);
-        const cell = new LogicCell();
+        const cell = new Logics.LogicCell();
         cell.cellClass = cellClass;
         cell.text.textContent = suffixes[i];
         if(isColored){
@@ -109,8 +110,8 @@ export function createFArrayLine(text: string, isColored : boolean = false, cell
     return [titleCell].concat(cells);
 
 }
-export function createLArrayLine(text: string, isColored : boolean = false, cellClass: string | GTextBoxCSS = { horizontalAnchor: "center" } ): LogicCellLine {
-    const titleCell = new LogicCell();
+export function createLArrayLine(text: string, isColored : boolean = false, cellClass: string | Objects.GOptions.GTextBoxCSS = { horizontalAnchor: "center" } ): Logics.LogicCellLine {
+    const titleCell = new Logics.LogicCell();
     titleCell.text.textContent = "L";
     titleCell.cellClass = cellClass;
 
@@ -119,7 +120,7 @@ export function createLArrayLine(text: string, isColored : boolean = false, cell
     const csa = createBWTIndexes(text);
     const cells = csa.map((v,i) =>{
         const _rank = rank(text, v);
-        const cell = new LogicCell();
+        const cell = new Logics.LogicCell();
         cell.cellClass = cellClass;
         cell.text.textContent = suffixes[i];
         if(isColored){
@@ -132,9 +133,9 @@ export function createLArrayLine(text: string, isColored : boolean = false, cell
 
 
 }
-export function createSortedMiddleCircularStringsLine(text: string, isColored : boolean = false, cellClass: string | GTextBoxCSS = { horizontalAnchor: "center" } ): LogicCellLine {
+export function createSortedMiddleCircularStringsLine(text: string, isColored : boolean = false, cellClass: string | Objects.GOptions.GTextBoxCSS = { horizontalAnchor: "center" } ): Logics.LogicCellLine {
     //const r : LogicCellLine = new Array();
-    const titleCell = new LogicCell();
+    const titleCell = new Logics.LogicCell();
     titleCell.text.textContent = "";
     titleCell.cellClass = cellClass;
 
@@ -143,19 +144,19 @@ export function createSortedMiddleCircularStringsLine(text: string, isColored : 
 
     const csa = createCircularSuffixArray(text);
     const cells = csa.map((v,i) =>{
-        const cell = new LogicCell();
+        const cell = new Logics.LogicCell();
         if(isColored){
-            const spans : LogicTSpan[] = new Array();
+            const spans : Logics.LogicTSpan[] = new Array();
             for(let i=1;i<text.length-1;i++){
                 const p = (v + i) % text.length;
                 const _rank = rank(text, p);
-                const span = new LogicTSpan();
+                const span = new Logics.LogicTSpan();
                 span.textContent = text[p];
                 const color = bwtColors[_rank % bwtColors.length];
                 span.style = {fill:color };
                 spans.push(span);                
             }
-            cell.text = new LogicText(spans);    
+            cell.text = new Logics.LogicText(spans);    
         }else{
             cell.text.textContent = suffixes[i];
             cell.cellClass = cellClass;
@@ -178,11 +179,11 @@ export function constructBWTTable2(text: string, isColored : boolean, option: Su
     if (option.withLCP == undefined) option.withLCP = false;
     if (option.withIndex == undefined) option.withIndex = true;
 
-    const arrays: LogicCellLine[] = new Array(0);
+    const arrays: Logics.LogicCellLine[] = new Array(0);
     //arrays.push({ name: "Index", values: indexes });
     
     if(option.withIndex){
-        arrays.push(getIndexArrayTableLine(text.length, option.zeroBased));
+        arrays.push(Logics.getIndexArrayTableLine(text.length, option.zeroBased));
     }
     if (option.withSA) {
         arrays.push( SuffixArray.createSuffixArrayTableLine(text, option.zeroBased) );
@@ -196,5 +197,5 @@ export function constructBWTTable2(text: string, isColored : boolean, option: Su
     arrays.push(createSortedMiddleCircularStringsLine(text, isColored));
     arrays.push(createLArrayLine(text, isColored));
 
-    return buildLogicTable(arrays, { isRowLines: false })
+    return Logics.buildLogicTable(arrays, { isRowLines: false })
 }

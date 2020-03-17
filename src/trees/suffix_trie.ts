@@ -1,4 +1,4 @@
-import { LogicTree } from "graph-table-svg";
+import { Logics } from "graph-table-svg";
 import * as Trie from "./trie";
 export function enumerateSuffixes(text: string): string[] {
     const texts: string[] = new Array();
@@ -8,7 +8,7 @@ export function enumerateSuffixes(text: string): string[] {
     return texts;
 
 }
-export function construct(text: string): LogicTree {
+export function construct(text: string): Logics.LogicTree {
     return Trie.construct(enumerateSuffixes(text));
 
 

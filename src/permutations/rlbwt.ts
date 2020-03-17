@@ -1,5 +1,5 @@
 import * as BWT from "./bwt"
-import { GTextBoxCSS, LogicTable, LogicCell, LogicTSpan, LogicText, getIndexArrayTableLine, LogicCellLine, buildLogicTable } from "graph-table-svg"
+import { Logics, Objects } from "graph-table-svg"
 import * as SuffixArray from "../array/suffix_array"
 import * as LCPArray from "../array/lcp_array"
 
@@ -83,7 +83,7 @@ export function createFRunStartPositions(text: string){
     return r;
 }
 
-export function createLArrayLine(text: string, isColored : boolean = false, cellClass: string | GTextBoxCSS = { horizontalAnchor: "center" } ): LogicCellLine {
+export function createLArrayLine(text: string, isColored : boolean = false, cellClass: string | Objects.GOptions.GTextBoxCSS = { horizontalAnchor: "center" } ): Logics.LogicCellLine {
     const line = BWT.createLArrayLine(text, isColored, cellClass);
     const lruns = createLRunStartingPositions(text);
     lruns.push(text.length);
@@ -99,7 +99,7 @@ export function createLArrayLine(text: string, isColored : boolean = false, cell
 
     return line;
 }
-export function createFArrayLine(text: string, isColored : boolean = false, cellClass: string | GTextBoxCSS = { horizontalAnchor: "center" } ): LogicCellLine {
+export function createFArrayLine(text: string, isColored : boolean = false, cellClass: string | Objects.GOptions.GTextBoxCSS = { horizontalAnchor: "center" } ): Logics.LogicCellLine {
     const line = BWT.createFArrayLine(text, isColored, cellClass);
     const fruns = createFRunStartPositions(text);
     fruns.push(text.length);
@@ -124,10 +124,10 @@ export function constructRLBWTTable(text: string, isColored : boolean, option: S
     if (option.withLCP == undefined) option.withLCP = false;
     if (option.withIndex == undefined) option.withIndex = true;
 
-    const arrays: LogicCellLine[] = new Array(0);
+    const arrays: Logics.LogicCellLine[] = new Array(0);
     //arrays.push({ name: "Index", values: indexes });
     if(option.withIndex){
-        arrays.push(getIndexArrayTableLine(text.length, option.zeroBased));
+        arrays.push(Logics.getIndexArrayTableLine(text.length, option.zeroBased));
     }
     if (option.withSA) {
         arrays.push( SuffixArray.createSuffixArrayTableLine(text, option.zeroBased) );
@@ -140,6 +140,6 @@ export function constructRLBWTTable(text: string, isColored : boolean, option: S
     arrays.push(BWT.createSortedMiddleCircularStringsLine(text, isColored));
     arrays.push(createLArrayLine(text, isColored));
 
-    return buildLogicTable(arrays, { isRowLines: false })
+    return Logics.buildLogicTable(arrays, { isRowLines: false })
     
 }

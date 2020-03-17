@@ -1,6 +1,6 @@
 
 
-import { LogicTable,  getIndexArrayTableLine, LogicTree, toLogicCellLine, buildLogicTable } from "graph-table-svg"
+import { Logics } from "graph-table-svg"
 /**
  * This namespace provides functions for Lempel-Ziv 78 compression.
  */
@@ -60,12 +60,12 @@ export function compress(text: string): LZ78Factor[] {
     return p[0];
 }
 
-export function constructLZ78Table(text: string): LogicTable {
+export function constructLZ78Table(text: string): Logics.LogicTable {
     const comp = compress(text);
-    const indexLine = getIndexArrayTableLine(comp.length);
-    const idLine = toLogicCellLine("id", comp.map((v, i) => v.id));
-    const characterLine = toLogicCellLine("character", comp.map((v, i) => v.nextChar))
-    return buildLogicTable(
+    const indexLine = Logics.getIndexArrayTableLine(comp.length);
+    const idLine = Logics.toLogicCellLine("id", comp.map((v, i) => v.id));
+    const characterLine = Logics.toLogicCellLine("character", comp.map((v, i) => v.nextChar))
+    return Logics.buildLogicTable(
         [indexLine, idLine, characterLine]
     , { isRowLines: true })
     /*
@@ -77,10 +77,10 @@ export function constructLZ78Table(text: string): LogicTable {
     return table;
     */
 }
-export function constructLZ78Trie(text: string): LogicTree {
+export function constructLZ78Trie(text: string): Logics.LogicTree {
     const nodes = preprocess(text)[1];
     //const graph = new Tree();            
-    const graphNodes = nodes.map((v) => new LogicTree());
+    const graphNodes = nodes.map((v) => new Logics.LogicTree());
     //graph.root = graphNodes[0];
     nodes.forEach((v, i) => {
         graphNodes[v.id].vertexOption.text = (v.id).toString();

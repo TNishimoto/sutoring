@@ -1,8 +1,8 @@
-import { LogicTree } from "graph-table-svg";
+import { Logics } from "graph-table-svg";
 import * as CompactTrie from "./compact_trie";
 import * as SuffixTrie from "./suffix_trie";
 
-export function construct(text: string): LogicTree {
+export function construct(text: string): Logics.LogicTree {
     const tree = CompactTrie.construct(SuffixTrie.enumerateSuffixes(text));
     return tree;
 

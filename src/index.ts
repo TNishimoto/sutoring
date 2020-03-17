@@ -33,6 +33,7 @@ export{
     //LogicTable, LogicTree, Console, GObject, GPathTextBox,
     Console,
     LZ78, LZ77WithSelfReference, 
+    
     SuffixArray, MinimalUniqueSubstrings, DistinctSubstrings, MaximalRepeats, MinimalRepeats,
     Trie, SuffixTrie, SuffixTree, 
     BWT, RLBWT, SAonRLBWT, Debug,LCPArray, 
