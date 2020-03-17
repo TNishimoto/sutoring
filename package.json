@@ -7,7 +7,7 @@
         "sutoring": "./bin/repl.js"
     },
     "scripts": {
-        "typedoc": "node node_modules/typedoc/bin/typedoc --out ./docs/typedoc/ ./src/ --name sutoring --readme readme.md --includeDeclarations --exclude node_modules/typescript/**/*.d.ts -m 'commonjs'",
+        "typedoc": "node node_modules/typedoc/bin/typedoc --out ./docs/typedoc/ ./src/ --name sutoring --readme readme.md --includeDeclarations --exclude node_modules/typescript/**/*.d.ts --exclude node_modules/@types/**/*.d.ts -m 'commonjs'",
         "webpack": "node node_modules/webpack/bin/webpack.js"
     },
     "keywords": [
@@ -16,12 +16,10 @@
     "author": "mklemma",
     "license": "MIT",
     "dependencies": {
-        "graph-table-svg": "0.0.36",
+        "graph-table-svg": "0.0.37",
         "opener": "^1.5.1"
     },
     "devDependencies": {
-        "gulp": "^4.0.2",
-        "gulp-typedoc": "^2.2.4",
         "ts-loader": "^6.2.1",
         "typedoc": "^0.17.0",
         "typescript": "^3.8.3",

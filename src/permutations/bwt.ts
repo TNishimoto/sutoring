@@ -1,8 +1,7 @@
-//import * as LogicGraphTable from "../graph_table"
 import { Logics, Objects } from "graph-table-svg"
+import { Logics, Objects } from "graph-table-svg/logics/index"
 import * as SuffixArray from "../array/suffix_array"
 import * as LCPArray from "../array/lcp_array"
-//import { GObject } from "graph-table-svg/dist/objects";
 
 /**
  * This namespace provides functions for Burrows-Wheeler transform.
