@@ -3,6 +3,12 @@
 
 export type LZ77Factor = { position: number, length: number } | string;
 
+/**
+ * Return the length of the longest common prefix of the two prefixes $text[pos1..]$ and $text[pos2..]$.
+ * @param text Input text.
+ * @param pos1 The starting position of the first prefix.
+ * @param pos2 The starting position of the second prefix.
+ */
 function lce(text: string, pos1: number, pos2: number): number {
     let t = 0;
     while (true) {
@@ -20,7 +26,11 @@ function lce(text: string, pos1: number, pos2: number): number {
 
     }
 }
-
+/**
+ * Compute the LZ77 factor $F$ starting at position $pos$ using string $text[1..pos + |F|-1]$, where $|F|$ is the length of the factor.
+ * @param text Input string.
+ * @param pos Input position.
+ */
 function find(text: string, pos: number): LZ77Factor {
     let len = 0;
     let referencePos = -1;
