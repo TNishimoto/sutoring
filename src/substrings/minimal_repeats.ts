@@ -1,10 +1,11 @@
 import * as DistinctSubstrings from "./distinct_substrings"
 import * as MaximalRepeats from "./maximal_repeats"
+import {getAlphabet} from "../string_functions"
 
 export function enumerate(text: string) {
     const map = DistinctSubstrings.createOccurrenceMap(text);
     const substrSet: Set<string> = new Set();
-    const characters = MaximalRepeats.getAlphabet(text);
+    const characters = getAlphabet(text);
 
     map.forEach((occs, substr) => {
         let bLeft = true;

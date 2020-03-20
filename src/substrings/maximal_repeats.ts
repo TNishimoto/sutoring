@@ -1,13 +1,6 @@
 import * as DistinctSubstrings from "./distinct_substrings"
+import {getAlphabet} from "../string_functions"
 
-export function getAlphabet(text: string): Set<string> {
-    const checker: Set<string> = new Set();
-    for (let i = 0; i < text.length; i++) {
-        checker.add(text[i]);
-    }
-    return checker;
-
-}
 export function enumerate(text: string) {
     const map = DistinctSubstrings.createOccurrenceMap(text);
     const substrSet: Set<string> = new Set();
