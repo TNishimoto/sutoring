@@ -1,7 +1,6 @@
 import { Logics, Objects } from "graph-table-svg"
-import { Logics, Objects } from "graph-table-svg/logics/index"
-import * as SuffixArray from "../array/suffix_array"
-import * as LCPArray from "../array/lcp_array"
+import * as SuffixArray from "../arrays/suffix_array"
+import * as LCPArray from "../arrays/lcp_array"
 
 /**
  * This namespace provides functions for Burrows-Wheeler transform.

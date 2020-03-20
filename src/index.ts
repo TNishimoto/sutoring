@@ -1,41 +1,20 @@
 
 
 import { Console } from "graph-table-svg"
-
-//import * as LogicGraphTable from "./graph_table"
-import  {LZ77WithSelfReference, LZ78}from "./factorizations/index"
-import * as SuffixArray from "./array/suffix_array"
-import * as LCPArray from "./array/lcp_array"
-
-import * as MinimalUniqueSubstrings from "./substrings/minimal_unique_substrings"
-import * as DistinctSubstrings from "./substrings/distinct_substrings"
-import * as MaximalRepeats from "./substrings/maximal_repeats"
-import * as MinimalRepeats from "./substrings/minimal_repeats"
-
-import { FibonacciSequence, ThueMorseSequence} from "./sequences/index"
-
-
-
-import * as Trie from "./trees/trie"
-import * as SuffixTrie from "./trees/suffix_trie"
-import * as SuffixTree from "./trees/suffix_tree"
-import * as BWT from "./permutations/bwt"
-import * as RLBWT from "./permutations/rlbwt"
-import * as SAonRLBWT from "./permutations/sa_on_rlbwt"
 import * as Debug from "./debug/debug"
 
-//import { GGraph } from "ggraph"
+import * as Arrays from "./arrays/index"
+import * as Sequences from "./sequences/index"
+import * as Permutations from "./permutations/index"
+import * as Factorizations from "./factorizations/index"
+import * as Trees from "./trees/index"
+import * as Substrings from "./substrings/index"
 
 
 export{
     //Common, GUI, Rectangle, GObjectAttributes, SVG, HTMLFunctions, CustomAttributeNames, 
     //ShapeObjectType, openSVG, openHTML, openCustomElement, openSVGFunctions, lazyOpenSVG,
     //LogicTable, LogicTree, Console, GObject, GPathTextBox,
-    Console,
-    LZ78, LZ77WithSelfReference, 
-    
-    SuffixArray, MinimalUniqueSubstrings, DistinctSubstrings, MaximalRepeats, MinimalRepeats,
-    Trie, SuffixTrie, SuffixTree, 
-    BWT, RLBWT, SAonRLBWT, Debug,LCPArray, 
-    FibonacciSequence, ThueMorseSequence
+    Console, Debug, 
+    Factorizations, Arrays, Sequences, Permutations, Trees, Substrings
 }

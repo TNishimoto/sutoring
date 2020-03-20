@@ -8,14 +8,14 @@
     <script>
         function constructButton() {
             const text = document.getElementById("text").value;
-            const tree = Sutoring.SuffixTrie.construct(text);
+            const tree = Sutoring.Trees.SuffixTrie.construct(text);
             Sutoring.Console.graph(tree, `Suffix Trie(${text})`);
 
         }
 
         function constructSuffixTreeButton() {
             const text = document.getElementById("text").value;
-            const tree = Sutoring.SuffixTree.construct(text);
+            const tree = Sutoring.Trees.SuffixTree.construct(text);
             Sutoring.Console.graph(tree, `Suffix Tree(${text})`);
         }
     </script>

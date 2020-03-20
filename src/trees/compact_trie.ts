@@ -1,5 +1,5 @@
 import { Logics } from "graph-table-svg";
-import * as LCPArray from "../array/lcp_array";
+import * as LCPArray from "../arrays/lcp_array";
 import * as Trie from "./trie";
 
 export function construct(texts: string[]): Logics.LogicTree {

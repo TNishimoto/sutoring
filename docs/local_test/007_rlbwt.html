@@ -14,7 +14,7 @@
             const withLCPFlag = document.getElementById("withLCP").checked;
             const withIndexFlag = document.getElementById("withIndex").checked;
 
-            const table = Sutoring.RLBWT.constructRLBWTTable(text, true, {
+            const table = Sutoring.Permutations.RLBWT.constructRLBWTTable(text, true, {
                 zeroBased: zeroBasedIndexFlag,
                 withBWT: withBWTFlag,
                 withLCP: withLCPFlag,

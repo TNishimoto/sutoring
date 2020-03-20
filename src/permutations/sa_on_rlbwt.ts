@@ -1,5 +1,5 @@
 import * as BWT from "./bwt"
-import * as LCP from "../array/lcp_array"
+import * as LCP from "../arrays/lcp_array"
 
 import * as RLBWT from "./rlbwt"
 

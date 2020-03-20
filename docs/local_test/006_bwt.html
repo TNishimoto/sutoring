@@ -14,7 +14,7 @@
             const withLCPFlag = document.getElementById("withLCP").checked;
             const withIndexFlag = document.getElementById("withIndex").checked;
 
-            const table = Sutoring.BWT.constructBWTTable2(text, true, {
+            const table = Sutoring.Permutations.BWT.constructBWTTable2(text, true, {
                 zeroBased: zeroBasedIndexFlag,
                 withBWT: withBWTFlag,
                 withLCP: withLCPFlag,
@@ -26,7 +26,7 @@
 
         function constructButton() {
             const text = document.getElementById("text").value;
-            const bwt = Sutoring.BWT.construct(text);
+            const bwt = Sutoring.Permutations.BWT.construct(text);
             Sutoring.Console.textarea(bwt, `BWT(${text})`);
         }
     </script>

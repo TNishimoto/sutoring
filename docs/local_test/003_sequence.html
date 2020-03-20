@@ -9,14 +9,14 @@
         function createFibonacciButton() {
             const length = parseInt(document.getElementById("text").value);
             console.log(length);
-            const str = Sutoring.FibonacciSequence.create(length);
+            const str = Sutoring.Sequences.FibonacciSequence.create(length);
             Sutoring.Console.textarea(str, `Fibonacci Sequence(${length})`);
         }
 
         function createThueMorseButton() {
             const length = parseInt(document.getElementById("text").value);
             console.log(length);
-            const str = Sutoring.ThueMorseSequence.create(length);
+            const str = Sutoring.Sequences.ThueMorseSequence.create(length);
             Sutoring.Console.textarea(str, `Thue-Morse Sequence(${length})`);
         }
     </script>
