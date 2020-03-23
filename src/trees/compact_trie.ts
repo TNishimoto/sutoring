@@ -33,9 +33,9 @@ export function compact(node: Logics.LogicTree, parent: Logics.LogicTree): boole
         const p = parent.children.findIndex((v) => { return v == node });
         if (p >= 0) {
             const newChild = node.children[0]!;
-            const newText = node.textContent + newChild.textContent;
+            const newText = node.edgeTextContent + newChild.edgeTextContent;
             parent.children[p] = newChild;
-            newChild.textContent = newText;
+            newChild.edgeTextContent = newText;
             return true;
         } else {
             throw Error("error");

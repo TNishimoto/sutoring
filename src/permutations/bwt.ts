@@ -1,4 +1,4 @@
-import { Logics, Objects } from "graph-table-svg"
+import { Logics, Objects, Common } from "graph-table-svg"
 import * as SuffixArray from "../arrays/suffix_array"
 import * as LCPArray from "../arrays/lcp_array"
 
@@ -56,14 +56,14 @@ export function createBWTIndexes(text: string, zeroBased : boolean = true): numb
 export function construct(text: string): string {
     return createBWTIndexes(text).map((v) => text[v]).join("");
 }
-export function createBWTTableLine(text: string, cellClass?: string | Objects.GOptions.GTextBoxCSS): Logics.LogicCellLine {
+export function createBWTTableLine(text: string, cellClass: string | Objects.GOptions.GTextBoxCSS  = Common.DefaultClassNames.defaultCellClass): Logics.LogicCellLine {
     const bwt = construct(text);
     const arr = Array.from(Array(text.length).keys()).map((i) => bwt[i]);
     console.log(arr);
     console.log(bwt);
 
     const name = "BWT"
-    return Logics.toLogicCellLine(name, arr, cellClass);
+    return Logics.toLogicCellLine(name, arr, {class:cellClass});
 }
 export function createFArray(text: string): string[] {
     return createSortedCircularStrings(text).map((v) => v[0]);
@@ -89,7 +89,7 @@ const bwtColors = ["black", "red", "orange", "blue", "green", "purple", "gray", 
 export function createFArrayLine(text: string, isColored : boolean = false, cellClass: string | Objects.GOptions.GTextBoxCSS = { horizontalAnchor: "center" } ): Logics.LogicCellLine {
     const titleCell = new Logics.LogicCell();
     titleCell.text.textContent = "F";
-    titleCell.cellClass = cellClass;
+    titleCell.svgGroupOption.class = cellClass;
 
     const suffixes = createFArray(text);
     //const name = "F";
@@ -97,7 +97,7 @@ export function createFArrayLine(text: string, isColored : boolean = false, cell
     const cells = csa.map((v,i) =>{
         const _rank = rank(text, v);
         const cell = new Logics.LogicCell();
-        cell.cellClass = cellClass;
+        cell.svgGroupOption.class = cellClass;
         cell.text.textContent = suffixes[i];
         if(isColored){
             const color = bwtColors[_rank % bwtColors.length];
@@ -111,7 +111,7 @@ export function createFArrayLine(text: string, isColored : boolean = false, cell
 export function createLArrayLine(text: string, isColored : boolean = false, cellClass: string | Objects.GOptions.GTextBoxCSS = { horizontalAnchor: "center" } ): Logics.LogicCellLine {
     const titleCell = new Logics.LogicCell();
     titleCell.text.textContent = "L";
-    titleCell.cellClass = cellClass;
+    titleCell.svgGroupOption.class = cellClass;
 
     const suffixes = createLArray(text);
 
@@ -119,7 +119,7 @@ export function createLArrayLine(text: string, isColored : boolean = false, cell
     const cells = csa.map((v,i) =>{
         const _rank = rank(text, v);
         const cell = new Logics.LogicCell();
-        cell.cellClass = cellClass;
+        cell.svgGroupOption.class = cellClass;
         cell.text.textContent = suffixes[i];
         if(isColored){
             const color = bwtColors[_rank % bwtColors.length];
@@ -135,7 +135,7 @@ export function createSortedMiddleCircularStringsLine(text: string, isColored : 
     //const r : LogicCellLine = new Array();
     const titleCell = new Logics.LogicCell();
     titleCell.text.textContent = "";
-    titleCell.cellClass = cellClass;
+    titleCell.svgGroupOption.class = cellClass;
 
 
     const suffixes = createSortedMiddleCircularStrings(text);
@@ -157,7 +157,7 @@ export function createSortedMiddleCircularStringsLine(text: string, isColored : 
             cell.text = new Logics.LogicText(spans);    
         }else{
             cell.text.textContent = suffixes[i];
-            cell.cellClass = cellClass;
+            cell.svgGroupOption.class = cellClass;
         }
         return cell;
     })

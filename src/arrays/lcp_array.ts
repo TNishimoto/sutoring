@@ -26,7 +26,11 @@ export function construct(text: string): number[] {
 export function createLCPArrayLine(text: string, cellClass? : string | Objects.GOptions.GTextBoxCSS) : Logics.LogicCellLine{
     const arr = construct(text);
     const name = "LCP"
-    return Logics.toLogicCellLine(name, arr, cellClass);
+    if(cellClass === undefined){
+        return Logics.toLogicCellLine(name, arr);
+    }else{
+        return Logics.toLogicCellLine(name, arr, { class:cellClass});
+    }
 }
 
 export function constructLCPTable(text: string, option: SuffixArray.SATableOption = { zeroBased: true, withSA: true, withLCP: true, withBWT: false }) {

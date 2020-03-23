@@ -92,7 +92,7 @@ export function createLArrayLine(text: string, isColored : boolean = false, cell
         const begin = lruns[i];
         const end = lruns[i+1]-1;
         for(let j=begin;j < end;j++){
-            line[j+1].bottomBorderClass = null;
+            line[j+1].bottomBorderOption.class = null;
         }
 
     }
@@ -109,7 +109,7 @@ export function createFArrayLine(text: string, isColored : boolean = false, cell
         const begin = fruns[i];
         const end = fruns[i+1]-1;
         for(let j=begin;j < end;j++){
-            line[j+1].bottomBorderClass = null;
+            line[j+1].bottomBorderOption.class = null;
         }
 
     }

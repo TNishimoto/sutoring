@@ -1,7 +1,7 @@
 
 //import {LogicGraphTable} from "./graph_table"
 //import { LogicTable, LogicCellLine, LogicCell } from "logic_index"
-import { Logics, Objects } from "graph-table-svg"
+import { Logics, Objects, Common } from "graph-table-svg"
 import * as LCPArray from "./lcp_array"
 import * as BWT from "../permutations/bwt"
 
@@ -48,10 +48,10 @@ export type SATableOption = { zeroBased?: boolean, withSA?: boolean, withLCP?: b
  * @param cellClass
  * @returns aaaaaaaa
  */
-export function createSuffixArrayTableLine(text: string, zero_based: boolean = true, cellClass? : string | Objects.GOptions.GTextBoxCSS) : Logics.LogicCellLine{
+export function createSuffixArrayTableLine(text: string, zero_based: boolean = true, cellClass : string | Objects.GOptions.GTextBoxCSS = Common.DefaultClassNames.defaultCellClass) : Logics.LogicCellLine{
     const arr = construct(text, zero_based);
     const name = "SA"
-    return Logics.toLogicCellLine(name, arr, cellClass);
+    return Logics.toLogicCellLine(name, arr, {class : cellClass});
 }
 export function createSortedSuffixes(text : string) : string[] {
     const sa = construct(text);
@@ -60,7 +60,7 @@ export function createSortedSuffixes(text : string) : string[] {
 export function createSortedSuffixesTableLine(text : string, cellClass : string | Objects.GOptions.GTextBoxCSS = {horizontalAnchor: "left"}) : Logics.LogicCellLine {
     const suffixes = createSortedSuffixes(text);
     const name = "Suffix";
-    return Logics.toLogicCellLine(name, suffixes, cellClass);
+    return Logics.toLogicCellLine(name, suffixes, {class : cellClass});
 
 }
 
