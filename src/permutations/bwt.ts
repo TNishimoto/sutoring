@@ -89,7 +89,7 @@ const bwtColors = ["black", "red", "orange", "blue", "green", "purple", "gray", 
 export function createFArrayLine(text: string, isColored : boolean = false, cellClass: string | Objects.GOptions.GTextBoxCSS = { horizontalAnchor: "center" } ): Logics.LogicCellLine {
     const titleCell = new Logics.LogicCell();
     titleCell.text.textContent = "F";
-    titleCell.svgGroupOption.class = cellClass;
+    titleCell.groupOption.class = cellClass;
 
     const suffixes = createFArray(text);
     //const name = "F";
@@ -97,7 +97,7 @@ export function createFArrayLine(text: string, isColored : boolean = false, cell
     const cells = csa.map((v,i) =>{
         const _rank = rank(text, v);
         const cell = new Logics.LogicCell();
-        cell.svgGroupOption.class = cellClass;
+        cell.groupOption.class = cellClass;
         cell.text.textContent = suffixes[i];
         if(isColored){
             const color = bwtColors[_rank % bwtColors.length];
@@ -111,7 +111,7 @@ export function createFArrayLine(text: string, isColored : boolean = false, cell
 export function createLArrayLine(text: string, isColored : boolean = false, cellClass: string | Objects.GOptions.GTextBoxCSS = { horizontalAnchor: "center" } ): Logics.LogicCellLine {
     const titleCell = new Logics.LogicCell();
     titleCell.text.textContent = "L";
-    titleCell.svgGroupOption.class = cellClass;
+    titleCell.groupOption.class = cellClass;
 
     const suffixes = createLArray(text);
 
@@ -119,7 +119,7 @@ export function createLArrayLine(text: string, isColored : boolean = false, cell
     const cells = csa.map((v,i) =>{
         const _rank = rank(text, v);
         const cell = new Logics.LogicCell();
-        cell.svgGroupOption.class = cellClass;
+        cell.groupOption.class = cellClass;
         cell.text.textContent = suffixes[i];
         if(isColored){
             const color = bwtColors[_rank % bwtColors.length];
@@ -135,7 +135,7 @@ export function createSortedMiddleCircularStringsLine(text: string, isColored : 
     //const r : LogicCellLine = new Array();
     const titleCell = new Logics.LogicCell();
     titleCell.text.textContent = "";
-    titleCell.svgGroupOption.class = cellClass;
+    titleCell.groupOption.class = cellClass;
 
 
     const suffixes = createSortedMiddleCircularStrings(text);
@@ -157,7 +157,7 @@ export function createSortedMiddleCircularStringsLine(text: string, isColored : 
             cell.text = new Logics.LogicText(spans);    
         }else{
             cell.text.textContent = suffixes[i];
-            cell.svgGroupOption.class = cellClass;
+            cell.groupOption.class = cellClass;
         }
         return cell;
     })

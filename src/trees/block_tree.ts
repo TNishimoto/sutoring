@@ -94,14 +94,16 @@ export function draw(graph: Objects.GGraph) {
     console.log("hello")
 }
 export function convert(blocktree: BlockTreeInfo): Logics.LogicTree {
-    const recFun = (v: BlockTreeNode) => {
+    const recFun : (v : BlockTreeNode) => Logics.LogicTree = (v: BlockTreeNode) => {
         const node = new Logics.LogicTree();
         node.vertexShape = Common.Enums.ShapeObjectType.Rect;
         node.vertexTextContent = blocktree.text.substr(v.position, v.length);
         node.vertexShape = "g-table";
         node.table = new Logics.LogicTable({ columnCount: node.vertexTextContent.length, rowCount: 1 });
+        
         for (let i = 0; i < node.vertexTextContent.length; i++) {
             node.table.cells[0][i].text.textContent = node.vertexTextContent[i];
+            node.table.cells[0][i].groupOption.class = {paddingLeft : 0, paddingRight : 0}
             if(i < node.vertexTextContent.length-1){
                 node.table.cells[0][i].rightBorderOption.style = { stroke : "transparent"}
             }
@@ -123,7 +125,7 @@ export function convert(blocktree: BlockTreeInfo): Logics.LogicTree {
         }
         return node;
     }
-    const tree = recFun(blocktree.root);
+    const tree : Logics.LogicTree = recFun(blocktree.root);
     //tree.drawingFunction = 
     tree.graphOption.relocateStyle = undefined;
     tree.graphOption.drawingFunction = { url: getLibPath(), functionName: "Sutoring.Trees.BlockTree.draw", drawingFunction: null }
