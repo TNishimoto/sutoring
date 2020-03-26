@@ -66,19 +66,23 @@ function palse(root: Objects.GVertex) {
         if (tree.children.length == 0) {
 
         } else if (tree.children.length == 1) {
-            w.cx = tree.children[0].cx;
+            w.x = 0;
         } else {
             let px = 0;
             w.children.forEach((q, i) => {
                 const subtree = q.createVirtualTree();
                 subtree.setRegionXYLocation(px, q.y);
+
                 if (i < w.children.length - 1) {
-                    px += subtree.region().width;
+                    px += q.getVirtualWidth();
                 } else {
-                    px += subtree.region().width;
+                    px += q.getVirtualWidth();
                 }
+                
             })
-            w.cx = px / 2;
+            w.x = 0;
+
+            //w.cx = px / 2;
         }
     })
 
@@ -103,7 +107,7 @@ export function convert(blocktree: BlockTreeInfo): Logics.LogicTree {
         
         for (let i = 0; i < node.vertexTextContent.length; i++) {
             node.table.cells[0][i].text.textContent = node.vertexTextContent[i];
-            node.table.cells[0][i].groupOption.class = {paddingLeft : 0, paddingRight : 0}
+            node.table.cells[0][i].groupOption.class = {paddingLeft : 5, paddingRight : 5}
             if(i < node.vertexTextContent.length-1){
                 node.table.cells[0][i].rightBorderOption.style = { stroke : "transparent"}
             }
