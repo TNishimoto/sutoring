@@ -1,22 +1,22 @@
-const sutoring = require("../dist/index");
+import * as Sutoring from "../../dist/index"
 
 
 for (let i = 1; i <= 9; i++) {
-    const seq = sutoring.ThueMorseSequence.createIthSequence(i);
+    const seq = Sutoring.Sequences.ThueMorseSequence.createIthSequence(i);
     console.log(`${i}-th True-Morse sequence: ${seq}`)
 }
 
 for (let i = 1; i <= 9; i++) {
-    const seq = sutoring.ThueMorseSequence.create(i * 10);
+    const seq = Sutoring.Sequences.ThueMorseSequence.create(i * 10);
     console.log(`True-Morse sequence of length ${i*10}: ${seq}`)
 }
 
 for (let i = 1; i <= 9; i++) {
-    const seq = sutoring.FibonacciSequence.createIthSequence(i);
+    const seq = Sutoring.Sequences.FibonacciSequence.createIthSequence(i);
     console.log(`${i}-th Fibonacci sequence: ${seq}`)
 }
 
 for (let i = 1; i <= 9; i++) {
-    const seq = sutoring.FibonacciSequence.create(i * 10);
+    const seq = Sutoring.Sequences.FibonacciSequence.create(i * 10);
     console.log(`Fibonacci sequence of length ${i*10}: ${seq}`)
 }

@@ -8,7 +8,7 @@
     },
     "scripts": {
         "typedoc": "node node_modules/typedoc/bin/typedoc --out ./docs/typedoc/ ./src/ --name sutoring --readme readme.md --includeDeclarations --exclude node_modules/typescript/**/*.d.ts --exclude node_modules/@types/**/*.d.ts -m commonjs",
-        "compile": "tsc -p . &&  node node_modules/webpack/bin/webpack.js"
+        "compile": "tsc -p . && tsc -p ./examples/ts && node node_modules/webpack/bin/webpack.js"
     },
     "keywords": [
         "sutoring"
@@ -16,7 +16,7 @@
     "author": "mklemma",
     "license": "MIT",
     "dependencies": {
-        "graph-table-svg": "0.0.56",
+        "graph-table-svg": "0.0.60",
         "opener": "^1.5.1"
     },
     "devDependencies": {

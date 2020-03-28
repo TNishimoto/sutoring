@@ -80,11 +80,16 @@ export function constructLZ78Table(text: string): Logics.LogicTable {
 export function constructLZ78Trie(text: string): Logics.LogicTree {
     const nodes = preprocess(text)[1];
     //const graph = new Tree();            
-    const graphNodes = nodes.map((v) => new Logics.LogicTree());
+    const graphNodes = nodes.map((v) => new Logics.LogicTreeNode());
     //graph.root = graphNodes[0];
     nodes.forEach((v, i) => {
-        graphNodes[v.id].vertexOption.text = (v.id).toString();
-        graphNodes[v.id].vertexOption.textClass = { fontSize: "18px" }
+        const graphNode = graphNodes[v.id];
+        const shape = graphNode.shapeObject;
+        if(shape instanceof Logics.LogicBasicShape){
+            shape.textContent = (v.id).toString();
+            shape.option.textClass = { fontSize: "18px" }
+    
+        } 
 
         v.children.forEach((value, key) => {
 
@@ -99,7 +104,9 @@ export function constructLZ78Trie(text: string): Logics.LogicTree {
             //graph.edges.push(e);
         })
     })
-    return graphNodes[0];
+    const tree = new Logics.LogicTree();
+    tree.root = graphNodes[0];
+    return tree;
 }
 
 //}

@@ -1,5 +1,7 @@
 
 import { Logics, Common, Objects } from "graph-table-svg";
+import { ShapeObjectType } from "graph-table-svg/dist/common/enums";
+import { GObject, GVertex, GTable } from "graph-table-svg/dist/objects";
 //import { GVertex } from "graph-table-svg/dist/objects";
 //import { LogicTable } from "graph-table-svg";
 
@@ -11,11 +13,18 @@ export type BlockTreeInfo = {
 }
 export type BlockTreeNode = {
     children: BlockTreeNode[];
-    reference: { node: BlockTreeNode, offset: number } | null;
+    reference: { position : number, offset : number} | null;
     height: number;
     position: number;
     length: number
 }
+/*
+export type BlockTreeNodeInfoForLogicNode = {
+    reference: number | null;
+    position: number;
+    length: number
+}
+*/
 function getLibPath(): string {
     const env = process.env
     if (env.GTS_DEBUG == "TRUE" && env.GTS_SPATH === undefined) {
@@ -58,13 +67,19 @@ function depthLeftToRightOrder(root: Objects.GVertex): Objects.GVertex[] {
 }
 
 function palse(root: Objects.GVertex) {
+    const nodeMap : Map<string, GVertex> = new Map();
     depthLeftToRightOrder(root).forEach((w) => {
         const tree = w.createVirtualTree();
         const depth1 = depth(w);
         w.y = depth1 * 50;
         w.x = 0;
-        if (tree.children.length == 0) {
+        const type = w.svgGroup.getAttribute("data-bt-type")!;
+        if(type == "node"){
+            nodeMap.set(`${w.svgGroup.getAttribute("data-bt-position")!}_${w.svgGroup.getAttribute("data-bt-height")!}`, w);
+            console.log("add" + `${w.svgGroup.getAttribute("data-bt-position")!}_${w.svgGroup.getAttribute("data-bt-height")!}`)
+        }
 
+        if (tree.children.length == 0) {
         } else if (tree.children.length == 1) {
             w.x = 0;
         } else {
@@ -86,6 +101,21 @@ function palse(root: Objects.GVertex) {
         }
     })
 
+    depthLeftToRightOrder(root).forEach((w) => {
+        const type = w.svgGroup.getAttribute("data-bt-type")!;
+        if(type == "referrence"){
+            const position = w.svgGroup.getAttribute("data-bt-position")!;
+            const offset = Number.parseInt(w.svgGroup.getAttribute("data-bt-offset")!);
+            const height = w.parent!.svgGroup.getAttribute("data-bt-height")
+            console.log("_" + `${position}_${height}`)
+            const refNode = <GTable>nodeMap.get(`${position}_${height}`)!;
+            const x = refNode.x + refNode.cells[0][offset].x;
+            const y = refNode.y + refNode.getRegion().height + 25;
+            w.x = x;
+            w.y = y;
+        }
+
+    })
 
 
 
@@ -98,26 +128,36 @@ export function draw(graph: Objects.GGraph) {
     console.log("hello")
 }
 export function convert(blocktree: BlockTreeInfo): Logics.LogicTree {
-    const recFun : (v : BlockTreeNode) => Logics.LogicTree = (v: BlockTreeNode) => {
-        const node = new Logics.LogicTree();
-        node.vertexShape = Common.Enums.ShapeObjectType.Rect;
-        node.vertexTextContent = blocktree.text.substr(v.position, v.length);
-        node.vertexShape = "g-table";
-        node.table = new Logics.LogicTable({ columnCount: node.vertexTextContent.length, rowCount: 1 });
+    const recFun : (v : BlockTreeNode) => Logics.LogicTreeNode = (v: BlockTreeNode) => {
+        const node = new Logics.LogicTreeNode();
+        const vertexText = blocktree.text.substr(v.position, v.length);
+        const table = new Logics.LogicTable({ columnCount: vertexText.length, rowCount: 1 });
+        node.shapeObject = table;
         
-        for (let i = 0; i < node.vertexTextContent.length; i++) {
-            node.table.cells[0][i].text.textContent = node.vertexTextContent[i];
-            node.table.cells[0][i].groupOption.class = {paddingLeft : 5, paddingRight : 5}
-            if(i < node.vertexTextContent.length-1){
-                node.table.cells[0][i].rightBorderOption.style = { stroke : "transparent"}
+        // node.vertexOption.attributes = { "data-bt-type" : "node" , "data-bt-position" : v.position.toString(), "data-bt-length" : v.length.toString(), "data-bt-height" : v.height.toString()}
+        
+
+        
+        for (let i = 0; i < vertexText.length; i++) {
+            table.cells[0][i].text.textContent = vertexText[i];
+            table.cells[0][i].groupOption.class = {paddingLeft : 5, paddingRight : 5}
+            if(i < vertexText.length-1){
+                table.cells[0][i].rightBorderOption.style = { stroke : "transparent"}
             }
         }
 
 
         if (v.reference != null) {
-            const leaf = new Logics.LogicTree();
-            leaf.vertexShape = Common.Enums.ShapeObjectType.Rect;
-            leaf.vertexTextContent = `${v.reference.node.position}/${v.reference.offset}`
+            const leaf = new Logics.LogicTreeNode();
+            const leafShape = new Logics.LogicBasicShape({shape : Common.Enums.ShapeObjectType.Rect});
+            
+            //leaf.vertexShape = Common.Enums.ShapeObjectType.Rect;
+            leafShape.option.attributes = { "data-bt-type" : "referrence", "data-bt-position" : v.reference.position.toString(), "data-bt-offset" : v.reference.offset.toString() }
+
+            leafShape.item = v.reference;
+
+            leafShape.textContent = `${v.reference}`
+            leaf.shapeObject = leafShape;
             node.children.push(leaf);
         } else {
 
@@ -129,7 +169,9 @@ export function convert(blocktree: BlockTreeInfo): Logics.LogicTree {
         }
         return node;
     }
-    const tree : Logics.LogicTree = recFun(blocktree.root);
+    const root = recFun(blocktree.root);
+    const tree = new Logics.LogicTree();
+    tree.root = root;
     //tree.drawingFunction = 
     tree.graphOption.relocateStyle = undefined;
     tree.graphOption.drawingFunction = { url: getLibPath(), functionName: "Sutoring.Trees.BlockTree.draw", drawingFunction: null }
@@ -182,12 +224,15 @@ function makeBlockTreeSub(text: string, children: BlockTreeNode[], degree: numbe
             } else {
                 const substr = text.substr(v.position, v.length);
                 const fstOcc = text.indexOf(substr);
+                
                 for (let p = 0; p < children.length; p++) {
                     if (children[p].position <= fstOcc && fstOcc <= children[p].position + children[p].length - 1) {
-                        v.reference = { node: children[p], offset: fstOcc - children[p].position };
+                        //v.reference = fstOcc;
+                        v.reference = { position: children[p].position, offset: fstOcc - children[p].position };
                         break;
                     }
                 }
+                
 
             }
         })

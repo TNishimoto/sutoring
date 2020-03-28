@@ -3,11 +3,11 @@ import * as LCPArray from "../arrays/lcp_array";
 import * as Trie from "./trie";
 
 export function construct(texts: string[]): Logics.LogicTree {
-    const root = Trie.construct(texts);
+    const tree = Trie.construct(texts);
 
     while (true) {
         let b = false;
-        const nodes = root.getOrderedNodes();
+        const nodes = tree.root!.getOrderedNodes();
         for (let i = 0; i < nodes.length; i++) {
             const node = nodes[i];
             for (let x = 0; x < node.children.length; x++) {
@@ -24,11 +24,11 @@ export function construct(texts: string[]): Logics.LogicTree {
         }
     }
 
-    return root;
+    return tree;
 
 
 }
-export function compact(node: Logics.LogicTree, parent: Logics.LogicTree): boolean {
+export function compact(node: Logics.LogicTreeNode, parent: Logics.LogicTreeNode): boolean {
     if (node.children.length == 1) {
         const p = parent.children.findIndex((v) => { return v == node });
         if (p >= 0) {
