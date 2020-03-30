@@ -134,7 +134,7 @@ export function convert(blocktree: BlockTreeInfo): Logics.LogicTree {
         const table = new Logics.LogicTable({ columnCount: vertexText.length, rowCount: 1 });
         node.shapeObject = table;
         
-        // node.vertexOption.attributes = { "data-bt-type" : "node" , "data-bt-position" : v.position.toString(), "data-bt-length" : v.length.toString(), "data-bt-height" : v.height.toString()}
+        table.option.attributes = { "data-bt-type" : "node" , "data-bt-position" : v.position.toString(), "data-bt-length" : v.length.toString(), "data-bt-height" : v.height.toString()}
         
 
         
