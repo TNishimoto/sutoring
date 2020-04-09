@@ -1,6 +1,6 @@
 {
     "name": "sutoring",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "",
     "main": "./dist/index.js",
     "bin": {
@@ -16,12 +16,12 @@
     "author": "mklemma",
     "license": "MIT",
     "dependencies": {
-        "graph-table-svg": "0.0.62",
+        "graph-table-svg": "0.0.73",
         "opener": "^1.5.1"
     },
     "devDependencies": {
         "ts-loader": "^6.2.2",
-        "typedoc": "^0.17.3",
+        "typedoc": "^0.17.4",
         "typescript": "^3.8.3",
         "webpack": "^4.42.1",
         "webpack-cli": "^3.3.11"
