@@ -14,14 +14,14 @@
             const withLCPFlag = document.getElementById("withLCP").checked;
             const withIndexFlag = document.getElementById("withIndex").checked;
 
-            const table = Sutoring.Permutations.RLBWT.constructRLBWTTable(text, true, {
+            const table = sutoring.Permutations.RLBWT.constructRLBWTTable(text, true, {
                 zeroBased: zeroBasedIndexFlag,
                 withBWT: withBWTFlag,
                 withLCP: withLCPFlag,
                 withSA: withSAFlag,
                 withIndex: withIndexFlag
             });
-            Sutoring.Console.table(table, `RLBWT Table(${text})`);
+            sutoring.Console.table(table, `RLBWT Table(${text})`);
         }
     </script>
 </head>

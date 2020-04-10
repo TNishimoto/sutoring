@@ -9,8 +9,8 @@
         function constructButton() {
             const text = document.getElementById("text").value;
             const texts = text.split(",");
-            const tree = Sutoring.Trees.Trie.construct(texts);
-            Sutoring.Console.graph(tree, `Trie(${text})`);
+            const tree = sutoring.Trees.Trie.construct(texts);
+            sutoring.Console.graph(tree, `Trie(${text})`);
         }
     </script>
 </head>

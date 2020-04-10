@@ -1,11 +1,11 @@
-import * as Sutoring from "../../dist/index"
+import * as sutoring from "../../dist/index"
 
 //const text = "aba";
 const text = "abaababaabaababaababaabaababaaba";
 
 //const text = "abaababaabaababaababaabaababaabaababaababaabaababaababaabaababaabaababaababaabaababaabaababaababaaba";
 
-const tree = Sutoring.Trees.BlockTree.makeBlockTree(text);
-const logicTree = Sutoring.Trees.BlockTree.convert(tree);
+const tree = sutoring.Trees.BlockTree.makeBlockTree(text);
+const logicTree = sutoring.Trees.BlockTree.convert(tree);
 //logicTree.graphOption.drawingFunction = undefined;
-Sutoring.Console.graph(logicTree);
+sutoring.Console.graph(logicTree);

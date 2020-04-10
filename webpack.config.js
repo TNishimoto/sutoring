@@ -4,7 +4,7 @@ module.exports = {
     mode: 'development',
     entry: './src/index.ts', //ファイルをまとめる際のエントリーポイント
     output: {
-        library: "Sutoring",
+        library: "sutoring",
         path: __dirname,
         filename: 'docs/sutoring.js' //まとめた結果出力されるファイル名
     },

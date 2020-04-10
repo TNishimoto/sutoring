@@ -1,4 +1,4 @@
-import * as Sutoring from "../../dist/index"
+import * as sutoring from "../../dist/index"
 
 
 const text = "abaab$";
@@ -11,11 +11,11 @@ const withLCPFlag = document.getElementById("withLCP").checked;
 const withIndexFlag = document.getElementById("withIndex").checked;
 */
 
-const table = Sutoring.Arrays.SuffixArray.constructSATable(text, {
+const table = sutoring.Arrays.SuffixArray.constructSATable(text, {
     zeroBased: false,
     withBWT: false,
     withLCP: false,
     withSA: true,
     withIndex: false
 });
-Sutoring.Console.table(table);
+sutoring.Console.table(table);

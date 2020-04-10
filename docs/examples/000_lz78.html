@@ -8,29 +8,29 @@
     <script>
         function constructLZ78TableButton() {
             const text = document.getElementById("text").value;
-            const table = Sutoring.Factorizations.LZ78.constructLZ78Table(text);
-            Sutoring.Console.table(table, `LZ78 Table(${text})`);
+            const table = sutoring.Factorizations.LZ78.constructLZ78Table(text);
+            sutoring.Console.table(table, `LZ78 Table(${text})`);
         }
 
         function constructLZ78TrieButton() {
             const text = document.getElementById("text").value;
-            const trie = Sutoring.Factorizations.LZ78.constructLZ78Trie(text);
-            Sutoring.Console.graph(trie, `LZ78 Trie(${text})`);
+            const trie = sutoring.Factorizations.LZ78.constructLZ78Trie(text);
+            sutoring.Console.graph(trie, `LZ78 Trie(${text})`);
         }
 
         function factorizeButton() {
             const text = document.getElementById("text").value;
-            const results = Sutoring.Factorizations.LZ78.factorize(text);
-            Sutoring.Console.textarea(results.join("|"), `Factorize(${text})`);
+            const results = sutoring.Factorizations.LZ78.factorize(text);
+            sutoring.Console.textarea(results.join("|"), `Factorize(${text})`);
 
-            //Sutoring.Console.log(results.join("|"));
+            //sutoring.Console.log(results.join("|"));
         }
 
         function compressButton() {
             const text = document.getElementById("text").value;
-            const results = Sutoring.Factorizations.LZ78.compress(text);
+            const results = sutoring.Factorizations.LZ78.compress(text);
 
-            Sutoring.Console.table(results, `Compress(${text})`);
+            sutoring.Console.table(results, `Compress(${text})`);
         }
     </script>
 </head>

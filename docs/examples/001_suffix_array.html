@@ -15,14 +15,14 @@
             const withIndexFlag = document.getElementById("withIndex").checked;
 
             console.log("LCP:" * withLCPFlag);
-            const table = Sutoring.Arrays.SuffixArray.constructSATable(text, {
+            const table = sutoring.Arrays.SuffixArray.constructSATable(text, {
                 zeroBased: zeroBasedIndexFlag,
                 withBWT: withBWTFlag,
                 withLCP: withLCPFlag,
                 withSA: withSAFlag,
                 withIndex: withIndexFlag
             });
-            Sutoring.Console.table(table);
+            sutoring.Console.table(table);
         }
     </script>
 </head>

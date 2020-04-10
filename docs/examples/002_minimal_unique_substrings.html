@@ -8,38 +8,38 @@
     <script>
         function enumerateButton() {
             const text = document.getElementById("text").value;
-            const results = Sutoring.Substrings.MinimalUniqueSubstrings.enumerate(text);
+            const results = sutoring.Substrings.MinimalUniqueSubstrings.enumerate(text);
             const lines = results.join("\n");
-            Sutoring.Console.textarea(lines, `MUS(${text})`);
+            sutoring.Console.textarea(lines, `MUS(${text})`);
         }
 
         function enumerateDistinctSubstringsButton() {
             const text = document.getElementById("text").value;
-            const results = Sutoring.Substrings.DistinctSubstrings.enumerate(text);
+            const results = sutoring.Substrings.DistinctSubstrings.enumerate(text);
             const lines = results.join("\n");
-            Sutoring.Console.textarea(lines, `Distinct Substrings(${text})`);
+            sutoring.Console.textarea(lines, `Distinct Substrings(${text})`);
         }
 
         function enumerateWithOccurrencesButton() {
             const text = document.getElementById("text").value;
-            const results = Sutoring.Substrings.DistinctSubstrings.enumerateWithOccurrences(text);
-            //Sutoring.Console.log(results.join(", "));
+            const results = sutoring.Substrings.DistinctSubstrings.enumerateWithOccurrences(text);
+            //sutoring.Console.log(results.join(", "));
         }
 
         function enumerateMaximalRepeatsButton() {
             const text = document.getElementById("text").value;
-            const results = Sutoring.Substrings.MaximalRepeats.enumerate(text);
+            const results = sutoring.Substrings.MaximalRepeats.enumerate(text);
             const lines = results.join("\n");
 
-            Sutoring.Console.textarea(lines, `Maximal Repeats(${text})`);
+            sutoring.Console.textarea(lines, `Maximal Repeats(${text})`);
 
         }
 
         function enumerateMinimalRepeatsButton() {
             const text = document.getElementById("text").value;
-            const results = Sutoring.Substrings.MinimalRepeats.enumerate(text);
+            const results = sutoring.Substrings.MinimalRepeats.enumerate(text);
             const lines = results.join("\n");
-            Sutoring.Console.textarea(lines, `Minimal Repeats(${text})`);
+            sutoring.Console.textarea(lines, `Minimal Repeats(${text})`);
 
         }
     </script>

@@ -1,7 +1,7 @@
-import * as Sutoring from "../../dist/index"
+import * as sutoring from "../../dist/index"
 
 const text = "abaababaabaababa$";
 
-const result1 = Sutoring.Factorizations.LZ77WithSelfReference.factorize(text);
+const result1 = sutoring.Factorizations.LZ77WithSelfReference.factorize(text);
 
 console.log(result1);

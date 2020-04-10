@@ -174,7 +174,7 @@ export function convert(blocktree: BlockTreeInfo): Logics.LogicTree {
     tree.root = root;
     //tree.drawingFunction = 
     tree.graphOption.relocateStyle = undefined;
-    tree.graphOption.drawingFunction = { url: getLibPath(), functionName: "Sutoring.Trees.BlockTree.draw", drawingFunction: null }
+    tree.graphOption.drawingFunction = { url: getLibPath(), functionName: "sutoring.Trees.BlockTree.draw", drawingFunction: null }
     return tree;
 }
 function getUnitLength(degree: number, unit: number, height: number) {

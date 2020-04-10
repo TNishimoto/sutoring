@@ -3,7 +3,7 @@
 const opener = require("opener")
 console.log("Hello world, sutoring.js!")
 console.log("This is a REPL of node.js.")
-console.log("The modules in Sutoring.js are stored in variable 'sutoring'.")
+console.log("The modules in sutoring.js are stored in variable 'sutoring'.")
 console.log("You can see the modules by executing 'commands()'");
 
 const sutoring = require("../dist/index");

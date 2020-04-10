@@ -14,20 +14,20 @@
             const withLCPFlag = document.getElementById("withLCP").checked;
             const withIndexFlag = document.getElementById("withIndex").checked;
 
-            const table = Sutoring.Permutations.BWT.constructBWTTable2(text, true, {
+            const table = sutoring.Permutations.BWT.constructBWTTable2(text, true, {
                 zeroBased: zeroBasedIndexFlag,
                 withBWT: withBWTFlag,
                 withLCP: withLCPFlag,
                 withSA: withSAFlag,
                 withIndex: withIndexFlag
             });
-            Sutoring.Console.table(table, `BWT Table(${text})`);
+            sutoring.Console.table(table, `BWT Table(${text})`);
         }
 
         function constructButton() {
             const text = document.getElementById("text").value;
-            const bwt = Sutoring.Permutations.BWT.construct(text);
-            Sutoring.Console.textarea(bwt, `BWT(${text})`);
+            const bwt = sutoring.Permutations.BWT.construct(text);
+            sutoring.Console.textarea(bwt, `BWT(${text})`);
         }
     </script>
 </head>
