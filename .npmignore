@@ -1,6 +1,6 @@
 # .npmignore
 /.vscode
-/docs/local_test
+/docs/examples
 /docs/typedoc
 /temp
 /examples

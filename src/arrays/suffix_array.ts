@@ -48,20 +48,21 @@ export type SATableOption = { zeroBased?: boolean, withSA?: boolean, withLCP?: b
  * @param cellClass
  * @returns aaaaaaaa
  */
-export function createSuffixArrayTableLine(text: string, zero_based: boolean = true, cellClass : string | Objects.GOptions.GTextBoxCSS = Common.DefaultClassNames.defaultCellClass) : Logics.LogicCellLine{
+export function createSuffixArrayTableLine(text: string, zero_based: boolean = true, cellClass : Objects.GOptions.CellAttributes = { style : { horizontalAnchor : "center"}}) : Logics.LogicCellLine{
+    //const suffixClass : Objects.GOptions.CellAttributes = { style : { horizontalAnchor : "center"}};
     const arr = construct(text, zero_based);
     const name = "SA"
-    return Logics.toLogicCellLine(name, arr, {class : cellClass});
+    return Logics.toLogicCellLine(name, arr, cellClass );
 }
 export function createSortedSuffixes(text : string) : string[] {
     const sa = construct(text);
     return sa.map((v) => text.substr(v));
 }
-export function createSortedSuffixesTableLine(text : string, cellClass : string | Objects.GOptions.GTextBoxCSS = {horizontalAnchor: "left"}) : Logics.LogicCellLine {
+export function createSortedSuffixesTableLine(text : string, cellClass : Objects.GOptions.CellAttributes = { style : { horizontalAnchor : "left"}, class : { horizontalAnchor : "right"}}) : Logics.LogicCellLine {
     const suffixes = createSortedSuffixes(text);
     const name = "Suffix";
-    return Logics.toLogicCellLine(name, suffixes, {class : cellClass});
-
+    const p = Logics.toLogicCellLine(name, suffixes, cellClass);
+    return p;
 }
 
 export function constructSATable(text: string, option: SATableOption = { zeroBased: true, withSA: true, withLCP: false, withBWT: false, withIndex: true }): Logics.LogicTable {
@@ -95,8 +96,9 @@ export function constructSATable(text: string, option: SATableOption = { zeroBas
     arrays.push( createSortedSuffixesTableLine(text));
 
 
-    return Logics.buildLogicTable(arrays, { isRowLines: false })
-
+    const result = Logics.buildLogicTable(arrays, { isRowLines: false })
+    console.log(createSuffixArrayTableLine(text, option.zeroBased)[2]);
+    return result;
 }
 
 

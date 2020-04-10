@@ -1,6 +1,6 @@
 {
     "name": "sutoring",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "",
     "main": "./dist/index.js",
     "bin": {
@@ -16,7 +16,7 @@
     "author": "mklemma",
     "license": "MIT",
     "dependencies": {
-        "graph-table-svg": "0.0.73",
+        "graph-table-svg": "0.0.77",
         "opener": "^1.5.1"
     },
     "devDependencies": {

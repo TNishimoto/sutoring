@@ -59,8 +59,6 @@ export function construct(text: string): string {
 export function createBWTTableLine(text: string, cellClass: string | Objects.GOptions.GTextBoxCSS  = Common.DefaultClassNames.defaultCellClass): Logics.LogicCellLine {
     const bwt = construct(text);
     const arr = Array.from(Array(text.length).keys()).map((i) => bwt[i]);
-    console.log(arr);
-    console.log(bwt);
 
     const name = "BWT"
     return Logics.toLogicCellLine(name, arr, {class:cellClass});
