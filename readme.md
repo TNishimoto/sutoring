@@ -11,6 +11,8 @@ At the moment, this library supports the following functions:
 - [Trie](https://codepen.io/mklemma/details/XWmJdXq "Trie")
 - [Suffix Trie](https://codepen.io/mklemma/details/GRpgZZg "Suffix Trie")
 - [BWT](https://codepen.io/mklemma/details/KKdwzzq "BWT")
+- [Block Tree](https://codepen.io/mklemma/details/WNQXNeb "Block Tree")
+
 
 # Documents
 - [Reference](https://TNishimoto.github.io/sutoring/typedoc/index.html "Reference")

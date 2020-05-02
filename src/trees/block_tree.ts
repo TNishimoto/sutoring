@@ -1,7 +1,9 @@
 
 import { Logics, Common, Objects } from "graph-table-svg";
-import { ShapeObjectType } from "graph-table-svg/dist/common/enums";
+//import { ShapeObjectType, ConnectorPosition } from "graph-table-svg/dist/common/enums";
 import { GObject, GVertex, GTable } from "graph-table-svg/dist/objects";
+import { BlockTree } from ".";
+import { endConnectorType } from "graph-table-svg/dist/common/style_names";
 //import { GVertex } from "graph-table-svg/dist/objects";
 //import { LogicTable } from "graph-table-svg";
 
@@ -49,9 +51,7 @@ function depthLeftToRightOrder(root: Objects.GVertex): Objects.GVertex[] {
     const h = root.createVirtualTree().getHeight();
     const arr: Objects.GVertex[][] = new Array(h);
     for(let i=0;i<arr.length;i++) arr[i] = new Array(0);
-    nodes.forEach((v) => {
-        console.log(`${h} ${depth(v)}`)
-        
+    nodes.forEach((v) => {        
         arr[h - depth(v)].push(v);
     }
     );
@@ -66,38 +66,65 @@ function depthLeftToRightOrder(root: Objects.GVertex): Objects.GVertex[] {
 
 }
 
-function palse(root: Objects.GVertex) {
+function drawBlockTree(root: Objects.GVertex) {
     const nodeMap : Map<string, GVertex> = new Map();
+    const unitVerticalGap = 50;
+    const refInterval = 10;
+
+    let maxHeight = 0;
     depthLeftToRightOrder(root).forEach((w) => {
-        const tree = w.createVirtualTree();
-        const depth1 = depth(w);
-        w.y = depth1 * 50;
-        w.x = 0;
         const type = w.svgGroup.getAttribute("data-bt-type")!;
         if(type == "node"){
-            nodeMap.set(`${w.svgGroup.getAttribute("data-bt-position")!}_${w.svgGroup.getAttribute("data-bt-height")!}`, w);
-            console.log("add" + `${w.svgGroup.getAttribute("data-bt-position")!}_${w.svgGroup.getAttribute("data-bt-height")!}`)
+            const height = Number.parseInt(w.svgGroup.getAttribute("data-bt-height")!);
+            if(maxHeight < height) maxHeight = height;
         }
 
-        if (tree.children.length == 0) {
-        } else if (tree.children.length == 1) {
-            w.x = 0;
-        } else {
-            let px = 0;
-            w.children.forEach((q, i) => {
-                const subtree = q.createVirtualTree();
-                subtree.setRegionXYLocation(px, q.y);
+    }
+    )
+    const refArray : number[] = new Array(maxHeight+1);
+    const refCounterArray : number[] = new Array(maxHeight+1);
+    const heightArray : number[] = new Array(maxHeight+1);
+    const widthArray : number[] = new Array(maxHeight+1);
 
-                if (i < w.children.length - 1) {
-                    px += q.getVirtualWidth();
-                } else {
-                    px += q.getVirtualWidth();
-                }
-                
-            })
-            w.x = 0;
+    for(let i=0;i<refArray.length;i++){
+        refArray[i] = 0;
+        refCounterArray[i] = 0;
+        heightArray[i] = 0;
+        widthArray[i] = 0;
+    }
+    depthLeftToRightOrder(root).forEach((w) => {
+        const type = w.svgGroup.getAttribute("data-bt-type")!;
+        if(type == "referrence"){
+            const height = Number.parseInt(w.parent!.svgGroup.getAttribute("data-bt-height")!);
+            refArray[height]++;
+        }
+    }
+    )
 
-            //w.cx = px / 2;
+    for(let i=refArray.length-1;i>=0;i--){
+        if(i == refArray.length-1){
+            heightArray[i] = 30;            
+        }else{
+            if(refArray[i+1] < 4){
+                heightArray[i] = heightArray[i+1] + unitVerticalGap;
+            }else{
+                heightArray[i] = heightArray[i+1] + (unitVerticalGap/2) + (refInterval * (refArray[i+1] + 1 ));
+            }
+        }
+    }
+
+
+    depthLeftToRightOrder(root).forEach((w) => {
+        const tree = w.createVirtualTree();
+        //const depth1 = depth(w);
+        const type = w.svgGroup.getAttribute("data-bt-type")!;
+        if(type == "node"){
+            const height = Number.parseInt(w.svgGroup.getAttribute("data-bt-height")!);
+            w.x = widthArray[height];
+            widthArray[height]+= w.width;
+            w.y = heightArray[height];
+
+            nodeMap.set(`${w.svgGroup.getAttribute("data-bt-position")!}_${w.svgGroup.getAttribute("data-bt-height")!}`, w);
         }
     })
 
@@ -106,13 +133,19 @@ function palse(root: Objects.GVertex) {
         if(type == "referrence"){
             const position = w.svgGroup.getAttribute("data-bt-position")!;
             const offset = Number.parseInt(w.svgGroup.getAttribute("data-bt-offset")!);
-            const height = w.parent!.svgGroup.getAttribute("data-bt-height")
-            console.log("_" + `${position}_${height}`)
+            const height = Number.parseInt(w.parent!.svgGroup.getAttribute("data-bt-height")!);
+            const length = Number.parseInt(w.parent!.svgGroup.getAttribute("data-bt-length")!);
+
             const refNode = <GTable>nodeMap.get(`${position}_${height}`)!;
-            const x = refNode.x + refNode.cells[0][offset].x;
-            const y = refNode.y + refNode.getRegion().height + 25;
+            const rectWidth = refNode.cells[0][offset].width * length;
+            const x = refNode.region.x + refNode.cells[0][offset].region.x;
+            const y = refNode.y + refNode.getRegion().height + 10 + (10 * refCounterArray[height]);
+            w.width = rectWidth;
+            //w.update();
+            w.height = 5;
             w.x = x;
             w.y = y;
+            refCounterArray[height]++;
         }
 
     })
@@ -123,20 +156,29 @@ function palse(root: Objects.GVertex) {
 
 export function draw(graph: Objects.GGraph) {
     graph.relocateStyle = null;
-    palse(graph.rootVertex!);
+    drawBlockTree(graph.rootVertex!);
 
-    console.log("hello")
 }
 export function convert(blocktree: BlockTreeInfo): Logics.LogicTree {
+
+    const flatten : (v : BlockTreeNode) => BlockTreeNode[] = (v: BlockTreeNode) => {
+        const r = new Array();
+        r.push(r);
+        v.children.map((w) =>{
+            flatten(w).forEach((w) => r.push(w));
+        })
+        return r;
+    }
+
     const recFun : (v : BlockTreeNode) => Logics.LogicTreeNode = (v: BlockTreeNode) => {
         const node = new Logics.LogicTreeNode();
         const vertexText = blocktree.text.substr(v.position, v.length);
         const table = new Logics.LogicTable({ columnCount: vertexText.length, rowCount: 1 });
         node.shapeObject = table;
         
-        table.option.attributes = { "data-bt-type" : "node" , "data-bt-position" : v.position.toString(), "data-bt-length" : v.length.toString(), "data-bt-height" : v.height.toString()}
+        table.option.attributes = { "data-bt-type" : "node" , "data-bt-position" : v.position.toString(), "data-bt-length" : v.length.toString(), "data-bt-height" : v.height.toString(), "name" : `btnode-${v.height}-${v.position}-${v.length}`}
         
-
+        
         
         for (let i = 0; i < vertexText.length; i++) {
             table.cells[0][i].text.textContent = vertexText[i];
@@ -149,14 +191,22 @@ export function convert(blocktree: BlockTreeInfo): Logics.LogicTree {
 
         if (v.reference != null) {
             const leaf = new Logics.LogicTreeNode();
-            const leafShape = new Logics.LogicBasicShape({shape : Common.Enums.ShapeObjectType.Rect});
             
-            //leaf.vertexShape = Common.Enums.ShapeObjectType.Rect;
-            leafShape.option.attributes = { "data-bt-type" : "referrence", "data-bt-position" : v.reference.position.toString(), "data-bt-offset" : v.reference.offset.toString() }
+            const leafShape = new Logics.LogicBasicShape({shape : Common.Enums.ShapeObjectType.Rect});
+
+            leafShape.option.attributes = { "data-bt-type" : "referrence", 
+            "data-bt-position" : v.reference.position.toString(), 
+            "data-bt-offset" : v.reference.offset.toString(),
+            "data-bt-length" : v.length.toString() 
+        }
 
             leafShape.item = v.reference;
-
-            leafShape.textContent = `${v.reference}`
+            leaf.edgeOption.style = {
+                beginConnectorType : Common.Enums.ConnectorType.Bottom,
+                endConnectorType : Common.Enums.ConnectorType.Right,
+                edgeType : "elbow"
+            }
+            
             leaf.shapeObject = leafShape;
             node.children.push(leaf);
         } else {
@@ -169,12 +219,17 @@ export function convert(blocktree: BlockTreeInfo): Logics.LogicTree {
         }
         return node;
     }
+    
     const root = recFun(blocktree.root);
     const tree = new Logics.LogicTree();
     tree.root = root;
     //tree.drawingFunction = 
     tree.graphOption.relocateStyle = undefined;
-    tree.graphOption.drawingFunction = { url: getLibPath(), functionName: "sutoring.Trees.BlockTree.draw", drawingFunction: null }
+    //tree.graphOption.drawingFunction = { url: getLibPath(), functionName: "sutoring.Trees.BlockTree.draw", drawingFunction: null }
+    const isNode = (process.title !== 'browser');
+    const urlStr = isNode ? getLibPath() : null;
+    tree.graphOption.drawingFunction = { url : urlStr, functionName: "sutoring.Trees.BlockTree.draw", drawingFunction: null }
+
     return tree;
 }
 function getUnitLength(degree: number, unit: number, height: number) {
@@ -259,7 +314,6 @@ function view(text: string, degree: number, unit: number) {
     const height = computeHeight(text.length, degree, unit);
     for (let t = height; t >= 0; t--) {
         const hunit = getUnitLength(degree, unit, t);
-        console.log(t + "/" + hunit)
         let s = "";
         for (let x = 0; x < text.length; x++) {
             s += text.substr(x, 1);
@@ -282,7 +336,6 @@ function view2Sub(text: string, children: BlockTreeNode[], output: string[]) {
         s[1 + (v.position + v.length - 1) * 2] = "|";
     })
     const str = s.join("");
-    console.log(str);
     output.push(str);
     const nextChildren = new Array(0);
     children.forEach((v) => {

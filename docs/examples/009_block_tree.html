@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Block Tree</title>
+    <script src="../sutoring.js"></script>
+    <script>
+        function constructButton() {
+            const text = document.getElementById("text").value;
+            const tree = sutoring.Trees.BlockTree.makeBlockTree(text);
+            const logicTree = sutoring.Trees.BlockTree.convert(tree);
+            sutoring.Console.graph(logicTree, `Block tree(${text})`);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Block Tree</h1>
+    <fieldset>
+        <legend>Input Text</legend>
+        <textarea id="text" rows="1" cols="80">abaababaabaababaababaabaababaaba</textarea></br>
+    </fieldset>
+
+    <fieldset>
+        <legend>Methods</legend>
+        <button onclick="constructButton()">construct</button>
+    </fieldset>
+    <hr size="10" color="black" noshade>
+</body>
+
+</html>
