@@ -13,13 +13,19 @@
             const withSAFlag = document.getElementById("withSA").checked;
             const withLCPFlag = document.getElementById("withLCP").checked;
             const withIndexFlag = document.getElementById("withIndex").checked;
+            const withMiddleSubstrings = document.getElementById("withMiddleSubstrings").checked;
+            const rlbwtFlag = document.getElementById("rlbwtFlag").checked;
 
-            const table = sutoring.Permutations.BWT.constructBWTTable2(text, true, {
+            console.log(rlbwtFlag)
+
+            const table = sutoring.Permutations.BWT.constructBWTTable2(text, {
                 zeroBased: zeroBasedIndexFlag,
                 withBWT: withBWTFlag,
                 withLCP: withLCPFlag,
                 withSA: withSAFlag,
-                withIndex: withIndexFlag
+                withIndex: withIndexFlag,
+                withMiddleSubstrings: withMiddleSubstrings,
+                isRLBWT: rlbwtFlag
             });
             sutoring.Console.table(table, `BWT Table(${text})`);
         }
@@ -47,6 +53,9 @@
         <input type="checkbox" id="withSA" value="1" checked="checked">with SA
         <input type="checkbox" id="withLCP" value="1">with LCP
         <input type="checkbox" id="withIndex" value="1" checked="checked">with Index
+        <input type="checkbox" id="withMiddleSubstrings" value="1" checked="checked">with Middle Substrings
+        <input type="checkbox" id="rlbwtFlag" value="1">RLBWT
+
         <br>
         <button onclick="constructButton()">BWT</button>
 

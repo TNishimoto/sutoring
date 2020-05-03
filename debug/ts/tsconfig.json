@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "removeComments": false,
+        "preserveConstEnums": true,
+        "outDir": "../js",
+
+        "sourceMap": false,
+        "target" : "ES6",
+        "declaration" : false,
+        "strict": true,
+        "module": "commonjs",
+        "baseUrl": "../../dist",
+
+        "paths": {
+            "../../dist/index": ["index"]
+        }
+    }
+    
+}

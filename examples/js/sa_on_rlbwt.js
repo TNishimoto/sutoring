@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const SAOnRLBWT = require("../../dist/permutations/sa_on_rlbwt");
+const graph_table_svg_1 = require("graph-table-svg");
+const text = "abaababaabaababaababaabaababaaba";
+const sp = SAOnRLBWT.createSSAForEndingPositions(text);
+const arr1 = SAOnRLBWT.toArray(sp);
+const arr2 = SAOnRLBWT.toLogicTableLine("test", arr1);
+graph_table_svg_1.Console.view(arr2);
+console.log(sp);

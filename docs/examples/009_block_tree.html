@@ -8,9 +8,9 @@
     <script>
         function constructButton() {
             const text = document.getElementById("text").value;
-            const tree = sutoring.Trees.BlockTree.makeBlockTree(text);
-            const logicTree = sutoring.Trees.BlockTree.convert(tree);
-            sutoring.Console.graph(logicTree, `Block tree(${text})`);
+            const tree = sutoring.Trees.BlockTree.constructBlockTree(text);
+            const logicTree = sutoring.Trees.BlockTree.toLogicTree(tree);
+            sutoring.Console.view(logicTree, `Block tree(${text})`);
         }
     </script>
 </head>

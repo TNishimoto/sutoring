@@ -3,86 +3,9 @@ import { Logics, Objects } from "graph-table-svg"
 import * as SuffixArray from "../arrays/suffix_array"
 import * as LCPArray from "../arrays/lcp_array"
 
-type RLEFactor = { char : string, length : number}
 
-export function runLengthEncode(text: string) : RLEFactor[]{
-    if(text.length == 0){
-        return new Array();
-    }else{
-        const r = new Array();
-        let m : number= 1;
-        let c : string = text[0];
-    
-        for(let i=1;i<text.length;i++){
-            if(text[i] != c){
-                r.push({ char : c, length : m});
-                m = 1;
-                c = text[i];
-            }else{
-                m++
-            }
-        }
-        if(m >= 1){
-            r.push({ char : c, length : m});
-        }
-        return r;
-    
-    }
-}
 
-export function construct(text: string) : RLEFactor[] {
-    const bwt = BWT.construct(text);
-    return runLengthEncode(bwt);
-}
-export function createLRunStartingPositions(text: string) : number[] {
-    const bwt = BWT.createLArray(text);
-    const r : number[] = new Array();
-    r.push(0);
-    for(let i=1;i<text.length;i++){
-        if(bwt[i] != bwt[i-1]){
-            r.push(i);
-        }
-    }
-    return r;    
-}
-export function createLRunEndingPositions(text: string) : number[] {
-    const lruns = createLRunStartingPositions(text);
-    const r : number[] = new Array();
-    for(let i=1;i<lruns.length;i++){
-        r.push(lruns[i]-1);
-    }
-    r.push(text.length-1);
-
-    return r;    
-}
-
-export function createFRunStartPositions(text: string){
-    const bwt = BWT.createLArray(text);
-    const lruns = createLRunStartingPositions(text);
-    const infos = lruns.map((v, i)=>{
-        if(i + 1 == lruns.length){
-            return [v, bwt.length - lruns[i]];
-        }else{
-            const width = lruns[i+1] - lruns[i];
-            return [v, width];
-        }
-    })
-    infos.sort((a, b) =>{
-        if(bwt[a[0]] != bwt[b[0]]){
-            return bwt[a[0]] < bwt[b[0]] ? -1 : 1;
-        }else{
-            return a[0] < b[0] ? -1 : 1;
-        }
-    })
-    const r = new Array(0);
-    r.push(0);
-    for(let i=0;i<infos.length;i++){
-        const prev = r[r.length-1];
-        r.push(infos[i][1] + prev);
-    }
-    return r;
-}
-
+/*
 export function createLArrayLine(text: string, isColored : boolean = false, cellClass: string | Objects.GOptions.GTextBoxCSS = { horizontalAnchor: "center" } ): Logics.LogicCellLine {
     const line = BWT.createLArrayLine(text, isColored, cellClass);
     const lruns = createLRunStartingPositions(text);
@@ -143,3 +66,4 @@ export function constructRLBWTTable(text: string, isColored : boolean, option: S
     return Logics.buildLogicTable(arrays, { isRowLines: false })
     
 }
+*/

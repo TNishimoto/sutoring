@@ -1,6 +1,6 @@
 {
     "name": "sutoring",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "description": "",
     "main": "./dist/index.js",
     "bin": {
@@ -8,7 +8,7 @@
     },
     "scripts": {
         "typedoc": "node node_modules/typedoc/bin/typedoc --out ./docs/typedoc/ ./src/ --name sutoring --readme readme.md --includeDeclarations --exclude node_modules/typescript/**/*.d.ts --exclude node_modules/@types/**/*.d.ts -m commonjs",
-        "compile": "tsc -p . && tsc -p ./examples/ts && node node_modules/webpack/bin/webpack.js"
+        "compile": "tsc -p . && tsc -p ./examples/ts && tsc -p ./debug/ts && node node_modules/webpack/bin/webpack.js"
     },
     "keywords": [
         "sutoring"
@@ -16,7 +16,7 @@
     "author": "mklemma",
     "license": "MIT",
     "dependencies": {
-        "graph-table-svg": "0.0.88",
+        "graph-table-svg": "0.0.89",
         "opener": "^1.5.1"
     },
     "devDependencies": {
