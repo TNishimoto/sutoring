@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>&quot;src/factorizations/lz77_with_self_reference&quot; | sutoring</title>
-	<meta name="description" content="">
+	<meta name="description" content="Documentation for sutoring">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -13,7 +13,7 @@
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -82,7 +82,6 @@
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_factorizations_lz77_with_self_reference_.html#compress" class="tsd-kind-icon">compress</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_factorizations_lz77_with_self_reference_.html#factorize" class="tsd-kind-icon">factorize</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_src_factorizations_lz77_with_self_reference_.html#find" class="tsd-kind-icon">find</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_src_factorizations_lz77_with_self_reference_.html#lce" class="tsd-kind-icon">lce</a></li>
 							</ul>
 						</section>
 					</div>
@@ -113,7 +112,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/factorizations/lz77_with_self_reference.ts:54</li>
+									<li>Defined in src/factorizations/lz77_with_self_reference.ts:41</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -136,7 +135,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/factorizations/lz77_with_self_reference.ts:42</li>
+									<li>Defined in src/factorizations/lz77_with_self_reference.ts:29</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -159,48 +158,30 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/factorizations/lz77_with_self_reference.ts:24</li>
+									<li>Defined in src/factorizations/lz77_with_self_reference.ts:11</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Compute the LZ77 factor $F$ starting at position $pos$ using string $text[1..pos + |F|-1]$, where $|F|$ is the length of the factor.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>text: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Input string.</p>
+									</div>
 								</li>
 								<li>
 									<h5>pos: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Input position.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_src_factorizations_lz77_with_self_reference_.html#lz77factor" class="tsd-signature-type">LZ77Factor</a></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="lce" class="tsd-anchor"></a>
-					<h3>lce</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">lce<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, pos1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, pos2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in src/factorizations/lz77_with_self_reference.ts:6</li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>text: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>pos1: <span class="tsd-signature-type">number</span></h5>
-								</li>
-								<li>
-									<h5>pos2: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -231,9 +212,6 @@
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="_src_factorizations_lz77_with_self_reference_.html#find" class="tsd-kind-icon">find</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_src_factorizations_lz77_with_self_reference_.html#lce" class="tsd-kind-icon">lce</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
@@ -243,6 +221,11 @@
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
 		</div>
 	</div>
 </footer>

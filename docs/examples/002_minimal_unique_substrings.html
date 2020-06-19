@@ -32,7 +32,14 @@
             const lines = results.join("\n");
 
             sutoring.Console.textarea(lines, `Maximal Repeats(${text})`);
+        }
 
+        function enumerateRightMaximalRepeatsButton() {
+            const text = document.getElementById("text").value;
+            const results = sutoring.Substrings.RightMaximalRepeats.enumerate(text);
+            const lines = results.join("\n");
+
+            sutoring.Console.textarea(lines, `Right-maximal Repeats(${text})`);
         }
 
         function enumerateMinimalRepeatsButton() {
@@ -40,7 +47,6 @@
             const results = sutoring.Substrings.MinimalRepeats.enumerate(text);
             const lines = results.join("\n");
             sutoring.Console.textarea(lines, `Minimal Repeats(${text})`);
-
         }
     </script>
 </head>
@@ -64,6 +70,11 @@
         <legend>Methods(MaximalRepeats)</legend>
         <button onclick="enumerateMaximalRepeatsButton()">enumerate</button>
     </fieldset>
+    <fieldset>
+        <legend>Methods(RightMaximalRepeats)</legend>
+        <button onclick="enumerateRightMaximalRepeatsButton()">enumerate</button>
+    </fieldset>
+
     <fieldset>
         <legend>Methods(MinimalRepeats)</legend>
         <button onclick="enumerateMinimalRepeatsButton()">enumerate</button>

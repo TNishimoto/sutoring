@@ -17,7 +17,7 @@ At the moment, this library supports the following functions:
 # Documents
 - [Reference](https://TNishimoto.github.io/sutoring/typedoc/index.html "Reference")
 
-# Insutall
+# Install
 
 npm install -g sutoring
 

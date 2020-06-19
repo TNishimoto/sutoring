@@ -202,8 +202,8 @@ export function toLogicTree(blocktree: BlockTreeInfo): Logics.LogicTree {
     const root = recFun(blocktree.root);
     const tree = new Logics.LogicTree();
     tree.root = root;
-    tree.graphOption.relocateStyle = undefined;
-    tree.graphOption.drawingFunction = { url : getLibPath(), functionName: "sutoring.Trees.BlockTree.drawBlockTree", drawingFunction: null }
+    tree.option.relocateStyle = undefined;
+    tree.option.drawingFunction = { url : getLibPath(), functionName: "sutoring.Trees.BlockTree.drawBlockTree", drawingFunction: null }
 
     return tree;
 }

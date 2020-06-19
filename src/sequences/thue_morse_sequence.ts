@@ -1,4 +1,7 @@
-
+/**
+ * This namespace provides functions for Thue-Morse sequences.
+ * @packageDocumentation
+ */
 
 const fibArray: Map<number, string> = new Map();
 function rev(str : string){
@@ -32,7 +35,11 @@ export function createIthSequence(ith: number): string {
 
     }
 }
-
+/**
+ * Return the thue-morse sequence of an input length.
+ * 
+ * @param len the length of the output string <!-- pramster -->
+ */
 export function create(len : number){
     let i=1;
     while(true){
