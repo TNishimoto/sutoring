@@ -1,3 +1,8 @@
+/**
+ * This namespace provides functions for Fibonacci sequences.
+ * <!-- @path sutoring.Sequences @module FibonacciSequence -->
+ * @packageDocumentation
+ */
 
 
 const fibArray: Map<number, string> = new Map();

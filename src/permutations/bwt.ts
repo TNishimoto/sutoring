@@ -1,10 +1,11 @@
+/**
+ * This namespace provides functions for Burrows-Wheeler transform.
+ * <!-- @path sutoring.Permutations @module BWT -->
+ * @packageDocumentation
+ */
 import { Logics, Objects, Common } from "graph-table-svg"
 import * as SuffixArray from "../arrays/suffix_array"
 import * as LCPArray from "../arrays/lcp_array"
-
-/**
- * This namespace provides functions for Burrows-Wheeler transform.
- */
 
 type BWTOption = SuffixArray.SATableOption & { 
     withMiddleSubstrings? : boolean 

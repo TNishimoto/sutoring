@@ -40,7 +40,7 @@ export namespace libxmlts {
             }
         }
         public get prevSibling(): libxmlts.XMLNode | null {
-            const item = (<libxmljs.Element>this.original).prevSibling();
+            const item :libxmljs.Node | null = (<libxmljs.Element>this.original).prevSibling();
             if (item == null) {
                 return null;
             } else {
@@ -96,7 +96,7 @@ export namespace libxmlts {
         }
         
     }
-    function constructNodeItem(v: libxmljs.Element | libxmljs.Attribute | libxmljs.XMLDocument): XMLNode {
+    function constructNodeItem(v: libxmljs.Element | libxmljs.Attribute | libxmljs.Document | libxmljs.Node): XMLNode {
         const type = (<any>v).type();
         if (type == "text") {
             return new Text(<libxmljs.Element>v);
@@ -116,7 +116,7 @@ export namespace libxmlts {
             throw new Error("error");
         }
     }
-    function constructNodeFromOtherDocument(doc : Document, node: libxmljs.Element | libxmljs.Attribute): InnerNode {
+    function constructNodeFromOtherDocument(doc : Document, node: libxmljs.Node | libxmljs.Attribute): InnerNode {
         const type = (<any>node).type();
         if (type == "text") {
             return Text.create(doc, (<libxmljs.Element>node).text());
@@ -145,7 +145,7 @@ export namespace libxmlts {
         }
     }
 
-    function constructInnerNode(v: libxmljs.Element): InnerNode {
+    function constructInnerNode(v: libxmljs.Node): InnerNode {
         const type = (<any>v).type();
         if (type == "text") {
             return new Text(<libxmljs.Element>v);
@@ -201,8 +201,8 @@ export namespace libxmlts {
         public get endTag() : string{
             return `</${this.name}>`;
         }
-        public defineNamespace(href :string)
-        public defineNamespace(prefix :string, href: string)
+        public defineNamespace(href :string): Namespace
+        public defineNamespace(prefix :string, href: string): Namespace
         public defineNamespace(fst :string, sec?: string) : Namespace {
             if(sec === undefined){
                 const ns = this.original.defineNamespace(fst);
@@ -213,7 +213,7 @@ export namespace libxmlts {
             }
         }
         public child(idx : number) : InnerNode {
-            const r = this.original.child(idx);
+            const r = this.original.child(idx)!;
             if(r !== undefined){
                 return constructInnerNode(r);
             }else{
@@ -286,8 +286,8 @@ export namespace libxmlts {
         public attrs(): libxmlts.Attribute[] {
             return this.original.attrs().map((v) => new libxmlts.Attribute(v));
         }
-        public find(xpath: string)
-        public find(xpath: string, ns_url : string)
+        public find(xpath: string): libxmlts.XMLNode[]
+        public find(xpath: string, ns_url : string): libxmlts.XMLNode[]
         public find(xpath: string, ns_url? : string): libxmlts.XMLNode[] {
             if(ns_url !== undefined){
                 return this.original.find(xpath, ns_url).map((v) => {
@@ -338,23 +338,23 @@ export namespace libxmlts {
         }
     }
     export class Document {
-        private _doc: libxmljs.XMLDocument;
-        public get doc(): libxmljs.XMLDocument {
+        private _doc: libxmljs.Document;
+        public get doc(): libxmljs.Document {
             return this._doc;
         }
 
-        constructor(__item: libxmljs.XMLDocument) {
+        constructor(__item: libxmljs.Document) {
             this._doc = __item;
         }
         public get root() : libxmlts.Element {
-            const r = this.doc.root();
+            const r = this.doc.root()!;
             return new libxmlts.Element(r);
         }
         public find(xpath: string) : libxmlts.XMLNode[]
         public find(xpath: string, ns_url : string) : libxmlts.XMLNode[]
         public find(xpath: string, ns_url? : string): libxmlts.XMLNode[] {
             if(ns_url !== undefined){
-                return (<any>this.doc).find(xpath, ns_url).map((v) => {
+                return (this.doc).find(xpath, ns_url).map((v) => {
                     return constructNodeItem(v);
                 })    
             }else{
@@ -393,7 +393,11 @@ export namespace libxmlts {
 
         public parseDocumentFragment(fragment : string) : InnerNode[]{
             const xml = `<?xml version="1.0" encoding="UTF-8"?><root>${fragment}</root>`
-            return libxmljs.parseXml(xml).root().childNodes().map((v)=> constructNodeFromOtherDocument(this, v));
+            const result = libxmljs.parseXml(xml);
+            //throw new Error("error");
+            
+            const root = libxmljs.parseXml(xml).root();             
+            return root!.childNodes().map((v)=> constructNodeFromOtherDocument(this, v));
         }
         public createElement(name : string) : libxmlts.Element{
             const r = new libxmljs.Element(this.doc, name, undefined);
@@ -466,11 +470,14 @@ export namespace libxmlts {
 
             (<any>node.original).addCData(content);
 
+            throw new Error("error")
+            /*
             const rawCDATAs = node.original.childNodes().filter((v)=>v.type() == "cdata");
             rawCDATAs.forEach((v) => v.remove() );
             node.remove();
             const cdatas = rawCDATAs.map((v) => new libxmlts.CDATA(v));
             return cdatas;
+            */
         }
     }
     export class Text extends InnerNode {

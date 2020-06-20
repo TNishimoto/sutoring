@@ -1,12 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="default no-js">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;src/sequences/fibonacci_sequence&quot; | sutoring</title>
+	<title>"src/sequences/fibonacci_sequence" | sutoring</title>
 	<meta name="description" content="Documentation for sutoring">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
+
+<script src="https://cdn.jsdelivr.net/npm/sutoring@0.0.11/docs/sutoring.js"></script><script>window.onload = (event) => {
+            window.addEventListener("keydown", function(event) {
+                event.stopPropagation();
+            }, true);
+            window.addEventListener("keypress", function(event) {
+                event.stopPropagation();
+            }, true);
+        };</script>
 </head>
 <body>
 <header>
@@ -16,7 +26,7 @@
 				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
-						<input id="tsd-search-field" type="text" />
+						<input id="tsd-search-field" type="text">
 					</div>
 					<ul class="results">
 						<li class="state loading">Preparing search index...</li>
@@ -36,11 +46,11 @@
 									<li data-value="private" class="selected">All</li>
 								</ul>
 							</div>
-							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<input type="checkbox" id="tsd-filter-inherited" checked>
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-externals" checked />
+							<input type="checkbox" id="tsd-filter-externals" checked>
 							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
+							<input type="checkbox" id="tsd-filter-only-exported">
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
@@ -56,16 +66,24 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_src_sequences_fibonacci_sequence_.html">&quot;src/sequences/fibonacci_sequence&quot;</a>
+					<a href="_src_sequences_fibonacci_sequence_.html">"src/sequences/fibonacci_sequence"</a>
 				</li>
 			</ul>
-			<h1>Module &quot;src/sequences/fibonacci_sequence&quot;</h1>
+			<h1>Module "src/sequences/fibonacci_sequence"</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>This namespace provides functions for Fibonacci sequences.</p>
+						<!-- @path sutoring.Sequences @module FibonacciSequence -->
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
@@ -73,15 +91,15 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_src_sequences_fibonacci_sequence_.html#fibarray" class="tsd-kind-icon">fib<wbr>Array</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_src_sequences_fibonacci_sequence_.html#fibarray" class="tsd-kind-icon">fib<wbr>Array</wbr></a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_sequences_fibonacci_sequence_.html#create" class="tsd-kind-icon">create</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_sequences_fibonacci_sequence_.html#createithsequence" class="tsd-kind-icon">create<wbr>Ith<wbr>Sequence</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_sequences_fibonacci_sequence_.html#getword" class="tsd-kind-icon">get<wbr>Word</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_sequences_fibonacci_sequence_.html#createithsequence" class="tsd-kind-icon">create<wbr>Ith<wbr>Sequence</wbr></wbr></a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_sequences_fibonacci_sequence_.html#getword" class="tsd-kind-icon">get<wbr>Word</wbr></a></li>
 							</ul>
 						</section>
 					</div>
@@ -91,11 +109,14 @@
 				<h2>Variables</h2>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
 					<a name="fibarray" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> fib<wbr>Array</h3>
-					<div class="tsd-signature tsd-kind-icon">fib<wbr>Array<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = new Map()</span></div>
+					<h3>
+<span class="tsd-flag ts-flagConst">Const</span> fib<wbr>Array</wbr>
+</h3>
+					<div class="tsd-signature tsd-kind-icon">fib<wbr>Array<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = new Map()</span></wbr>
+</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in src/sequences/fibonacci_sequence.ts:3</li>
+							<li>Defined in src/sequences/fibonacci_sequence.ts:8</li>
 						</ul>
 					</aside>
 				</section>
@@ -106,71 +127,127 @@
 					<a name="create" class="tsd-anchor"></a>
 					<h3>create</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">create<span class="tsd-signature-symbol">(</span>length<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<span class="tsd-signature-symbol">(</span>length<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>
+</li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/sequences/fibonacci_sequence.ts:29</li>
+									<li>Defined in src/sequences/fibonacci_sequence.ts:34</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>length: <span class="tsd-signature-type">number</span></h5>
+									<h5>length: <span class="tsd-signature-type">number</span>
+</h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span>
+</h4>
 						</li>
 					</ul>
-				</section>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div data-custom="true"><fieldset>
+<legend>Parameters</legend>
+<label>length:<input id="function-17-parameter-0" type="number" name="number" min="0" size="5" value="0"></label>
+</fieldset></div>
+<button onClick='const value = sutoring.Sequences.FibonacciSequence.create(document.getElementById("function-17-parameter-0").value);
+        const title = "create("+ document.getElementById("function-17-parameter-0").value.toString()+ ")";
+        sutoring.Console.textarea(value.toString(), title, {container : "function-17-code" });'>Run</button>
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-17-code"></code>
+</fieldset>
+</div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="createithsequence" class="tsd-anchor"></a>
-					<h3>create<wbr>Ith<wbr>Sequence</h3>
+					<h3>create<wbr>Ith<wbr>Sequence</wbr></wbr>
+</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Ith<wbr>Sequence<span class="tsd-signature-symbol">(</span>ith<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Ith<wbr>Sequence<span class="tsd-signature-symbol">(</span>ith<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></wbr></wbr>
+</li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/sequences/fibonacci_sequence.ts:4</li>
+									<li>Defined in src/sequences/fibonacci_sequence.ts:9</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>ith: <span class="tsd-signature-type">number</span></h5>
+									<h5>ith: <span class="tsd-signature-type">number</span>
+</h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span>
+</h4>
 						</li>
 					</ul>
-				</section>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div data-custom="true"><fieldset>
+<legend>Parameters</legend>
+<label>ith:<input id="function-18-parameter-0" type="number" name="number" min="0" size="5" value="0"></label>
+</fieldset></div>
+<button onClick='const value = sutoring.Sequences.FibonacciSequence.createIthSequence(document.getElementById("function-18-parameter-0").value);
+        const title = "createIthSequence("+ document.getElementById("function-18-parameter-0").value.toString()+ ")";
+        sutoring.Console.textarea(value.toString(), title, {container : "function-18-code" });'>Run</button>
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-18-code"></code>
+</fieldset>
+</div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="getword" class="tsd-anchor"></a>
-					<h3>get<wbr>Word</h3>
+					<h3>get<wbr>Word</wbr>
+</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Word<span class="tsd-signature-symbol">(</span>ith<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Word<span class="tsd-signature-symbol">(</span>ith<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></wbr>
+</li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/sequences/fibonacci_sequence.ts:38</li>
+									<li>Defined in src/sequences/fibonacci_sequence.ts:43</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>ith: <span class="tsd-signature-type">number</span></h5>
+									<h5>ith: <span class="tsd-signature-type">number</span>
+</h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span>
+</h4>
 						</li>
 					</ul>
-				</section>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div data-custom="true"><fieldset>
+<legend>Parameters</legend>
+<label>ith:<input id="function-19-parameter-0" type="number" name="number" min="0" size="5" value="0"></label>
+</fieldset></div>
+<button onClick='const value = sutoring.Sequences.FibonacciSequence.getWord(document.getElementById("function-19-parameter-0").value);
+        const title = "getWord("+ document.getElementById("function-19-parameter-0").value.toString()+ ")";
+        sutoring.Console.textarea(value.toString(), title, {container : "function-19-code" });'>Run</button>
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-19-code"></code>
+</fieldset>
+</div></section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -180,23 +257,23 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="_src_sequences_fibonacci_sequence_.html">&quot;src/sequences/fibonacci_<wbr>sequence&quot;</a>
+						<a href="_src_sequences_fibonacci_sequence_.html">"src/sequences/fibonacci_<wbr>sequence"</wbr></a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_src_sequences_fibonacci_sequence_.html#fibarray" class="tsd-kind-icon">fib<wbr>Array</a>
+						<a href="_src_sequences_fibonacci_sequence_.html#fibarray" class="tsd-kind-icon">fib<wbr>Array</wbr></a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_src_sequences_fibonacci_sequence_.html#create" class="tsd-kind-icon">create</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_src_sequences_fibonacci_sequence_.html#createithsequence" class="tsd-kind-icon">create<wbr>Ith<wbr>Sequence</a>
+						<a href="_src_sequences_fibonacci_sequence_.html#createithsequence" class="tsd-kind-icon">create<wbr>Ith<wbr>Sequence</wbr></wbr></a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_src_sequences_fibonacci_sequence_.html#getword" class="tsd-kind-icon">get<wbr>Word</a>
+						<a href="_src_sequences_fibonacci_sequence_.html#getword" class="tsd-kind-icon">get<wbr>Word</wbr></a>
 					</li>
 				</ul>
 			</nav>

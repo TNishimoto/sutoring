@@ -8,7 +8,15 @@
 	<meta name="description" content="Documentation for sutoring">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
-<script src="https://cdn.jsdelivr.net/npm/sutoring@0.0.93/docs/sutoring.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sutoring@0.0.11/docs/sutoring.js"></script><script>window.onload = (event) => {
+            window.addEventListener("keydown", function(event) {
+                event.stopPropagation();
+            }, true);
+            window.addEventListener("keypress", function(event) {
+                event.stopPropagation();
+            }, true);
+        };</script>
 </head>
 <body>
 <header>
@@ -72,6 +80,7 @@
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
 						<p>This namespace provides functions for Thue-Morse sequences.</p>
+						<!-- @path sutoring.Sequences @module ThueMorseSequence -->
 					</div>
 				</div>
 			</section>
@@ -107,7 +116,7 @@
 </div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in src/sequences/thue_morse_sequence.ts:6</li>
+							<li>Defined in src/sequences/thue_morse_sequence.ts:7</li>
 						</ul>
 					</aside>
 				</section>
@@ -125,7 +134,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/sequences/thue_morse_sequence.ts:43</li>
+									<li>Defined in src/sequences/thue_morse_sequence.ts:45</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -139,15 +148,31 @@
 									<h5>len: <span class="tsd-signature-type">number</span>
 </h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the length of the output string <!-- pramster --></p>
+										<p>The length of the output string <!-- @min 0 @size 20 @value 1  --></p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span>
 </h4>
+							<p>The thue-morse sequence of an input length.</p>
 						</li>
 					</ul>
-				<div name="run"><button>test</button></div></section>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div data-custom="true"><fieldset>
+<legend>Parameters</legend>
+<label>len:<input id="function-20-parameter-0" type="number" name="number" min="0" size="20" value="1"></label>
+</fieldset></div>
+<button onClick='const value = sutoring.Sequences.ThueMorseSequence.create(document.getElementById("function-20-parameter-0").value);
+        const title = "create("+ document.getElementById("function-20-parameter-0").value.toString()+ ")";
+        sutoring.Console.textarea(value.toString(), title, {container : "function-20-code" });'>Run</button>
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-20-code"></code>
+</fieldset>
+</div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="createithsequence" class="tsd-anchor"></a>
 					<h3>create<wbr>Ith<wbr>Sequence</wbr></wbr>
@@ -160,7 +185,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/sequences/thue_morse_sequence.ts:18</li>
+									<li>Defined in src/sequences/thue_morse_sequence.ts:19</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -174,7 +199,22 @@
 </h4>
 						</li>
 					</ul>
-				<div name="run"><button>test</button></div></section>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div data-custom="true"><fieldset>
+<legend>Parameters</legend>
+<label>ith:<input id="function-21-parameter-0" type="number" name="number" min="0" size="5" value="0"></label>
+</fieldset></div>
+<button onClick='const value = sutoring.Sequences.ThueMorseSequence.createIthSequence(document.getElementById("function-21-parameter-0").value);
+        const title = "createIthSequence("+ document.getElementById("function-21-parameter-0").value.toString()+ ")";
+        sutoring.Console.textarea(value.toString(), title, {container : "function-21-code" });'>Run</button>
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-21-code"></code>
+</fieldset>
+</div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 					<a name="rev" class="tsd-anchor"></a>
 					<h3>rev</h3>
@@ -186,7 +226,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/sequences/thue_morse_sequence.ts:7</li>
+									<li>Defined in src/sequences/thue_morse_sequence.ts:8</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>

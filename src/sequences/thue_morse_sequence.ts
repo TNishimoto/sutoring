@@ -1,5 +1,6 @@
 /**
  * This namespace provides functions for Thue-Morse sequences.
+ * <!-- @path sutoring.Sequences @module ThueMorseSequence -->
  * @packageDocumentation
  */
 
@@ -38,7 +39,8 @@ export function createIthSequence(ith: number): string {
 /**
  * Return the thue-morse sequence of an input length.
  * 
- * @param len the length of the output string <!-- pramster -->
+ * @param len The length of the output string <!-- @min 0 @size 20 @value 1  -->
+ * @returns The thue-morse sequence of an input length.
  */
 export function create(len : number){
     let i=1;

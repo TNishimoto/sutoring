@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.createLCPArray = exports.createSuffixArray = void 0;
 const SAOnRLBWT = require("../../dist/permutations/sa_on_rlbwt");
 const BWT = require("../../dist/permutations/bwt");
 function createSuffixArray(text) {
