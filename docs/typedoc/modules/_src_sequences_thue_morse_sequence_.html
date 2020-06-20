@@ -18,7 +18,15 @@
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/sutoring@0.0.11/docs/sutoring.js"></script><script>window.onload = (event) => {
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/sutoring@0.0.16/docs/sutoring.js"></script><script>window.onload = (event) => {
             window.addEventListener("keydown", function(event) {
                 event.stopPropagation();
             }, true);
@@ -175,7 +183,7 @@
 </fieldset></div>
 <button onClick='const value = sutoring.Sequences.ThueMorseSequence.create(document.getElementById("function-20-parameter-0").value);
         const title = "create("+ document.getElementById("function-20-parameter-0").value.toString()+ ")";
-        sutoring.Console.textarea(value.toString(), title, {container : "function-20-code" });'>Run</button>
+        sutoring.Console.textarea(sutoring.Debug.toStringLines(value), title, {container : "function-20-code" });'>Run</button>
 </fieldset>
 <fieldset>
 <legend>Result</legend>
@@ -217,7 +225,7 @@
 </fieldset></div>
 <button onClick='const value = sutoring.Sequences.ThueMorseSequence.createIthSequence(document.getElementById("function-21-parameter-0").value);
         const title = "createIthSequence("+ document.getElementById("function-21-parameter-0").value.toString()+ ")";
-        sutoring.Console.textarea(value.toString(), title, {container : "function-21-code" });'>Run</button>
+        sutoring.Console.textarea(sutoring.Debug.toStringLines(value), title, {container : "function-21-code" });'>Run</button>
 </fieldset>
 <fieldset>
 <legend>Result</legend>

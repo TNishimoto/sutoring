@@ -18,7 +18,15 @@
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/sutoring@0.0.11/docs/sutoring.js"></script><script>window.onload = (event) => {
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/sutoring@0.0.16/docs/sutoring.js"></script><script>window.onload = (event) => {
             window.addEventListener("keydown", function(event) {
                 event.stopPropagation();
             }, true);
@@ -166,7 +174,7 @@
 </fieldset></div>
 <button onClick='const value = sutoring.Sequences.FibonacciSequence.create(document.getElementById("function-17-parameter-0").value);
         const title = "create("+ document.getElementById("function-17-parameter-0").value.toString()+ ")";
-        sutoring.Console.textarea(value.toString(), title, {container : "function-17-code" });'>Run</button>
+        sutoring.Console.textarea(sutoring.Debug.toStringLines(value), title, {container : "function-17-code" });'>Run</button>
 </fieldset>
 <fieldset>
 <legend>Result</legend>
@@ -208,7 +216,7 @@
 </fieldset></div>
 <button onClick='const value = sutoring.Sequences.FibonacciSequence.createIthSequence(document.getElementById("function-18-parameter-0").value);
         const title = "createIthSequence("+ document.getElementById("function-18-parameter-0").value.toString()+ ")";
-        sutoring.Console.textarea(value.toString(), title, {container : "function-18-code" });'>Run</button>
+        sutoring.Console.textarea(sutoring.Debug.toStringLines(value), title, {container : "function-18-code" });'>Run</button>
 </fieldset>
 <fieldset>
 <legend>Result</legend>
@@ -250,7 +258,7 @@
 </fieldset></div>
 <button onClick='const value = sutoring.Sequences.FibonacciSequence.getWord(document.getElementById("function-19-parameter-0").value);
         const title = "getWord("+ document.getElementById("function-19-parameter-0").value.toString()+ ")";
-        sutoring.Console.textarea(value.toString(), title, {container : "function-19-code" });'>Run</button>
+        sutoring.Console.textarea(sutoring.Debug.toStringLines(value), title, {container : "function-19-code" });'>Run</button>
 </fieldset>
 <fieldset>
 <legend>Result</legend>

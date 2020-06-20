@@ -18,7 +18,15 @@
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/sutoring@0.0.11/docs/sutoring.js"></script><script>window.onload = (event) => {
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/sutoring@0.0.16/docs/sutoring.js"></script><script>window.onload = (event) => {
             window.addEventListener("keydown", function(event) {
                 event.stopPropagation();
             }, true);
@@ -266,7 +274,7 @@
 </fieldset></div>
 <button onClick='const value = sutoring.Permutations.BWT.construct(document.getElementById("function-0-parameter-0").value);
         const title = "construct("+ document.getElementById("function-0-parameter-0").value.toString()+ ")";
-        sutoring.Console.textarea(value.toString(), title, {container : "function-0-code" });'>Run</button>
+        sutoring.Console.textarea(sutoring.Debug.toStringLines(value), title, {container : "function-0-code" });'>Run</button>
 </fieldset>
 <fieldset>
 <legend>Result</legend>
@@ -360,7 +368,24 @@
 </h4>
 						</li>
 					</ul>
-				</section>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div data-custom="true"><fieldset>
+<legend>Parameters</legend>
+<div>
+<label>text</label><textarea id="function-3-parameter-0" cols="40" rows="4" maxlength="20"></textarea>
+</div>
+</fieldset></div>
+<button onClick='const value = sutoring.Permutations.BWT.constructRLBWT(document.getElementById("function-3-parameter-0").value);
+        const title = "constructRLBWT("+ document.getElementById("function-3-parameter-0").value.toString()+ ")";
+        sutoring.Console.textarea(sutoring.Debug.toStringLines(value), title, {container : "function-3-code" });'>Run</button>
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-3-code"></code>
+</fieldset>
+</div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="createbwtindexes" class="tsd-anchor"></a>
 					<h3>createBWTIndexes</h3>
@@ -409,7 +434,7 @@ Default value zeroBased</label><select id="function-4-parameter-1">
 </fieldset></div>
 <button onClick='const value = sutoring.Permutations.BWT.createBWTIndexes(document.getElementById("function-4-parameter-0").value,(document.getElementById("function-4-parameter-1").value == "true"));
         const title = "createBWTIndexes("+ document.getElementById("function-4-parameter-0").value.toString()+ (document.getElementById("function-4-parameter-1").value == "true").toString()+ ")";
-        sutoring.Console.textarea(value.join(", "), title, {container : "function-4-code" });'>Run</button>
+        sutoring.Console.textarea(sutoring.Debug.toStringLines(value), title, {container : "function-4-code" });'>Run</button>
 </fieldset>
 <fieldset>
 <legend>Result</legend>
@@ -555,7 +580,7 @@ Default value zeroBased</label><select id="function-6-parameter-1">
 </fieldset></div>
 <button onClick='const value = sutoring.Permutations.BWT.createCircularSuffixArray(document.getElementById("function-6-parameter-0").value,(document.getElementById("function-6-parameter-1").value == "true"));
         const title = "createCircularSuffixArray("+ document.getElementById("function-6-parameter-0").value.toString()+ (document.getElementById("function-6-parameter-1").value == "true").toString()+ ")";
-        sutoring.Console.textarea(value.join(", "), title, {container : "function-6-code" });'>Run</button>
+        sutoring.Console.textarea(sutoring.Debug.toStringLines(value), title, {container : "function-6-code" });'>Run</button>
 </fieldset>
 <fieldset>
 <legend>Result</legend>
@@ -598,7 +623,7 @@ Default value zeroBased</label><select id="function-6-parameter-1">
 </fieldset></div>
 <button onClick='const value = sutoring.Permutations.BWT.createFArray(document.getElementById("function-7-parameter-0").value);
         const title = "createFArray("+ document.getElementById("function-7-parameter-0").value.toString()+ ")";
-        sutoring.Console.textarea(value.join(", "), title, {container : "function-7-code" });'>Run</button>
+        sutoring.Console.textarea(sutoring.Debug.toStringLines(value), title, {container : "function-7-code" });'>Run</button>
 </fieldset>
 <fieldset>
 <legend>Result</legend>
@@ -684,7 +709,7 @@ Default value zeroBased</label><select id="function-6-parameter-1">
 </fieldset></div>
 <button onClick='const value = sutoring.Permutations.BWT.createFRunStartPositions(document.getElementById("function-9-parameter-0").value);
         const title = "createFRunStartPositions("+ document.getElementById("function-9-parameter-0").value.toString()+ ")";
-        sutoring.Console.textarea(value.join(", "), title, {container : "function-9-code" });'>Run</button>
+        sutoring.Console.textarea(sutoring.Debug.toStringLines(value), title, {container : "function-9-code" });'>Run</button>
 </fieldset>
 <fieldset>
 <legend>Result</legend>
@@ -727,7 +752,7 @@ Default value zeroBased</label><select id="function-6-parameter-1">
 </fieldset></div>
 <button onClick='const value = sutoring.Permutations.BWT.createLArray(document.getElementById("function-10-parameter-0").value);
         const title = "createLArray("+ document.getElementById("function-10-parameter-0").value.toString()+ ")";
-        sutoring.Console.textarea(value.join(", "), title, {container : "function-10-code" });'>Run</button>
+        sutoring.Console.textarea(sutoring.Debug.toStringLines(value), title, {container : "function-10-code" });'>Run</button>
 </fieldset>
 <fieldset>
 <legend>Result</legend>
@@ -813,7 +838,7 @@ Default value zeroBased</label><select id="function-6-parameter-1">
 </fieldset></div>
 <button onClick='const value = sutoring.Permutations.BWT.createLRunEndingPositions(document.getElementById("function-12-parameter-0").value);
         const title = "createLRunEndingPositions("+ document.getElementById("function-12-parameter-0").value.toString()+ ")";
-        sutoring.Console.textarea(value.join(", "), title, {container : "function-12-code" });'>Run</button>
+        sutoring.Console.textarea(sutoring.Debug.toStringLines(value), title, {container : "function-12-code" });'>Run</button>
 </fieldset>
 <fieldset>
 <legend>Result</legend>
@@ -857,7 +882,7 @@ Default value zeroBased</label><select id="function-6-parameter-1">
 </fieldset></div>
 <button onClick='const value = sutoring.Permutations.BWT.createLRunStartingPositions(document.getElementById("function-13-parameter-0").value);
         const title = "createLRunStartingPositions("+ document.getElementById("function-13-parameter-0").value.toString()+ ")";
-        sutoring.Console.textarea(value.join(", "), title, {container : "function-13-code" });'>Run</button>
+        sutoring.Console.textarea(sutoring.Debug.toStringLines(value), title, {container : "function-13-code" });'>Run</button>
 </fieldset>
 <fieldset>
 <legend>Result</legend>
@@ -928,7 +953,7 @@ Default value zeroBased</label><select id="function-6-parameter-1">
 </fieldset></div>
 <button onClick='const value = sutoring.Permutations.BWT.createSortedMiddleCircularStrings(document.getElementById("function-14-parameter-0").value);
         const title = "createSortedMiddleCircularStrings("+ document.getElementById("function-14-parameter-0").value.toString()+ ")";
-        sutoring.Console.textarea(value.join(", "), title, {container : "function-14-code" });'>Run</button>
+        sutoring.Console.textarea(sutoring.Debug.toStringLines(value), title, {container : "function-14-code" });'>Run</button>
 </fieldset>
 <fieldset>
 <legend>Result</legend>
@@ -1028,7 +1053,24 @@ Default value zeroBased</label><select id="function-6-parameter-1">
 </h4>
 						</li>
 					</ul>
-				</section>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div data-custom="true"><fieldset>
+<legend>Parameters</legend>
+<div>
+<label>text</label><textarea id="function-16-parameter-0" cols="40" rows="4" maxlength="20"></textarea>
+</div>
+</fieldset></div>
+<button onClick='const value = sutoring.Permutations.BWT.runLengthEncode(document.getElementById("function-16-parameter-0").value);
+        const title = "runLengthEncode("+ document.getElementById("function-16-parameter-0").value.toString()+ ")";
+        sutoring.Console.textarea(sutoring.Debug.toStringLines(value), title, {container : "function-16-code" });'>Run</button>
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-16-code"></code>
+</fieldset>
+</div></section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">

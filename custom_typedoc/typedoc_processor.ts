@@ -183,7 +183,7 @@ export function processHeadTag(doc: libxmljs.Document){
     if(head != null){
         const scriptTags = head.find("script");
         scriptTags.forEach((v) => v.remove());
-        const sutoringSrc = "https://cdn.jsdelivr.net/npm/sutoring@0.0.11/docs/sutoring.js";
+        const sutoringSrc = "https://cdn.jsdelivr.net/npm/sutoring@0.0.16/docs/sutoring.js";
         const scriptSutoring: libxmljs.Element = new libxmljs.Element(doc, "script", "");
         scriptSutoring.attr({src : sutoringSrc})
         head.addChild(scriptSutoring);    

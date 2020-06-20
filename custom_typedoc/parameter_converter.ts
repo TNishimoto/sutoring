@@ -1,6 +1,7 @@
 import libxmljs = require('libxmljs');
 export type TypeDocParameter = { name: string; type: string, comment: string | null };
 
+
 export function commentParse(comment: string): Map<string, string> {
     const map = new Map<string, string>();
     const arrs = comment.split(" ");
@@ -157,6 +158,7 @@ export function checkReturnTypeConvertable(returnParameter : TypeDocParameter | 
     set.add("string[]");
     set.add("number");
     set.add("number[]");
+    set.add("RLEFactor[]");
 
     if(returnParameter != null){
         if(!set.has(returnParameter.type)){
@@ -168,11 +170,16 @@ export function checkReturnTypeConvertable(returnParameter : TypeDocParameter | 
     return b;
 }
 export function getViewCode(returnParameter : TypeDocParameter, valueName : string, titleName : string, functionID : number){
+    return `sutoring.Console.textarea(sutoring.Debug.toStringLines(${valueName}), ${titleName}, {container : "function-${functionID}-code" })`;
+    /*
     if(returnParameter.type == "string" || returnParameter.type == "number"){
         return `sutoring.Console.textarea(${valueName}.toString(), ${titleName}, {container : "function-${functionID}-code" })`;
     }else if(returnParameter.type == "string[]" || returnParameter.type == "number[]"){
         return `sutoring.Console.textarea(${valueName}.join(", "), ${titleName}, {container : "function-${functionID}-code" })`;
-    }else{
+    }else if(returnParameter.type == "RLEFactor[]"){
+    }
+    else{
         return `sutoring.Console.textarea(${valueName}.toString(), ${titleName}, {container : "function-${functionID}-code" })`;        
     }
+    */
 }
