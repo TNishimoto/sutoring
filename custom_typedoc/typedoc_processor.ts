@@ -129,7 +129,10 @@ export class TypeDocFunctionTag{
     }
     public process(){
         this.clearCustomElements();
-        if(!checkParameterConvertable(this.parameters) || !checkReturnTypeConvertable(this.returnParameter)) return;
+        if(!checkParameterConvertable(this.parameters) || !checkReturnTypeConvertable(this.returnParameter)){
+            console.log(`False: ${this.functionName} ${this.parameters.map((v)=>v.type).join(", ")} ${this.returnParameter == null ? "null" : this.returnParameter.type}`)
+            return;
+        } 
         const mainElement = this.createCustomTag();
         this.element.addChild(mainElement);
         

@@ -9,6 +9,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 
+
+
+
+
+
+
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/sutoring@0.0.11/docs/sutoring.js"></script><script>window.onload = (event) => {
             window.addEventListener("keydown", function(event) {
                 event.stopPropagation();
@@ -382,7 +391,31 @@
 </h4>
 						</li>
 					</ul>
-				</section>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div data-custom="true"><fieldset>
+<legend>Parameters</legend>
+<div>
+<label>text</label><textarea id="function-4-parameter-0" cols="40" rows="4" maxlength="20"></textarea>
+</div>
+<div>
+<label>
+Default value zeroBased</label><select id="function-4-parameter-1">
+        <option value="true">true</option>
+        <option value="false">false</option>
+        </select>
+</div>
+</fieldset></div>
+<button onClick='const value = sutoring.Permutations.BWT.createBWTIndexes(document.getElementById("function-4-parameter-0").value,(document.getElementById("function-4-parameter-1").value == "true"));
+        const title = "createBWTIndexes("+ document.getElementById("function-4-parameter-0").value.toString()+ (document.getElementById("function-4-parameter-1").value == "true").toString()+ ")";
+        sutoring.Console.textarea(value.join(", "), title, {container : "function-4-code" });'>Run</button>
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-4-code"></code>
+</fieldset>
+</div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="createbwttableline" class="tsd-anchor"></a>
 					<h3>createBWTTable<wbr>Line</wbr>
@@ -504,7 +537,31 @@
 </h4>
 						</li>
 					</ul>
-				</section>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div data-custom="true"><fieldset>
+<legend>Parameters</legend>
+<div>
+<label>text</label><textarea id="function-6-parameter-0" cols="40" rows="4" maxlength="20"></textarea>
+</div>
+<div>
+<label>
+Default value zeroBased</label><select id="function-6-parameter-1">
+        <option value="true">true</option>
+        <option value="false">false</option>
+        </select>
+</div>
+</fieldset></div>
+<button onClick='const value = sutoring.Permutations.BWT.createCircularSuffixArray(document.getElementById("function-6-parameter-0").value,(document.getElementById("function-6-parameter-1").value == "true"));
+        const title = "createCircularSuffixArray("+ document.getElementById("function-6-parameter-0").value.toString()+ (document.getElementById("function-6-parameter-1").value == "true").toString()+ ")";
+        sutoring.Console.textarea(value.join(", "), title, {container : "function-6-code" });'>Run</button>
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-6-code"></code>
+</fieldset>
+</div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="createfarray" class="tsd-anchor"></a>
 					<h3>createFArray</h3>

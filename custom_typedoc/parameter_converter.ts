@@ -24,7 +24,10 @@ export function parseParameterElements(parameterContainer: libxmljs.Element): Ty
         if (v.type() == "element") {
             const w = <libxmljs.Element>v;
             const name = w.get("h5")!.text().split(":")[0];
-            const type = w.get("h5/span")!.text();
+            const t1 = w.get("h5/span[@class='tsd-signature-type']")!;
+            const t2 = w.get("h5/a[@class='tsd-signature-type']")!;
+            const type = t1 != null ? t1.text() : t2!.text();
+
             const commentNode = w.get("div/p/comment()");
             if (commentNode != null) {
                 //console.log(w.text() );
@@ -49,10 +52,11 @@ export function parseReturnParameterElement(parameterContainer: libxmljs.Element
 
 
 export function createParameterInputElement(parameter: TypeDocParameter, functionID: number, parameterID: number, doc: libxmljs.Document): libxmljs.Element {
+    const id = `function-${functionID}-parameter-${parameterID}`;
     if (parameter.type == "string") {
         const div: libxmljs.Element = new libxmljs.Element(doc, "div", "");
 
-        const fragments = parseHtmlFragments(`<label>${parameter.name}</label><textarea id="function-${functionID}-parameter-${parameterID}" cols="40" rows="4" maxlength="20" ></textarea>`);
+        const fragments = parseHtmlFragments(`<label>${parameter.name}</label><textarea id="${id}" cols="40" rows="4" maxlength="20" ></textarea>`);
         fragments.forEach((v) => {
             if (v instanceof libxmljs.Element) {
                 div.addChild(v)
@@ -79,9 +83,23 @@ export function createParameterInputElement(parameter: TypeDocParameter, functio
             }
         }
 
-        const fragments = parseHtmlFragments(`<label>${parameter.name}:<input id="function-${functionID}-parameter-${parameterID}" type="number" name="number"  min="${min}" size="${size}" value="${value}"></label>`);
+        const fragments = parseHtmlFragments(`<label>${parameter.name}:<input id="${id}" type="number" name="number"  min="${min}" size="${size}" value="${value}"></label>`);
         const r = fragments[0];
         return <libxmljs.Element>r;
+    } else if(parameter.type == "boolean"){
+        const div: libxmljs.Element = new libxmljs.Element(doc, "div", "");
+        const fragments = parseHtmlFragments(`<label>${parameter.name}</label><select id="${id}" >
+        <option value="true">true</option>
+        <option value="false">false</option>
+        </select>`);
+        fragments.forEach((v) => {
+            if (v instanceof libxmljs.Element) {
+                div.addChild(v)
+            }
+        }
+        )
+        return div;
+
     }
     const div: libxmljs.Element = new libxmljs.Element(doc, "div", "");
     return div;
@@ -91,8 +109,11 @@ export function getParametrInputValue(parameter: TypeDocParameter, inputElementI
         return `document.getElementById("${inputElementID}").value`
     } else if (parameter.type == "number") {
         return `document.getElementById("${inputElementID}").value`
-    } else {
-        return "";
+    } else if(parameter.type == "boolean"){
+        return `(document.getElementById("${inputElementID}").value == "true")`
+    }
+    else {
+        throw new Error("error");
     }
 }
 function getParameterID(functionID: number, i: number) {
@@ -120,6 +141,7 @@ export function checkParameterConvertable(parameters: TypeDocParameter[]) : bool
     const set = new Set<string>();
     set.add("string");
     set.add("number");
+    set.add("boolean");
 
     parameters.forEach((v) =>{
         if(!set.has(v.type)){
