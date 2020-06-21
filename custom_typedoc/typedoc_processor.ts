@@ -160,15 +160,19 @@ export class TypeDocFunctionTag{
         button.attr({"onClick" : buttonClickEvent });
         this.mainFieldSet.addChild(button);
 
-        if(this.returnParameter != null && this.returnParameter.type == "Logics.LogicCellLine"){
-            const visualizeLabel : libxmljs.Element = new libxmljs.Element(this.element.doc(), "label", "  Visualize");
-            const visualizeCheckbox : libxmljs.Element = new libxmljs.Element(this.element.doc(), "input", "");
-            visualizeCheckbox.attr({ id : `function-${this.id}-visualize-checkbox`});
-            visualizeCheckbox.attr({ type : "checkbox"})
-            visualizeCheckbox.attr({ checked : "checked"})
-            visualizeCheckbox.attr({ name : "visualize-checkbox"})
-            this.mainFieldSet.addChild(visualizeLabel);
-            this.mainFieldSet.addChild(visualizeCheckbox);
+
+        if(this.returnParameter != null){
+            const b = this.returnParameter.type == "Logics.LogicCellLine" || this.returnParameter.type == "LogicTable";
+            if(b){
+                const visualizeLabel : libxmljs.Element = new libxmljs.Element(this.element.doc(), "label", "  Visualize");
+                const visualizeCheckbox : libxmljs.Element = new libxmljs.Element(this.element.doc(), "input", "");
+                visualizeCheckbox.attr({ id : `function-${this.id}-visualize-checkbox`});
+                visualizeCheckbox.attr({ type : "checkbox"})
+                visualizeCheckbox.attr({ checked : "checked"})
+                visualizeCheckbox.attr({ name : "visualize-checkbox"})
+                this.mainFieldSet.addChild(visualizeLabel);
+                this.mainFieldSet.addChild(visualizeCheckbox);    
+            }
 
         }
 
