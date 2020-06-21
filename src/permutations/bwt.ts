@@ -1,6 +1,6 @@
 /**
  * This namespace provides functions for Burrows-Wheeler transform.
- * <!-- @path sutoring.Permutations @module BWT -->
+ * <template data-path="sutoring.Permutations" data-module="BWT"></template>
  * @packageDocumentation
  */
 import { Logics, Objects, Common } from "graph-table-svg"
@@ -20,6 +20,12 @@ function createCircularStrings(text: string): string[] {
     const r = Array.from(Array(text.length).keys()).map((i) => createCircularString(text, i));
     return r;
 }
+
+/**
+ * 
+ * @param text An input text. <template data-value="abaababaabaab$"></template>
+ * @param zeroBased 
+ */
 export function createCircularSuffixArray(text: string, zeroBased : boolean = true): number[] {
     const r = Array.from(Array(text.length).keys());
     r.sort((a, b) => {
@@ -32,6 +38,10 @@ export function createCircularSuffixArray(text: string, zeroBased : boolean = tr
         return r.map((v) => v+1);
     }
 }
+/**
+ * 
+ * @param text An input text. <template data-value="abaababaabaab$"></template>
+ */
 function createSortedCircularStrings(text: string): string[] {
     const csa = createCircularSuffixArray(text);
     return csa.map((i) => createCircularString(text, i));
@@ -51,6 +61,11 @@ function compare(text: string, ith: number, jth: number): number {
         }
     }
 }
+/**
+ * 
+ * @param text An input text. <template data-value="abaababaabaab$"></template>
+ * @param zeroBased 
+ */
 export function createBWTIndexes(text: string, zeroBased : boolean = true): number[] {
     const csa = createCircularSuffixArray(text);
     return csa.map((v) => {
@@ -61,9 +76,18 @@ export function createBWTIndexes(text: string, zeroBased : boolean = true): numb
         }
     });
 }
+/**
+ * 
+ * @param text An input text. <template data-value="abaababaabaab$"></template>
+ */
 export function construct(text: string): string {
     return createBWTIndexes(text).map((v) => text[v]).join("");
 }
+/**
+ * 
+ * @param text An input text. <template data-value="abaababaabaab$"></template>
+ * @param cellClass 
+ */
 export function createBWTTableLine(text: string, cellClass: string | Objects.GOptions.GTextBoxCSS  = Common.DefaultClassNames.defaultCellClass): Logics.LogicCellLine {
     const bwt = construct(text);
     const arr = Array.from(Array(text.length).keys()).map((i) => bwt[i]);
@@ -71,12 +95,24 @@ export function createBWTTableLine(text: string, cellClass: string | Objects.GOp
     const name = "BWT"
     return Logics.toLogicCellLine(name, arr, {class:cellClass});
 }
+/**
+ * 
+ * @param text An input text. <template data-value="abaababaabaab$"></template>
+ */
 export function createFArray(text: string): string[] {
     return createSortedCircularStrings(text).map((v) => v[0]);
 }
+/**
+ * 
+ * @param text An input text. <template data-value="abaababaabaab$"></template>
+ */
 export function createLArray(text: string): string[] {
     return createSortedCircularStrings(text).map((v) => v[v.length - 1]);
 }
+/**
+ * 
+ * @param text An input text. <template data-value="abaababaabaab$"></template>
+ */
 export function createSortedMiddleCircularStrings(text: string): string[] {
     return createSortedCircularStrings(text).map((v) => v.substr(1, v.length - 2));
 }
@@ -91,7 +127,13 @@ function rank(text : string, ith : number) : number {
 const bwtColors = ["black", "red", "orange", "blue", "green", "purple", "gray", "slateblue", "saddlebrown", "olive", "aqua"];
 
 
-
+/**
+ * 
+ * @param text An input text. <template data-value="abaababaabaab$"></template>
+ * @param isColored 
+ * @param isRLBWT 
+ * @param cellClass 
+ */
 export function createFArrayLine(text: string, isColored : boolean = false, isRLBWT : boolean = false ,cellClass: string | Objects.GOptions.GTextBoxCSS = { horizontalAnchor: "center" } ): Logics.LogicCellLine {
     const titleCell = new Logics.LogicCell();
     titleCell.text.textContent = "F";
@@ -129,6 +171,14 @@ export function createFArrayLine(text: string, isColored : boolean = false, isRL
     return [titleCell].concat(cells);
 
 }
+
+/**
+ * 
+ * @param text An input text. <template data-value="abaababaabaab$"></template>
+ * @param isColored 
+ * @param isRLBWT 
+ * @param cellClass 
+ */
 export function createLArrayLine(text: string, isColored : boolean = false, isRLBWT : boolean = false ,cellClass: string | Objects.GOptions.GTextBoxCSS = { horizontalAnchor: "center" } ): Logics.LogicCellLine {
     const titleCell = new Logics.LogicCell();
     titleCell.text.textContent = "L";
@@ -186,7 +236,12 @@ export function createLArrayLine(text: string, isColored : boolean = false, cell
     return line;
 }
 */
-
+/**
+ * 
+ * @param text An input text. <template data-value="abaababaabaab$"></template>
+ * @param isColored 
+ * @param cellClass 
+ */
 export function createSortedMiddleCircularStringsLine(text: string, isColored : boolean = false, cellClass: string | Objects.GOptions.GTextBoxCSS = { horizontalAnchor: "center" } ): Logics.LogicCellLine {
     //const r : LogicCellLine = new Array();
     const titleCell = new Logics.LogicCell();
@@ -222,12 +277,22 @@ export function createSortedMiddleCircularStringsLine(text: string, isColored : 
 
 }
 
-
+/**
+ * 
+ * @param text An input text. <template data-value="abaababaabaab$"></template>
+ * @param option 
+ */
 export function constructBWTTable(text: string, option: SuffixArray.SATableOption = { zeroBased: true, withSA: true, withLCP: false, withBWT: true }) {
     return SuffixArray.constructSATable(text, option);
 }
 
-export function constructBWTTable2(text: string, option: BWTOption = { zeroBased: true, withSA: true, withLCP: false, withBWT: true, withMiddleSubstrings : true, isRLBWT : false, coloredChar : true }) {
+/**
+ * 
+ * @param text An input text. <template data-value="abaababaabaab$"></template>
+ * @param option 
+ */
+export function constructBWTTable2(text: string, option: BWTOption = { zeroBased: true, withSA: true, withLCP: false, withBWT: true, 
+    withMiddleSubstrings : true, isRLBWT : false, coloredChar : true }) : Logics.LogicTable {
     if (option.zeroBased == undefined) option.zeroBased = true;
     if (option.withSA == undefined) option.withSA = true;
     if (option.withLCP == undefined) option.withLCP = false;
@@ -264,6 +329,10 @@ export function constructBWTTable2(text: string, option: BWTOption = { zeroBased
 
 type RLEFactor = { char : string, length : number}
 
+/**
+ * 
+ * @param text An input text. <template data-value="abaababaabaab$"></template>
+ */
 export function runLengthEncode(text: string) : RLEFactor[]{
     if(text.length == 0){
         return new Array();
@@ -289,10 +358,19 @@ export function runLengthEncode(text: string) : RLEFactor[]{
     }
 }
 
+/**
+ * 
+ * @param text An input text. <template data-value="abaababaabaab$"></template>
+ */
 export function constructRLBWT(text: string) : RLEFactor[] {
     const bwt = construct(text);
     return runLengthEncode(bwt);
 }
+
+/**
+ * 
+ * @param text An input text. <template data-value="abaababaabaab$"></template>
+ */
 export function createLRunStartingPositions(text: string) : number[] {
     const bwt = createLArray(text);
     const r : number[] = new Array();
@@ -304,6 +382,10 @@ export function createLRunStartingPositions(text: string) : number[] {
     }
     return r;    
 }
+/**
+ * 
+ * @param text An input text. <template data-value="abaababaabaab$"></template>
+ */
 export function createLRunEndingPositions(text: string) : number[] {
     const lruns = createLRunStartingPositions(text);
     const r : number[] = new Array();
@@ -314,6 +396,10 @@ export function createLRunEndingPositions(text: string) : number[] {
 
     return r;    
 }
+/**
+ * 
+ * @param text An input text. <template data-value="abaababaabaab$"></template>
+ */
 export function createFRunStartPositions(text: string) : number[]{
     const bwt = createLArray(text);
     const lruns = createLRunStartingPositions(text);

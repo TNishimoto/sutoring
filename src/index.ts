@@ -1,7 +1,7 @@
 
 
 import { Console } from "graph-table-svg"
-import * as Debug from "./debug/debug"
+import * as Debug from "./debug/index"
 
 import * as Arrays from "./arrays/index"
 import * as Sequences from "./sequences/index"

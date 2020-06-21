@@ -1,40 +1,40 @@
+
 import libxmljs = require('libxmljs');
-export type TypeDocParameter = { name: string; type: string, comment: string | null };
+import {TypeDocParameter, templateParse, parseHtmlFragments} from './lib';
 
-
-export function commentParse(comment: string): Map<string, string> {
-    const map = new Map<string, string>();
-    const arrs = comment.split(" ");
-    for (let i = 0; i < arrs.length - 1; i++) {
-        if (arrs[i].length > 0 && arrs[i][0] == "@") {
-            const name = arrs[i].substr(1);
-            const value = arrs[i + 1];
-            map.set(name, value);
-        }
-    }
-    return map;
-}
-export function parseHtmlFragments(str: string): libxmljs.Node[] {
-    const doc = libxmljs.parseHtmlFragment(`<root>${str}</root>`);
-    return doc.root()!.childNodes();
-}
 
 export function parseParameterElements(parameterContainer: libxmljs.Element): TypeDocParameter[] {
     const r: TypeDocParameter[] = [];
     parameterContainer.childNodes().forEach((v) => {
         if (v.type() == "element") {
-            const w = <libxmljs.Element>v;
-            const name = w.get("h5")!.text().split(":")[0];
-            const t1 = w.get("h5/span[@class='tsd-signature-type']")!;
-            const t2 = w.get("h5/a[@class='tsd-signature-type']")!;
-            const type = t1 != null ? t1.text() : t2!.text();
+            const liNode = (<libxmljs.Element>v);
+            const h5Node = liNode.get("h5")!;
+            const defaultFlagElement = h5Node.get("span[@class='tsd-flag ts-flagDefault value']");
+            const spanNodes = h5Node.find("*[@class='tsd-signature-type' or @class='tsd-signature-symbol']");
+            
+            let type : string = "";
+            if(defaultFlagElement != null) spanNodes.pop();
+            type = spanNodes.map((v) => (<libxmljs.Element>v).text()).join("");
 
-            const commentNode = w.get("div/p/comment()");
-            if (commentNode != null) {
+            //console.log(spanNodes.map((v) => (<libxmljs.Element>v).name()).join(","))
+            let rawText = "";
+            h5Node.childNodes().forEach((w) =>{
+                if(w.type() == "text" && w instanceof libxmljs.Element){
+                    rawText += w.text();
+                }
+            })
+            const name = rawText.split(":")[0];
+            //const t1 = h5Node.get("span[@class='tsd-signature-type']")!;
+            //const t2 = h5Node.get("a[@class='tsd-signature-type']")!;
+            //const type = t1 != null ? t1.text() : t2!.text();
+
+            const templateNode = liNode.get("div/p/template");
+            if (templateNode != null) {
                 //console.log(w.text() );
-                r.push({ name: name, type: type, comment: commentNode.text() });
+                const map = templateParse(templateNode);
+                r.push({ name: name, type: type, option : map });
             } else {
-                r.push({ name: name, type: type, comment: null });
+                r.push({ name: name, type: type, option : null });
             }
         }
     })
@@ -46,94 +46,16 @@ export function parseReturnParameterElement(parameterContainer: libxmljs.Element
     //const name = w.get("h5")!.text().split(":")[0];
     const type = text;
     const commentNode = w.get("div/p/comment()");
-    return { name: "Returns", type: type, comment: null };
+    return { name: "Returns", type: type, option: null };
 
 
-}
-
-
-export function createParameterInputElement(parameter: TypeDocParameter, functionID: number, parameterID: number, doc: libxmljs.Document): libxmljs.Element {
-    const id = `function-${functionID}-parameter-${parameterID}`;
-    if (parameter.type == "string") {
-        const div: libxmljs.Element = new libxmljs.Element(doc, "div", "");
-
-        const fragments = parseHtmlFragments(`<label>${parameter.name}</label><textarea id="${id}" cols="40" rows="4" maxlength="20" ></textarea>`);
-        fragments.forEach((v) => {
-            if (v instanceof libxmljs.Element) {
-                div.addChild(v)
-            }
-        }
-        )
-        return div;
-
-    } else if (parameter.type == "number") {
-        //const doc = new libxmlts.Document(this.element.doc());
-        let min = 0;
-        let value = 0;
-        let size = 5;
-        if (parameter.comment != null) {
-            const map = commentParse(parameter.comment);
-            if (map.has("min")) {
-                min = Number.parseInt(map.get("min")!);
-            }
-            if (map.has("value")) {
-                value = Number.parseInt(map.get("value")!);
-            }
-            if (map.has("size")) {
-                size = Number.parseInt(map.get("size")!);
-            }
-        }
-
-        const fragments = parseHtmlFragments(`<label>${parameter.name}:<input id="${id}" type="number" name="number"  min="${min}" size="${size}" value="${value}"></label>`);
-        const r = fragments[0];
-        return <libxmljs.Element>r;
-    } else if(parameter.type == "boolean"){
-        const div: libxmljs.Element = new libxmljs.Element(doc, "div", "");
-        const fragments = parseHtmlFragments(`<label>${parameter.name}</label><select id="${id}" >
-        <option value="true">true</option>
-        <option value="false">false</option>
-        </select>`);
-        fragments.forEach((v) => {
-            if (v instanceof libxmljs.Element) {
-                div.addChild(v)
-            }
-        }
-        )
-        return div;
-
-    }
-    const div: libxmljs.Element = new libxmljs.Element(doc, "div", "");
-    return div;
-}
-export function getParametrInputValue(parameter: TypeDocParameter, inputElementID: string): string {
-    if (parameter.type == "string") {
-        return `document.getElementById("${inputElementID}").value`
-    } else if (parameter.type == "number") {
-        return `document.getElementById("${inputElementID}").value`
-    } else if(parameter.type == "boolean"){
-        return `(document.getElementById("${inputElementID}").value == "true")`
-    }
-    else {
-        throw new Error("error");
-    }
 }
 function getParameterID(functionID: number, i: number) {
     return `function-${functionID}-parameter-${i}`
 }
-
-export function getTitleCode(parameters: TypeDocParameter[], functionName: string, functionID: number): string {
-    let titleCode = `const title = "${functionName}("`;
-    parameters.forEach((v, i) => {
-        const value = getParametrInputValue(v, getParameterID(functionID, i))
-        titleCode += `+ ${value}.toString()`;
-    })
-    titleCode += `+ ")"`
-    return titleCode;
-}
 export function getArguments(parameters: TypeDocParameter[], functionID: number): string[] {
     const r: string[] = parameters.map((v, i) => {
-        return getParametrInputValue(v, getParameterID(functionID, i));
-
+        return `sutoring.Debug.CustomTypedoc.getParameterInputValue("${getParameterID(functionID, i)}")`; 
     })
     return r;
 }
@@ -143,6 +65,11 @@ export function checkParameterConvertable(parameters: TypeDocParameter[]) : bool
     set.add("string");
     set.add("number");
     set.add("boolean");
+    set.add("string | Objects.GOptions.GTextBoxCSS");
+    set.add("BWTOption")
+    set.add("SuffixArray.SATableOption")
+    set.add("SATableOption")
+    set.add("Objects.GOptions.CellAttributes")
 
     parameters.forEach((v) =>{
         if(!set.has(v.type)){
@@ -159,6 +86,10 @@ export function checkReturnTypeConvertable(returnParameter : TypeDocParameter | 
     set.add("number");
     set.add("number[]");
     set.add("RLEFactor[]");
+    set.add("Logics.LogicCellLine");
+    set.add("LogicTable");
+
+    //set.add("Logics.LogicCellLine");
 
     if(returnParameter != null){
         if(!set.has(returnParameter.type)){
@@ -170,7 +101,23 @@ export function checkReturnTypeConvertable(returnParameter : TypeDocParameter | 
     return b;
 }
 export function getViewCode(returnParameter : TypeDocParameter, valueName : string, titleName : string, functionID : number){
-    return `sutoring.Console.textarea(sutoring.Debug.toStringLines(${valueName}), ${titleName}, {container : "function-${functionID}-code" })`;
+    if(returnParameter.type == "Logics.LogicCellLine" || returnParameter.type == "LogicTable"){
+        return `const b = document.getElementById("function-${functionID}-visualize-checkbox").checked;
+        if(b){ 
+            sutoring.Console.table(${valueName}, ${titleName}, "function-${functionID}-code")}
+            else{ 
+            sutoring.Console.textarea(${valueName}, ${titleName}, {container : "function-${functionID}-code" })
+        }`
+        /*
+        if(visualize){
+            return `sutoring.Console.table(${valueName}, ${titleName}, "function-${functionID}-code")`;
+        }else{
+            return `sutoring.Console.textarea(${valueName}, ${titleName}, {container : "function-${functionID}-code" })`;
+        }
+        */
+    }else{
+        return `sutoring.Console.textarea(${valueName}, ${titleName}, {container : "function-${functionID}-code" })`;
+    }
     /*
     if(returnParameter.type == "string" || returnParameter.type == "number"){
         return `sutoring.Console.textarea(${valueName}.toString(), ${titleName}, {container : "function-${functionID}-code" })`;

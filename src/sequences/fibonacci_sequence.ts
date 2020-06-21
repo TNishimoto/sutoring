@@ -1,6 +1,6 @@
 /**
  * This namespace provides functions for Fibonacci sequences.
- * <!-- @path sutoring.Sequences @module FibonacciSequence -->
+ * <template data-path="sutoring.Sequences" data-module="FibonacciSequence"></template>
  * @packageDocumentation
  */
 

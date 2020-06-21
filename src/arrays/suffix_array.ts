@@ -1,27 +1,32 @@
+/**
+ * This namespace provides functions for suffix array.
+ * <template data-path="sutoring.Arrays" data-module="SuffixArray"></template>
+ * @packageDocumentation
+ */
 
-//import {LogicGraphTable} from "./graph_table"
-//import { LogicTable, LogicCellLine, LogicCell } from "logic_index"
-import { Logics, Objects, Common } from "graph-table-svg"
+import { Logics, Objects } from "graph-table-svg"
 import * as LCPArray from "./lcp_array"
 import * as BWT from "../permutations/bwt"
 
 //import { toLogicCellLine, buildLogicTable } from "logic_index";
 //namespace StrFunctions {
 /**
- * This namespace provides functions for suffix array.
+ * 
+ * @param text An input text. <template data-value="abaababaabaab$"></template> 
+ * @param zero_based 
  */
-export function construct(str: string, zero_based: boolean = true): number[] {
-    const arr: number[] = new Array(str.length);
-    for (let i = 0; i < str.length; i++) {
+export function construct(text: string, zero_based: boolean = true): number[] {
+    const arr: number[] = new Array(text.length);
+    for (let i = 0; i < text.length; i++) {
         arr[i] = i;
     }
 
     const func = function (item1: number, item2: number): number {
-        for (let i = 0; i <= str.length; i++) {
-            if (item1 + i >= str.length || item2 + i >= str.length) break;
-            if (str.charAt(item1 + i) < str.charAt(item2 + i)) {
+        for (let i = 0; i <= text.length; i++) {
+            if (item1 + i >= text.length || item2 + i >= text.length) break;
+            if (text.charAt(item1 + i) < text.charAt(item2 + i)) {
                 return - 1;
-            } else if (str.charAt(item1 + i) > str.charAt(item2 + i)) {
+            } else if (text.charAt(item1 + i) > text.charAt(item2 + i)) {
                 return 1;
             }
         }
@@ -42,11 +47,11 @@ export function construct(str: string, zero_based: boolean = true): number[] {
 export type SATableOption = { zeroBased?: boolean, withSA?: boolean, withLCP?: boolean, withBWT?: boolean, withIndex?: boolean };
 
 /**
- * [Markdown](https://marked.js.org/)
- * @param text 
+ * 
+ * @param text An input text. <template data-value="abaababaabaab$"></template>
  * @param zero_based 
  * @param cellClass
- * @returns aaaaaaaa
+ * @returns 
  */
 export function createSuffixArrayTableLine(text: string, zero_based: boolean = true, cellClass : Objects.GOptions.CellAttributes = { style : { horizontalAnchor : "center"}}) : Logics.LogicCellLine{
     //const suffixClass : Objects.GOptions.CellAttributes = { style : { horizontalAnchor : "center"}};
@@ -54,17 +59,30 @@ export function createSuffixArrayTableLine(text: string, zero_based: boolean = t
     const name = "SA"
     return Logics.toLogicCellLine(name, arr, cellClass );
 }
+/**
+ * 
+ * @param text An input text. <template data-value="abaababaabaab$"></template>
+ */
 export function createSortedSuffixes(text : string) : string[] {
     const sa = construct(text);
     return sa.map((v) => text.substr(v));
 }
+/**
+ * 
+ * @param text An input text. <template data-value="abaababaabaab$"></template>
+ * @param cellClass 
+ */
 export function createSortedSuffixesTableLine(text : string, cellClass : Objects.GOptions.CellAttributes = { style : { horizontalAnchor : "left"}, class : { horizontalAnchor : "right"}}) : Logics.LogicCellLine {
     const suffixes = createSortedSuffixes(text);
     const name = "Suffix";
     const p = Logics.toLogicCellLine(name, suffixes, cellClass);
     return p;
 }
-
+/**
+ * 
+ * @param text An input text. <template data-value="abaababaabaab$"></template>
+ * @param option 
+ */
 export function constructSATable(text: string, option: SATableOption = { zeroBased: true, withSA: true, withLCP: false, withBWT: false, withIndex: true }): Logics.LogicTable {
     if (option.zeroBased == undefined) option.zeroBased = true;
     if (option.withSA == undefined) option.withSA = true;

@@ -18,15 +18,7 @@
 
 
 
-
-
-
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/sutoring@0.0.16/docs/sutoring.js"></script><script>window.onload = (event) => {
+<script src="https://cdn.jsdelivr.net/npm/sutoring@0.0.17/docs/sutoring.js"></script><script>window.onload = (event) => {
             window.addEventListener("keydown", function(event) {
                 event.stopPropagation();
             }, true);
@@ -96,8 +88,8 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>This namespace provides functions for Burrows-Wheeler transform.</p>
-						<!-- @path sutoring.Permutations @module BWT -->
+						<p>This namespace provides functions for Burrows-Wheeler transform.
+						<template data-path="sutoring.Permutations" data-module="BWT"></template></p>
 					</div>
 				</div>
 			</section>
@@ -168,7 +160,7 @@
 </div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in src/permutations/bwt.ts:265</li>
+							<li>Defined in src/permutations/bwt.ts:330</li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -197,7 +189,7 @@
 </div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in src/permutations/bwt.ts:91</li>
+							<li>Defined in src/permutations/bwt.ts:127</li>
 						</ul>
 					</aside>
 				</section>
@@ -215,7 +207,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/permutations/bwt.ts:41</li>
+									<li>Defined in src/permutations/bwt.ts:51</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -249,14 +241,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/permutations/bwt.ts:64</li>
+									<li>Defined in src/permutations/bwt.ts:83</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>text: <span class="tsd-signature-type">string</span>
 </h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span>
@@ -266,19 +263,19 @@
 				<div name="run" data-custom="true">
 <fieldset>
 <legend>Demo</legend>
-<div data-custom="true"><fieldset>
+<div id="function-5" data-function-name="construct" data-custom="true"><fieldset id="function-5-parameters-fieldset">
 <legend>Parameters</legend>
-<div>
-<label>text</label><textarea id="function-0-parameter-0" cols="40" rows="4" maxlength="20"></textarea>
+<div data-name="text" data-type="string" id="function-5-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1" maxlength="20">abaababaabaab$</textarea>
 </div>
 </fieldset></div>
-<button onClick='const value = sutoring.Permutations.BWT.construct(document.getElementById("function-0-parameter-0").value);
-        const title = "construct("+ document.getElementById("function-0-parameter-0").value.toString()+ ")";
-        sutoring.Console.textarea(sutoring.Debug.toStringLines(value), title, {container : "function-0-code" });'>Run</button>
+<button onClick='const value = sutoring.Permutations.BWT.construct(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-5-parameter-0"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-5");
+        sutoring.Console.textarea(value, title, {container : "function-5-code" });'>Run</button>
 </fieldset>
 <fieldset>
 <legend>Result</legend>
-<code id="function-0-code"></code>
+<code id="function-5-code"></code>
 </fieldset>
 </div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
@@ -292,26 +289,95 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/permutations/bwt.ts:226</li>
+									<li>Defined in src/permutations/bwt.ts:285</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>text: <span class="tsd-signature-type">string</span>
 </h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
 								</li>
 								<li>
 									<h5>
 <span class="tsd-flag ts-flagDefault value">Default value</span> option: <span class="tsd-signature-type">SuffixArray.SATableOption</span><span class="tsd-signature-symbol"> = { zeroBased: true, withSA: true, withLCP: false, withBWT: true }</span>
 </h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="../classes/_node_modules_graph_table_svg_dist_logics_logic_table_d_.logictable.html" class="tsd-signature-type">LogicTable</a>
 </h4>
 						</li>
 					</ul>
-				</section>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div id="function-6" data-function-name="constructBWTTable" data-custom="true"><fieldset id="function-6-parameters-fieldset">
+<legend>Parameters</legend>
+<div data-name="text" data-type="string" id="function-6-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1" maxlength="20">abaababaabaab$</textarea>
+</div>
+<div data-name="
+ option" data-type="SuffixArray.SATableOption" id="function-6-parameter-1"><fieldset>
+        <legend>
+ option</legend>
+        <div data-name="withBWT" data-type="boolean">
+<label>withBWT</label>
+        <select name="select">
+        <option value="true">true</option>
+<option value="false">false</option>
+        </select>
+</div>
+        <div data-name="withIndex" data-type="boolean">
+<label>withIndex</label>
+        <select name="select">
+        <option value="true">true</option>
+<option value="false">false</option>
+        </select>
+</div>
+        <div data-name="withLCP" data-type="boolean">
+<label>withLCP</label>
+        <select name="select">
+        <option value="true">true</option>
+<option value="false">false</option>
+        </select>
+</div>
+        <div data-name="withSA" data-type="boolean">
+<label>withSA</label>
+        <select name="select">
+        <option value="true">true</option>
+<option value="false">false</option>
+        </select>
+</div>
+        <div data-name="zeroBased" data-type="boolean">
+<label>zeroBased</label>
+        <select name="select">
+        <option value="true">true</option>
+<option value="false">false</option>
+        </select>
+</div>
+        </fieldset></div>
+</fieldset></div>
+<button onClick='const value = sutoring.Permutations.BWT.constructBWTTable(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-6-parameter-0"),sutoring.Debug.CustomTypedoc.getParameterInputValue("function-6-parameter-1"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-6");
+        const b = document.getElementById("function-6-visualize-checkbox").checked;
+        if(b){ 
+            sutoring.Console.table(value, title, "function-6-code")}
+            else{ 
+            sutoring.Console.textarea(value, title, {container : "function-6-code" })
+        };'>Run</button>
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-6-code"></code>
+</fieldset>
+</div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="constructbwttable2" class="tsd-anchor"></a>
 					<h3>constructBWTTable2</h3>
@@ -323,26 +389,116 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/permutations/bwt.ts:230</li>
+									<li>Defined in src/permutations/bwt.ts:294</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>text: <span class="tsd-signature-type">string</span>
 </h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
 								</li>
 								<li>
 									<h5>
-<span class="tsd-flag ts-flagDefault value">Default value</span> option: <a href="_src_permutations_bwt_.html#bwtoption" class="tsd-signature-type">BWTOption</a><span class="tsd-signature-symbol"> = { zeroBased: true, withSA: true, withLCP: false, withBWT: true, withMiddleSubstrings : true, isRLBWT : false, coloredChar : true }</span>
+<span class="tsd-flag ts-flagDefault value">Default value</span> option: <a href="_src_permutations_bwt_.html#bwtoption" class="tsd-signature-type">BWTOption</a><span class="tsd-signature-symbol"> = { zeroBased: true, withSA: true, withLCP: false, withBWT: true,withMiddleSubstrings : true, isRLBWT : false, coloredChar : true }</span>
 </h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="../classes/_node_modules_graph_table_svg_dist_logics_logic_table_d_.logictable.html" class="tsd-signature-type">LogicTable</a>
 </h4>
 						</li>
 					</ul>
-				</section>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div id="function-7" data-function-name="constructBWTTable2" data-custom="true"><fieldset id="function-7-parameters-fieldset">
+<legend>Parameters</legend>
+<div data-name="text" data-type="string" id="function-7-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1" maxlength="20">abaababaabaab$</textarea>
+</div>
+<div data-name="
+ option" data-type="BWTOption" id="function-7-parameter-1"><fieldset>
+        <legend>
+ option</legend>
+        <div data-name="withBWT" data-type="boolean">
+<label>withBWT</label>
+        <select name="select">
+        <option value="true">true</option>
+<option value="false">false</option>
+        </select>
+</div>
+        <div data-name="withIndex" data-type="boolean">
+<label>withIndex</label>
+        <select name="select">
+        <option value="true">true</option>
+<option value="false">false</option>
+        </select>
+</div>
+        <div data-name="withLCP" data-type="boolean">
+<label>withLCP</label>
+        <select name="select">
+        <option value="true">true</option>
+<option value="false">false</option>
+        </select>
+</div>
+        <div data-name="withSA" data-type="boolean">
+<label>withSA</label>
+        <select name="select">
+        <option value="true">true</option>
+<option value="false">false</option>
+        </select>
+</div>
+        <div data-name="zeroBased" data-type="boolean">
+<label>zeroBased</label>
+        <select name="select">
+        <option value="true">true</option>
+<option value="false">false</option>
+        </select>
+</div>
+        <div data-name="coloredChar" data-type="boolean">
+<label>coloredChar</label>
+        <select name="select">
+        <option value="true">true</option>
+<option value="false">false</option>
+        </select>
+</div>
+        <div data-name="isRLBWT" data-type="boolean">
+<label>isRLBWT</label>
+        <select name="select">
+        <option value="true">true</option>
+<option value="false">false</option>
+        </select>
+</div>
+        <div data-name="withMiddleSubstrings" data-type="boolean">
+<label>withMiddleSubstrings</label>
+        <select name="select">
+        <option value="true">true</option>
+<option value="false">false</option>
+        </select>
+</div>
+        </fieldset></div>
+</fieldset></div>
+<button onClick='const value = sutoring.Permutations.BWT.constructBWTTable2(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-7-parameter-0"),sutoring.Debug.CustomTypedoc.getParameterInputValue("function-7-parameter-1"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-7");
+        const b = document.getElementById("function-7-visualize-checkbox").checked;
+        if(b){ 
+            sutoring.Console.table(value, title, "function-7-code")}
+            else{ 
+            sutoring.Console.textarea(value, title, {container : "function-7-code" })
+        };'>Run</button>
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-7-code"></code>
+</fieldset>
+</div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="constructrlbwt" class="tsd-anchor"></a>
 					<h3>constructRLBWT</h3>
@@ -354,14 +510,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/permutations/bwt.ts:292</li>
+									<li>Defined in src/permutations/bwt.ts:365</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>text: <span class="tsd-signature-type">string</span>
 </h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_src_permutations_bwt_.html#rlefactor" class="tsd-signature-type">RLEFactor</a><span class="tsd-signature-symbol">[]</span>
@@ -371,19 +532,19 @@
 				<div name="run" data-custom="true">
 <fieldset>
 <legend>Demo</legend>
-<div data-custom="true"><fieldset>
+<div id="function-8" data-function-name="constructRLBWT" data-custom="true"><fieldset id="function-8-parameters-fieldset">
 <legend>Parameters</legend>
-<div>
-<label>text</label><textarea id="function-3-parameter-0" cols="40" rows="4" maxlength="20"></textarea>
+<div data-name="text" data-type="string" id="function-8-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1" maxlength="20">abaababaabaab$</textarea>
 </div>
 </fieldset></div>
-<button onClick='const value = sutoring.Permutations.BWT.constructRLBWT(document.getElementById("function-3-parameter-0").value);
-        const title = "constructRLBWT("+ document.getElementById("function-3-parameter-0").value.toString()+ ")";
-        sutoring.Console.textarea(sutoring.Debug.toStringLines(value), title, {container : "function-3-code" });'>Run</button>
+<button onClick='const value = sutoring.Permutations.BWT.constructRLBWT(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-8-parameter-0"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-8");
+        sutoring.Console.textarea(value, title, {container : "function-8-code" });'>Run</button>
 </fieldset>
 <fieldset>
 <legend>Result</legend>
-<code id="function-3-code"></code>
+<code id="function-8-code"></code>
 </fieldset>
 </div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
@@ -397,19 +558,26 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/permutations/bwt.ts:54</li>
+									<li>Defined in src/permutations/bwt.ts:69</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>text: <span class="tsd-signature-type">string</span>
 </h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
 								</li>
 								<li>
 									<h5>
 <span class="tsd-flag ts-flagDefault value">Default value</span> zeroBased: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span>
 </h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span>
@@ -419,26 +587,28 @@
 				<div name="run" data-custom="true">
 <fieldset>
 <legend>Demo</legend>
-<div data-custom="true"><fieldset>
+<div id="function-9" data-function-name="createBWTIndexes" data-custom="true"><fieldset id="function-9-parameters-fieldset">
 <legend>Parameters</legend>
-<div>
-<label>text</label><textarea id="function-4-parameter-0" cols="40" rows="4" maxlength="20"></textarea>
+<div data-name="text" data-type="string" id="function-9-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1" maxlength="20">abaababaabaab$</textarea>
 </div>
-<div>
+<div data-name="
+ zeroBased" data-type="boolean" id="function-9-parameter-1">
 <label>
-Default value zeroBased</label><select id="function-4-parameter-1">
+ zeroBased</label>
+        <select name="select">
         <option value="true">true</option>
-        <option value="false">false</option>
+<option value="false">false</option>
         </select>
 </div>
 </fieldset></div>
-<button onClick='const value = sutoring.Permutations.BWT.createBWTIndexes(document.getElementById("function-4-parameter-0").value,(document.getElementById("function-4-parameter-1").value == "true"));
-        const title = "createBWTIndexes("+ document.getElementById("function-4-parameter-0").value.toString()+ (document.getElementById("function-4-parameter-1").value == "true").toString()+ ")";
-        sutoring.Console.textarea(sutoring.Debug.toStringLines(value), title, {container : "function-4-code" });'>Run</button>
+<button onClick='const value = sutoring.Permutations.BWT.createBWTIndexes(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-9-parameter-0"),sutoring.Debug.CustomTypedoc.getParameterInputValue("function-9-parameter-1"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-9");
+        sutoring.Console.textarea(value, title, {container : "function-9-code" });'>Run</button>
 </fieldset>
 <fieldset>
 <legend>Result</legend>
-<code id="function-4-code"></code>
+<code id="function-9-code"></code>
 </fieldset>
 </div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
@@ -453,26 +623,84 @@ Default value zeroBased</label><select id="function-4-parameter-1">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/permutations/bwt.ts:67</li>
+									<li>Defined in src/permutations/bwt.ts:91</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>text: <span class="tsd-signature-type">string</span>
 </h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
 								</li>
 								<li>
 									<h5>
 <span class="tsd-flag ts-flagDefault value">Default value</span> cellClass: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Objects.GOptions.GTextBoxCSS</span><span class="tsd-signature-symbol"> = Common.DefaultClassNames.defaultCellClass</span>
 </h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Logics.LogicCellLine</span>
 </h4>
 						</li>
 					</ul>
-				</section>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div id="function-10" data-function-name="createBWTTableLine" data-custom="true"><fieldset id="function-10-parameters-fieldset">
+<legend>Parameters</legend>
+<div data-name="text" data-type="string" id="function-10-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1" maxlength="20">abaababaabaab$</textarea>
+</div>
+<div data-name="
+ cellClass" data-type="string | Objects.GOptions.GTextBoxCSS" id="function-10-parameter-1"><fieldset>
+        <legend>
+ cellClass</legend>
+        <div data-name="autoSizeShapeToFitText" data-type="AutoSizeShapeToFitText">
+<label>autoSizeShapeToFitText</label>
+        <select name="select">
+        <option value="auto">auto</option>
+<option value="semi-auto">semi-auto</option>
+<option value="none">none</option>
+        </select>
+</div>
+        <div data-name="verticalAnchor" data-type="VerticalAnchor">
+<label>verticalAnchor</label>
+        <select name="select">
+        <option value="top">top</option>
+<option value="middle">middle</option>
+<option value="bottom">bottom</option>
+        </select>
+</div>
+        <div data-name="horizontalAnchor" data-type="HorizontalAnchor">
+<label>horizontalAnchor</label>
+        <select name="select">
+        <option value="left">left</option>
+<option value="center">center</option>
+<option value="right">right</option>
+        </select>
+</div>
+        </fieldset></div>
+</fieldset></div>
+<button onClick='const value = sutoring.Permutations.BWT.createBWTTableLine(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-10-parameter-0"),sutoring.Debug.CustomTypedoc.getParameterInputValue("function-10-parameter-1"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-10");
+        const b = document.getElementById("function-10-visualize-checkbox").checked;
+        if(b){ 
+            sutoring.Console.table(value, title, "function-10-code")}
+            else{ 
+            sutoring.Console.textarea(value, title, {container : "function-10-code" })
+        };'>Run</button><label>  Visualize</label><input id="function-10-visualize-checkbox" type="checkbox" checked name="visualize-checkbox">
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-10-code"></code>
+</fieldset>
+</div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 					<a name="createcircularstring" class="tsd-anchor"></a>
 					<h3>create<wbr>Circular<wbr>String</wbr></wbr>
@@ -543,19 +771,26 @@ Default value zeroBased</label><select id="function-4-parameter-1">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/permutations/bwt.ts:23</li>
+									<li>Defined in src/permutations/bwt.ts:29</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>text: <span class="tsd-signature-type">string</span>
 </h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
 								</li>
 								<li>
 									<h5>
 <span class="tsd-flag ts-flagDefault value">Default value</span> zeroBased: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span>
 </h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span>
@@ -565,26 +800,28 @@ Default value zeroBased</label><select id="function-4-parameter-1">
 				<div name="run" data-custom="true">
 <fieldset>
 <legend>Demo</legend>
-<div data-custom="true"><fieldset>
+<div id="function-11" data-function-name="createCircularSuffixArray" data-custom="true"><fieldset id="function-11-parameters-fieldset">
 <legend>Parameters</legend>
-<div>
-<label>text</label><textarea id="function-6-parameter-0" cols="40" rows="4" maxlength="20"></textarea>
+<div data-name="text" data-type="string" id="function-11-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1" maxlength="20">abaababaabaab$</textarea>
 </div>
-<div>
+<div data-name="
+ zeroBased" data-type="boolean" id="function-11-parameter-1">
 <label>
-Default value zeroBased</label><select id="function-6-parameter-1">
+ zeroBased</label>
+        <select name="select">
         <option value="true">true</option>
-        <option value="false">false</option>
+<option value="false">false</option>
         </select>
 </div>
 </fieldset></div>
-<button onClick='const value = sutoring.Permutations.BWT.createCircularSuffixArray(document.getElementById("function-6-parameter-0").value,(document.getElementById("function-6-parameter-1").value == "true"));
-        const title = "createCircularSuffixArray("+ document.getElementById("function-6-parameter-0").value.toString()+ (document.getElementById("function-6-parameter-1").value == "true").toString()+ ")";
-        sutoring.Console.textarea(sutoring.Debug.toStringLines(value), title, {container : "function-6-code" });'>Run</button>
+<button onClick='const value = sutoring.Permutations.BWT.createCircularSuffixArray(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-11-parameter-0"),sutoring.Debug.CustomTypedoc.getParameterInputValue("function-11-parameter-1"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-11");
+        sutoring.Console.textarea(value, title, {container : "function-11-code" });'>Run</button>
 </fieldset>
 <fieldset>
 <legend>Result</legend>
-<code id="function-6-code"></code>
+<code id="function-11-code"></code>
 </fieldset>
 </div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
@@ -598,14 +835,19 @@ Default value zeroBased</label><select id="function-6-parameter-1">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/permutations/bwt.ts:74</li>
+									<li>Defined in src/permutations/bwt.ts:102</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>text: <span class="tsd-signature-type">string</span>
 </h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>
@@ -615,19 +857,19 @@ Default value zeroBased</label><select id="function-6-parameter-1">
 				<div name="run" data-custom="true">
 <fieldset>
 <legend>Demo</legend>
-<div data-custom="true"><fieldset>
+<div id="function-12" data-function-name="createFArray" data-custom="true"><fieldset id="function-12-parameters-fieldset">
 <legend>Parameters</legend>
-<div>
-<label>text</label><textarea id="function-7-parameter-0" cols="40" rows="4" maxlength="20"></textarea>
+<div data-name="text" data-type="string" id="function-12-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1" maxlength="20">abaababaabaab$</textarea>
 </div>
 </fieldset></div>
-<button onClick='const value = sutoring.Permutations.BWT.createFArray(document.getElementById("function-7-parameter-0").value);
-        const title = "createFArray("+ document.getElementById("function-7-parameter-0").value.toString()+ ")";
-        sutoring.Console.textarea(sutoring.Debug.toStringLines(value), title, {container : "function-7-code" });'>Run</button>
+<button onClick='const value = sutoring.Permutations.BWT.createFArray(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-12-parameter-0"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-12");
+        sutoring.Console.textarea(value, title, {container : "function-12-code" });'>Run</button>
 </fieldset>
 <fieldset>
 <legend>Result</legend>
-<code id="function-7-code"></code>
+<code id="function-12-code"></code>
 </fieldset>
 </div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
@@ -642,14 +884,19 @@ Default value zeroBased</label><select id="function-6-parameter-1">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/permutations/bwt.ts:95</li>
+									<li>Defined in src/permutations/bwt.ts:137</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>text: <span class="tsd-signature-type">string</span>
 </h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
 								</li>
 								<li>
 									<h5>
@@ -665,13 +912,84 @@ Default value zeroBased</label><select id="function-6-parameter-1">
 									<h5>
 <span class="tsd-flag ts-flagDefault value">Default value</span> cellClass: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Objects.GOptions.GTextBoxCSS</span><span class="tsd-signature-symbol"> = { horizontalAnchor: "center" }</span>
 </h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Logics.LogicCellLine</span>
 </h4>
 						</li>
 					</ul>
-				</section>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div id="function-13" data-function-name="createFArrayLine" data-custom="true"><fieldset id="function-13-parameters-fieldset">
+<legend>Parameters</legend>
+<div data-name="text" data-type="string" id="function-13-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1" maxlength="20">abaababaabaab$</textarea>
+</div>
+<div data-name="
+ isColored" data-type="boolean" id="function-13-parameter-1">
+<label>
+ isColored</label>
+        <select name="select">
+        <option value="true">true</option>
+<option value="false">false</option>
+        </select>
+</div>
+<div data-name="
+ isRLBWT" data-type="boolean" id="function-13-parameter-2">
+<label>
+ isRLBWT</label>
+        <select name="select">
+        <option value="true">true</option>
+<option value="false">false</option>
+        </select>
+</div>
+<div data-name="
+ cellClass" data-type="string | Objects.GOptions.GTextBoxCSS" id="function-13-parameter-3"><fieldset>
+        <legend>
+ cellClass</legend>
+        <div data-name="autoSizeShapeToFitText" data-type="AutoSizeShapeToFitText">
+<label>autoSizeShapeToFitText</label>
+        <select name="select">
+        <option value="auto">auto</option>
+<option value="semi-auto">semi-auto</option>
+<option value="none">none</option>
+        </select>
+</div>
+        <div data-name="verticalAnchor" data-type="VerticalAnchor">
+<label>verticalAnchor</label>
+        <select name="select">
+        <option value="top">top</option>
+<option value="middle">middle</option>
+<option value="bottom">bottom</option>
+        </select>
+</div>
+        <div data-name="horizontalAnchor" data-type="HorizontalAnchor">
+<label>horizontalAnchor</label>
+        <select name="select">
+        <option value="left">left</option>
+<option value="center">center</option>
+<option value="right">right</option>
+        </select>
+</div>
+        </fieldset></div>
+</fieldset></div>
+<button onClick='const value = sutoring.Permutations.BWT.createFArrayLine(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-13-parameter-0"),sutoring.Debug.CustomTypedoc.getParameterInputValue("function-13-parameter-1"),sutoring.Debug.CustomTypedoc.getParameterInputValue("function-13-parameter-2"),sutoring.Debug.CustomTypedoc.getParameterInputValue("function-13-parameter-3"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-13");
+        const b = document.getElementById("function-13-visualize-checkbox").checked;
+        if(b){ 
+            sutoring.Console.table(value, title, "function-13-code")}
+            else{ 
+            sutoring.Console.textarea(value, title, {container : "function-13-code" })
+        };'>Run</button><label>  Visualize</label><input id="function-13-visualize-checkbox" type="checkbox" checked name="visualize-checkbox">
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-13-code"></code>
+</fieldset>
+</div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="createfrunstartpositions" class="tsd-anchor"></a>
 					<h3>createFRun<wbr>Start<wbr>Positions</wbr></wbr>
@@ -684,14 +1002,19 @@ Default value zeroBased</label><select id="function-6-parameter-1">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/permutations/bwt.ts:317</li>
+									<li>Defined in src/permutations/bwt.ts:403</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>text: <span class="tsd-signature-type">string</span>
 </h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span>
@@ -701,19 +1024,19 @@ Default value zeroBased</label><select id="function-6-parameter-1">
 				<div name="run" data-custom="true">
 <fieldset>
 <legend>Demo</legend>
-<div data-custom="true"><fieldset>
+<div id="function-14" data-function-name="createFRunStartPositions" data-custom="true"><fieldset id="function-14-parameters-fieldset">
 <legend>Parameters</legend>
-<div>
-<label>text</label><textarea id="function-9-parameter-0" cols="40" rows="4" maxlength="20"></textarea>
+<div data-name="text" data-type="string" id="function-14-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1" maxlength="20">abaababaabaab$</textarea>
 </div>
 </fieldset></div>
-<button onClick='const value = sutoring.Permutations.BWT.createFRunStartPositions(document.getElementById("function-9-parameter-0").value);
-        const title = "createFRunStartPositions("+ document.getElementById("function-9-parameter-0").value.toString()+ ")";
-        sutoring.Console.textarea(sutoring.Debug.toStringLines(value), title, {container : "function-9-code" });'>Run</button>
+<button onClick='const value = sutoring.Permutations.BWT.createFRunStartPositions(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-14-parameter-0"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-14");
+        sutoring.Console.textarea(value, title, {container : "function-14-code" });'>Run</button>
 </fieldset>
 <fieldset>
 <legend>Result</legend>
-<code id="function-9-code"></code>
+<code id="function-14-code"></code>
 </fieldset>
 </div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
@@ -727,14 +1050,19 @@ Default value zeroBased</label><select id="function-6-parameter-1">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/permutations/bwt.ts:77</li>
+									<li>Defined in src/permutations/bwt.ts:109</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>text: <span class="tsd-signature-type">string</span>
 </h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>
@@ -744,19 +1072,19 @@ Default value zeroBased</label><select id="function-6-parameter-1">
 				<div name="run" data-custom="true">
 <fieldset>
 <legend>Demo</legend>
-<div data-custom="true"><fieldset>
+<div id="function-15" data-function-name="createLArray" data-custom="true"><fieldset id="function-15-parameters-fieldset">
 <legend>Parameters</legend>
-<div>
-<label>text</label><textarea id="function-10-parameter-0" cols="40" rows="4" maxlength="20"></textarea>
+<div data-name="text" data-type="string" id="function-15-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1" maxlength="20">abaababaabaab$</textarea>
 </div>
 </fieldset></div>
-<button onClick='const value = sutoring.Permutations.BWT.createLArray(document.getElementById("function-10-parameter-0").value);
-        const title = "createLArray("+ document.getElementById("function-10-parameter-0").value.toString()+ ")";
-        sutoring.Console.textarea(sutoring.Debug.toStringLines(value), title, {container : "function-10-code" });'>Run</button>
+<button onClick='const value = sutoring.Permutations.BWT.createLArray(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-15-parameter-0"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-15");
+        sutoring.Console.textarea(value, title, {container : "function-15-code" });'>Run</button>
 </fieldset>
 <fieldset>
 <legend>Result</legend>
-<code id="function-10-code"></code>
+<code id="function-15-code"></code>
 </fieldset>
 </div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
@@ -771,14 +1099,19 @@ Default value zeroBased</label><select id="function-6-parameter-1">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/permutations/bwt.ts:132</li>
+									<li>Defined in src/permutations/bwt.ts:182</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>text: <span class="tsd-signature-type">string</span>
 </h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
 								</li>
 								<li>
 									<h5>
@@ -794,13 +1127,84 @@ Default value zeroBased</label><select id="function-6-parameter-1">
 									<h5>
 <span class="tsd-flag ts-flagDefault value">Default value</span> cellClass: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Objects.GOptions.GTextBoxCSS</span><span class="tsd-signature-symbol"> = { horizontalAnchor: "center" }</span>
 </h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Logics.LogicCellLine</span>
 </h4>
 						</li>
 					</ul>
-				</section>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div id="function-16" data-function-name="createLArrayLine" data-custom="true"><fieldset id="function-16-parameters-fieldset">
+<legend>Parameters</legend>
+<div data-name="text" data-type="string" id="function-16-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1" maxlength="20">abaababaabaab$</textarea>
+</div>
+<div data-name="
+ isColored" data-type="boolean" id="function-16-parameter-1">
+<label>
+ isColored</label>
+        <select name="select">
+        <option value="true">true</option>
+<option value="false">false</option>
+        </select>
+</div>
+<div data-name="
+ isRLBWT" data-type="boolean" id="function-16-parameter-2">
+<label>
+ isRLBWT</label>
+        <select name="select">
+        <option value="true">true</option>
+<option value="false">false</option>
+        </select>
+</div>
+<div data-name="
+ cellClass" data-type="string | Objects.GOptions.GTextBoxCSS" id="function-16-parameter-3"><fieldset>
+        <legend>
+ cellClass</legend>
+        <div data-name="autoSizeShapeToFitText" data-type="AutoSizeShapeToFitText">
+<label>autoSizeShapeToFitText</label>
+        <select name="select">
+        <option value="auto">auto</option>
+<option value="semi-auto">semi-auto</option>
+<option value="none">none</option>
+        </select>
+</div>
+        <div data-name="verticalAnchor" data-type="VerticalAnchor">
+<label>verticalAnchor</label>
+        <select name="select">
+        <option value="top">top</option>
+<option value="middle">middle</option>
+<option value="bottom">bottom</option>
+        </select>
+</div>
+        <div data-name="horizontalAnchor" data-type="HorizontalAnchor">
+<label>horizontalAnchor</label>
+        <select name="select">
+        <option value="left">left</option>
+<option value="center">center</option>
+<option value="right">right</option>
+        </select>
+</div>
+        </fieldset></div>
+</fieldset></div>
+<button onClick='const value = sutoring.Permutations.BWT.createLArrayLine(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-16-parameter-0"),sutoring.Debug.CustomTypedoc.getParameterInputValue("function-16-parameter-1"),sutoring.Debug.CustomTypedoc.getParameterInputValue("function-16-parameter-2"),sutoring.Debug.CustomTypedoc.getParameterInputValue("function-16-parameter-3"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-16");
+        const b = document.getElementById("function-16-visualize-checkbox").checked;
+        if(b){ 
+            sutoring.Console.table(value, title, "function-16-code")}
+            else{ 
+            sutoring.Console.textarea(value, title, {container : "function-16-code" })
+        };'>Run</button><label>  Visualize</label><input id="function-16-visualize-checkbox" type="checkbox" checked name="visualize-checkbox">
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-16-code"></code>
+</fieldset>
+</div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="createlrunendingpositions" class="tsd-anchor"></a>
 					<h3>createLRun<wbr>Ending<wbr>Positions</wbr></wbr>
@@ -813,14 +1217,19 @@ Default value zeroBased</label><select id="function-6-parameter-1">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/permutations/bwt.ts:307</li>
+									<li>Defined in src/permutations/bwt.ts:389</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>text: <span class="tsd-signature-type">string</span>
 </h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span>
@@ -830,19 +1239,19 @@ Default value zeroBased</label><select id="function-6-parameter-1">
 				<div name="run" data-custom="true">
 <fieldset>
 <legend>Demo</legend>
-<div data-custom="true"><fieldset>
+<div id="function-17" data-function-name="createLRunEndingPositions" data-custom="true"><fieldset id="function-17-parameters-fieldset">
 <legend>Parameters</legend>
-<div>
-<label>text</label><textarea id="function-12-parameter-0" cols="40" rows="4" maxlength="20"></textarea>
+<div data-name="text" data-type="string" id="function-17-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1" maxlength="20">abaababaabaab$</textarea>
 </div>
 </fieldset></div>
-<button onClick='const value = sutoring.Permutations.BWT.createLRunEndingPositions(document.getElementById("function-12-parameter-0").value);
-        const title = "createLRunEndingPositions("+ document.getElementById("function-12-parameter-0").value.toString()+ ")";
-        sutoring.Console.textarea(sutoring.Debug.toStringLines(value), title, {container : "function-12-code" });'>Run</button>
+<button onClick='const value = sutoring.Permutations.BWT.createLRunEndingPositions(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-17-parameter-0"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-17");
+        sutoring.Console.textarea(value, title, {container : "function-17-code" });'>Run</button>
 </fieldset>
 <fieldset>
 <legend>Result</legend>
-<code id="function-12-code"></code>
+<code id="function-17-code"></code>
 </fieldset>
 </div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
@@ -857,14 +1266,19 @@ Default value zeroBased</label><select id="function-6-parameter-1">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/permutations/bwt.ts:296</li>
+									<li>Defined in src/permutations/bwt.ts:374</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>text: <span class="tsd-signature-type">string</span>
 </h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span>
@@ -874,19 +1288,19 @@ Default value zeroBased</label><select id="function-6-parameter-1">
 				<div name="run" data-custom="true">
 <fieldset>
 <legend>Demo</legend>
-<div data-custom="true"><fieldset>
+<div id="function-18" data-function-name="createLRunStartingPositions" data-custom="true"><fieldset id="function-18-parameters-fieldset">
 <legend>Parameters</legend>
-<div>
-<label>text</label><textarea id="function-13-parameter-0" cols="40" rows="4" maxlength="20"></textarea>
+<div data-name="text" data-type="string" id="function-18-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1" maxlength="20">abaababaabaab$</textarea>
 </div>
 </fieldset></div>
-<button onClick='const value = sutoring.Permutations.BWT.createLRunStartingPositions(document.getElementById("function-13-parameter-0").value);
-        const title = "createLRunStartingPositions("+ document.getElementById("function-13-parameter-0").value.toString()+ ")";
-        sutoring.Console.textarea(sutoring.Debug.toStringLines(value), title, {container : "function-13-code" });'>Run</button>
+<button onClick='const value = sutoring.Permutations.BWT.createLRunStartingPositions(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-18-parameter-0"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-18");
+        sutoring.Console.textarea(value, title, {container : "function-18-code" });'>Run</button>
 </fieldset>
 <fieldset>
 <legend>Result</legend>
-<code id="function-13-code"></code>
+<code id="function-18-code"></code>
 </fieldset>
 </div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
@@ -901,14 +1315,19 @@ Default value zeroBased</label><select id="function-6-parameter-1">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/permutations/bwt.ts:35</li>
+									<li>Defined in src/permutations/bwt.ts:45</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>text: <span class="tsd-signature-type">string</span>
 </h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>
@@ -928,14 +1347,19 @@ Default value zeroBased</label><select id="function-6-parameter-1">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/permutations/bwt.ts:80</li>
+									<li>Defined in src/permutations/bwt.ts:116</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>text: <span class="tsd-signature-type">string</span>
 </h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>
@@ -945,19 +1369,19 @@ Default value zeroBased</label><select id="function-6-parameter-1">
 				<div name="run" data-custom="true">
 <fieldset>
 <legend>Demo</legend>
-<div data-custom="true"><fieldset>
+<div id="function-19" data-function-name="createSortedMiddleCircularStrings" data-custom="true"><fieldset id="function-19-parameters-fieldset">
 <legend>Parameters</legend>
-<div>
-<label>text</label><textarea id="function-14-parameter-0" cols="40" rows="4" maxlength="20"></textarea>
+<div data-name="text" data-type="string" id="function-19-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1" maxlength="20">abaababaabaab$</textarea>
 </div>
 </fieldset></div>
-<button onClick='const value = sutoring.Permutations.BWT.createSortedMiddleCircularStrings(document.getElementById("function-14-parameter-0").value);
-        const title = "createSortedMiddleCircularStrings("+ document.getElementById("function-14-parameter-0").value.toString()+ ")";
-        sutoring.Console.textarea(sutoring.Debug.toStringLines(value), title, {container : "function-14-code" });'>Run</button>
+<button onClick='const value = sutoring.Permutations.BWT.createSortedMiddleCircularStrings(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-19-parameter-0"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-19");
+        sutoring.Console.textarea(value, title, {container : "function-19-code" });'>Run</button>
 </fieldset>
 <fieldset>
 <legend>Result</legend>
-<code id="function-14-code"></code>
+<code id="function-19-code"></code>
 </fieldset>
 </div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
@@ -972,14 +1396,19 @@ Default value zeroBased</label><select id="function-6-parameter-1">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/permutations/bwt.ts:190</li>
+									<li>Defined in src/permutations/bwt.ts:245</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>text: <span class="tsd-signature-type">string</span>
 </h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
 								</li>
 								<li>
 									<h5>
@@ -990,13 +1419,75 @@ Default value zeroBased</label><select id="function-6-parameter-1">
 									<h5>
 <span class="tsd-flag ts-flagDefault value">Default value</span> cellClass: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Objects.GOptions.GTextBoxCSS</span><span class="tsd-signature-symbol"> = { horizontalAnchor: "center" }</span>
 </h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Logics.LogicCellLine</span>
 </h4>
 						</li>
 					</ul>
-				</section>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div id="function-20" data-function-name="createSortedMiddleCircularStringsLine" data-custom="true"><fieldset id="function-20-parameters-fieldset">
+<legend>Parameters</legend>
+<div data-name="text" data-type="string" id="function-20-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1" maxlength="20">abaababaabaab$</textarea>
+</div>
+<div data-name="
+ isColored" data-type="boolean" id="function-20-parameter-1">
+<label>
+ isColored</label>
+        <select name="select">
+        <option value="true">true</option>
+<option value="false">false</option>
+        </select>
+</div>
+<div data-name="
+ cellClass" data-type="string | Objects.GOptions.GTextBoxCSS" id="function-20-parameter-2"><fieldset>
+        <legend>
+ cellClass</legend>
+        <div data-name="autoSizeShapeToFitText" data-type="AutoSizeShapeToFitText">
+<label>autoSizeShapeToFitText</label>
+        <select name="select">
+        <option value="auto">auto</option>
+<option value="semi-auto">semi-auto</option>
+<option value="none">none</option>
+        </select>
+</div>
+        <div data-name="verticalAnchor" data-type="VerticalAnchor">
+<label>verticalAnchor</label>
+        <select name="select">
+        <option value="top">top</option>
+<option value="middle">middle</option>
+<option value="bottom">bottom</option>
+        </select>
+</div>
+        <div data-name="horizontalAnchor" data-type="HorizontalAnchor">
+<label>horizontalAnchor</label>
+        <select name="select">
+        <option value="left">left</option>
+<option value="center">center</option>
+<option value="right">right</option>
+        </select>
+</div>
+        </fieldset></div>
+</fieldset></div>
+<button onClick='const value = sutoring.Permutations.BWT.createSortedMiddleCircularStringsLine(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-20-parameter-0"),sutoring.Debug.CustomTypedoc.getParameterInputValue("function-20-parameter-1"),sutoring.Debug.CustomTypedoc.getParameterInputValue("function-20-parameter-2"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-20");
+        const b = document.getElementById("function-20-visualize-checkbox").checked;
+        if(b){ 
+            sutoring.Console.table(value, title, "function-20-code")}
+            else{ 
+            sutoring.Console.textarea(value, title, {container : "function-20-code" })
+        };'>Run</button><label>  Visualize</label><input id="function-20-visualize-checkbox" type="checkbox" checked name="visualize-checkbox">
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-20-code"></code>
+</fieldset>
+</div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 					<a name="rank" class="tsd-anchor"></a>
 					<h3>rank</h3>
@@ -1008,7 +1499,7 @@ Default value zeroBased</label><select id="function-6-parameter-1">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/permutations/bwt.ts:83</li>
+									<li>Defined in src/permutations/bwt.ts:119</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1039,14 +1530,19 @@ Default value zeroBased</label><select id="function-6-parameter-1">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/permutations/bwt.ts:267</li>
+									<li>Defined in src/permutations/bwt.ts:336</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>text: <span class="tsd-signature-type">string</span>
 </h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_src_permutations_bwt_.html#rlefactor" class="tsd-signature-type">RLEFactor</a><span class="tsd-signature-symbol">[]</span>
@@ -1056,19 +1552,19 @@ Default value zeroBased</label><select id="function-6-parameter-1">
 				<div name="run" data-custom="true">
 <fieldset>
 <legend>Demo</legend>
-<div data-custom="true"><fieldset>
+<div id="function-21" data-function-name="runLengthEncode" data-custom="true"><fieldset id="function-21-parameters-fieldset">
 <legend>Parameters</legend>
-<div>
-<label>text</label><textarea id="function-16-parameter-0" cols="40" rows="4" maxlength="20"></textarea>
+<div data-name="text" data-type="string" id="function-21-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1" maxlength="20">abaababaabaab$</textarea>
 </div>
 </fieldset></div>
-<button onClick='const value = sutoring.Permutations.BWT.runLengthEncode(document.getElementById("function-16-parameter-0").value);
-        const title = "runLengthEncode("+ document.getElementById("function-16-parameter-0").value.toString()+ ")";
-        sutoring.Console.textarea(sutoring.Debug.toStringLines(value), title, {container : "function-16-code" });'>Run</button>
+<button onClick='const value = sutoring.Permutations.BWT.runLengthEncode(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-21-parameter-0"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-21");
+        sutoring.Console.textarea(value, title, {container : "function-21-code" });'>Run</button>
 </fieldset>
 <fieldset>
 <legend>Result</legend>
-<code id="function-16-code"></code>
+<code id="function-21-code"></code>
 </fieldset>
 </div></section>
 			</section>

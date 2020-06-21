@@ -18,15 +18,7 @@
 
 
 
-
-
-
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/sutoring@0.0.16/docs/sutoring.js"></script><script>window.onload = (event) => {
+<script src="https://cdn.jsdelivr.net/npm/sutoring@0.0.17/docs/sutoring.js"></script><script>window.onload = (event) => {
             window.addEventListener("keydown", function(event) {
                 event.stopPropagation();
             }, true);
@@ -96,8 +88,8 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>This namespace provides functions for Thue-Morse sequences.</p>
-						<!-- @path sutoring.Sequences @module ThueMorseSequence -->
+						<p>This namespace provides functions for Thue-Morse sequences.
+						<template data-path="sutoring.Sequences" data-module="ThueMorseSequence"></template></p>
 					</div>
 				</div>
 			</section>
@@ -165,7 +157,7 @@
 									<h5>len: <span class="tsd-signature-type">number</span>
 </h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The length of the output string <!-- @min 0 @size 20 @value 1  --></p>
+										<p>The length of the output string <template data-min="0" data-size="20" data-value="1"></template></p>
 									</div>
 								</li>
 							</ul>
@@ -177,17 +169,17 @@
 				<div name="run" data-custom="true">
 <fieldset>
 <legend>Demo</legend>
-<div data-custom="true"><fieldset>
+<div id="function-25" data-function-name="create" data-custom="true"><fieldset id="function-25-parameters-fieldset">
 <legend>Parameters</legend>
-<label>len:<input id="function-20-parameter-0" type="number" name="number" min="0" size="20" value="1"></label>
+<div data-name="len" data-type="number" id="function-25-parameter-0"><label>len:<input type="number" name="input" min="0" size="20" value="1"></label></div>
 </fieldset></div>
-<button onClick='const value = sutoring.Sequences.ThueMorseSequence.create(document.getElementById("function-20-parameter-0").value);
-        const title = "create("+ document.getElementById("function-20-parameter-0").value.toString()+ ")";
-        sutoring.Console.textarea(sutoring.Debug.toStringLines(value), title, {container : "function-20-code" });'>Run</button>
+<button onClick='const value = sutoring.Sequences.ThueMorseSequence.create(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-25-parameter-0"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-25");
+        sutoring.Console.textarea(value, title, {container : "function-25-code" });'>Run</button>
 </fieldset>
 <fieldset>
 <legend>Result</legend>
-<code id="function-20-code"></code>
+<code id="function-25-code"></code>
 </fieldset>
 </div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
@@ -219,17 +211,17 @@
 				<div name="run" data-custom="true">
 <fieldset>
 <legend>Demo</legend>
-<div data-custom="true"><fieldset>
+<div id="function-26" data-function-name="createIthSequence" data-custom="true"><fieldset id="function-26-parameters-fieldset">
 <legend>Parameters</legend>
-<label>ith:<input id="function-21-parameter-0" type="number" name="number" min="0" size="5" value="0"></label>
+<div data-name="ith" data-type="number" id="function-26-parameter-0"><label>ith:<input type="number" name="input" min="0" size="5" value="0"></label></div>
 </fieldset></div>
-<button onClick='const value = sutoring.Sequences.ThueMorseSequence.createIthSequence(document.getElementById("function-21-parameter-0").value);
-        const title = "createIthSequence("+ document.getElementById("function-21-parameter-0").value.toString()+ ")";
-        sutoring.Console.textarea(sutoring.Debug.toStringLines(value), title, {container : "function-21-code" });'>Run</button>
+<button onClick='const value = sutoring.Sequences.ThueMorseSequence.createIthSequence(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-26-parameter-0"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-26");
+        sutoring.Console.textarea(value, title, {container : "function-26-code" });'>Run</button>
 </fieldset>
 <fieldset>
 <legend>Result</legend>
-<code id="function-21-code"></code>
+<code id="function-26-code"></code>
 </fieldset>
 </div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">

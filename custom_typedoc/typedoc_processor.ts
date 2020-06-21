@@ -1,7 +1,10 @@
 
 import libxmljs = require('libxmljs');
 import {libxmlts} from './libxmlts';
-import {TypeDocParameter, parseParameterElements, commentParse, createParameterInputElement, getParametrInputValue, getTitleCode, getArguments, checkParameterConvertable, parseReturnParameterElement, checkReturnTypeConvertable, getViewCode} from './parameter_converter';
+import {TypeDocParameter, templateParse, parseHtmlFragments} from './lib';
+
+import {parseParameterElements, getArguments, checkParameterConvertable, parseReturnParameterElement, checkReturnTypeConvertable, getViewCode} from './parameter_converter';
+import {createParameterInputElement} from './parameter_input_element';
 
 export function viewDocumentTree2(node : libxmljs.Node, space : number){
     let s = "";
@@ -28,10 +31,10 @@ export function viewDocumentTree(doc : libxmljs.Document){
 
 export type ModuleResolver = { path: string; moduleName : string };
 export function getModuleResolver(doc : libxmljs.Document) : ModuleResolver | null{
-    const comment = doc.get(`//section[@class="tsd-panel tsd-comment"]/div[@class="tsd-comment tsd-typography"]/div/comment()`)
-    if(comment != null){
-        const text = comment.text();
-        const map = commentParse(text);
+    const templateElement = doc.get(`//section[@class="tsd-panel tsd-comment"]/div[@class="tsd-comment tsd-typography"]/div/p/template`)
+    if(templateElement != null){
+        //const text = comment.text();
+        const map = templateParse(templateElement);
         const path = map.get("path");
         const module = map.get("module");
         if(path != null && module != null){
@@ -64,9 +67,16 @@ export class TypeDocFunctionTag{
             }
         })
     }
+    public get demoID() : string{
+        return `function-${this.id}`;
+    }
     public createDemoElement() : libxmljs.Element{
         const div: libxmljs.Element = new libxmljs.Element(this.element.doc(), "div", "");
+        div.attr({id : this.demoID });
+        div.attr({"data-function-name" : `${this.functionName}`});
+        
         const fieldset: libxmljs.Element = new libxmljs.Element(this.element.doc(), "fieldset", "");
+        fieldset.attr({id : `function-${this.id}-parameters-fieldset`})
         const legend: libxmljs.Element = new libxmljs.Element(this.element.doc(), "legend", "Parameters");
         div.addChild(fieldset);
         fieldset.addChild(legend);
@@ -142,13 +152,25 @@ export class TypeDocFunctionTag{
         const button: libxmljs.Element = new libxmljs.Element(this.element.doc(), "button", "");
         button.text("Run");
         const moduleResolver = getModuleResolver(this.element.doc())!;
-        const titleCode = getTitleCode(this.parameters, this.functionName, this.id);
+        //const titleCode = getTitleCode(this.parameters, this.functionName, this.id);
         const viewCode = getViewCode(this.returnParameter!, "value", "title", this.id);
         const buttonClickEvent = `const value = ${moduleResolver.path}.${moduleResolver.moduleName}.${this.functionName}(${getArguments(this.parameters, this.id).join(",") });
-        ${titleCode};
+        const title = sutoring.Debug.CustomTypedoc.getTitle("${this.demoID}");
         ${viewCode};`;
         button.attr({"onClick" : buttonClickEvent });
         this.mainFieldSet.addChild(button);
+
+        if(this.returnParameter != null && this.returnParameter.type == "Logics.LogicCellLine"){
+            const visualizeLabel : libxmljs.Element = new libxmljs.Element(this.element.doc(), "label", "  Visualize");
+            const visualizeCheckbox : libxmljs.Element = new libxmljs.Element(this.element.doc(), "input", "");
+            visualizeCheckbox.attr({ id : `function-${this.id}-visualize-checkbox`});
+            visualizeCheckbox.attr({ type : "checkbox"})
+            visualizeCheckbox.attr({ checked : "checked"})
+            visualizeCheckbox.attr({ name : "visualize-checkbox"})
+            this.mainFieldSet.addChild(visualizeLabel);
+            this.mainFieldSet.addChild(visualizeCheckbox);
+
+        }
 
         const codeFieldset: libxmljs.Element = new libxmljs.Element(this.element.doc(), "fieldset", "");
         const codeLegend: libxmljs.Element = new libxmljs.Element(this.element.doc(), "legend", "Result");
@@ -161,14 +183,6 @@ export class TypeDocFunctionTag{
         codeFieldset.addChild(code);
 
 
-        //console.log(demo.toString());
-        /*
-        this.parameters.forEach((v) =>{
-            console.log(v);
-        })
-        console.log(this.functionName )
-        console.log(this.functionName.length)
-        */  
     }
 
 }
@@ -178,12 +192,15 @@ export function createCodeTag(text: string, doc: libxmljs.Document): libxmljs.El
     pre.addChild(code);
     return pre;
 }
+
+const sutoringSrc = "https://cdn.jsdelivr.net/npm/sutoring@0.0.17/docs/sutoring.js";
+//const sutoringSrc = "../../sutoring.js";
+
 export function processHeadTag(doc: libxmljs.Document){
     const head = doc.get("//head");
     if(head != null){
         const scriptTags = head.find("script");
         scriptTags.forEach((v) => v.remove());
-        const sutoringSrc = "https://cdn.jsdelivr.net/npm/sutoring@0.0.16/docs/sutoring.js";
         const scriptSutoring: libxmljs.Element = new libxmljs.Element(doc, "script", "");
         scriptSutoring.attr({src : sutoringSrc})
         head.addChild(scriptSutoring);    
