@@ -1,6 +1,6 @@
 
 import libxmljs = require('libxmljs');
-import {TypeDocParameter, templateParse, parseHtmlFragments} from './lib';
+import {TypeDocParameter, templateParse, parseHtmlFragments, isVisualType} from './lib';
 
 
 export function parseParameterElements(parameterContainer: libxmljs.Element): TypeDocParameter[] {
@@ -24,9 +24,6 @@ export function parseParameterElements(parameterContainer: libxmljs.Element): Ty
                 }
             })
             const name = rawText.split(":")[0];
-            //const t1 = h5Node.get("span[@class='tsd-signature-type']")!;
-            //const t2 = h5Node.get("a[@class='tsd-signature-type']")!;
-            //const type = t1 != null ? t1.text() : t2!.text();
 
             const templateNode = liNode.get("div/p/template");
             if (templateNode != null) {
@@ -40,7 +37,7 @@ export function parseParameterElements(parameterContainer: libxmljs.Element): Ty
     })
     return r;
 }
-export function parseReturnParameterElement(parameterContainer: libxmljs.Element): TypeDocParameter {
+export function parseReturnTypeElement(parameterContainer: libxmljs.Element): TypeDocParameter {
     const w = <libxmljs.Element>parameterContainer;
     const text = w.text().split(" ")[1].trim();
     //const name = w.get("h5")!.text().split(":")[0];
@@ -59,17 +56,10 @@ export function getArguments(parameters: TypeDocParameter[], functionID: number)
     })
     return r;
 }
+/*
 export function checkParameterConvertable(parameters: TypeDocParameter[]) : boolean {
     let b = true;
     const set = new Set<string>();
-    set.add("string");
-    set.add("number");
-    set.add("boolean");
-    set.add("string | Objects.GOptions.GTextBoxCSS");
-    set.add("BWTOption")
-    set.add("SuffixArray.SATableOption")
-    set.add("SATableOption")
-    set.add("Objects.GOptions.CellAttributes")
 
     parameters.forEach((v) =>{
         if(!set.has(v.type)){
@@ -78,6 +68,8 @@ export function checkParameterConvertable(parameters: TypeDocParameter[]) : bool
     })
     return b;
 }
+*/
+/*
 export function checkReturnTypeConvertable(returnParameter : TypeDocParameter | null) : boolean {
     let b = true;
     const set = new Set<string>();
@@ -100,33 +92,16 @@ export function checkReturnTypeConvertable(returnParameter : TypeDocParameter | 
     }
     return b;
 }
+*/
 export function getViewCode(returnParameter : TypeDocParameter, valueName : string, titleName : string, functionID : number){
-    if(returnParameter.type == "Logics.LogicCellLine" || returnParameter.type == "LogicTable"){
+    if(isVisualType(returnParameter) ){
         return `const b = document.getElementById("function-${functionID}-visualize-checkbox").checked;
         if(b){ 
             sutoring.Console.table(${valueName}, ${titleName}, "function-${functionID}-code")}
             else{ 
             sutoring.Console.textarea(${valueName}, ${titleName}, {container : "function-${functionID}-code" })
         }`
-        /*
-        if(visualize){
-            return `sutoring.Console.table(${valueName}, ${titleName}, "function-${functionID}-code")`;
-        }else{
-            return `sutoring.Console.textarea(${valueName}, ${titleName}, {container : "function-${functionID}-code" })`;
-        }
-        */
     }else{
         return `sutoring.Console.textarea(${valueName}, ${titleName}, {container : "function-${functionID}-code" })`;
     }
-    /*
-    if(returnParameter.type == "string" || returnParameter.type == "number"){
-        return `sutoring.Console.textarea(${valueName}.toString(), ${titleName}, {container : "function-${functionID}-code" })`;
-    }else if(returnParameter.type == "string[]" || returnParameter.type == "number[]"){
-        return `sutoring.Console.textarea(${valueName}.join(", "), ${titleName}, {container : "function-${functionID}-code" })`;
-    }else if(returnParameter.type == "RLEFactor[]"){
-    }
-    else{
-        return `sutoring.Console.textarea(${valueName}.toString(), ${titleName}, {container : "function-${functionID}-code" })`;        
-    }
-    */
 }

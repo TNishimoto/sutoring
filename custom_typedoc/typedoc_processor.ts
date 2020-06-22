@@ -1,52 +1,11 @@
 
 import libxmljs = require('libxmljs');
-import {libxmlts} from './libxmlts';
-import {TypeDocParameter, templateParse, parseHtmlFragments} from './lib';
+import {TypeDocParameter, getModuleResolver, sutoringSrc, isVisualType, allowedParameterTypes, allowedReturnTypes} from './lib';
 
-import {parseParameterElements, getArguments, checkParameterConvertable, parseReturnParameterElement, checkReturnTypeConvertable, getViewCode} from './parameter_converter';
+import {parseParameterElements, getArguments, parseReturnTypeElement, getViewCode} from './parameter_converter';
 import {createParameterInputElement} from './parameter_input_element';
 
-export function viewDocumentTree2(node : libxmljs.Node, space : number){
-    let s = "";
-    for(let i=0;i<space;i++){
-        s += " ";
-    }
-    //console.log(node.type());
 
-    if(node.type() == "element" && node instanceof libxmljs.Element){
-        console.log(`${s}<${node.name()}>`);
-        node.childNodes().forEach((v) =>{
-            viewDocumentTree2(v, space+1);
-        })
-        console.log(`${s}</${node.name()}>`);
-
-    }else if(node.type() == "text" && node instanceof libxmljs.Element){
-        console.log(`${s}:${node.text()}`);
-
-    }
-}
-export function viewDocumentTree(doc : libxmljs.Document){
-    viewDocumentTree2(doc.root()!, 0);
-}
-
-export type ModuleResolver = { path: string; moduleName : string };
-export function getModuleResolver(doc : libxmljs.Document) : ModuleResolver | null{
-    const templateElement = doc.get(`//section[@class="tsd-panel tsd-comment"]/div[@class="tsd-comment tsd-typography"]/div/p/template`)
-    if(templateElement != null){
-        //const text = comment.text();
-        const map = templateParse(templateElement);
-        const path = map.get("path");
-        const module = map.get("module");
-        if(path != null && module != null){
-            return {path : path, moduleName : module};
-        }else{
-            return null;
-        }
-
-    }else{
-        return null;
-    }
-}
 
 
 
@@ -59,7 +18,7 @@ export class TypeDocFunctionTag{
         this.element = element;
         this.id = id_counter++;
     }
-    public clearCustomElements(){
+    clearCustomElements(){
         const items = this.element.childNodes();
         items.forEach((v) =>{
             if(v instanceof libxmljs.Element && v.attr("data-custom") != null){
@@ -67,10 +26,10 @@ export class TypeDocFunctionTag{
             }
         })
     }
-    public get demoID() : string{
+    get demoID() : string{
         return `function-${this.id}`;
     }
-    public createDemoElement() : libxmljs.Element{
+    createDemoElement() : libxmljs.Element{
         const div: libxmljs.Element = new libxmljs.Element(this.element.doc(), "div", "");
         div.attr({id : this.demoID });
         div.attr({"data-function-name" : `${this.functionName}`});
@@ -91,20 +50,17 @@ export class TypeDocFunctionTag{
     }
     /*
     */
-    public get parameters() : TypeDocParameter[]{
+    get parameters() : TypeDocParameter[]{
         const list = this.element.get("ul[@class='tsd-descriptions']/li/ul[@class='tsd-parameters']");
         return list == null ? [] : parseParameterElements(list);
     }
-    public get returnParameter() : TypeDocParameter | null {
+    get returnParameter() : TypeDocParameter | null {
         const return_h4 = this.element.get("ul[@class='tsd-descriptions']/li/h4[@class='tsd-returns-title']");
-        return return_h4 == null ? null : parseReturnParameterElement(return_h4);
+        return return_h4 == null ? null : parseReturnTypeElement(return_h4);
     }
     
-    public get functionNamespace() : string {
-        return "";
-    }
 
-    public get functionName() : string {
+    get functionName() : string {
         const name = this.element.get("h3");
         if(name != null){
             return name.text().trim();
@@ -113,11 +69,11 @@ export class TypeDocFunctionTag{
         }
     }
     
-    public get runTag():libxmljs.Element | null{
+    get runTag():libxmljs.Element | null{
         const tag = this.element.get("div[@name='run']");
         return tag;
     }
-    public get mainFieldSet() : libxmljs.Element {
+    get mainFieldSet() : libxmljs.Element {
         const tag = this.element.get("div[@name='run']/fieldset");
         return tag!;
 
@@ -139,7 +95,9 @@ export class TypeDocFunctionTag{
     }
     public process(){
         this.clearCustomElements();
-        if(!checkParameterConvertable(this.parameters) || !checkReturnTypeConvertable(this.returnParameter)){
+        const returnTypeCheck = this.returnParameter == null || allowedReturnTypes.has(this.returnParameter.type);
+        const inputTypeCheck = this.parameters.every((v) => allowedParameterTypes.has(v.type)); 
+        if(! inputTypeCheck || !returnTypeCheck ){
             console.log(`False: ${this.functionName} ${this.parameters.map((v)=>v.type).join(", ")} ${this.returnParameter == null ? "null" : this.returnParameter.type}`)
             return;
         } 
@@ -161,18 +119,15 @@ export class TypeDocFunctionTag{
         this.mainFieldSet.addChild(button);
 
 
-        if(this.returnParameter != null){
-            const b = this.returnParameter.type == "Logics.LogicCellLine" || this.returnParameter.type == "LogicTable";
-            if(b){
-                const visualizeLabel : libxmljs.Element = new libxmljs.Element(this.element.doc(), "label", "  Visualize");
-                const visualizeCheckbox : libxmljs.Element = new libxmljs.Element(this.element.doc(), "input", "");
-                visualizeCheckbox.attr({ id : `function-${this.id}-visualize-checkbox`});
-                visualizeCheckbox.attr({ type : "checkbox"})
-                visualizeCheckbox.attr({ checked : "checked"})
-                visualizeCheckbox.attr({ name : "visualize-checkbox"})
-                this.mainFieldSet.addChild(visualizeLabel);
-                this.mainFieldSet.addChild(visualizeCheckbox);    
-            }
+        if(isVisualType(this.returnParameter)){
+            const visualizeLabel : libxmljs.Element = new libxmljs.Element(this.element.doc(), "label", "  Visualize");
+            const visualizeCheckbox : libxmljs.Element = new libxmljs.Element(this.element.doc(), "input", "");
+            visualizeCheckbox.attr({ id : `function-${this.id}-visualize-checkbox`});
+            visualizeCheckbox.attr({ type : "checkbox"})
+            visualizeCheckbox.attr({ checked : "checked"})
+            visualizeCheckbox.attr({ name : "visualize-checkbox"})
+            this.mainFieldSet.addChild(visualizeLabel);
+            this.mainFieldSet.addChild(visualizeCheckbox);    
 
         }
 
@@ -190,15 +145,7 @@ export class TypeDocFunctionTag{
     }
 
 }
-export function createCodeTag(text: string, doc: libxmljs.Document): libxmljs.Element {
-    const pre: libxmljs.Element = new libxmljs.Element(doc, "pre", "");
-    const code: libxmljs.Element = new libxmljs.Element(doc, "code", text);
-    pre.addChild(code);
-    return pre;
-}
 
-const sutoringSrc = "https://cdn.jsdelivr.net/npm/sutoring@0.0.17/docs/sutoring.js";
-//const sutoringSrc = "../../sutoring.js";
 
 export function processHeadTag(doc: libxmljs.Document){
     const head = doc.get("//head");
