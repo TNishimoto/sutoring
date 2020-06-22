@@ -33,6 +33,7 @@ allowedReturnTypes.add("LZ78Factor[]");
 allowedReturnTypes.add("LZ77Factor[]");
 allowedReturnTypes.add("SubstringInfo[]");
 allowedReturnTypes.add("Map<string, number[]>");
+allowedReturnTypes.add("DistinctSubstrings.SubstringInfo[]")
 
 export function isVisualTableType(e : TypeDocParameter | null){
     if(e == null){

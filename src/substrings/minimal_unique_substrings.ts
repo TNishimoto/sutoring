@@ -1,9 +1,12 @@
+/**
+ * This namespace provides functions for minimal unique substrings.
+ * <template data-path="sutoring.Substrings" data-module="MinimalUniqueSubstrings"></template>
+ * @packageDocumentation
+ */
+
 
 import * as DistinctSubstrings from "./distinct_substrings"
 
-/**
- * This namespace  provides functions for minimal unique substrings~(MUS).
- */
 export function enumerate(text: string): string[] {
     const map = DistinctSubstrings.createOccurrenceMap(text);
     const r: string[] = new Array(0);

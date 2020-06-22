@@ -1,3 +1,10 @@
+/**
+ * This namespace provides functions for maximal repeats on a string.
+ * <template data-path="sutoring.Substrings" data-module="MaximalRepeats"></template>
+ * @packageDocumentation
+ */
+
+
 import * as DistinctSubstrings from "./distinct_substrings"
 import {getAlphabet} from "../string_functions"
 

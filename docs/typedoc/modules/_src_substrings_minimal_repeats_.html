@@ -1,12 +1,21 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="default no-js">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;src/substrings/minimal_repeats&quot; | sutoring</title>
+	<title>"src/substrings/minimal_repeats" | sutoring</title>
 	<meta name="description" content="Documentation for sutoring">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
+<script src="../../sutoring.js"></script><script>window.onload = (event) => {
+            window.addEventListener("keydown", function(event) {
+                event.stopPropagation();
+            }, true);
+            window.addEventListener("keypress", function(event) {
+                event.stopPropagation();
+            }, true);
+        };</script>
 </head>
 <body>
 <header>
@@ -16,7 +25,7 @@
 				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
-						<input id="tsd-search-field" type="text" />
+						<input id="tsd-search-field" type="text">
 					</div>
 					<ul class="results">
 						<li class="state loading">Preparing search index...</li>
@@ -36,11 +45,11 @@
 									<li data-value="private" class="selected">All</li>
 								</ul>
 							</div>
-							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<input type="checkbox" id="tsd-filter-inherited" checked>
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-externals" checked />
+							<input type="checkbox" id="tsd-filter-externals" checked>
 							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
+							<input type="checkbox" id="tsd-filter-only-exported">
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
@@ -56,16 +65,24 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_src_substrings_minimal_repeats_.html">&quot;src/substrings/minimal_repeats&quot;</a>
+					<a href="_src_substrings_minimal_repeats_.html">"src/substrings/minimal_repeats"</a>
 				</li>
 			</ul>
-			<h1>Module &quot;src/substrings/minimal_repeats&quot;</h1>
+			<h1>Module "src/substrings/minimal_repeats"</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>This namespace provides functions for maximal repeats on a string.
+						<template data-path="sutoring.Substrings" data-module="MinimalRepeats"></template></p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
@@ -85,25 +102,45 @@
 					<a name="enumerate" class="tsd-anchor"></a>
 					<h3>enumerate</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">enumerate<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">enumerate<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>
+</li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/substrings/minimal_repeats.ts:5</li>
+									<li>Defined in src/substrings/minimal_repeats.ts:11</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>text: <span class="tsd-signature-type">string</span></h5>
+									<h5>text: <span class="tsd-signature-type">string</span>
+</h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>
+</h4>
 						</li>
 					</ul>
-				</section>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div id="function-42" data-function-name="enumerate" data-custom="true"><fieldset id="function-42-parameters-fieldset">
+<legend>Parameters</legend>
+<div data-name="text" data-type="string" id="function-42-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1">abaababaabaab$</textarea>
+</div>
+</fieldset></div>
+<button onClick='const value = sutoring.Substrings.MinimalRepeats.enumerate(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-42-parameter-0"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-42");
+        sutoring.Console.textarea(value, title, {container : "function-42-code" });'>Run</button>
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-42-code"></code>
+</fieldset>
+</div></section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -113,7 +150,7 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="_src_substrings_minimal_repeats_.html">&quot;src/substrings/minimal_<wbr>repeats&quot;</a>
+						<a href="_src_substrings_minimal_repeats_.html">"src/substrings/minimal_<wbr>repeats"</wbr></a>
 					</li>
 				</ul>
 			</nav>

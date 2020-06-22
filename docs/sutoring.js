@@ -1222,7 +1222,7 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nex
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.RightMaximalRepeats = exports.MinimalUniqueSubstrings = exports.DistinctSubstrings = exports.MaximalRepeats = exports.MinimalRepeats = void 0;\r\nconst MinimalUniqueSubstrings = __webpack_require__(/*! ./minimal_unique_substrings */ \"./src/substrings/minimal_unique_substrings.ts\");\r\nexports.MinimalUniqueSubstrings = MinimalUniqueSubstrings;\r\nconst DistinctSubstrings = __webpack_require__(/*! ./distinct_substrings */ \"./src/substrings/distinct_substrings.ts\");\r\nexports.DistinctSubstrings = DistinctSubstrings;\r\nconst MaximalRepeats = __webpack_require__(/*! ./maximal_repeats */ \"./src/substrings/maximal_repeats.ts\");\r\nexports.MaximalRepeats = MaximalRepeats;\r\nconst RightMaximalRepeats = __webpack_require__(/*! ./right_maximal_repeat */ \"./src/substrings/right_maximal_repeat.ts\");\r\nexports.RightMaximalRepeats = RightMaximalRepeats;\r\nconst MinimalRepeats = __webpack_require__(/*! ./minimal_repeats */ \"./src/substrings/minimal_repeats.ts\");\r\nexports.MinimalRepeats = MinimalRepeats;\r\n\n\n//# sourceURL=webpack://sutoring/./src/substrings/index.ts?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.QGram = exports.RightMaximalRepeats = exports.MinimalUniqueSubstrings = exports.DistinctSubstrings = exports.MaximalRepeats = exports.MinimalRepeats = void 0;\r\nconst MinimalUniqueSubstrings = __webpack_require__(/*! ./minimal_unique_substrings */ \"./src/substrings/minimal_unique_substrings.ts\");\r\nexports.MinimalUniqueSubstrings = MinimalUniqueSubstrings;\r\nconst DistinctSubstrings = __webpack_require__(/*! ./distinct_substrings */ \"./src/substrings/distinct_substrings.ts\");\r\nexports.DistinctSubstrings = DistinctSubstrings;\r\nconst MaximalRepeats = __webpack_require__(/*! ./maximal_repeats */ \"./src/substrings/maximal_repeats.ts\");\r\nexports.MaximalRepeats = MaximalRepeats;\r\nconst RightMaximalRepeats = __webpack_require__(/*! ./right_maximal_repeat */ \"./src/substrings/right_maximal_repeat.ts\");\r\nexports.RightMaximalRepeats = RightMaximalRepeats;\r\nconst MinimalRepeats = __webpack_require__(/*! ./minimal_repeats */ \"./src/substrings/minimal_repeats.ts\");\r\nexports.MinimalRepeats = MinimalRepeats;\r\nconst QGram = __webpack_require__(/*! ./qgram */ \"./src/substrings/qgram.ts\");\r\nexports.QGram = QGram;\r\n\n\n//# sourceURL=webpack://sutoring/./src/substrings/index.ts?");
 
 /***/ }),
 
@@ -1259,6 +1259,18 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nex
 
 "use strict";
 eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.enumerate = void 0;\r\nconst DistinctSubstrings = __webpack_require__(/*! ./distinct_substrings */ \"./src/substrings/distinct_substrings.ts\");\r\nfunction enumerate(text) {\r\n    const map = DistinctSubstrings.createOccurrenceMap(text);\r\n    const r = new Array(0);\r\n    map.forEach((occs, substr) => {\r\n        if (occs.length == 1) {\r\n            if (substr.length == 1) {\r\n                r.push(substr);\r\n            }\r\n            else {\r\n                const left = substr.substr(1);\r\n                const right = substr.substr(0, substr.length - 1);\r\n                if (map.get(left).length > 1 && map.get(right).length > 1) {\r\n                    r.push(substr);\r\n                }\r\n            }\r\n        }\r\n    });\r\n    DistinctSubstrings.sort(r);\r\n    return r;\r\n}\r\nexports.enumerate = enumerate;\r\n\n\n//# sourceURL=webpack://sutoring/./src/substrings/minimal_unique_substrings.ts?");
+
+/***/ }),
+
+/***/ "./src/substrings/qgram.ts":
+/*!*********************************!*\
+  !*** ./src/substrings/qgram.ts ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.enumerate = exports.enumerateWithInfo = void 0;\r\nconst DistinctSubstrings = __webpack_require__(/*! ./distinct_substrings */ \"./src/substrings/distinct_substrings.ts\");\r\nfunction enumerateWithInfo(text, q) {\r\n    return DistinctSubstrings.enumerateWithInfo(text).filter((v) => v.substring.length == q);\r\n}\r\nexports.enumerateWithInfo = enumerateWithInfo;\r\nfunction enumerate(text, q) {\r\n    return enumerateWithInfo(text, q).map((v) => v.substring);\r\n}\r\nexports.enumerate = enumerate;\r\n\n\n//# sourceURL=webpack://sutoring/./src/substrings/qgram.ts?");
 
 /***/ }),
 

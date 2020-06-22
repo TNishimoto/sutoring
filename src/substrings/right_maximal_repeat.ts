@@ -1,3 +1,10 @@
+/**
+ * This namespace provides functions for right maximal repeats.
+ * <template data-path="sutoring.Substrings" data-module="RightMaximalRepeats"></template>
+ * @packageDocumentation
+ */
+
+
 import * as DistinctSubstrings from "./distinct_substrings"
 import {getAlphabet} from "../string_functions"
 
