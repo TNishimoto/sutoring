@@ -1,12 +1,21 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="default no-js">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;src/substrings/distinct_substrings&quot; | sutoring</title>
+	<title>"src/substrings/distinct_substrings" | sutoring</title>
 	<meta name="description" content="Documentation for sutoring">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
+<script src="../../sutoring.js"></script><script>window.onload = (event) => {
+            window.addEventListener("keydown", function(event) {
+                event.stopPropagation();
+            }, true);
+            window.addEventListener("keypress", function(event) {
+                event.stopPropagation();
+            }, true);
+        };</script>
 </head>
 <body>
 <header>
@@ -16,7 +25,7 @@
 				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
-						<input id="tsd-search-field" type="text" />
+						<input id="tsd-search-field" type="text">
 					</div>
 					<ul class="results">
 						<li class="state loading">Preparing search index...</li>
@@ -36,11 +45,11 @@
 									<li data-value="private" class="selected">All</li>
 								</ul>
 							</div>
-							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<input type="checkbox" id="tsd-filter-inherited" checked>
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-externals" checked />
+							<input type="checkbox" id="tsd-filter-externals" checked>
 							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
+							<input type="checkbox" id="tsd-filter-only-exported">
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
@@ -56,16 +65,24 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_src_substrings_distinct_substrings_.html">&quot;src/substrings/distinct_substrings&quot;</a>
+					<a href="_src_substrings_distinct_substrings_.html">"src/substrings/distinct_substrings"</a>
 				</li>
 			</ul>
-			<h1>Module &quot;src/substrings/distinct_substrings&quot;</h1>
+			<h1>Module "src/substrings/distinct_substrings"</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>This namespace provides functions for distinct substrings on a string.
+						<template data-path="sutoring.Substrings" data-module="DistinctSubstrings"></template></p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
@@ -73,15 +90,15 @@
 						<section class="tsd-index-section ">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_src_substrings_distinct_substrings_.html#substringinfo" class="tsd-kind-icon">Substring<wbr>Info</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_src_substrings_distinct_substrings_.html#substringinfo" class="tsd-kind-icon">Substring<wbr>Info</wbr></a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_substrings_distinct_substrings_.html#createoccurrencemap" class="tsd-kind-icon">create<wbr>Occurrence<wbr>Map</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_substrings_distinct_substrings_.html#createoccurrencemap" class="tsd-kind-icon">create<wbr>Occurrence<wbr>Map</wbr></wbr></a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_substrings_distinct_substrings_.html#enumerate" class="tsd-kind-icon">enumerate</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_substrings_distinct_substrings_.html#enumeratewithinfo" class="tsd-kind-icon">enumerate<wbr>With<wbr>Info</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_substrings_distinct_substrings_.html#enumeratewithinfo" class="tsd-kind-icon">enumerate<wbr>With<wbr>Info</wbr></wbr></a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_substrings_distinct_substrings_.html#sort" class="tsd-kind-icon">sort</a></li>
 							</ul>
 						</section>
@@ -92,21 +109,25 @@
 				<h2>Type aliases</h2>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
 					<a name="substringinfo" class="tsd-anchor"></a>
-					<h3>Substring<wbr>Info</h3>
-					<div class="tsd-signature tsd-kind-icon">Substring<wbr>Info<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>occurrences<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>substring<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
+					<h3>Substring<wbr>Info</wbr>
+</h3>
+					<div class="tsd-signature tsd-kind-icon">Substring<wbr>Info<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>occurrences<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>substring<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></wbr>
+</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in src/substrings/distinct_substrings.ts:39</li>
+							<li>Defined in src/substrings/distinct_substrings.ts:46</li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter">
-								<h5>occurrences<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h5>
+								<h5>occurrences<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span>
+</h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5>substring<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								<h5>substring<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>
+</h5>
 							</li>
 						</ul>
 					</div>
@@ -116,101 +137,183 @@
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="createoccurrencemap" class="tsd-anchor"></a>
-					<h3>create<wbr>Occurrence<wbr>Map</h3>
+					<h3>create<wbr>Occurrence<wbr>Map</wbr></wbr>
+</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Occurrence<wbr>Map<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Occurrence<wbr>Map<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></wbr></wbr>
+</li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/substrings/distinct_substrings.ts:23</li>
+									<li>Defined in src/substrings/distinct_substrings.ts:30</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>text: <span class="tsd-signature-type">string</span></h5>
+									<h5>text: <span class="tsd-signature-type">string</span>
+</h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span>
+</h4>
 						</li>
 					</ul>
-				</section>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div id="function-37" data-function-name="createOccurrenceMap" data-custom="true"><fieldset id="function-37-parameters-fieldset">
+<legend>Parameters</legend>
+<div data-name="text" data-type="string" id="function-37-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1">abaababaabaab$</textarea>
+</div>
+</fieldset></div>
+<button onClick='const value = sutoring.Substrings.DistinctSubstrings.createOccurrenceMap(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-37-parameter-0"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-37");
+        sutoring.Console.textarea(value, title, {container : "function-37-code" });'>Run</button>
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-37-code"></code>
+</fieldset>
+</div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="enumerate" class="tsd-anchor"></a>
 					<h3>enumerate</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">enumerate<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">enumerate<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>
+</li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/substrings/distinct_substrings.ts:13</li>
+									<li>Defined in src/substrings/distinct_substrings.ts:20</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>text: <span class="tsd-signature-type">string</span></h5>
+									<h5>text: <span class="tsd-signature-type">string</span>
+</h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>
+</h4>
 						</li>
 					</ul>
-				</section>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div id="function-38" data-function-name="enumerate" data-custom="true"><fieldset id="function-38-parameters-fieldset">
+<legend>Parameters</legend>
+<div data-name="text" data-type="string" id="function-38-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1">abaababaabaab$</textarea>
+</div>
+</fieldset></div>
+<button onClick='const value = sutoring.Substrings.DistinctSubstrings.enumerate(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-38-parameter-0"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-38");
+        sutoring.Console.textarea(value, title, {container : "function-38-code" });'>Run</button>
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-38-code"></code>
+</fieldset>
+</div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="enumeratewithinfo" class="tsd-anchor"></a>
-					<h3>enumerate<wbr>With<wbr>Info</h3>
+					<h3>enumerate<wbr>With<wbr>Info</wbr></wbr>
+</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">enumerate<wbr>With<wbr>Info<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_src_substrings_distinct_substrings_.html#substringinfo" class="tsd-signature-type">SubstringInfo</a><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">enumerate<wbr>With<wbr>Info<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_src_substrings_distinct_substrings_.html#substringinfo" class="tsd-signature-type">SubstringInfo</a><span class="tsd-signature-symbol">[]</span></wbr></wbr>
+</li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/substrings/distinct_substrings.ts:40</li>
+									<li>Defined in src/substrings/distinct_substrings.ts:47</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>text: <span class="tsd-signature-type">string</span></h5>
+									<h5>text: <span class="tsd-signature-type">string</span>
+</h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_src_substrings_distinct_substrings_.html#substringinfo" class="tsd-signature-type">SubstringInfo</a><span class="tsd-signature-symbol">[]</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_src_substrings_distinct_substrings_.html#substringinfo" class="tsd-signature-type">SubstringInfo</a><span class="tsd-signature-symbol">[]</span>
+</h4>
 						</li>
 					</ul>
-				</section>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div id="function-39" data-function-name="enumerateWithInfo" data-custom="true"><fieldset id="function-39-parameters-fieldset">
+<legend>Parameters</legend>
+<div data-name="text" data-type="string" id="function-39-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1">abaababaabaab$</textarea>
+</div>
+</fieldset></div>
+<button onClick='const value = sutoring.Substrings.DistinctSubstrings.enumerateWithInfo(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-39-parameter-0"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-39");
+        sutoring.Console.textarea(value, title, {container : "function-39-code" });'>Run</button>
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-39-code"></code>
+</fieldset>
+</div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="sort" class="tsd-anchor"></a>
 					<h3>sort</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">sort<span class="tsd-signature-symbol">(</span>strings<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">sort<span class="tsd-signature-symbol">(</span>strings<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>
+</li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/substrings/distinct_substrings.ts:4</li>
+									<li>Defined in src/substrings/distinct_substrings.ts:11</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>This namespace provides functions for distinct substrings on a string.</p>
-								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>strings: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+									<h5>strings: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>
+</h5>
+									<div class="tsd-comment tsd-typography">
+										<p><template data-value="aba, nbbb, acc, abbb, baa"></template></p>
+									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>
+</h4>
 						</li>
 					</ul>
-				</section>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div id="function-40" data-function-name="sort" data-custom="true"><fieldset id="function-40-parameters-fieldset">
+<legend>Parameters</legend>
+<div data-name="strings" data-type="string[]" id="function-40-parameter-0">
+<label>strings</label><textarea name="input" cols="40" rows="1">aba, nbbb, acc, abbb, baa</textarea>
+</div>
+</fieldset></div>
+<button onClick='const value = sutoring.Substrings.DistinctSubstrings.sort(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-40-parameter-0"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-40");
+        sutoring.Console.textarea(value, title, {container : "function-40-code" });'>Run</button>
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-40-code"></code>
+</fieldset>
+</div></section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -220,23 +323,23 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="_src_substrings_distinct_substrings_.html">&quot;src/substrings/distinct_<wbr>substrings&quot;</a>
+						<a href="_src_substrings_distinct_substrings_.html">"src/substrings/distinct_<wbr>substrings"</wbr></a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="_src_substrings_distinct_substrings_.html#substringinfo" class="tsd-kind-icon">Substring<wbr>Info</a>
+						<a href="_src_substrings_distinct_substrings_.html#substringinfo" class="tsd-kind-icon">Substring<wbr>Info</wbr></a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_src_substrings_distinct_substrings_.html#createoccurrencemap" class="tsd-kind-icon">create<wbr>Occurrence<wbr>Map</a>
+						<a href="_src_substrings_distinct_substrings_.html#createoccurrencemap" class="tsd-kind-icon">create<wbr>Occurrence<wbr>Map</wbr></wbr></a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_src_substrings_distinct_substrings_.html#enumerate" class="tsd-kind-icon">enumerate</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_src_substrings_distinct_substrings_.html#enumeratewithinfo" class="tsd-kind-icon">enumerate<wbr>With<wbr>Info</a>
+						<a href="_src_substrings_distinct_substrings_.html#enumeratewithinfo" class="tsd-kind-icon">enumerate<wbr>With<wbr>Info</wbr></wbr></a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_src_substrings_distinct_substrings_.html#sort" class="tsd-kind-icon">sort</a>

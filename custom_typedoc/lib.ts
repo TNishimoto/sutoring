@@ -11,6 +11,7 @@ export const sutoringSrc = "../../sutoring.js";
 
 export const allowedParameterTypes : Set<string> = new Set<string>();
 allowedParameterTypes.add("string");
+allowedParameterTypes.add("string[]");
 allowedParameterTypes.add("number");
 allowedParameterTypes.add("boolean");
 allowedParameterTypes.add("string | Objects.GOptions.GTextBoxCSS");
@@ -29,6 +30,9 @@ allowedReturnTypes.add("Logics.LogicCellLine");
 allowedReturnTypes.add("LogicTable");
 allowedReturnTypes.add("LogicTree");
 allowedReturnTypes.add("LZ78Factor[]");
+allowedReturnTypes.add("LZ77Factor[]");
+allowedReturnTypes.add("SubstringInfo[]");
+allowedReturnTypes.add("Map<string, number[]>");
 
 export function isVisualTableType(e : TypeDocParameter | null){
     if(e == null){

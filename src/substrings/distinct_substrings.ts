@@ -1,13 +1,20 @@
 /**
  * This namespace provides functions for distinct substrings on a string.
+ * <template data-path="sutoring.Substrings" data-module="DistinctSubstrings"></template>
+ * @packageDocumentation
  */
-export function sort(strings: string[]) {
+
+ /**
+  * 
+  * @param strings <template data-value="aba, bbb, acc, abbb, baa"></template>
+  */
+export function sort(strings: string[]) : string[] {
     strings.sort((a, b) => {
         if (a < b) return -1;
         if (a > b) return 1;
         return 0;
     })
-
+    return strings;
 }
 
 export function enumerate(text: string): string[] {

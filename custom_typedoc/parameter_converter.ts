@@ -39,9 +39,17 @@ export function parseParameterElements(parameterContainer: libxmljs.Element): Ty
 }
 export function parseReturnTypeElement(parameterContainer: libxmljs.Element): TypeDocParameter {
     const w = <libxmljs.Element>parameterContainer;
-    const text = w.text().split(" ")[1].trim();
+    const spanNodes = w.find("*[@class='tsd-signature-type' or @class='tsd-signature-symbol']");
+    const type = spanNodes.map((v) => (<libxmljs.Element>v).text()).join("");
+
+    //const text = w.text().split(" ")[1].trim();
+
+    //let type : string = "";
+    //if(defaultFlagElement != null) spanNodes.pop();
+    //type = spanNodes.map((v) => (<libxmljs.Element>v).text()).join("");
+
     //const name = w.get("h5")!.text().split(":")[0];
-    const type = text;
+    //const type = text;
     const commentNode = w.get("div/p/comment()");
     return { name: "Returns", type: type, option: null };
 
@@ -56,43 +64,6 @@ export function getArguments(parameters: TypeDocParameter[], functionID: number)
     })
     return r;
 }
-/*
-export function checkParameterConvertable(parameters: TypeDocParameter[]) : boolean {
-    let b = true;
-    const set = new Set<string>();
-
-    parameters.forEach((v) =>{
-        if(!set.has(v.type)){
-            b = false;
-        }
-    })
-    return b;
-}
-*/
-/*
-export function checkReturnTypeConvertable(returnParameter : TypeDocParameter | null) : boolean {
-    let b = true;
-    const set = new Set<string>();
-    set.add("string");
-    set.add("string[]");
-    set.add("number");
-    set.add("number[]");
-    set.add("RLEFactor[]");
-    set.add("Logics.LogicCellLine");
-    set.add("LogicTable");
-
-    //set.add("Logics.LogicCellLine");
-
-    if(returnParameter != null){
-        if(!set.has(returnParameter.type)){
-            b = false;
-        }
-    }else{
-        b = false;
-    }
-    return b;
-}
-*/
 export function getViewCode(returnParameter : TypeDocParameter, valueName : string, titleName : string, functionID : number){
     if(isVisualTableType(returnParameter) ){
         return `const b = document.getElementById("function-${functionID}-visualize-checkbox").checked;

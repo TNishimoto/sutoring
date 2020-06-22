@@ -55,7 +55,12 @@ export function getParameterInputValue(inputElementID: string | HTMLElement ): a
         if (type == "string") {
             const textarea = div.getElementsByTagName("textarea").item(0)!;
             return textarea.value;
-        } else if (type == "number") {
+        }
+        else if (type == "string[]") {
+            const textarea = div.getElementsByTagName("textarea").item(0)!;
+            return textarea.value.split(",").map((v)=>v.trim());
+        }  
+        else if (type == "number") {
             const input = div.getElementsByTagName("input").item(0)!;
             return input.value;
         } else if(type == "boolean"){

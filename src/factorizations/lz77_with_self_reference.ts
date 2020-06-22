@@ -1,4 +1,9 @@
-//import { type } from "os";
+/**
+ * This namespace provides functions for LZ77.
+ * <template data-path="sutoring.Factorizations" data-module="LZ77WithSelfReference"></template>
+ * @packageDocumentation
+ */
+
 import {lce} from "../string_functions"
 
 export type LZ77Factor = { position: number, length: number } | string;

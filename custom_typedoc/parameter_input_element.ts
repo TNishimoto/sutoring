@@ -22,8 +22,16 @@ function typedocParameterToInputElement(parameter: TypeDocParameter) : string{
         if(parameter.option != null && parameter.option.has("value")){
             value = parameter.option.get("value")!;
         }
-        center = `<label>${parameter.name}</label><textarea name="input" cols="40" rows="1" maxlength="20">${value}</textarea>`;
-    } else if (parameter.type == "number") {
+        center = `<label>${parameter.name}</label><textarea name="input" cols="40" rows="1">${value}</textarea>`;
+    }
+    else if(parameter.type == "string[]"){
+        let value = "abaababaabaab$";
+        if(parameter.option != null && parameter.option.has("value")){
+            value = parameter.option.get("value")!;
+        }
+        center = `<label>${parameter.name}</label><textarea name="input" cols="40" rows="1">${value}</textarea>`;
+    } 
+    else if (parameter.type == "number") {
         //const doc = new libxmlts.Document(this.element.doc());
         let min = 0;
         let value = 0;
