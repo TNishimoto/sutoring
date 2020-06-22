@@ -1,6 +1,6 @@
 
 import libxmljs = require('libxmljs');
-import {TypeDocParameter, templateParse, parseHtmlFragments, isVisualType} from './lib';
+import {TypeDocParameter, templateParse, parseHtmlFragments, isVisualTableType, isVisualGraphType} from './lib';
 
 
 export function parseParameterElements(parameterContainer: libxmljs.Element): TypeDocParameter[] {
@@ -94,14 +94,23 @@ export function checkReturnTypeConvertable(returnParameter : TypeDocParameter | 
 }
 */
 export function getViewCode(returnParameter : TypeDocParameter, valueName : string, titleName : string, functionID : number){
-    if(isVisualType(returnParameter) ){
+    if(isVisualTableType(returnParameter) ){
         return `const b = document.getElementById("function-${functionID}-visualize-checkbox").checked;
         if(b){ 
             sutoring.Console.table(${valueName}, ${titleName}, "function-${functionID}-code")}
             else{ 
             sutoring.Console.textarea(${valueName}, ${titleName}, {container : "function-${functionID}-code" })
         }`
-    }else{
+    }
+    else if(isVisualGraphType(returnParameter)){
+        return `const b = document.getElementById("function-${functionID}-visualize-checkbox").checked;
+        if(b){ 
+            sutoring.Console.graph(${valueName}, ${titleName}, "function-${functionID}-code")}
+            else{ 
+            sutoring.Console.textarea(${valueName}, ${titleName}, {container : "function-${functionID}-code" })
+        }`
+    }
+    else{
         return `sutoring.Console.textarea(${valueName}, ${titleName}, {container : "function-${functionID}-code" })`;
     }
 }

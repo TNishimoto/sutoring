@@ -1,10 +1,13 @@
-//import * as LogicGraphTable from "../graph_table"
-import * as SuffixArray from "./suffix_array"
-//import { GTextBoxCSS } from "g_options";
-import { Logics, Objects } from "graph-table-svg"
 /**
- * This namespace provides functions for longest common prefix array.
+ * This namespace provides functions for LCP array.
+ * <template data-path="sutoring.Arrays" data-module="LCPArray"></template>
+ * @packageDocumentation
  */
+
+
+import * as SuffixArray from "./suffix_array"
+import { Logics, Objects } from "graph-table-svg"
+
 export function lcp(text1: string, text2: string): number {
     const max = text1.length < text2.length ? text2.length : text1.length;
     for (let i = 0; i < max; i++) {

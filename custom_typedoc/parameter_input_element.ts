@@ -3,7 +3,7 @@ import {TypeDocParameter, templateParse, parseHtmlFragments} from './lib';
 import libxmljs = require('libxmljs');
 
 
-export function createSelectBox(name : string, keyValuePairs : [string, string][] ) : string{
+function createSelectBox(name : string, keyValuePairs : [string, string][] ) : string{
         
     const optionStr = keyValuePairs.map((v) =>{
         return `<option value="${v[1]}">${v[0]}</option>`
@@ -14,14 +14,11 @@ export function createSelectBox(name : string, keyValuePairs : [string, string][
     return s;
     
 }
-function createBooleanSelectBox(name : string) : string{
-    return `${createSelectBox(name, [ ["true", "true"], ["false", "false"] ])}`;
-}
-export function createParameterInputElement2(parameter: TypeDocParameter) : string{
+function typedocParameterToInputElement(parameter: TypeDocParameter) : string{
 
     let center : string = "";
     if (parameter.type == "string") {
-        let value = "";
+        let value = "abaababaabaab$";
         if(parameter.option != null && parameter.option.has("value")){
             value = parameter.option.get("value")!;
         }
@@ -47,7 +44,7 @@ export function createParameterInputElement2(parameter: TypeDocParameter) : stri
         center = `<label>${parameter.name}:<input type="number" name="input"  min="${min}" size="${size}" value="${value}"></label>`;
     } else if(parameter.type == "boolean"){
         center = `<label>${parameter.name}</label>
-        ${createBooleanSelectBox("select")}`;
+        ${createSelectBox("select", [ ["true", "true"], ["false", "false"] ])}`;
     
 
     }
@@ -74,14 +71,14 @@ export function createParameterInputElement2(parameter: TypeDocParameter) : stri
         const p8 = { name : "withMiddleSubstrings", type : "boolean", option : null};
         center = `<fieldset>
         <legend>${parameter.name}</legend>
-        ${createParameterInputElement2(p1)}
-        ${createParameterInputElement2(p2)}
-        ${createParameterInputElement2(p3)}
-        ${createParameterInputElement2(p4)}
-        ${createParameterInputElement2(p5)}
-        ${createParameterInputElement2(p6)}
-        ${createParameterInputElement2(p7)}
-        ${createParameterInputElement2(p8)}
+        ${typedocParameterToInputElement(p1)}
+        ${typedocParameterToInputElement(p2)}
+        ${typedocParameterToInputElement(p3)}
+        ${typedocParameterToInputElement(p4)}
+        ${typedocParameterToInputElement(p5)}
+        ${typedocParameterToInputElement(p6)}
+        ${typedocParameterToInputElement(p7)}
+        ${typedocParameterToInputElement(p8)}
         </fieldset>`;
 
     }
@@ -93,11 +90,11 @@ export function createParameterInputElement2(parameter: TypeDocParameter) : stri
         const p5 = { name : "zeroBased", type : "boolean", option : null};
         center = `<fieldset>
         <legend>${parameter.name}</legend>
-        ${createParameterInputElement2(p1)}
-        ${createParameterInputElement2(p2)}
-        ${createParameterInputElement2(p3)}
-        ${createParameterInputElement2(p4)}
-        ${createParameterInputElement2(p5)}
+        ${typedocParameterToInputElement(p1)}
+        ${typedocParameterToInputElement(p2)}
+        ${typedocParameterToInputElement(p3)}
+        ${typedocParameterToInputElement(p4)}
+        ${typedocParameterToInputElement(p5)}
         </fieldset>`;
 
     }
@@ -107,9 +104,9 @@ export function createParameterInputElement2(parameter: TypeDocParameter) : stri
         const p3 = { name : "horizontalAnchor", type : "HorizontalAnchor", option : null};
         center = `<fieldset>
         <legend>${parameter.name}</legend>
-        ${createParameterInputElement2(p1)}
-        ${createParameterInputElement2(p2)}
-        ${createParameterInputElement2(p3)}
+        ${typedocParameterToInputElement(p1)}
+        ${typedocParameterToInputElement(p2)}
+        ${typedocParameterToInputElement(p3)}
         </fieldset>`;
     }else if(parameter.type == "Objects.GOptions.CellAttributes"){
         const p1 = { name : "autoSizeShapeToFitText", type : "AutoSizeShapeToFitText", option : null};
@@ -122,13 +119,13 @@ export function createParameterInputElement2(parameter: TypeDocParameter) : stri
 
         center = `<fieldset>
         <legend>${parameter.name}</legend>
-        ${createParameterInputElement2(p1)}
-        ${createParameterInputElement2(p2)}
-        ${createParameterInputElement2(p3)}
-        ${createParameterInputElement2(p4)}
-        ${createParameterInputElement2(p5)}
-        ${createParameterInputElement2(p6)}
-        ${createParameterInputElement2(p7)}
+        ${typedocParameterToInputElement(p1)}
+        ${typedocParameterToInputElement(p2)}
+        ${typedocParameterToInputElement(p3)}
+        ${typedocParameterToInputElement(p4)}
+        ${typedocParameterToInputElement(p5)}
+        ${typedocParameterToInputElement(p6)}
+        ${typedocParameterToInputElement(p7)}
         </fieldset>`;
     }
     return `<div data-name="${parameter.name}" data-type="${parameter.type}">${center}</div>`
@@ -137,7 +134,7 @@ export function createParameterInputElement2(parameter: TypeDocParameter) : stri
 export function createParameterInputElement(parameter: TypeDocParameter, functionID: number, parameterID: number, doc: libxmljs.Document): libxmljs.Element {
     const id = `function-${functionID}-parameter-${parameterID}`;
     //const div: libxmljs.Element = new libxmljs.Element(doc, "div", "");
-    const div = libxmljs.parseHtmlFragment(createParameterInputElement2(parameter)).root()!;
+    const div = libxmljs.parseHtmlFragment(typedocParameterToInputElement(parameter)).root()!;
     div.attr({id : id});
     return div;
 

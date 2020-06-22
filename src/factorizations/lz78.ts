@@ -1,9 +1,10 @@
-
-
-import { Logics } from "graph-table-svg"
 /**
  * This namespace provides functions for Lempel-Ziv 78 compression.
+ * <template data-path="sutoring.Factorizations" data-module="LZ78"></template>
+ * @packageDocumentation
  */
+
+import { Logics } from "graph-table-svg"
 export type LZ78Factor = { id: number, nextChar: string };
 export type LZ78Node = { id: number, children: Map<string, LZ78Node> }
 //type RevLZ78Node = { char : string, parent : number | null }

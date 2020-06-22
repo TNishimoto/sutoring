@@ -1,6 +1,6 @@
 
 import libxmljs = require('libxmljs');
-import {TypeDocParameter, getModuleResolver, sutoringSrc, isVisualType, allowedParameterTypes, allowedReturnTypes} from './lib';
+import {TypeDocParameter, getModuleResolver, sutoringSrc, isVisualTableType, allowedParameterTypes, allowedReturnTypes, isVisualGraphType} from './lib';
 
 import {parseParameterElements, getArguments, parseReturnTypeElement, getViewCode} from './parameter_converter';
 import {createParameterInputElement} from './parameter_input_element';
@@ -119,7 +119,7 @@ export class TypeDocFunctionTag{
         this.mainFieldSet.addChild(button);
 
 
-        if(isVisualType(this.returnParameter)){
+        if(isVisualTableType(this.returnParameter) || isVisualGraphType(this.returnParameter)){
             const visualizeLabel : libxmljs.Element = new libxmljs.Element(this.element.doc(), "label", "  Visualize");
             const visualizeCheckbox : libxmljs.Element = new libxmljs.Element(this.element.doc(), "input", "");
             visualizeCheckbox.attr({ id : `function-${this.id}-visualize-checkbox`});

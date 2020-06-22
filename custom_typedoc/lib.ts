@@ -6,8 +6,8 @@ import path = require("path")
 export type TypeDocParameter = { name: string; type: string, option: Map<string,string> | null };
 
 
-export const sutoringSrc = "https://cdn.jsdelivr.net/npm/sutoring@0.0.17/docs/sutoring.js";
-//const sutoringSrc = "../../sutoring.js";
+//export const sutoringSrc = "https://cdn.jsdelivr.net/npm/sutoring@0.0.17/docs/sutoring.js";
+export const sutoringSrc = "../../sutoring.js";
 
 export const allowedParameterTypes : Set<string> = new Set<string>();
 allowedParameterTypes.add("string");
@@ -27,14 +27,24 @@ allowedReturnTypes.add("number[]");
 allowedReturnTypes.add("RLEFactor[]");
 allowedReturnTypes.add("Logics.LogicCellLine");
 allowedReturnTypes.add("LogicTable");
+allowedReturnTypes.add("LogicTree");
+allowedReturnTypes.add("LZ78Factor[]");
 
-export function isVisualType(e : TypeDocParameter | null){
+export function isVisualTableType(e : TypeDocParameter | null){
     if(e == null){
         return false;
     }else{
         return e.type == "Logics.LogicCellLine" || e.type == "LogicTable";
     }
 }
+export function isVisualGraphType(e : TypeDocParameter | null){
+    if(e == null){
+        return false;
+    }else{
+        return e.type == "LogicTree";
+    }
+}
+
 
 export function templateParse(template: libxmljs.Element): Map<string, string> {
     const map = new Map<string, string>();
