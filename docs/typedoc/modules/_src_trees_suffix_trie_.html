@@ -1,12 +1,21 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="default no-js">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;src/trees/suffix_trie&quot; | sutoring</title>
+	<title>"src/trees/suffix_trie" | sutoring</title>
 	<meta name="description" content="Documentation for sutoring">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
+<script src="../../sutoring.js"></script><script>window.onload = (event) => {
+            window.addEventListener("keydown", function(event) {
+                event.stopPropagation();
+            }, true);
+            window.addEventListener("keypress", function(event) {
+                event.stopPropagation();
+            }, true);
+        };</script>
 </head>
 <body>
 <header>
@@ -16,7 +25,7 @@
 				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
-						<input id="tsd-search-field" type="text" />
+						<input id="tsd-search-field" type="text">
 					</div>
 					<ul class="results">
 						<li class="state loading">Preparing search index...</li>
@@ -36,11 +45,11 @@
 									<li data-value="private" class="selected">All</li>
 								</ul>
 							</div>
-							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<input type="checkbox" id="tsd-filter-inherited" checked>
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-externals" checked />
+							<input type="checkbox" id="tsd-filter-externals" checked>
 							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
+							<input type="checkbox" id="tsd-filter-only-exported">
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
@@ -56,16 +65,24 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_src_trees_suffix_trie_.html">&quot;src/trees/suffix_trie&quot;</a>
+					<a href="_src_trees_suffix_trie_.html">"src/trees/suffix_trie"</a>
 				</li>
 			</ul>
-			<h1>Module &quot;src/trees/suffix_trie&quot;</h1>
+			<h1>Module "src/trees/suffix_trie"</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>This namespace provides functions for suffix tries.
+						<template data-path="sutoring.Trees" data-module="SuffixTrie"></template></p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
@@ -74,7 +91,7 @@
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_trees_suffix_trie_.html#construct" class="tsd-kind-icon">construct</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_trees_suffix_trie_.html#enumeratesuffixes" class="tsd-kind-icon">enumerate<wbr>Suffixes</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_trees_suffix_trie_.html#enumeratesuffixes" class="tsd-kind-icon">enumerate<wbr>Suffixes</wbr></a></li>
 							</ul>
 						</section>
 					</div>
@@ -86,48 +103,94 @@
 					<a name="construct" class="tsd-anchor"></a>
 					<h3>construct</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">construct<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/_node_modules_graph_table_svg_dist_logics_logic_tree_d_.logictree.html" class="tsd-signature-type">LogicTree</a></li>
+						<li class="tsd-signature tsd-kind-icon">construct<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/_node_modules_graph_table_svg_dist_logics_logic_tree_d_.logictree.html" class="tsd-signature-type">LogicTree</a>
+</li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/trees/suffix_trie.ts:11</li>
+									<li>Defined in src/trees/suffix_trie.ts:17</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>text: <span class="tsd-signature-type">string</span></h5>
+									<h5>text: <span class="tsd-signature-type">string</span>
+</h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../classes/_node_modules_graph_table_svg_dist_logics_logic_tree_d_.logictree.html" class="tsd-signature-type">LogicTree</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../classes/_node_modules_graph_table_svg_dist_logics_logic_tree_d_.logictree.html" class="tsd-signature-type">LogicTree</a>
+</h4>
 						</li>
 					</ul>
-				</section>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div id="function-53" data-function-name="construct" data-custom="true"><fieldset id="function-53-parameters-fieldset">
+<legend>Parameters</legend>
+<div data-name="text" data-type="string" id="function-53-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1">abaababaabaab$</textarea>
+</div>
+</fieldset></div>
+<button onClick='const value = sutoring.Trees.SuffixTrie.construct(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-53-parameter-0"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-53");
+        const b = document.getElementById("function-53-visualize-checkbox").checked;
+        if(b){ 
+            sutoring.Console.graph(value, title, "function-53-code")}
+            else{ 
+            sutoring.Console.textarea(value, title, {container : "function-53-code" })
+        };'>Run</button><label>  Visualize</label><input id="function-53-visualize-checkbox" type="checkbox" checked name="visualize-checkbox">
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-53-code"></code>
+</fieldset>
+</div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="enumeratesuffixes" class="tsd-anchor"></a>
-					<h3>enumerate<wbr>Suffixes</h3>
+					<h3>enumerate<wbr>Suffixes</wbr>
+</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">enumerate<wbr>Suffixes<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">enumerate<wbr>Suffixes<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></wbr>
+</li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/trees/suffix_trie.ts:3</li>
+									<li>Defined in src/trees/suffix_trie.ts:9</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>text: <span class="tsd-signature-type">string</span></h5>
+									<h5>text: <span class="tsd-signature-type">string</span>
+</h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>
+</h4>
 						</li>
 					</ul>
-				</section>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div id="function-54" data-function-name="enumerateSuffixes" data-custom="true"><fieldset id="function-54-parameters-fieldset">
+<legend>Parameters</legend>
+<div data-name="text" data-type="string" id="function-54-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1">abaababaabaab$</textarea>
+</div>
+</fieldset></div>
+<button onClick='const value = sutoring.Trees.SuffixTrie.enumerateSuffixes(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-54-parameter-0"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-54");
+        sutoring.Console.textarea(value, title, {container : "function-54-code" });'>Run</button>
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-54-code"></code>
+</fieldset>
+</div></section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -137,7 +200,7 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="_src_trees_suffix_trie_.html">&quot;src/trees/suffix_<wbr>trie&quot;</a>
+						<a href="_src_trees_suffix_trie_.html">"src/trees/suffix_<wbr>trie"</wbr></a>
 					</li>
 				</ul>
 			</nav>
@@ -147,7 +210,7 @@
 						<a href="_src_trees_suffix_trie_.html#construct" class="tsd-kind-icon">construct</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_src_trees_suffix_trie_.html#enumeratesuffixes" class="tsd-kind-icon">enumerate<wbr>Suffixes</a>
+						<a href="_src_trees_suffix_trie_.html#enumeratesuffixes" class="tsd-kind-icon">enumerate<wbr>Suffixes</wbr></a>
 					</li>
 				</ul>
 			</nav>

@@ -1,3 +1,9 @@
+/**
+ * This namespace provides functions for tries.
+ * <template data-path="sutoring.Trees" data-module="Trie"></template>
+ * @packageDocumentation
+ */
+
 import { Logics } from "graph-table-svg";
 
 export function construct(texts: string[]): Logics.LogicTree {

@@ -1,3 +1,8 @@
+/**
+ * This namespace provides functions for block trees.
+ * <template data-path="sutoring.Trees" data-module="BlockTree"></template>
+ * @packageDocumentation
+ */
 
 import { Logics, Common, Objects } from "graph-table-svg";
 import { GVertex, GTable } from "graph-table-svg/dist/objects";

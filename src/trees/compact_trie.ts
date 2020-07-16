@@ -1,3 +1,9 @@
+/**
+ * This namespace provides functions for compact tries.
+ * <template data-path="sutoring.Trees" data-module="CompactTrie"></template>
+ * @packageDocumentation
+ */
+
 import { Logics } from "graph-table-svg";
 import * as LCPArray from "../arrays/lcp_array";
 import * as Trie from "./trie";

@@ -1,3 +1,9 @@
+/**
+ * This namespace provides functions for suffix tries.
+ * <template data-path="sutoring.Trees" data-module="SuffixTrie"></template>
+ * @packageDocumentation
+ */
+
 import { Logics } from "graph-table-svg";
 import * as Trie from "./trie";
 export function enumerateSuffixes(text: string): string[] {

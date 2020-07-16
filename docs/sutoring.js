@@ -1318,7 +1318,7 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nex
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.BlockTree = exports.SuffixTree = exports.SuffixTrie = exports.Trie = void 0;\r\nconst Trie = __webpack_require__(/*! ./trie */ \"./src/trees/trie.ts\");\r\nexports.Trie = Trie;\r\nconst SuffixTrie = __webpack_require__(/*! ./suffix_trie */ \"./src/trees/suffix_trie.ts\");\r\nexports.SuffixTrie = SuffixTrie;\r\nconst SuffixTree = __webpack_require__(/*! ./suffix_tree */ \"./src/trees/suffix_tree.ts\");\r\nexports.SuffixTree = SuffixTree;\r\nconst BlockTree = __webpack_require__(/*! ./block_tree */ \"./src/trees/block_tree.ts\");\r\nexports.BlockTree = BlockTree;\r\n\n\n//# sourceURL=webpack://sutoring/./src/trees/index.ts?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.CompactTrie = exports.BlockTree = exports.SuffixTree = exports.SuffixTrie = exports.Trie = void 0;\r\nconst Trie = __webpack_require__(/*! ./trie */ \"./src/trees/trie.ts\");\r\nexports.Trie = Trie;\r\nconst SuffixTrie = __webpack_require__(/*! ./suffix_trie */ \"./src/trees/suffix_trie.ts\");\r\nexports.SuffixTrie = SuffixTrie;\r\nconst SuffixTree = __webpack_require__(/*! ./suffix_tree */ \"./src/trees/suffix_tree.ts\");\r\nexports.SuffixTree = SuffixTree;\r\nconst BlockTree = __webpack_require__(/*! ./block_tree */ \"./src/trees/block_tree.ts\");\r\nexports.BlockTree = BlockTree;\r\nconst CompactTrie = __webpack_require__(/*! ./compact_trie */ \"./src/trees/compact_trie.ts\");\r\nexports.CompactTrie = CompactTrie;\r\n\n\n//# sourceURL=webpack://sutoring/./src/trees/index.ts?");
 
 /***/ }),
 
