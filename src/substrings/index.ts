@@ -4,7 +4,8 @@ import * as MaximalRepeats from "./maximal_repeats"
 import * as RightMaximalRepeats from "./right_maximal_repeat"
 import * as MinimalRepeats from "./minimal_repeats"
 import * as QGram from "./qgram"
+import * as Delta from "./delta"
 
 export{
-    MinimalRepeats, MaximalRepeats, DistinctSubstrings, MinimalUniqueSubstrings, RightMaximalRepeats, QGram
+    MinimalRepeats, MaximalRepeats, DistinctSubstrings, MinimalUniqueSubstrings, RightMaximalRepeats, QGram, Delta
 }
