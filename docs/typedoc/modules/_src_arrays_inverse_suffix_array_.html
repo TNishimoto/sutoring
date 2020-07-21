@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;src/string_functions&quot; | sutoring</title>
+	<title>&quot;src/arrays/inverse_suffix_array&quot; | sutoring</title>
 	<meta name="description" content="Documentation for sutoring">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_src_string_functions_.html">&quot;src/string_functions&quot;</a>
+					<a href="_src_arrays_inverse_suffix_array_.html">&quot;src/arrays/inverse_suffix_array&quot;</a>
 				</li>
 			</ul>
-			<h1>Module &quot;src/string_functions&quot;</h1>
+			<h1>Module &quot;src/arrays/inverse_suffix_array&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -73,9 +73,9 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_string_functions_.html#getalphabet" class="tsd-kind-icon">get<wbr>Alphabet</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_string_functions_.html#lce" class="tsd-kind-icon">lce</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_string_functions_.html#lcp" class="tsd-kind-icon">lcp</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_arrays_inverse_suffix_array_.html#construct" class="tsd-kind-icon">construct</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_arrays_inverse_suffix_array_.html#createisaarrayline" class="tsd-kind-icon">createISAArray<wbr>Line</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_src_arrays_inverse_suffix_array_.html#inverse" class="tsd-kind-icon">inverse</a></li>
 							</ul>
 						</section>
 					</div>
@@ -84,16 +84,16 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="getalphabet" class="tsd-anchor"></a>
-					<h3>get<wbr>Alphabet</h3>
+					<a name="construct" class="tsd-anchor"></a>
+					<h3>construct</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Alphabet<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">construct<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, zerobased<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/string_functions.ts:2</li>
+									<li>Defined in src/arrays/inverse_suffix_array.ts:14</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -101,77 +101,66 @@
 								<li>
 									<h5>text: <span class="tsd-signature-type">string</span></h5>
 								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> zerobased: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
+								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="lce" class="tsd-anchor"></a>
-					<h3>lce</h3>
+					<a name="createisaarrayline" class="tsd-anchor"></a>
+					<h3>createISAArray<wbr>Line</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">lce<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, pos1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, pos2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon">createISAArray<wbr>Line<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, zerobased<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span>, cellClass<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Objects.GOptions.GTextBoxCSS</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Logics.LogicCellLine</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/string_functions.ts:15</li>
+									<li>Defined in src/arrays/inverse_suffix_array.ts:18</li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Return the length of the longest common prefix of the two prefixes $text[pos1..]$ and $text[pos2..]$.</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>text: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Input text.</p>
-									</div>
 								</li>
 								<li>
-									<h5>pos1: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The starting position of the first prefix.</p>
-									</div>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> zerobased: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
 								</li>
 								<li>
-									<h5>pos2: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The starting position of the second prefix.</p>
-									</div>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> cellClass: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Objects.GOptions.GTextBoxCSS</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Logics.LogicCellLine</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="lcp" class="tsd-anchor"></a>
-					<h3>lcp</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">lcp<span class="tsd-signature-symbol">(</span>text1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, text2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="inverse" class="tsd-anchor"></a>
+					<h3>inverse</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">inverse<span class="tsd-signature-symbol">(</span>array<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span>, zerobased<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/string_functions.ts:32</li>
+									<li>Defined in src/arrays/inverse_suffix_array.ts:5</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>text1: <span class="tsd-signature-type">string</span></h5>
+									<h5>array: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 								<li>
-									<h5>text2: <span class="tsd-signature-type">string</span></h5>
+									<h5>zerobased: <span class="tsd-signature-type">boolean</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -184,20 +173,20 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="_src_string_functions_.html">&quot;src/string_<wbr>functions&quot;</a>
+						<a href="_src_arrays_inverse_suffix_array_.html">&quot;src/arrays/inverse_<wbr>suffix_<wbr>array&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_src_string_functions_.html#getalphabet" class="tsd-kind-icon">get<wbr>Alphabet</a>
+						<a href="_src_arrays_inverse_suffix_array_.html#construct" class="tsd-kind-icon">construct</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_src_string_functions_.html#lce" class="tsd-kind-icon">lce</a>
+						<a href="_src_arrays_inverse_suffix_array_.html#createisaarrayline" class="tsd-kind-icon">createISAArray<wbr>Line</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_src_string_functions_.html#lcp" class="tsd-kind-icon">lcp</a>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_src_arrays_inverse_suffix_array_.html#inverse" class="tsd-kind-icon">inverse</a>
 					</li>
 				</ul>
 			</nav>

@@ -7,14 +7,8 @@
 
 import * as SuffixArray from "./suffix_array"
 import { Logics, Objects } from "graph-table-svg"
+import { lcp } from "../string_functions"
 
-export function lcp(text1: string, text2: string): number {
-    const max = text1.length < text2.length ? text2.length : text1.length;
-    for (let i = 0; i < max; i++) {
-        if (text1[i] != text2[i]) return i;
-    }
-    return max;
-}
 export function construct(text: string): number[] {
     const sa = SuffixArray.construct(text);
     const lcpArray = sa.map((_, i) => {

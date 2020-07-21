@@ -112,11 +112,11 @@
 					<a name="satableoption" class="tsd-anchor"></a>
 					<h3>SATable<wbr>Option</wbr>
 </h3>
-					<div class="tsd-signature tsd-kind-icon">SATable<wbr>Option<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>withBWT<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">; </span>withIndex<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">; </span>withLCP<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">; </span>withSA<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">; </span>zeroBased<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> }</span></wbr>
+					<div class="tsd-signature tsd-kind-icon">SATable<wbr>Option<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>withBWT<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">; </span>withISA<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">; </span>withIndex<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">; </span>withLCP<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">; </span>withLPF<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">; </span>withSA<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">; </span>zeroBased<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> }</span></wbr>
 </div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in src/arrays/suffix_array.ts:47</li>
+							<li>Defined in src/arrays/suffix_array.ts:50</li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -129,12 +129,22 @@
 							</li>
 							<li class="tsd-parameter">
 								<h5>
+<span class="tsd-flag ts-flagOptional">Optional</span> withISA<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span>
+</h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>
 <span class="tsd-flag ts-flagOptional">Optional</span> with<wbr>Index<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></wbr>
 </h5>
 							</li>
 							<li class="tsd-parameter">
 								<h5>
 <span class="tsd-flag ts-flagOptional">Optional</span> withLCP<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span>
+</h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>
+<span class="tsd-flag ts-flagOptional">Optional</span> withLPF<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span>
 </h5>
 							</li>
 							<li class="tsd-parameter">
@@ -164,7 +174,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/arrays/suffix_array.ts:18</li>
+									<li>Defined in src/arrays/suffix_array.ts:21</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -193,12 +203,12 @@
 				<div name="run" data-custom="true">
 <fieldset>
 <legend>Demo</legend>
-<div id="function-4" data-function-name="construct" data-custom="true"><fieldset id="function-4-parameters-fieldset">
+<div id="function-3" data-function-name="construct" data-custom="true"><fieldset id="function-3-parameters-fieldset">
 <legend>Parameters</legend>
-<div data-name="text" data-type="string" id="function-4-parameter-0">
+<div data-name="text" data-type="string" id="function-3-parameter-0">
 <label>text</label><textarea name="input" cols="40" rows="1">abaababaabaab$</textarea>
 </div>
-<div data-name=" zero_based" data-type="boolean" id="function-4-parameter-1">
+<div data-name=" zero_based" data-type="boolean" id="function-3-parameter-1">
 <label> zero_based</label>
         <select name="select">
         <option value="true">true</option>
@@ -206,13 +216,13 @@
         </select>
 </div>
 </fieldset></div>
-<button onClick='const value = sutoring.Arrays.SuffixArray.construct(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-4-parameter-0"),sutoring.Debug.CustomTypedoc.getParameterInputValue("function-4-parameter-1"));
-        const title = sutoring.Debug.CustomTypedoc.getTitle("function-4");
-        sutoring.Console.textarea(value, title, {container : "function-4-code" });'>Run</button>
+<button onClick='const value = sutoring.Arrays.SuffixArray.construct(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-3-parameter-0"),sutoring.Debug.CustomTypedoc.getParameterInputValue("function-3-parameter-1"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-3");
+        sutoring.Console.textarea(value, title, {container : "function-3-code" });'>Run</button>
 </fieldset>
 <fieldset>
 <legend>Result</legend>
-<code id="function-4-code"></code>
+<code id="function-3-code"></code>
 </fieldset>
 </div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
@@ -226,7 +236,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/arrays/suffix_array.ts:86</li>
+									<li>Defined in src/arrays/suffix_array.ts:89</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -242,7 +252,7 @@
 								</li>
 								<li>
 									<h5>
-<span class="tsd-flag ts-flagDefault value">Default value</span> option: <a href="_src_arrays_suffix_array_.html#satableoption" class="tsd-signature-type">SATableOption</a><span class="tsd-signature-symbol"> = { zeroBased: true, withSA: true, withLCP: false, withBWT: false, withIndex: true }</span>
+<span class="tsd-flag ts-flagDefault value">Default value</span> option: <a href="_src_arrays_suffix_array_.html#satableoption" class="tsd-signature-type">SATableOption</a><span class="tsd-signature-symbol"> = { zeroBased: true, withSA: true, withLCP: false, withBWT: false, withIndex: true, withLPF : true, withISA : true }</span>
 </h5>
 									<div class="tsd-comment tsd-typography">
 									</div>
@@ -255,12 +265,12 @@
 				<div name="run" data-custom="true">
 <fieldset>
 <legend>Demo</legend>
-<div id="function-5" data-function-name="constructSATable" data-custom="true"><fieldset id="function-5-parameters-fieldset">
+<div id="function-4" data-function-name="constructSATable" data-custom="true"><fieldset id="function-4-parameters-fieldset">
 <legend>Parameters</legend>
-<div data-name="text" data-type="string" id="function-5-parameter-0">
+<div data-name="text" data-type="string" id="function-4-parameter-0">
 <label>text</label><textarea name="input" cols="40" rows="1">abaababaabaab$</textarea>
 </div>
-<div data-name=" option" data-type="SATableOption" id="function-5-parameter-1"><fieldset>
+<div data-name=" option" data-type="SATableOption" id="function-4-parameter-1"><fieldset>
         <legend> option</legend>
         <div data-name="withBWT" data-type="boolean">
 <label>withBWT</label>
@@ -297,20 +307,35 @@
 <option value="false">false</option>
         </select>
 </div>
+        <div data-name="withLPF" data-type="boolean">
+<label>withLPF</label>
+        <select name="select">
+        <option value="true">true</option>
+<option value="false">false</option>
+        </select>
+</div>
+        <div data-name="withISA" data-type="boolean">
+<label>withISA</label>
+        <select name="select">
+        <option value="true">true</option>
+<option value="false">false</option>
+        </select>
+</div>
+
         </fieldset></div>
 </fieldset></div>
-<button onClick='const value = sutoring.Arrays.SuffixArray.constructSATable(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-5-parameter-0"),sutoring.Debug.CustomTypedoc.getParameterInputValue("function-5-parameter-1"));
-        const title = sutoring.Debug.CustomTypedoc.getTitle("function-5");
-        const b = document.getElementById("function-5-visualize-checkbox").checked;
+<button onClick='const value = sutoring.Arrays.SuffixArray.constructSATable(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-4-parameter-0"),sutoring.Debug.CustomTypedoc.getParameterInputValue("function-4-parameter-1"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-4");
+        const b = document.getElementById("function-4-visualize-checkbox").checked;
         if(b){ 
-            sutoring.Console.table(value, title, "function-5-code")}
+            sutoring.Console.table(value, title, "function-4-code")}
             else{ 
-            sutoring.Console.textarea(value, title, {container : "function-5-code" })
-        };'>Run</button><label>  Visualize</label><input id="function-5-visualize-checkbox" type="checkbox" checked name="visualize-checkbox">
+            sutoring.Console.textarea(value, title, {container : "function-4-code" })
+        };'>Run</button><label>  Visualize</label><input id="function-4-visualize-checkbox" type="checkbox" checked name="visualize-checkbox">
 </fieldset>
 <fieldset>
 <legend>Result</legend>
-<code id="function-5-code"></code>
+<code id="function-4-code"></code>
 </fieldset>
 </div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
@@ -325,7 +350,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/arrays/suffix_array.ts:66</li>
+									<li>Defined in src/arrays/suffix_array.ts:69</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -347,19 +372,19 @@
 				<div name="run" data-custom="true">
 <fieldset>
 <legend>Demo</legend>
-<div id="function-6" data-function-name="createSortedSuffixes" data-custom="true"><fieldset id="function-6-parameters-fieldset">
+<div id="function-5" data-function-name="createSortedSuffixes" data-custom="true"><fieldset id="function-5-parameters-fieldset">
 <legend>Parameters</legend>
-<div data-name="text" data-type="string" id="function-6-parameter-0">
+<div data-name="text" data-type="string" id="function-5-parameter-0">
 <label>text</label><textarea name="input" cols="40" rows="1">abaababaabaab$</textarea>
 </div>
 </fieldset></div>
-<button onClick='const value = sutoring.Arrays.SuffixArray.createSortedSuffixes(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-6-parameter-0"));
-        const title = sutoring.Debug.CustomTypedoc.getTitle("function-6");
-        sutoring.Console.textarea(value, title, {container : "function-6-code" });'>Run</button>
+<button onClick='const value = sutoring.Arrays.SuffixArray.createSortedSuffixes(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-5-parameter-0"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-5");
+        sutoring.Console.textarea(value, title, {container : "function-5-code" });'>Run</button>
 </fieldset>
 <fieldset>
 <legend>Result</legend>
-<code id="function-6-code"></code>
+<code id="function-5-code"></code>
 </fieldset>
 </div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
@@ -374,7 +399,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/arrays/suffix_array.ts:75</li>
+									<li>Defined in src/arrays/suffix_array.ts:78</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -403,12 +428,12 @@
 				<div name="run" data-custom="true">
 <fieldset>
 <legend>Demo</legend>
-<div id="function-7" data-function-name="createSortedSuffixesTableLine" data-custom="true"><fieldset id="function-7-parameters-fieldset">
+<div id="function-6" data-function-name="createSortedSuffixesTableLine" data-custom="true"><fieldset id="function-6-parameters-fieldset">
 <legend>Parameters</legend>
-<div data-name="text" data-type="string" id="function-7-parameter-0">
+<div data-name="text" data-type="string" id="function-6-parameter-0">
 <label>text</label><textarea name="input" cols="40" rows="1">abaababaabaab$</textarea>
 </div>
-<div data-name=" cellClass" data-type="Objects.GOptions.CellAttributes" id="function-7-parameter-1"><fieldset>
+<div data-name=" cellClass" data-type="Objects.GOptions.CellAttributes" id="function-6-parameter-1"><fieldset>
         <legend> cellClass</legend>
         <div data-name="autoSizeShapeToFitText" data-type="AutoSizeShapeToFitText">
 <label>autoSizeShapeToFitText</label>
@@ -440,18 +465,18 @@
         <div data-name="paddingBottom" data-type="number"><label>paddingBottom:<input type="number" name="input" min="0" size="5" value="0"></label></div>
         </fieldset></div>
 </fieldset></div>
-<button onClick='const value = sutoring.Arrays.SuffixArray.createSortedSuffixesTableLine(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-7-parameter-0"),sutoring.Debug.CustomTypedoc.getParameterInputValue("function-7-parameter-1"));
-        const title = sutoring.Debug.CustomTypedoc.getTitle("function-7");
-        const b = document.getElementById("function-7-visualize-checkbox").checked;
+<button onClick='const value = sutoring.Arrays.SuffixArray.createSortedSuffixesTableLine(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-6-parameter-0"),sutoring.Debug.CustomTypedoc.getParameterInputValue("function-6-parameter-1"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-6");
+        const b = document.getElementById("function-6-visualize-checkbox").checked;
         if(b){ 
-            sutoring.Console.table(value, title, "function-7-code")}
+            sutoring.Console.table(value, title, "function-6-code")}
             else{ 
-            sutoring.Console.textarea(value, title, {container : "function-7-code" })
-        };'>Run</button><label>  Visualize</label><input id="function-7-visualize-checkbox" type="checkbox" checked name="visualize-checkbox">
+            sutoring.Console.textarea(value, title, {container : "function-6-code" })
+        };'>Run</button><label>  Visualize</label><input id="function-6-visualize-checkbox" type="checkbox" checked name="visualize-checkbox">
 </fieldset>
 <fieldset>
 <legend>Result</legend>
-<code id="function-7-code"></code>
+<code id="function-6-code"></code>
 </fieldset>
 </div></section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
@@ -466,7 +491,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/arrays/suffix_array.ts:56</li>
+									<li>Defined in src/arrays/suffix_array.ts:59</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -498,19 +523,19 @@
 				<div name="run" data-custom="true">
 <fieldset>
 <legend>Demo</legend>
-<div id="function-8" data-function-name="createSuffixArrayTableLine" data-custom="true"><fieldset id="function-8-parameters-fieldset">
+<div id="function-7" data-function-name="createSuffixArrayTableLine" data-custom="true"><fieldset id="function-7-parameters-fieldset">
 <legend>Parameters</legend>
-<div data-name="text" data-type="string" id="function-8-parameter-0">
+<div data-name="text" data-type="string" id="function-7-parameter-0">
 <label>text</label><textarea name="input" cols="40" rows="1">abaababaabaab$</textarea>
 </div>
-<div data-name=" zero_based" data-type="boolean" id="function-8-parameter-1">
+<div data-name=" zero_based" data-type="boolean" id="function-7-parameter-1">
 <label> zero_based</label>
         <select name="select">
         <option value="true">true</option>
 <option value="false">false</option>
         </select>
 </div>
-<div data-name=" cellClass" data-type="Objects.GOptions.CellAttributes" id="function-8-parameter-2"><fieldset>
+<div data-name=" cellClass" data-type="Objects.GOptions.CellAttributes" id="function-7-parameter-2"><fieldset>
         <legend> cellClass</legend>
         <div data-name="autoSizeShapeToFitText" data-type="AutoSizeShapeToFitText">
 <label>autoSizeShapeToFitText</label>
@@ -542,18 +567,18 @@
         <div data-name="paddingBottom" data-type="number"><label>paddingBottom:<input type="number" name="input" min="0" size="5" value="0"></label></div>
         </fieldset></div>
 </fieldset></div>
-<button onClick='const value = sutoring.Arrays.SuffixArray.createSuffixArrayTableLine(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-8-parameter-0"),sutoring.Debug.CustomTypedoc.getParameterInputValue("function-8-parameter-1"),sutoring.Debug.CustomTypedoc.getParameterInputValue("function-8-parameter-2"));
-        const title = sutoring.Debug.CustomTypedoc.getTitle("function-8");
-        const b = document.getElementById("function-8-visualize-checkbox").checked;
+<button onClick='const value = sutoring.Arrays.SuffixArray.createSuffixArrayTableLine(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-7-parameter-0"),sutoring.Debug.CustomTypedoc.getParameterInputValue("function-7-parameter-1"),sutoring.Debug.CustomTypedoc.getParameterInputValue("function-7-parameter-2"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-7");
+        const b = document.getElementById("function-7-visualize-checkbox").checked;
         if(b){ 
-            sutoring.Console.table(value, title, "function-8-code")}
+            sutoring.Console.table(value, title, "function-7-code")}
             else{ 
-            sutoring.Console.textarea(value, title, {container : "function-8-code" })
-        };'>Run</button><label>  Visualize</label><input id="function-8-visualize-checkbox" type="checkbox" checked name="visualize-checkbox">
+            sutoring.Console.textarea(value, title, {container : "function-7-code" })
+        };'>Run</button><label>  Visualize</label><input id="function-7-visualize-checkbox" type="checkbox" checked name="visualize-checkbox">
 </fieldset>
 <fieldset>
 <legend>Result</legend>
-<code id="function-8-code"></code>
+<code id="function-7-code"></code>
 </fieldset>
 </div></section>
 			</section>

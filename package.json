@@ -8,7 +8,10 @@
     },
     "scripts": {
         "typedoc": "node node_modules/typedoc/bin/typedoc --out ./docs/typedoc/ ./src/ --name sutoring --readme readme.md --includeDeclarations --exclude node_modules/typescript/**/*.d.ts --exclude node_modules/@types/**/*.d.ts -m commonjs",
-        "compile": "tsc -p . && tsc -p ./examples/ts && tsc -p ./debug/ts && node node_modules/webpack/bin/webpack.js"
+        "compile": "tsc -p . && tsc -p ./examples/ts && tsc -p ./debug/ts && node node_modules/webpack/bin/webpack.js",
+        "custom": "ts-node custom_typedoc/main.ts",
+        "all": "npm run compile && npm run typedoc && npm run custom"
+
     },
     "keywords": [
         "sutoring"
@@ -16,7 +19,7 @@
     "author": "mklemma",
     "license": "MIT",
     "dependencies": {
-        "graph-table-svg": "0.0.101",
+        "graph-table-svg": "0.0.104",
         "opener": "^1.5.1"
     },
     "devDependencies": {
@@ -24,7 +27,7 @@
         "libxmljs": "^0.19.7",
         "ts-loader": "^8.0.1",
         "typedoc": "^0.17.8",
-        "typescript": "^3.9.6",
+        "typescript": "^3.9.7",
         "webpack": "^4.43.0",
         "webpack-cli": "^3.3.12"
     }

@@ -29,3 +29,10 @@ export function lce(text: string, pos1: number, pos2: number): number {
 
     }
 }
+export function lcp(text1: string, text2: string): number {
+    const max = text1.length < text2.length ? text2.length : text1.length;
+    for (let i = 0; i < max; i++) {
+        if (text1[i] != text2[i]) return i;
+    }
+    return max;
+}

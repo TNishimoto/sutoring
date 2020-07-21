@@ -264,13 +264,18 @@ export function constructBlockTree(text: string, degree: number = 2, unit: numbe
         const substr1 = text.substr(pos1, hunit + node.length);
         const fstOcc1 = text.indexOf(substr1);
         if (fstOcc1 == pos1) {
+            console.log(substr1 + "/" + pos1 + "/" + fstOcc1 + "/" + "TRUE")
             return true;
         } else {
             const substr2 = text.substr(node.position, hunit + node.length);
             const fstOcc2 = text.indexOf(substr2);
             if (fstOcc2 == node.position) {
+                console.log(substr1 + "/" + pos1 + "/" + fstOcc1 + "/" + "TRUE2")
+
                 return true;
             } else {
+                console.log(substr1 + "/" + pos1 + "/" + fstOcc1 + "/" + "FALSE")
+
                 return false;
             }
     

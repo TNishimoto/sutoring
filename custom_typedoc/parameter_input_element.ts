@@ -96,6 +96,9 @@ function typedocParameterToInputElement(parameter: TypeDocParameter) : string{
         const p3 = { name : "withLCP", type : "boolean", option : null};
         const p4 = { name : "withSA", type : "boolean", option : null};
         const p5 = { name : "zeroBased", type : "boolean", option : null};
+        const p6 = { name : "withLPF", type : "boolean", option : null};
+        const p7 = { name : "withISA", type : "boolean", option : null};
+
         center = `<fieldset>
         <legend>${parameter.name}</legend>
         ${typedocParameterToInputElement(p1)}
@@ -103,6 +106,9 @@ function typedocParameterToInputElement(parameter: TypeDocParameter) : string{
         ${typedocParameterToInputElement(p3)}
         ${typedocParameterToInputElement(p4)}
         ${typedocParameterToInputElement(p5)}
+        ${typedocParameterToInputElement(p6)}
+        ${typedocParameterToInputElement(p7)}
+
         </fieldset>`;
 
     }

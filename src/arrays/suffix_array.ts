@@ -6,6 +6,9 @@
 
 import { Logics, Objects } from "graph-table-svg"
 import * as LCPArray from "./lcp_array"
+import * as LPFArray from "./lpf_array"
+import * as ISA from "./inverse_suffix_array"
+
 import * as BWT from "../permutations/bwt"
 
 //import { toLogicCellLine, buildLogicTable } from "logic_index";
@@ -44,7 +47,7 @@ export function construct(text: string, zero_based: boolean = true): number[] {
         return arr.map((v) => v + 1);
     }
 }
-export type SATableOption = { zeroBased?: boolean, withSA?: boolean, withLCP?: boolean, withBWT?: boolean, withIndex?: boolean };
+export type SATableOption = { zeroBased?: boolean, withSA?: boolean, withLCP?: boolean, withBWT?: boolean, withIndex?: boolean, withLPF? : boolean, withISA? :boolean };
 
 /**
  * 
@@ -83,12 +86,14 @@ export function createSortedSuffixesTableLine(text : string, cellClass : Objects
  * @param text An input text. <template data-value="abaababaabaab$"></template>
  * @param option 
  */
-export function constructSATable(text: string, option: SATableOption = { zeroBased: true, withSA: true, withLCP: false, withBWT: false, withIndex: true }): Logics.LogicTable {
+export function constructSATable(text: string, option: SATableOption = { zeroBased: true, withSA: true, withLCP: false, withBWT: false, withIndex: true, withLPF : true, withISA : true }): Logics.LogicTable {
     if (option.zeroBased == undefined) option.zeroBased = true;
     if (option.withSA == undefined) option.withSA = true;
     if (option.withLCP == undefined) option.withLCP = false;
     if (option.withBWT == undefined) option.withBWT = false;
     if (option.withIndex == undefined) option.withIndex = true;
+    if (option.withLPF == undefined) option.withLPF = true;
+    if (option.withISA == undefined) option.withISA = false;
 
     //const sa = construct(text);
     //const view_sa = option.zeroBased ? sa : sa.map((v) => v + 1);
@@ -104,9 +109,17 @@ export function constructSATable(text: string, option: SATableOption = { zeroBas
     if (option.withSA) {
         arrays.push( createSuffixArrayTableLine(text, option.zeroBased) );
     }
+    if (option.withISA) {
+        arrays.push( ISA.createISAArrayLine(text, option.zeroBased) );
+    }
+
     if (option.withLCP) {
         arrays.push( LCPArray.createLCPArrayLine(text) );
     }
+    if (option.withLPF) {
+        arrays.push( LPFArray.createLPFArrayLine(text) );
+    }
+
     if (option.withBWT) {
         arrays.push( BWT.createBWTTableLine(text) );
     }

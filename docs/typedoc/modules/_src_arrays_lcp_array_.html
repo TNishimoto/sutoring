@@ -93,7 +93,6 @@
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_arrays_lcp_array_.html#construct" class="tsd-kind-icon">construct</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_arrays_lcp_array_.html#constructlcptable" class="tsd-kind-icon">constructLCPTable</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_arrays_lcp_array_.html#createlcparrayline" class="tsd-kind-icon">createLCPArray<wbr>Line</wbr></a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_arrays_lcp_array_.html#lcp" class="tsd-kind-icon">lcp</a></li>
 							</ul>
 						</section>
 					</div>
@@ -112,7 +111,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/arrays/lcp_array.ts:18</li>
+									<li>Defined in src/arrays/lcp_array.ts:12</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -155,7 +154,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/arrays/lcp_array.ts:39</li>
+									<li>Defined in src/arrays/lcp_array.ts:33</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -219,6 +218,21 @@
 <option value="false">false</option>
         </select>
 </div>
+        <div data-name="withLPF" data-type="boolean">
+<label>withLPF</label>
+        <select name="select">
+        <option value="true">true</option>
+<option value="false">false</option>
+        </select>
+</div>
+        <div data-name="withISA" data-type="boolean">
+<label>withISA</label>
+        <select name="select">
+        <option value="true">true</option>
+<option value="false">false</option>
+        </select>
+</div>
+
         </fieldset></div>
 </fieldset></div>
 <button onClick='const value = sutoring.Arrays.LCPArray.constructLCPTable(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-1-parameter-0"),sutoring.Debug.CustomTypedoc.getParameterInputValue("function-1-parameter-1"));
@@ -247,7 +261,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/arrays/lcp_array.ts:29</li>
+									<li>Defined in src/arrays/lcp_array.ts:23</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -316,56 +330,6 @@
 <code id="function-2-code"></code>
 </fieldset>
 </div></section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="lcp" class="tsd-anchor"></a>
-					<h3>lcp</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">lcp<span class="tsd-signature-symbol">(</span>text1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, text2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>
-</li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in src/arrays/lcp_array.ts:11</li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>text1: <span class="tsd-signature-type">string</span>
-</h5>
-								</li>
-								<li>
-									<h5>text2: <span class="tsd-signature-type">string</span>
-</h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span>
-</h4>
-						</li>
-					</ul>
-				<div name="run" data-custom="true">
-<fieldset>
-<legend>Demo</legend>
-<div id="function-3" data-function-name="lcp" data-custom="true"><fieldset id="function-3-parameters-fieldset">
-<legend>Parameters</legend>
-<div data-name="text1" data-type="string" id="function-3-parameter-0">
-<label>text1</label><textarea name="input" cols="40" rows="1">abaababaabaab$</textarea>
-</div>
-<div data-name="text2" data-type="string" id="function-3-parameter-1">
-<label>text2</label><textarea name="input" cols="40" rows="1">abaababaabaab$</textarea>
-</div>
-</fieldset></div>
-<button onClick='const value = sutoring.Arrays.LCPArray.lcp(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-3-parameter-0"),sutoring.Debug.CustomTypedoc.getParameterInputValue("function-3-parameter-1"));
-        const title = sutoring.Debug.CustomTypedoc.getTitle("function-3");
-        sutoring.Console.textarea(value, title, {container : "function-3-code" });'>Run</button>
-</fieldset>
-<fieldset>
-<legend>Result</legend>
-<code id="function-3-code"></code>
-</fieldset>
-</div></section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -389,9 +353,6 @@
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_src_arrays_lcp_array_.html#createlcparrayline" class="tsd-kind-icon">createLCPArray<wbr>Line</wbr></a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_src_arrays_lcp_array_.html#lcp" class="tsd-kind-icon">lcp</a>
 					</li>
 				</ul>
 			</nav>

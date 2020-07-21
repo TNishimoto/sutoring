@@ -6,10 +6,10 @@ import { getModuleFiles, getModuleResolver } from './lib';
 import * as typedoc_processor from './typedoc_processor';
 
 
+//console.log(__dirname)
 
-
-getModuleFiles("../docs/typedoc/modules");
-const directory = "../docs/typedoc/modules";
+const directory = __dirname + "/../docs/typedoc/modules";
+getModuleFiles(directory);
 
 getModuleFiles(directory).forEach((file) => {
   const text = fs.readFileSync(file, { encoding: "utf-8" });
