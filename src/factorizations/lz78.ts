@@ -9,6 +9,10 @@ export type LZ78Factor = { id: number, nextChar: string };
 export type LZ78Node = { id: number, children: Map<string, LZ78Node> }
 //type RevLZ78Node = { char : string, parent : number | null }
 
+/**
+ * Return the LZ78 factors and LZ78 nodes of a given string.
+ * @param text Input string
+ */
 function preprocess(text: string): [LZ78Factor[], LZ78Node[]] {
     let nodeCount = 0;
     const root = { id: nodeCount++, children: new Map() };
@@ -37,6 +41,10 @@ function preprocess(text: string): [LZ78Factor[], LZ78Node[]] {
 
     return [factors, nodes];
 }
+/**
+ * Return the string represented a given LZ78 factors.
+ * @param factors Input LZ78 factors
+ */
 function extract(factors: LZ78Factor[]): string[] {
     const r: string[] = new Array();
     factors.forEach((f, i) => {
@@ -51,16 +59,29 @@ function extract(factors: LZ78Factor[]): string[] {
     return r;
 }
 
+/**
+ * Compuress a given string into LZ78 factors, 
+ * and return the string array whose i-th string is the string represented by i-th LZ78 factor.
+ * @param text Input string
+ */
 export function factorize(text: string): string[] {
     const p = preprocess(text);
     const parsedStrings = extract(p[0]);
     return parsedStrings;
 }
+/**
+ * Return the LZ78 factors of a given string.
+ * @param text Input string
+ */
 export function compress(text: string): LZ78Factor[] {
     const p = preprocess(text);
     return p[0];
 }
 
+/**
+ * Return a logic table representing the LZ78 factors of a given string.
+ * @param text Input string
+ */
 export function constructLZ78Table(text: string): Logics.LogicTable {
     const comp = compress(text);
     const indexLine = Logics.getIndexArrayTableLine(comp.length);
@@ -78,6 +99,10 @@ export function constructLZ78Table(text: string): Logics.LogicTable {
     return table;
     */
 }
+/**
+ * Return a logic tree representing the LZ78 trie of a given string.
+ * @param text Input string
+ */
 export function constructLZ78Trie(text: string): Logics.LogicTree {
     const nodes = preprocess(text)[1];
     //const graph = new Tree();            
