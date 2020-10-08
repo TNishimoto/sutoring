@@ -14,9 +14,9 @@ import * as BWT from "../permutations/bwt"
 //import { toLogicCellLine, buildLogicTable } from "logic_index";
 //namespace StrFunctions {
 /**
- * 
- * @param text An input text. <template data-value="abaababaabaab$"></template> 
- * @param zero_based 
+ * Returns the suffix array of a given string.
+ * @param text An input string. <template data-value="abaababaabaab$"></template> 
+ * @param zero_based The smallest value is 0 in the suffix array if the input value is true; otherwise the smallest value is 1.
  */
 export function construct(text: string, zero_based: boolean = true): number[] {
     const arr: number[] = new Array(text.length);
