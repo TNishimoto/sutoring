@@ -97,8 +97,18 @@ export class TypeDocFunctionTag{
         this.clearCustomElements();
         const returnTypeCheck = this.returnParameter == null || allowedReturnTypes.has(this.returnParameter.type);
         const inputTypeCheck = this.parameters.every((v) => allowedParameterTypes.has(v.type)); 
-        if(! inputTypeCheck || !returnTypeCheck ){
+        if(! inputTypeCheck || !returnTypeCheck ){            
             console.log(`False: ${this.functionName} ${this.parameters.map((v)=>v.type).join(", ")} ${this.returnParameter == null ? "null" : this.returnParameter.type}`)
+            if(!inputTypeCheck){
+                this.parameters.forEach((v) =>{
+                    if(!allowedParameterTypes.has(v.type)){
+                        console.log(`Reason: The input type ${v.type} is not registered`);
+                    }
+                })
+            }
+            if(!returnTypeCheck){
+                console.log(`Reason: The return type ${this.returnParameter?.type} is not registred`);
+            }
             return;
         } 
         const mainElement = this.createCustomTag();

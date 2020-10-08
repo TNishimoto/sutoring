@@ -23,6 +23,8 @@ allowedParameterTypes.add("Objects.GOptions.CellAttributes")
 export const allowedReturnTypes : Set<string> = new Set<string>();
 allowedReturnTypes.add("string");
 allowedReturnTypes.add("string[]");
+allowedReturnTypes.add("string[][]");
+allowedReturnTypes.add("SubDeltaInfo[]");
 allowedReturnTypes.add("number");
 allowedReturnTypes.add("number[]");
 allowedReturnTypes.add("RLEFactor[]");
