@@ -17,6 +17,10 @@ export function sort(strings: string[]) : string[] {
     return strings;
 }
 
+/**
+ * Return all the distinct substrings in a given string.
+ * @param text 
+ */
 export function enumerate(text: string): string[] {
     const map = createOccurrenceMap(text);
     const r: string[] = new Array(0);
