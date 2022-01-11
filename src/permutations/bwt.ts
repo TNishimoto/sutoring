@@ -93,7 +93,7 @@ export function createBWTTableLine(text: string, cellClass: string | Objects.GOp
     const arr = Array.from(Array(text.length).keys()).map((i) => bwt[i]);
 
     const name = "BWT"
-    return Logics.toLogicCellLine(name, arr, {class:cellClass});
+    return Logics.buildLogicCellLine(name, arr, {class:cellClass});
 }
 /**
  * 

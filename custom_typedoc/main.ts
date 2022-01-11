@@ -9,6 +9,9 @@ import * as typedoc_processor from './typedoc_processor';
 //console.log(__dirname)
 
 const directory = __dirname + "/../docs/typedoc/modules";
+console.log(`Process: ${directory}`)
+console.log(`File Count: ${getModuleFiles(directory).length}`)
+
 getModuleFiles(directory);
 
 getModuleFiles(directory).forEach((file) => {
@@ -16,7 +19,9 @@ getModuleFiles(directory).forEach((file) => {
   const xmlDoc = libxmljs.parseHtmlString(text);
   const moduleResolver = getModuleResolver(xmlDoc);
   if (moduleResolver != null) {
-    console.log(moduleResolver);
+    console.log(`ModuleResolver-Path: ${moduleResolver.path}, name: ${moduleResolver.moduleName}`);
+
+    //console.log(moduleResolver);
 
     typedoc_processor.processHeadTag(xmlDoc);
 
@@ -28,6 +33,8 @@ getModuleFiles(directory).forEach((file) => {
     });
     fs.writeFileSync(file, xmlDoc.toString(), { encoding: "utf-8" });
 
+  }else{
+    console.log(`ModuleResolver: ${moduleResolver}`);
   }
 
 })

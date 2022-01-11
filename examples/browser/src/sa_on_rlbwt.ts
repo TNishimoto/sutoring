@@ -1,4 +1,5 @@
 
+/*
 function hello(message : string){
     window.alert(message);
 }
@@ -6,3 +7,4 @@ function hello(message : string){
 function setFunction(message : ){
     window.alert(message);
 }
+*/

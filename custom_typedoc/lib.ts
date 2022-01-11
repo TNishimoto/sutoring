@@ -117,9 +117,12 @@ export function getModuleFiles(dir: string): string[] {
       const stats = fs.statSync(fullPath);
   
       if (stats.isFile()) {
+        r.push(fullPath);
+        /*
         if (filename.length >= 4 && filename.substr(0, 4) == "_src") {
           r.push(fullPath);
         }
+        */
       }
     });
     return r;

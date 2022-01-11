@@ -84,7 +84,7 @@ export function createSAStartingPositionArrayLine(text: string, zero_based: bool
         }
     })
 
-    return Logics.toLogicCellLine(name, arr2, cellClass );
+    return Logics.buildLogicCellLine(name, arr2, cellClass );
 }
 export function createSAEndingPositionArrayLine(text: string, zero_based: boolean = true , cellClass : Objects.GOptions.CellAttributes = { style : { horizontalAnchor : "center"}} ): Logics.LogicCellLine {
     
@@ -101,7 +101,7 @@ export function createSAEndingPositionArrayLine(text: string, zero_based: boolea
         }
     })
 
-    return Logics.toLogicCellLine(name, arr2, cellClass );
+    return Logics.buildLogicCellLine(name, arr2, cellClass );
 }
 
 

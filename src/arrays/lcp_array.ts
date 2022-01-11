@@ -24,9 +24,9 @@ export function createLCPArrayLine(text: string, cellClass? : string | Objects.G
     const arr = construct(text);
     const name = "LCP"
     if(cellClass === undefined){
-        return Logics.toLogicCellLine(name, arr);
+        return Logics.buildLogicCellLine(name, arr);
     }else{
-        return Logics.toLogicCellLine(name, arr, { class:cellClass});
+        return Logics.buildLogicCellLine(name, arr, { class:cellClass});
     }
 }
 

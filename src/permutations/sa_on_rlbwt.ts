@@ -41,7 +41,7 @@ export function toArray(arr : number[]) : (number | null)[]{
 }
 export function toLogicTableLine(name : string, arr : (number | null)[]) : Logics.LogicTable{
     const arr2 = arr.map((v) => v == null ? "" : v);
-    const p = Logics.toLogicCellLine(name, arr2);
+    const p = Logics.buildLogicCellLine(name, arr2);
 
     
     return Logics.buildLogicTable([p], { isRowLines: true });

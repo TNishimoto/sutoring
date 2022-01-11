@@ -7,7 +7,7 @@
         "sutoring": "./bin/repl.js"
     },
     "scripts": {
-        "typedoc": "node node_modules/typedoc/bin/typedoc --out ./docs/typedoc/ ./src/ --name sutoring --readme readme.md --includeDeclarations --exclude node_modules/typescript/**/*.d.ts --exclude node_modules/@types/**/*.d.ts -m commonjs",
+        "typedoc": "node node_modules/typedoc/bin/typedoc --out ./docs/typedoc/ ./src/ --name sutoring --readme readme.md --exclude node_modules/typescript/**/*.d.ts --exclude node_modules/@types/**/*.d.ts",
         "compile": "tsc -p . && tsc -p ./examples/console/ts && tsc -p ./examples/browser && tsc -p ./debug/ts && node node_modules/webpack/bin/webpack.js",
         "compile2": "tsc -p ./examples/browser",
         "custom": "ts-node custom_typedoc/main.ts",
@@ -19,7 +19,7 @@
     "author": "mklemma",
     "license": "MIT",
     "dependencies": {
-        "graph-table-svg": "0.0.119",
+        "graph-table-svg": "^0.0.120",
         "opener": "^1.5.2"
     },
     "devDependencies": {
@@ -27,7 +27,7 @@
         "libxmljs": "^0.19.7",
         "ts-loader": "^9.2.2",
         "typedoc": "^0.20.36",
-        "typescript": "^4.3.2",
+        "typescript": "4.2",
         "webpack": "^5.38.1",
         "webpack-cli": "^4.7.0"
     }

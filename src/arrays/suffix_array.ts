@@ -11,8 +11,6 @@ import * as ISA from "./inverse_suffix_array"
 
 import * as BWT from "../permutations/bwt"
 
-//import { toLogicCellLine, buildLogicTable } from "logic_index";
-//namespace StrFunctions {
 /**
  * Returns the suffix array of a given string.
  * @param text An input string. <template data-value="abaababaabaab$"></template> 
@@ -60,7 +58,7 @@ export function createSuffixArrayTableLine(text: string, zero_based: boolean = t
     //const suffixClass : Objects.GOptions.CellAttributes = { style : { horizontalAnchor : "center"}};
     const arr = construct(text, zero_based);
     const name = "SA"
-    return Logics.toLogicCellLine(name, arr, cellClass );
+    return Logics.buildLogicCellLine(name, arr, cellClass );
 }
 /**
  * 
@@ -78,7 +76,7 @@ export function createSortedSuffixes(text : string) : string[] {
 export function createSortedSuffixesTableLine(text : string, cellClass : Objects.GOptions.CellAttributes = { style : { horizontalAnchor : "left"}, class : { horizontalAnchor : "right"}}) : Logics.LogicCellLine {
     const suffixes = createSortedSuffixes(text);
     const name = "Suffix";
-    const p = Logics.toLogicCellLine(name, suffixes, cellClass);
+    const p = Logics.buildLogicCellLine(name, suffixes, cellClass);
     return p;
 }
 /**

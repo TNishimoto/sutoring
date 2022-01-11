@@ -85,8 +85,8 @@ export function compress(text: string): LZ78Factor[] {
 export function constructLZ78Table(text: string): Logics.LogicTable {
     const comp = compress(text);
     const indexLine = Logics.getIndexArrayTableLine(comp.length);
-    const idLine = Logics.toLogicCellLine("id", comp.map((v, i) => v.id));
-    const characterLine = Logics.toLogicCellLine("character", comp.map((v, i) => v.nextChar))
+    const idLine = Logics.buildLogicCellLine("id", comp.map((v, i) => v.id));
+    const characterLine = Logics.buildLogicCellLine("character", comp.map((v, i) => v.nextChar))
     return Logics.buildLogicTable(
         [indexLine, idLine, characterLine]
     , { isRowLines: true })

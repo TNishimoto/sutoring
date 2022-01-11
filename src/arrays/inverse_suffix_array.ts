@@ -19,8 +19,8 @@ export function createISAArrayLine(text: string, zerobased : boolean = true,cell
     const arr = construct(text, zerobased);
     const name = "ISA"
     if(cellClass === undefined){
-        return Logics.toLogicCellLine(name, arr);
+        return Logics.buildLogicCellLine(name, arr);
     }else{
-        return Logics.toLogicCellLine(name, arr, { class:cellClass});
+        return Logics.buildLogicCellLine(name, arr, { class:cellClass});
     }
 }

@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html class="default no-js">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>permutations/bwt | sutoring</title>
+	<meta name="description" content="Documentation for sutoring">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	
+
+<script src="../../sutoring.js"></script><script>window.onload = (event) => {
+            window.addEventListener("keydown", function(event) {
+                event.stopPropagation();
+            }, true);
+            window.addEventListener("keypress", function(event) {
+                event.stopPropagation();
+            }, true);
+        };</script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text">
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">sutoring</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked>
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked>
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">sutoring</a>
+				</li>
+				<li>
+					<a href="permutations_bwt.html">permutations/bwt</a>
+				</li>
+			</ul>
+			<h1>Module permutations/bwt</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>This namespace provides functions for Burrows-Wheeler transform.
+						<template data-path="sutoring.Permutations" data-module="BWT"></template></p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="permutations_bwt.html#bwtoption" class="tsd-kind-icon">BWTOption</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="permutations_bwt.html#bwtcolors" class="tsd-kind-icon">bwt<wbr>Colors</wbr></a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="permutations_bwt.html#construct" class="tsd-kind-icon">construct</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="permutations_bwt.html#constructbwttable" class="tsd-kind-icon">constructBWTTable</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="permutations_bwt.html#constructbwttable2" class="tsd-kind-icon">constructBWTTable2</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="permutations_bwt.html#constructrlbwt" class="tsd-kind-icon">constructRLBWT</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="permutations_bwt.html#createbwtindexes" class="tsd-kind-icon">createBWTIndexes</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="permutations_bwt.html#createbwttableline" class="tsd-kind-icon">createBWTTable<wbr>Line</wbr></a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="permutations_bwt.html#createcircularsuffixarray" class="tsd-kind-icon">create<wbr>Circular<wbr>Suffix<wbr>Array</wbr></wbr></wbr></a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="permutations_bwt.html#createfarray" class="tsd-kind-icon">createFArray</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="permutations_bwt.html#createfarrayline" class="tsd-kind-icon">createFArray<wbr>Line</wbr></a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="permutations_bwt.html#createfrunstartpositions" class="tsd-kind-icon">createFRun<wbr>Start<wbr>Positions</wbr></wbr></a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="permutations_bwt.html#createlarray" class="tsd-kind-icon">createLArray</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="permutations_bwt.html#createlarrayline" class="tsd-kind-icon">createLArray<wbr>Line</wbr></a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="permutations_bwt.html#createlrunendingpositions" class="tsd-kind-icon">createLRun<wbr>Ending<wbr>Positions</wbr></wbr></a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="permutations_bwt.html#createlrunstartingpositions" class="tsd-kind-icon">createLRun<wbr>Starting<wbr>Positions</wbr></wbr></a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="permutations_bwt.html#createsortedmiddlecircularstrings" class="tsd-kind-icon">create<wbr>Sorted<wbr>Middle<wbr>Circular<wbr>Strings</wbr></wbr></wbr></wbr></a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="permutations_bwt.html#createsortedmiddlecircularstringsline" class="tsd-kind-icon">create<wbr>Sorted<wbr>Middle<wbr>Circular<wbr>Strings<wbr>Line</wbr></wbr></wbr></wbr></wbr></a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="permutations_bwt.html#rank" class="tsd-kind-icon">rank</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="permutations_bwt.html#runlengthencode" class="tsd-kind-icon">run<wbr>Length<wbr>Encode</wbr></wbr></a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="bwtoption" class="tsd-anchor"></a>
+					<h3>BWTOption</h3>
+					<div class="tsd-signature tsd-kind-icon">BWTOption<span class="tsd-signature-symbol">:</span> <a href="arrays_suffix_array.html#satableoption" class="tsd-signature-type" data-tsd-kind="Type alias">SATableOption</a><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>coloredChar<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>isRLBWT<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>withMiddleSubstrings<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> }</span>
+</div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/permutations/bwt.ts:10</li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="bwtcolors" class="tsd-anchor"></a>
+					<h3>
+<span class="tsd-flag ts-flagConst">Const</span> bwt<wbr>Colors</wbr>
+</h3>
+					<div class="tsd-signature tsd-kind-icon">bwt<wbr>Colors<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = ...</span></wbr>
+</div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/permutations/bwt.ts:127</li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="construct" class="tsd-anchor"></a>
+					<h3>construct</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">construct<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>
+</li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/permutations/bwt.ts:83</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span>
+</h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span>
+</h4>
+						</li>
+					</ul>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div id="function-14" data-function-name="construct" data-custom="true"><fieldset id="function-14-parameters-fieldset">
+<legend>Parameters</legend>
+<div data-name="text" data-type="string" id="function-14-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1">abaababaabaab$</textarea>
+</div>
+</fieldset></div>
+<button onClick='const value = sutoring.Permutations.BWT.construct(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-14-parameter-0"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-14");
+        sutoring.Console.textarea(value, title, {container : "function-14-code" });'>Run</button>
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-14-code"></code>
+</fieldset>
+</div></section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="constructbwttable" class="tsd-anchor"></a>
+					<h3>constructBWTTable</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">constructBWTTable<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, option<span class="tsd-signature-symbol">?: </span><a href="arrays_suffix_array.html#satableoption" class="tsd-signature-type" data-tsd-kind="Type alias">SATableOption</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">LogicTable</span>
+</li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/permutations/bwt.ts:285</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span>
+</h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
+								</li>
+								<li>
+									<h5>option: <a href="arrays_suffix_array.html#satableoption" class="tsd-signature-type" data-tsd-kind="Type alias">SATableOption</a><span class="tsd-signature-symbol"> = ...</span>
+</h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">LogicTable</span>
+</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="constructbwttable2" class="tsd-anchor"></a>
+					<h3>constructBWTTable2</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">constructBWTTable2<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, option<span class="tsd-signature-symbol">?: </span><a href="permutations_bwt.html#bwtoption" class="tsd-signature-type" data-tsd-kind="Type alias">BWTOption</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Logics.LogicTable</span>
+</li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/permutations/bwt.ts:294</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span>
+</h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
+								</li>
+								<li>
+									<h5>option: <a href="permutations_bwt.html#bwtoption" class="tsd-signature-type" data-tsd-kind="Type alias">BWTOption</a><span class="tsd-signature-symbol"> = ...</span>
+</h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Logics.LogicTable</span>
+</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="constructrlbwt" class="tsd-anchor"></a>
+					<h3>constructRLBWT</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">constructRLBWT<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">RLEFactor</span><span class="tsd-signature-symbol">[]</span>
+</li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/permutations/bwt.ts:365</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span>
+</h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">RLEFactor</span><span class="tsd-signature-symbol">[]</span>
+</h4>
+						</li>
+					</ul>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div id="function-17" data-function-name="constructRLBWT" data-custom="true"><fieldset id="function-17-parameters-fieldset">
+<legend>Parameters</legend>
+<div data-name="text" data-type="string" id="function-17-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1">abaababaabaab$</textarea>
+</div>
+</fieldset></div>
+<button onClick='const value = sutoring.Permutations.BWT.constructRLBWT(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-17-parameter-0"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-17");
+        sutoring.Console.textarea(value, title, {container : "function-17-code" });'>Run</button>
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-17-code"></code>
+</fieldset>
+</div></section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="createbwtindexes" class="tsd-anchor"></a>
+					<h3>createBWTIndexes</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">createBWTIndexes<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, zeroBased<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span>
+</li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/permutations/bwt.ts:69</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span>
+</h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
+								</li>
+								<li>
+									<h5>zeroBased: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span>
+</h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span>
+</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="createbwttableline" class="tsd-anchor"></a>
+					<h3>createBWTTable<wbr>Line</wbr>
+</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">createBWTTable<wbr>Line<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, cellClass<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Objects.GOptions.GTextBoxCSS</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Logics.LogicCellLine</span></wbr>
+</li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/permutations/bwt.ts:91</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span>
+</h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
+								</li>
+								<li>
+									<h5>cellClass: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Objects.GOptions.GTextBoxCSS</span><span class="tsd-signature-symbol"> = ...</span>
+</h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Logics.LogicCellLine</span>
+</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="createcircularsuffixarray" class="tsd-anchor"></a>
+					<h3>create<wbr>Circular<wbr>Suffix<wbr>Array</wbr></wbr></wbr>
+</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Circular<wbr>Suffix<wbr>Array<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, zeroBased<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></wbr></wbr></wbr>
+</li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/permutations/bwt.ts:29</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span>
+</h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
+								</li>
+								<li>
+									<h5>zeroBased: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span>
+</h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span>
+</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="createfarray" class="tsd-anchor"></a>
+					<h3>createFArray</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">createFArray<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>
+</li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/permutations/bwt.ts:102</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span>
+</h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>
+</h4>
+						</li>
+					</ul>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div id="function-21" data-function-name="createFArray" data-custom="true"><fieldset id="function-21-parameters-fieldset">
+<legend>Parameters</legend>
+<div data-name="text" data-type="string" id="function-21-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1">abaababaabaab$</textarea>
+</div>
+</fieldset></div>
+<button onClick='const value = sutoring.Permutations.BWT.createFArray(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-21-parameter-0"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-21");
+        sutoring.Console.textarea(value, title, {container : "function-21-code" });'>Run</button>
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-21-code"></code>
+</fieldset>
+</div></section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="createfarrayline" class="tsd-anchor"></a>
+					<h3>createFArray<wbr>Line</wbr>
+</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">createFArray<wbr>Line<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, isColored<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span>, isRLBWT<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span>, cellClass<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Objects.GOptions.GTextBoxCSS</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Logics.LogicCellLine</span></wbr>
+</li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/permutations/bwt.ts:137</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span>
+</h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
+								</li>
+								<li>
+									<h5>isColored: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span>
+</h5>
+								</li>
+								<li>
+									<h5>isRLBWT: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span>
+</h5>
+								</li>
+								<li>
+									<h5>cellClass: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Objects.GOptions.GTextBoxCSS</span><span class="tsd-signature-symbol"> = ...</span>
+</h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Logics.LogicCellLine</span>
+</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="createfrunstartpositions" class="tsd-anchor"></a>
+					<h3>createFRun<wbr>Start<wbr>Positions</wbr></wbr>
+</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">createFRun<wbr>Start<wbr>Positions<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></wbr></wbr>
+</li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/permutations/bwt.ts:403</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span>
+</h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span>
+</h4>
+						</li>
+					</ul>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div id="function-23" data-function-name="createFRunStartPositions" data-custom="true"><fieldset id="function-23-parameters-fieldset">
+<legend>Parameters</legend>
+<div data-name="text" data-type="string" id="function-23-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1">abaababaabaab$</textarea>
+</div>
+</fieldset></div>
+<button onClick='const value = sutoring.Permutations.BWT.createFRunStartPositions(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-23-parameter-0"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-23");
+        sutoring.Console.textarea(value, title, {container : "function-23-code" });'>Run</button>
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-23-code"></code>
+</fieldset>
+</div></section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="createlarray" class="tsd-anchor"></a>
+					<h3>createLArray</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">createLArray<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>
+</li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/permutations/bwt.ts:109</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span>
+</h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>
+</h4>
+						</li>
+					</ul>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div id="function-24" data-function-name="createLArray" data-custom="true"><fieldset id="function-24-parameters-fieldset">
+<legend>Parameters</legend>
+<div data-name="text" data-type="string" id="function-24-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1">abaababaabaab$</textarea>
+</div>
+</fieldset></div>
+<button onClick='const value = sutoring.Permutations.BWT.createLArray(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-24-parameter-0"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-24");
+        sutoring.Console.textarea(value, title, {container : "function-24-code" });'>Run</button>
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-24-code"></code>
+</fieldset>
+</div></section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="createlarrayline" class="tsd-anchor"></a>
+					<h3>createLArray<wbr>Line</wbr>
+</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">createLArray<wbr>Line<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, isColored<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span>, isRLBWT<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span>, cellClass<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Objects.GOptions.GTextBoxCSS</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Logics.LogicCellLine</span></wbr>
+</li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/permutations/bwt.ts:182</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span>
+</h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
+								</li>
+								<li>
+									<h5>isColored: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span>
+</h5>
+								</li>
+								<li>
+									<h5>isRLBWT: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span>
+</h5>
+								</li>
+								<li>
+									<h5>cellClass: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Objects.GOptions.GTextBoxCSS</span><span class="tsd-signature-symbol"> = ...</span>
+</h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Logics.LogicCellLine</span>
+</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="createlrunendingpositions" class="tsd-anchor"></a>
+					<h3>createLRun<wbr>Ending<wbr>Positions</wbr></wbr>
+</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">createLRun<wbr>Ending<wbr>Positions<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></wbr></wbr>
+</li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/permutations/bwt.ts:389</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span>
+</h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span>
+</h4>
+						</li>
+					</ul>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div id="function-26" data-function-name="createLRunEndingPositions" data-custom="true"><fieldset id="function-26-parameters-fieldset">
+<legend>Parameters</legend>
+<div data-name="text" data-type="string" id="function-26-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1">abaababaabaab$</textarea>
+</div>
+</fieldset></div>
+<button onClick='const value = sutoring.Permutations.BWT.createLRunEndingPositions(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-26-parameter-0"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-26");
+        sutoring.Console.textarea(value, title, {container : "function-26-code" });'>Run</button>
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-26-code"></code>
+</fieldset>
+</div></section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="createlrunstartingpositions" class="tsd-anchor"></a>
+					<h3>createLRun<wbr>Starting<wbr>Positions</wbr></wbr>
+</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">createLRun<wbr>Starting<wbr>Positions<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></wbr></wbr>
+</li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/permutations/bwt.ts:374</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span>
+</h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span>
+</h4>
+						</li>
+					</ul>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div id="function-27" data-function-name="createLRunStartingPositions" data-custom="true"><fieldset id="function-27-parameters-fieldset">
+<legend>Parameters</legend>
+<div data-name="text" data-type="string" id="function-27-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1">abaababaabaab$</textarea>
+</div>
+</fieldset></div>
+<button onClick='const value = sutoring.Permutations.BWT.createLRunStartingPositions(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-27-parameter-0"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-27");
+        sutoring.Console.textarea(value, title, {container : "function-27-code" });'>Run</button>
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-27-code"></code>
+</fieldset>
+</div></section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="createsortedmiddlecircularstrings" class="tsd-anchor"></a>
+					<h3>create<wbr>Sorted<wbr>Middle<wbr>Circular<wbr>Strings</wbr></wbr></wbr></wbr>
+</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Sorted<wbr>Middle<wbr>Circular<wbr>Strings<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></wbr></wbr></wbr></wbr>
+</li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/permutations/bwt.ts:116</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span>
+</h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>
+</h4>
+						</li>
+					</ul>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div id="function-28" data-function-name="createSortedMiddleCircularStrings" data-custom="true"><fieldset id="function-28-parameters-fieldset">
+<legend>Parameters</legend>
+<div data-name="text" data-type="string" id="function-28-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1">abaababaabaab$</textarea>
+</div>
+</fieldset></div>
+<button onClick='const value = sutoring.Permutations.BWT.createSortedMiddleCircularStrings(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-28-parameter-0"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-28");
+        sutoring.Console.textarea(value, title, {container : "function-28-code" });'>Run</button>
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-28-code"></code>
+</fieldset>
+</div></section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="createsortedmiddlecircularstringsline" class="tsd-anchor"></a>
+					<h3>create<wbr>Sorted<wbr>Middle<wbr>Circular<wbr>Strings<wbr>Line</wbr></wbr></wbr></wbr></wbr>
+</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Sorted<wbr>Middle<wbr>Circular<wbr>Strings<wbr>Line<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, isColored<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span>, cellClass<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Objects.GOptions.GTextBoxCSS</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Logics.LogicCellLine</span></wbr></wbr></wbr></wbr></wbr>
+</li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/permutations/bwt.ts:245</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span>
+</h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
+								</li>
+								<li>
+									<h5>isColored: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span>
+</h5>
+								</li>
+								<li>
+									<h5>cellClass: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Objects.GOptions.GTextBoxCSS</span><span class="tsd-signature-symbol"> = ...</span>
+</h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Logics.LogicCellLine</span>
+</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="rank" class="tsd-anchor"></a>
+					<h3>rank</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">rank<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, ith<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>
+</li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/permutations/bwt.ts:119</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span>
+</h5>
+								</li>
+								<li>
+									<h5>ith: <span class="tsd-signature-type">number</span>
+</h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span>
+</h4>
+						</li>
+					</ul>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div id="function-30" data-function-name="rank" data-custom="true"><fieldset id="function-30-parameters-fieldset">
+<legend>Parameters</legend>
+<div data-name="text" data-type="string" id="function-30-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1">abaababaabaab$</textarea>
+</div>
+<div data-name="ith" data-type="number" id="function-30-parameter-1"><label>ith:<input type="number" name="input" min="0" size="5" value="0"></label></div>
+</fieldset></div>
+<button onClick='const value = sutoring.Permutations.BWT.rank(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-30-parameter-0"),sutoring.Debug.CustomTypedoc.getParameterInputValue("function-30-parameter-1"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-30");
+        sutoring.Console.textarea(value, title, {container : "function-30-code" });'>Run</button>
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-30-code"></code>
+</fieldset>
+</div></section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="runlengthencode" class="tsd-anchor"></a>
+					<h3>run<wbr>Length<wbr>Encode</wbr></wbr>
+</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">run<wbr>Length<wbr>Encode<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">RLEFactor</span><span class="tsd-signature-symbol">[]</span></wbr></wbr>
+</li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/permutations/bwt.ts:336</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span>
+</h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An input text. <template data-value="abaababaabaab$"></template></p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">RLEFactor</span><span class="tsd-signature-symbol">[]</span>
+</h4>
+						</li>
+					</ul>
+				<div name="run" data-custom="true">
+<fieldset>
+<legend>Demo</legend>
+<div id="function-31" data-function-name="runLengthEncode" data-custom="true"><fieldset id="function-31-parameters-fieldset">
+<legend>Parameters</legend>
+<div data-name="text" data-type="string" id="function-31-parameter-0">
+<label>text</label><textarea name="input" cols="40" rows="1">abaababaabaab$</textarea>
+</div>
+</fieldset></div>
+<button onClick='const value = sutoring.Permutations.BWT.runLengthEncode(sutoring.Debug.CustomTypedoc.getParameterInputValue("function-31-parameter-0"));
+        const title = sutoring.Debug.CustomTypedoc.getTitle("function-31");
+        sutoring.Console.textarea(value, title, {container : "function-31-code" });'>Run</button>
+</fieldset>
+<fieldset>
+<legend>Result</legend>
+<code id="function-31-code"></code>
+</fieldset>
+</div></section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Exports</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="permutations_bwt.html">permutations/bwt</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="permutations_bwt.html#bwtoption" class="tsd-kind-icon">BWTOption</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="permutations_bwt.html#bwtcolors" class="tsd-kind-icon">bwt<wbr>Colors</wbr></a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="permutations_bwt.html#construct" class="tsd-kind-icon">construct</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="permutations_bwt.html#constructbwttable" class="tsd-kind-icon">constructBWTTable</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="permutations_bwt.html#constructbwttable2" class="tsd-kind-icon">constructBWTTable2</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="permutations_bwt.html#constructrlbwt" class="tsd-kind-icon">constructRLBWT</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="permutations_bwt.html#createbwtindexes" class="tsd-kind-icon">createBWTIndexes</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="permutations_bwt.html#createbwttableline" class="tsd-kind-icon">createBWTTable<wbr>Line</wbr></a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="permutations_bwt.html#createcircularsuffixarray" class="tsd-kind-icon">create<wbr>Circular<wbr>Suffix<wbr>Array</wbr></wbr></wbr></a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="permutations_bwt.html#createfarray" class="tsd-kind-icon">createFArray</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="permutations_bwt.html#createfarrayline" class="tsd-kind-icon">createFArray<wbr>Line</wbr></a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="permutations_bwt.html#createfrunstartpositions" class="tsd-kind-icon">createFRun<wbr>Start<wbr>Positions</wbr></wbr></a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="permutations_bwt.html#createlarray" class="tsd-kind-icon">createLArray</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="permutations_bwt.html#createlarrayline" class="tsd-kind-icon">createLArray<wbr>Line</wbr></a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="permutations_bwt.html#createlrunendingpositions" class="tsd-kind-icon">createLRun<wbr>Ending<wbr>Positions</wbr></wbr></a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="permutations_bwt.html#createlrunstartingpositions" class="tsd-kind-icon">createLRun<wbr>Starting<wbr>Positions</wbr></wbr></a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="permutations_bwt.html#createsortedmiddlecircularstrings" class="tsd-kind-icon">create<wbr>Sorted<wbr>Middle<wbr>Circular<wbr>Strings</wbr></wbr></wbr></wbr></a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="permutations_bwt.html#createsortedmiddlecircularstringsline" class="tsd-kind-icon">create<wbr>Sorted<wbr>Middle<wbr>Circular<wbr>Strings<wbr>Line</wbr></wbr></wbr></wbr></wbr></a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="permutations_bwt.html#rank" class="tsd-kind-icon">rank</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="permutations_bwt.html#runlengthencode" class="tsd-kind-icon">run<wbr>Length<wbr>Encode</wbr></wbr></a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
