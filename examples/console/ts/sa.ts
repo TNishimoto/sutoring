@@ -1,4 +1,4 @@
-import * as sutoring from "../../dist/index"
+import * as sutoring from "../../../dist/index"
 
 
 const text = "abaab$";

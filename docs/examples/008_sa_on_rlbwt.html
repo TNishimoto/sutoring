@@ -6,33 +6,18 @@
     <title>SA on RLBWT</title>
     <script src="../sutoring.js"></script>
     <script>
-        function constructBWTTableButton() {
+        function constructSATableButton() {
             const text = document.getElementById("text").value;
-            /*
-            const r1 = sutoring.BWT.createCircularSuffixArray(text);
-            console.log(r1);
-            const r2 = sutoring.SAonRLBWT.createSuffixArray(text);
-            console.log(r2);
+            const zeroBasedIndexFlag = document.getElementById("zeroBased").checked;
+            const withBWTFlag = document.getElementById("withBWT").checked;
+            const withSAFlag = document.getElementById("withSA").checked;
+            const withLCPFlag = document.getElementById("withLCP").checked;
+            const withIndexFlag = document.getElementById("withIndex").checked;
 
-            const r3 = sutoring.SAonRLBWT.createSuffixArrayFromBack(text);
-            console.log(r3);
-
-            const lcpArray1 = sutoring.LCPArray.construct(text);
-            console.log(lcpArray1);
-            const lcpArray2 = sutoring.SAonRLBWT.createLCPArray(text);
-            console.log(lcpArray2);
-
-            const b1 = sutoring.Debug.isEqual(r1, r2);
-            console.log(b1);
-
-            const b2 = sutoring.Debug.isEqual(r1, r3);
-            console.log(b2);
-
-            const b3 = sutoring.Debug.isEqual(lcpArray1, lcpArray2);
-            console.log(b3);
-            */
-
-            //sutoring.Console.table(table);
+            console.log("LCP:" * withLCPFlag);
+            const table = sutoring.Permutations.RLBWT.constructRLBWTTable(text);
+            const result = sutoring.Console.table(table);
+            console.log(result);
         }
     </script>
 </head>
@@ -41,13 +26,19 @@
     <h1>SA on RLBWT</h1>
     <fieldset>
         <legend>Input Text</legend>
-        <textarea id="text" rows="1" cols="80">abaababaabaabab$</textarea></br>
+        <textarea id="text" rows="1" cols="80">abaababaabaababaababaab$</textarea></br>
     </fieldset>
 
     <fieldset>
         <legend>Methods</legend>
-        <button onclick="constructBWTTableButton()">constructBWTTable</button>
+        <button onclick="constructSATableButton()">constructSATable</button>
+        <input type="checkbox" id="zeroBased" value="1" checked="checked">zero based index
+        <input type="checkbox" id="withBWT" value="1">with BWT
+        <input type="checkbox" id="withSA" value="1" checked="checked">with SA
+        <input type="checkbox" id="withLCP" value="1">with LCP
+        <input type="checkbox" id="withIndex" value="1" checked="checked">with Index
     </fieldset>
+    <hr size="10" color="black" noshade>
 
 </body>
 

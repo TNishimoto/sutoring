@@ -7,7 +7,7 @@ import { Logics, Objects, Common } from "graph-table-svg"
 import * as SuffixArray from "../arrays/suffix_array"
 import * as LCPArray from "../arrays/lcp_array"
 
-type BWTOption = SuffixArray.SATableOption & { 
+export type BWTOption = SuffixArray.SATableOption & { 
     withMiddleSubstrings? : boolean 
     isRLBWT? : boolean
     coloredChar? : boolean
@@ -116,7 +116,7 @@ export function createLArray(text: string): string[] {
 export function createSortedMiddleCircularStrings(text: string): string[] {
     return createSortedCircularStrings(text).map((v) => v.substr(1, v.length - 2));
 }
-function rank(text : string, ith : number) : number {
+export function rank(text : string, ith : number) : number {
     const c = text[ith];
     let _rank = 0;
     for(let i=0;i<ith;i++){
@@ -124,7 +124,7 @@ function rank(text : string, ith : number) : number {
     }
     return _rank;
 }
-const bwtColors = ["black", "red", "orange", "blue", "green", "purple", "gray", "slateblue", "saddlebrown", "olive", "aqua"];
+export const bwtColors = ["black", "red", "orange", "blue", "green", "purple", "gray", "slateblue", "saddlebrown", "olive", "aqua"];
 
 
 /**

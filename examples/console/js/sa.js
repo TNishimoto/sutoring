@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const sutoring = require("../../dist/index");
+const sutoring = require("../../../dist/index");
 const text = "abaab$";
 /*
 const text = document.getElementById("text").value;

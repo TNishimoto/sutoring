@@ -3,17 +3,17 @@
         "noImplicitAny": true,
         "removeComments": false,
         "preserveConstEnums": true,
-        "outDir": "../js",
+        "outDir": "../console/js",
 
         "sourceMap": false,
         "target" : "ES6",
         "declaration" : false,
         "strict": true,
         "module": "commonjs",
-        "baseUrl": "../../dist",
+        "baseUrl": "../../../dist",
 
         "paths": {
-            "../../dist/index": ["index"]
+            "../../../dist/index": ["index"]
         }
     }
     

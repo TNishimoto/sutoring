@@ -1,5 +1,5 @@
-import * as SAOnRLBWT from "../../dist/permutations/sa_on_rlbwt"
-import * as BWT from "../../dist/permutations/bwt"
+import * as SAOnRLBWT from "../../../dist/permutations/sa_on_rlbwt"
+import * as BWT from "../../../dist/permutations/bwt"
 import {Console} from "graph-table-svg"
 
 const text = "abaababaabaababaab$";

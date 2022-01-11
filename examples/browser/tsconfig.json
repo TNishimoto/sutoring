@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "removeComments": false,
+        "preserveConstEnums": true,
+        "outDir": "../../docs/examples/scripts",
+
+        "sourceMap": false,
+        "target" : "ES6",
+        "declaration" : false,
+        "strict": true,
+        "module": "commonjs",
+        "baseUrl": "./",
+
+        "paths": {
+            "../../../node_modules/graph-table-svg/dist": ["graph-table-svg"]
+        }
+    }
+    
+}
