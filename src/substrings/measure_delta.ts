@@ -5,19 +5,17 @@
  */
 
  import { Logics } from "graph-table-svg"
+import { CellCSS } from "graph-table-svg/dist/objects/g_options";
+import { Cell } from "graph-table-svg/dist/objects/table_helpers/cell";
 import * as DistinctSubstrings from "./distinct_substrings"
 
-export type SubDeltaInfo = { substrLength: number, substrCount : number, subDelta : number }
+export type sharpDeltaInfo = { substrLength: number, substrCount : number, sharpDelta : number }
 
 
 export function getDistinctSubstrings(text : string) : string[][]{
     const distinctSubstrings = DistinctSubstrings.createOccurrenceMap(text);
-    //const countMap : Map<number, number> = new Map();
 
     let maxLen =text.length;
-    //distinctSubstrings.forEach((_, key) =>{
-    //    if(maxLen < key.length) maxLen = key.length;
-    //})
     const r : string[][] = new Array(maxLen+1);
     for(let i=0;i<r.length;i++){
         r[i] = new Array(0);
@@ -31,49 +29,62 @@ export function getDistinctSubstrings(text : string) : string[][]{
 
 export function getDistinctSubstringsTable(text : string) : Logics.LogicTable{
     const distinctSubstrings = getDistinctSubstrings(text);
-    const arrays = distinctSubstrings.map((v, i) =>{
-        const p = new Array(2);
-        p[0] = i.toString();
-        p[1] = v.join(", ");
-        return p;
+
+    const substring_arrays = distinctSubstrings.map((v, i) =>{
+        return v.join(", ");
+    });
+    const len_arrays = distinctSubstrings.map((v, i) =>{
+        return (i).toString();
     });
 
-    return Logics.buildLogicTable(arrays, { isRowLines: true })
+
+    const css : CellCSS = { horizontalAnchor : "left"};
+    const substr_line = Logics.buildLogicCellLine("Substrings", substring_arrays, { style:  css } );
+    const len_line = Logics.buildLogicCellLine("Length", len_arrays );
+
+    return Logics.buildLogicTable([len_line, substr_line], { isRowLines: false })
 
 }
 
 
-export function getSubDeltaInfoArray(text : string) : SubDeltaInfo[]{
+
+
+export function getSharpDeltaInfoArray(text : string) : sharpDeltaInfo[]{
     const substrings = getDistinctSubstrings(text);
-    const r : SubDeltaInfo[] = new Array(substrings.length);
+    const r : sharpDeltaInfo[] = new Array(substrings.length);
     for(let i=0;i<r.length;i++){
-        const delta = i == 0 ? 0 : (substrings[i].length / i);
-        r[i] = { substrLength : i, substrCount : substrings[i].length, subDelta : delta };
+        const delta = i == 0 ? 0 :  (substrings[i].length / i );
+        r[i] = { substrLength : (i), substrCount : substrings[i].length, sharpDelta : delta };
     }
     return r;
      
 }
 
+export function getSharpDeltaInfoTable(text : string) : Logics.LogicTable{
+    const array = getSharpDeltaInfoArray(text);
+
+    const substrLengthArray = array.map((v) =>{
+        return v.substrLength.toString();
+    });
+    const substrCountArray = array.map((v) =>{
+        return v.substrCount.toString();
+    });
+    const sharpDeltaArray = array.map((v) =>{
+        return v.sharpDelta.toString();
+    });
+
+    const lengthLine = Logics.buildLogicCellLine("Substring length", substrLengthArray );
+    const countLine = Logics.buildLogicCellLine("Substring count", substrCountArray );
+    const sharpDeltaLine = Logics.buildLogicCellLine("Sharp delta", sharpDeltaArray );
+
+    return Logics.buildLogicTable([lengthLine, countLine, sharpDeltaLine], { isRowLines: false })
+
+
+}
+
 
 export function delta(text : string) : number{
-    const subDeltaInfoArray = getSubDeltaInfoArray(text);
-    const max = subDeltaInfoArray.map((a) => a.subDelta).reduce((a,b)=>a>b?a:b);
+    const subDeltaInfoArray = getSharpDeltaInfoArray(text);
+    const max = subDeltaInfoArray.map((a) => a.sharpDelta).reduce((a,b)=>a>b?a:b);
     return max;
-    /*
-    const x = DistinctSubstrings.createOccurrenceMap(text);
-    const countMap : Map<number, number> = new Map();
-    x.forEach((value, key) =>{
-        const len = key.length;
-        const count = countMap.has(len) ? countMap.get(len)! : 0;
-        countMap.set(len, count+1);
-    })
-    let max = 0;
-    countMap.forEach((count, len) =>{
-        const v = count / len;
-        if(v > max){
-            max = v;
-        }
-    })
-    return max;
-    */
 }

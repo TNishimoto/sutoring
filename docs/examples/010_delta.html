@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Substring Complexity δ</title>
+    <script src="../sutoring.js"></script>
+    <script>
+        function delta() {
+            const text = document.getElementById("text").value;
+            const delta = sutoring.Substrings.MeasureDelta.delta(text);
+            sutoring.Console.textarea(delta, `delta(${text})`);
+        }
+
+        function distinctSubstringsTable() {
+            const text = document.getElementById("text").value;
+            const table = sutoring.Substrings.MeasureDelta.getDistinctSubstringsTable(text);
+            sutoring.Console.table(table, `distinctSubstringsTable(${text})`);
+        }
+
+        function sharpDeltaInfoTable() {
+            const text = document.getElementById("text").value;
+            const table = sutoring.Substrings.MeasureDelta.getSharpDeltaInfoTable(text);
+            sutoring.Console.table(table, `sharpDeltaInfoTable(${text})`);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Substring Complexity δ</h1>
+    <fieldset>
+        <legend>Input Text</legend>
+        <textarea id="text" rows="1" cols="80">abaababaabaababaababaabaababaaba</textarea></br>
+    </fieldset>
+
+    <fieldset>
+        <legend>Methods</legend>
+        <button onclick="delta()">Delta</button>
+        <button onclick="distinctSubstringsTable()">Distinct Substrings Table</button>
+        <button onclick="sharpDeltaInfoTable()">Sharp delta Info Table</button>
+
+    </fieldset>
+    <hr size="10" color="black" noshade>
+</body>
+
+</html>
