@@ -12,6 +12,7 @@ At the moment, this library supports the following functions:
 - [Suffix Trie](https://codepen.io/mklemma/details/GRpgZZg "Suffix Trie")
 - [BWT](https://codepen.io/mklemma/details/KKdwzzq "BWT")
 - [Block Tree](https://codepen.io/mklemma/details/WNQXNeb "Block Tree")
+- [Substring Complexity δ](https://codepen.io/mklemma/pen/bGoQEBY "Substring Complexity δ")
 
 
 # Documents
