@@ -8,8 +8,9 @@
     },
     "scripts": {
         "typedoc": "node node_modules/typedoc/bin/typedoc --out ./docs/typedoc/ ./src/ --name sutoring --readme readme.md --exclude node_modules/typescript/**/*.d.ts --exclude node_modules/@types/**/*.d.ts",
-        "compile": "tsc -p . && tsc -p ./examples/console/ts && tsc -p ./examples/browser && tsc -p ./debug/ts && node node_modules/webpack/bin/webpack.js",
+        "compile": "tsc -p . && tsc -p ./examples/console && tsc -p ./examples/browser && tsc -p ./debug/ts && node node_modules/webpack/bin/webpack.js",
         "compile2": "tsc -p ./examples/browser",
+        "compile3": "tsc -p .",
         "custom": "ts-node custom_typedoc/main.ts",
         "all": "npm run compile && npm run typedoc && npm run custom"
     },
@@ -19,7 +20,7 @@
     "author": "mklemma",
     "license": "MIT",
     "dependencies": {
-        "graph-table-svg": "^0.0.120",
+        "graph-table-svg": "^0.0.126",
         "opener": "^1.5.2",
         "typescript": "^4.7.4"
     },
